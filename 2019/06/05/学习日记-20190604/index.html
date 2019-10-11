@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习日记,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="构建事件树ETA的完整算法以及优化、Linux下查看端口占用情况、Selenium python官方文档再学习、Anytree-构建树的Python第三方库、treelib">
+<meta name="keywords" content="学习日记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习日记-20190604">
+<meta property="og:url" content="http://yoursite.com/2019/06/05/学习日记-20190604/index.html">
+<meta property="og:site_name" content="花茶树窝">
+<meta property="og:description" content="构建事件树ETA的完整算法以及优化、Linux下查看端口占用情况、Selenium python官方文档再学习、Anytree-构建树的Python第三方库、treelib">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/tree/udo.png?raw=true">
+<meta property="og:updated_time" content="2019-10-11T08:53:17.308Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习日记-20190604">
+<meta name="twitter:description" content="构建事件树ETA的完整算法以及优化、Linux下查看端口占用情况、Selenium python官方文档再学习、Anytree-构建树的Python第三方库、treelib">
+<meta name="twitter:image" content="https://github.com/zhengjiani/markdownImages/blob/master/tree/udo.png?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/05/学习日记-20190604/">
+
+
+
+
+
+  <title>学习日记-20190604 | 花茶树窝</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?870e68ebac7b44a2e5fc2f00b965a03b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花茶树窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/05/学习日记-20190604/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zheng Jiani">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花茶树窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学习日记-20190604</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-05T15:39:44+08:00">
+                2019-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>构建事件树ETA的完整算法以及优化、Linux下查看端口占用情况、Selenium python官方文档再学习、Anytree-构建树的Python第三方库、treelib</p>
+<a id="more"></a>
+
+<h2 id="构建事件树的完整算法以及优化"><a href="#构建事件树的完整算法以及优化" class="headerlink" title="构建事件树的完整算法以及优化"></a>构建事件树的完整算法以及优化</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> CESs <span class="title">generateCESwithEventTree</span><span class="params">(ESG4WSCModel esg4wscModel)</span></span>&#123;</span><br><span class="line">    <span class="comment">//Step1-Handling refining ESG4WSCs</span></span><br><span class="line">    <span class="keyword">for</span>(Pair&lt;Event,ESG4WSCModel&gt; p : esg4wscModel.getRefiningEsgs())&#123;</span><br><span class="line">        <span class="comment">// 递归调用</span></span><br><span class="line">        refCESs = generateCESwithEventTree(p.ESG4WSCModel);</span><br><span class="line">        CESsToReplace.append(p.Event,refCESs);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//Step2-Solving DTs</span></span><br><span class="line">    <span class="keyword">for</span>(DT dt : esg4wscModel.getDTs())</span><br><span class="line">        solveDTAndAddEdges(dt,esg4wscModel);</span><br><span class="line">    <span class="comment">//Step3-Building the event tree</span></span><br><span class="line">    <span class="comment">// 贪婪算法</span></span><br><span class="line">    EventTree tree = <span class="keyword">new</span> EventTree();</span><br><span class="line">    tree.setRoot(esg4wscModel.getEntryNode());<span class="comment">//entry-'['</span></span><br><span class="line">    <span class="comment">// 用于广度优先搜索的队列</span></span><br><span class="line">    queue.add(esg4wscModel.getEntryNode());</span><br><span class="line">    <span class="keyword">while</span>(queue.isNotEmpty())&#123;</span><br><span class="line">        event = queue.first();</span><br><span class="line">        <span class="keyword">if</span>(event.isNotVisited())&#123;</span><br><span class="line">            <span class="comment">//expand tree</span></span><br><span class="line">            event.setVisited(<span class="keyword">true</span>);</span><br><span class="line">            <span class="keyword">for</span>(Event child : event.getSuccessors())&#123;</span><br><span class="line">                tree.addChild(event.child);</span><br><span class="line">                queue.add(child);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//Step4-Completing the tree</span></span><br><span class="line">    <span class="keyword">for</span>(Event e:tree.getLeafs())</span><br><span class="line">        <span class="keyword">if</span>(e != <span class="string">']'</span>)&#123;</span><br><span class="line">            ES = esg4wscModel.getShortestPath(e,<span class="string">']'</span>);<span class="comment">//from'e'to ']'</span></span><br><span class="line">            tree.append(e,ES);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="comment">//依赖于Step3-4的信息，在这之间进行剪枝</span></span><br><span class="line">    <span class="comment">//Step5-Deriving CESs</span></span><br><span class="line">    CESs = deriveCESs(tree);<span class="comment">//each path from root to a leaf is a CES</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">//Step6-Replacing refined events</span></span><br><span class="line">    <span class="keyword">for</span>(Pair&lt;Event,CESs&gt;p : CESsToReplace)</span><br><span class="line">        CESs = replaceRefinedEvents(CESs,p.Event,p.CESs);</span><br><span class="line">    <span class="keyword">return</span> CESs;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>ETA-原始的事件树建树算法（广度优先遍历）</p>
+<p>ETA+P-将剪枝步应用在第5步之前</p>
+<p>GETA-使用贪婪算法替代第3步</p>
+<p>GETA+P-使用贪婪算法和剪枝步</p>
+<p>与cpp（Chinese postman problem）算法对比</p>
+<h2 id="Linux下查看端口占用情况"><a href="#Linux下查看端口占用情况" class="headerlink" title="Linux下查看端口占用情况"></a>Linux下查看端口占用情况</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ntpl</span><br></pre></td></tr></table></figure>
+
+<h2 id="Selenium-python官方文档再学习"><a href="#Selenium-python官方文档再学习" class="headerlink" title="Selenium python官方文档再学习"></a>Selenium python官方文档再学习</h2><p><a href="https://selenium-python.readthedocs.io/page-objects.html" target="_blank" rel="noopener">https://selenium-python.readthedocs.io/page-objects.html</a></p>
+<p>定位文件（locators.py）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time    : 2019/6/4 16:47</span></span><br><span class="line"><span class="comment"># @Author  : zhengjiani</span></span><br><span class="line"><span class="comment"># @Software: PyCharm</span></span><br><span class="line"><span class="comment"># @Blog    ：https://zhengjiani.github.io/</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">其中一种做法是将定位器字符串与它们被使用的位置分开。 在此示例中，同一页面的定位器属于同一个类。</span></span><br><span class="line"><span class="string">有种策略模式的感觉</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainPageLocators</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""所有主页的定位器都应该放在这里"""</span></span><br><span class="line">    GO_BUTTON = (By.ID,<span class="string">'submit'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SearchResultsPageLocators</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""所有搜索结果的定位器都应该放在这里"""</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<p>元素文件（element.py）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time    : 2019/6/4 16:52</span></span><br><span class="line"><span class="comment"># @Author  : zhengjiani</span></span><br><span class="line"><span class="comment"># @Software: PyCharm</span></span><br><span class="line"><span class="comment"># @Blog    ：https://zhengjiani.github.io/</span></span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.support.ui <span class="keyword">import</span> WebDriverWait</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BasePageElement</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="string">"""BasePage会在每个页面对象类中进行初始化"""</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__set__</span><span class="params">(self, instance, value)</span>:</span></span><br><span class="line">        <span class="string">"""将文本设置为提供的值"""</span></span><br><span class="line">        driver = instance.driver</span><br><span class="line">        WebDriverWait(driver,<span class="number">100</span>).until(</span><br><span class="line">            <span class="keyword">lambda</span> driver:driver.find_element_by_name(self.locator))</span><br><span class="line">        driver.find_element_by_name(self.locator).clear()</span><br><span class="line">        driver.find_element_by_name(self.locator).send_keys(value)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__get__</span><span class="params">(self, instance, owner)</span>:</span></span><br><span class="line">        <span class="string">"""获取指定对象的文本"""</span></span><br><span class="line">        driver = instance.driver</span><br><span class="line">        WebDriverWait(driver,<span class="number">100</span>).until(</span><br><span class="line">            <span class="keyword">lambda</span> driver:driver.find_element_by_name(self.locator))</span><br><span class="line">        element = driver.find_element_by_name(self.locator)</span><br><span class="line">        <span class="keyword">return</span> element.get_attribute(<span class="string">"value"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>页面对象文件（page.py）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time    : 2019/6/4 16:46</span></span><br><span class="line"><span class="comment"># @Author  : zhengjiani</span></span><br><span class="line"><span class="comment"># @Software: PyCharm</span></span><br><span class="line"><span class="comment"># @Blog    ：https://zhengjiani.github.io/</span></span><br><span class="line"><span class="keyword">from</span> .element <span class="keyword">import</span> BasePageElement</span><br><span class="line"><span class="keyword">from</span> .locators <span class="keyword">import</span> MainPageLocators</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SearchTextElement</span><span class="params">(BasePageElement)</span>:</span></span><br><span class="line">    locator = <span class="string">'q'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BasePage</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,driver)</span>:</span></span><br><span class="line">        self.driver = driver</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainPage</span><span class="params">(BasePage)</span>:</span></span><br><span class="line"></span><br><span class="line">    search_text_element = SearchTextElement()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_title_matches</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Python"</span> <span class="keyword">in</span> self.driver.title</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">click_go_button</span><span class="params">(self)</span>:</span></span><br><span class="line">        element = self.driver.find_element(*MainPageLocators.GO_BUTTON)</span><br><span class="line">        element.click()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SearchResultsPage</span><span class="params">(BasePage)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_results_found</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"No results found."</span> <span class="keyword">not</span> <span class="keyword">in</span> self.driver.page_source</span><br></pre></td></tr></table></figure>
+
+<p>测试文件（test.py）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time    : 2019/6/4 17:24</span></span><br><span class="line"><span class="comment"># @Author  : zhengjiani</span></span><br><span class="line"><span class="comment"># @Software: PyCharm</span></span><br><span class="line"><span class="comment"># @Blog    ：https://zhengjiani.github.io/</span></span><br><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> page</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">PythonOrgSearch</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.driver = webdriver.Chrome()</span><br><span class="line">        self.driver.get(<span class="string">"http://www.python.org"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_search_in_python_org</span><span class="params">(self)</span>:</span></span><br><span class="line">        main_page = page.MainPage(self.driver)</span><br><span class="line">        <span class="keyword">assert</span> main_page.is_title_matches()</span><br><span class="line">        main_page.search_text_element = <span class="string">"pycon"</span></span><br><span class="line">        main_page.click_go_button()</span><br><span class="line">        search_results_page = page.SearchResultsPage(self.driver)</span><br><span class="line">        <span class="keyword">assert</span> search_results_page.is_results_found()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tearDown</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.driver.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure>
+
+<h2 id="Anytree-构建树的Python第三方库"><a href="#Anytree-构建树的Python第三方库" class="headerlink" title="Anytree-构建树的Python第三方库"></a>Anytree-构建树的Python第三方库</h2><p>（<strong>原来了解过一个treelib，其实本质是一样的，但是感觉Anytree更易理解，而且可以直接画成dot图，方便可视化</strong>）</p>
+<p>官方文档戳 <a href="https://anytree.readthedocs.io/en/latest/" target="_blank" rel="noopener">https://anytree.readthedocs.io/en/latest/</a></p>
+<p>建一棵树并控制台打印</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time    : 2019/6/5 15:26</span></span><br><span class="line"><span class="comment"># @Author  : zhengjiani</span></span><br><span class="line"><span class="comment"># @Software: PyCharm</span></span><br><span class="line"><span class="comment"># @Blog    ：https://zhengjiani.github.io/</span></span><br><span class="line"><span class="keyword">from</span> anytree <span class="keyword">import</span> Node, RenderTree</span><br><span class="line">udo = Node(<span class="string">"Udo"</span>)</span><br><span class="line">marc = Node(<span class="string">"Marc"</span>, parent=udo)</span><br><span class="line">lian = Node(<span class="string">"Lian"</span>, parent=marc)</span><br><span class="line">dan = Node(<span class="string">"Dan"</span>, parent=udo)</span><br><span class="line">jan = Node(<span class="string">"Jan"</span>, parent=dan)</span><br><span class="line">joe = Node(<span class="string">"Joe"</span>, parent=dan)</span><br><span class="line"><span class="keyword">for</span> pre, fill, node <span class="keyword">in</span> RenderTree(udo):</span><br><span class="line">    print(<span class="string">"%s%s"</span> % (pre, node.name))</span><br><span class="line">-----------------------------------------------------------------------------------------</span><br><span class="line">Udo</span><br><span class="line">├── Marc</span><br><span class="line">│   └── Lian</span><br><span class="line">└── Dan</span><br><span class="line">    ├── Jan</span><br><span class="line">    └── Joe</span><br></pre></td></tr></table></figure>
+
+<p>图可视化</p>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/tree/udo.png?raw=true" alt="udo.png"></p>
+<p>treelib建树，功能更强大，可以找路径啥的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time    : 2019/4/11 20:13</span></span><br><span class="line"><span class="comment"># @Author  : zhengjiani</span></span><br><span class="line"><span class="comment"># @Software: PyCharm</span></span><br><span class="line"><span class="comment"># @Blog    ：https://zhengjiani.github.io/</span></span><br><span class="line"><span class="keyword">from</span> treelib <span class="keyword">import</span> Node,Tree</span><br><span class="line">node = Node()</span><br><span class="line">tree = Tree()</span><br><span class="line">tree.create_node(<span class="string">"Harry"</span>,<span class="string">"harry"</span>)<span class="comment">#root node</span></span><br><span class="line">tree.create_node(<span class="string">"Jane"</span>,<span class="string">"jane"</span>,parent=<span class="string">"harry"</span>)</span><br><span class="line">tree.create_node(<span class="string">"Bill"</span>,<span class="string">"bill"</span>,parent=<span class="string">"harry"</span>)</span><br><span class="line">tree.create_node(<span class="string">"Diane"</span>, <span class="string">"diane"</span>, parent=<span class="string">"jane"</span>)</span><br><span class="line">tree.create_node(<span class="string">"Mary"</span>, <span class="string">"mary"</span>, parent=<span class="string">"diane"</span>)</span><br><span class="line">tree.create_node(<span class="string">"Mark"</span>, <span class="string">"mark"</span>, parent=<span class="string">"jane"</span>)</span><br><span class="line">tree.show()</span><br><span class="line"><span class="comment">#打印节点标签</span></span><br><span class="line">print(<span class="string">','</span>.join([tree[node].tag <span class="keyword">for</span> node <span class="keyword">in</span> tree.expand_tree(mode=Tree.DEPTH)]))</span><br><span class="line"><span class="comment">#过滤节点标签</span></span><br><span class="line">print(<span class="string">','</span>.join([tree[node].tag <span class="keyword">for</span> node <span class="keyword">in</span> tree.expand_tree(filter = <span class="keyword">lambda</span> x:x.identifier != <span class="string">'diane'</span>)]))</span><br><span class="line"><span class="comment">#获得某一节点的子树</span></span><br><span class="line">sub_t = tree.subtree(<span class="string">'diane'</span>)</span><br><span class="line">sub_t.show()</span><br><span class="line"><span class="comment">#在原来的树上粘一棵新树</span></span><br><span class="line">new_tree = Tree()</span><br><span class="line">new_tree.create_node(<span class="string">"n1"</span>,<span class="number">1</span>)<span class="comment">#root node</span></span><br><span class="line">new_tree.create_node(<span class="string">"n2"</span>,<span class="number">2</span>,parent=<span class="number">1</span>)</span><br><span class="line">new_tree.create_node(<span class="string">"n3"</span>,<span class="number">3</span>,parent=<span class="number">1</span>)</span><br><span class="line">tree.paste(<span class="string">'bill'</span>,new_tree)</span><br><span class="line">tree.show()</span><br><span class="line"><span class="comment">#移去已经存在的节点,如果移去的是根节点，则子树也移了</span></span><br><span class="line">tree.remove_node(<span class="number">1</span>)</span><br><span class="line">tree.show()</span><br><span class="line"><span class="comment">#移动节点改变父节点</span></span><br><span class="line">tree.move_node(<span class="string">'mary'</span>,<span class="string">'harry'</span>)</span><br><span class="line">tree.show()</span><br><span class="line"><span class="comment">#树的深度</span></span><br><span class="line">print(tree.depth())</span><br><span class="line"><span class="comment">#获取节点标签</span></span><br><span class="line">node = tree.get_node(<span class="string">"bill"</span>)</span><br><span class="line">tree.depth(node)</span><br><span class="line"></span><br><span class="line"><span class="comment">#保存树</span></span><br><span class="line"><span class="comment">#tree.save2file('tree.txt')</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习日记/" rel="tag"># 学习日记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/03/学习日记-20190603/" rel="next" title="学习日记-20190604">
+                <i class="fa fa-chevron-left"></i> 学习日记-20190604
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/05/博客说明/" rel="prev" title="博客说明">
+                博客说明 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zheng Jiani</p>
+              <p class="site-description motion-element" itemprop="description">喜欢，成就梦想</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengjiani" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#构建事件树的完整算法以及优化"><span class="nav-number">1.</span> <span class="nav-text">构建事件树的完整算法以及优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux下查看端口占用情况"><span class="nav-number">2.</span> <span class="nav-text">Linux下查看端口占用情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Selenium-python官方文档再学习"><span class="nav-number">3.</span> <span class="nav-text">Selenium python官方文档再学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Anytree-构建树的Python第三方库"><span class="nav-number">4.</span> <span class="nav-text">Anytree-构建树的Python第三方库</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zheng Jiani</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

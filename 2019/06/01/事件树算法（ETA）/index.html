@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习日记,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Python RESTful API">
+<meta name="keywords" content="学习日记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="事件树算法(ETA)">
+<meta property="og:url" content="http://yoursite.com/2019/06/01/事件树算法（ETA）/index.html">
+<meta property="og:site_name" content="花茶树窝">
+<meta property="og:description" content="Python RESTful API">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/ETA+/ETA.PNG?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/ETA+/greedy_tree.PNG?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/ETA+/prun_tree.PNG?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/flaskimg/RESTful-get.PNG?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/flaskimg/RESTful-get1.PNG?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/flaskimg/RESTful-post.PNG?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/flaskimg/RESTful-put.PNG?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/flaskimg/RESTful-del.PNG?raw=true">
+<meta property="og:updated_time" content="2019-10-11T08:53:17.308Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="事件树算法(ETA)">
+<meta name="twitter:description" content="Python RESTful API">
+<meta name="twitter:image" content="https://github.com/zhengjiani/markdownImages/blob/master/ETA+/ETA.PNG?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/01/事件树算法（ETA）/">
+
+
+
+
+
+  <title>事件树算法(ETA) | 花茶树窝</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?870e68ebac7b44a2e5fc2f00b965a03b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花茶树窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/01/事件树算法（ETA）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zheng Jiani">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花茶树窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">事件树算法(ETA)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-01T08:30:00+08:00">
+                2019-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Python RESTful API</p>
+<a id="more"></a>
+
+
+
+<p>事件树算法（ETA）、Python RESTful API</p>
+<!--more-->
+
+<h2 id="阅读文献"><a href="#阅读文献" class="headerlink" title="阅读文献"></a>阅读文献</h2><h2 id="Event-tree-algorithms-to-generate-test-sequences-for-composite-Web-services"><a href="#Event-tree-algorithms-to-generate-test-sequences-for-composite-Web-services" class="headerlink" title="Event tree algorithms to generate test sequences for composite Web services"></a>Event tree algorithms to generate test sequences for composite Web services</h2><p>提出了一种替代中国邮递员问题（CPP）算法的<strong>事件树算法Event tree algorithm（ETA）</strong>。有两种策略可以用于减小测试套件的规模：</p>
+<p>（1）cost-based greedy procedure用于构造事件树。</p>
+<p>（2）定义一种方法来修剪树的冗余元素（<strong>剪枝</strong>）</p>
+<p><strong>ETA (不选择策略), ETA+P (剪枝策略), GETA(贪婪算法),  GETA+P (贪婪算法+剪枝策略)</strong></p>
+<p>四种算法介绍：</p>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/ETA+/ETA.PNG?raw=true" alt="ETA.PNG"></p>
+<blockquote>
+<p>GREEDY：通过减少测试套件中事件的数量</p>
+<p>替代基于广度优先搜索中的Lines12-25，每个节点依旧保持着它的高度，该算法有一个边集，其中的每个边都可以根据开销cost进行扩展。当树节点是一个叶子节点时，扩展边cost为1,(lines7-8,lines26-29)。当一个节点不是叶子节点，那么它所有的扩展边就会实现一个新的分支，开销cost更新则树节点+1，(lines16-20)，这些规则可以计算边的开销，算法迭代直到所有的边被遍历(line9)，总是首先扩展最低开销的边。</p>
+<p>剪枝策略——优先考虑现有测试序列的扩展，以最低成本建立树的分支（例如最靠近根节点的）</p>
+</blockquote>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/ETA+/greedy_tree.PNG?raw=true" alt="greedy_tree.PNG"></p>
+<blockquote>
+<p>Pruning tree</p>
+<p>剪枝条件：1.给定一个完全的事件树T=(V$<em>T$,E$_T$,root)，一个子树st=(V$</em>{st}$,E$<em>{st}$,root$</em>{st}$,)是T的子树如果root$<em>{st}$不是T的根节点并且root$</em>{st}$的父节点至少还有另一个孩子节点。2.如果移除子树st后T’依然可以覆盖所有的需求边。</p>
+<p>Lines4-22区分可以剪枝的子树，Line9检查条件1，Line8检查条件2，定位后，变量canCutNode则指向子树的根节点，否则canCutNode为空。之后，算法剪枝子树Lines24-26，Line27更新边覆盖率。</p>
+</blockquote>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/ETA+/prun_tree.PNG?raw=true" alt="prun_tree.PNG"></p>
+<p>四种算法对比：</p>
+<p>GETA+P比CPP算法的产生时间平均减少了7%，产生的测试套件是CPP的2.24倍，</p>
+<p>对比实验：CPP</p>
+<p>衡量标准：Test suite size \ Number of test sequences \ Average test sequence length</p>
+<p>实验结果：</p>
+<blockquote>
+<p>generation time(faster-&gt;slowest)：GETA+P -&gt; GETA -&gt; ETA+P -&gt; ETA -&gt;CPP</p>
+</blockquote>
+<blockquote>
+<p>test suite size(smallest-&gt;largest)：CPP-&gt; GETA+P-&gt;GETA-&gt;ETA+P-&gt;ETA</p>
+</blockquote>
+<blockquote>
+<p>nums of CES$_s$(lowest-&gt;highest)：CPP-&gt;GETA+P-&gt;GETA-&gt;ETA+P-&gt;ETA</p>
+</blockquote>
+<blockquote>
+<p>average test sequence length(shortest-&gt;longest)：ETA-&gt;ETA+P-&gt;GETA-&gt;GETA+P-&gt;CPP</p>
+</blockquote>
+<p>上述实验均是实验模型。</p>
+<ul>
+<li>Selenium WebDriver – How To Test REST API**</li>
+</ul>
+<p>UI测试存在的问题</p>
+<ol>
+<li>UI测试是非常慢的（这是因为—你的浏览器第一次发送请求给服务器以获取某些信息，一旦它获取了所需要的信息，可能需要一些时间来处理数据并通过下载以表格/适当的格式显示它们图像和应用样式等所以你必须等待所有这些过程完成才能与应用程序交互）</li>
+<li>因为它很慢，所以它十分耗时</li>
+<li>对于不同的浏览器测试，可能必须重复相同的测试集</li>
+<li>浏览器是与selenium脚本分开的进程。 因此，同步始终是一个问题。</li>
+<li>UI测试有很多依赖项，如浏览器/版本/grid/驱动程序等</li>
+</ol>
+<p>因此，这并不意味着我们应该始终进行API级别测试并发布产品。 我们应该尝试尽可能地进行API级别测试。 我们可以获得非常小的UI测试覆盖率.</p>
+<p>REST API testing</p>
+<p>与selenium web驱动程序UI测试相比，REST API测试并不是很困难。 大多数API应该是GET / POST / PUT / PATCH / DELETE请求之一。</p>
+<ol>
+<li>GET用于从后端获取信息以在UI中显示</li>
+<li>POST用于将新信息添加到后端</li>
+<li>PUT用于更新/替换任何现有信息</li>
+<li>PATCH用于部分更新</li>
+<li>DELETE用于从后端删除信息</li>
+</ol>
+<h2 id="Python-RESTful-API-testing"><a href="#Python-RESTful-API-testing" class="headerlink" title="Python RESTful API testing"></a>Python RESTful API testing</h2><p>构造REATful API</p>
+<p>GET方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Get All Products</span></span><br><span class="line"><span class="meta">@app.route('/product',methods=['GET'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_products</span><span class="params">()</span>:</span></span><br><span class="line">    all_products = Product.query.all()</span><br><span class="line">    result = products_schema.dump(all_products)</span><br><span class="line">    <span class="keyword">return</span> jsonify(result.data)</span><br><span class="line"><span class="comment"># Get Single Product</span></span><br><span class="line"><span class="meta">@app.route('/product/&lt;id&gt;',methods=['GET'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_product</span><span class="params">(id)</span>:</span></span><br><span class="line">    product = Product.query.get(id)</span><br><span class="line">    <span class="keyword">return</span> product_schema.jsonify(product)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/flaskimg/RESTful-get.PNG?raw=true" alt="RESTful-get.PNG"></p>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/flaskimg/RESTful-get1.PNG?raw=true" alt="RESTful-get1.PNG"></p>
+<p>POST方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create a Product</span></span><br><span class="line"><span class="meta">@app.route('/product',methods=['POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add_product</span><span class="params">()</span>:</span></span><br><span class="line">    name = request.json[<span class="string">'name'</span>]</span><br><span class="line">    description = request.json[<span class="string">'description'</span>]</span><br><span class="line">    price = request.json[<span class="string">'price'</span>]</span><br><span class="line">    qty = request.json[<span class="string">'qty'</span>]</span><br><span class="line"></span><br><span class="line">    new_product = Product(name,description,price,qty)</span><br><span class="line"></span><br><span class="line">    db.session.add(new_product)</span><br><span class="line">    db.session.commit()</span><br><span class="line">    <span class="keyword">return</span> product_schema.jsonify(new_product)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/flaskimg/RESTful-post.PNG?raw=true" alt="RESTful-post.PNG"></p>
+<p>PUT请求</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Update a Product</span></span><br><span class="line"><span class="meta">@app.route('/product/&lt;id&gt;',methods=['PUT'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update_product</span><span class="params">(id)</span>:</span></span><br><span class="line">    product = Product.query.get(id)</span><br><span class="line">    name = request.json[<span class="string">'name'</span>]</span><br><span class="line">    description = request.json[<span class="string">'description'</span>]</span><br><span class="line">    price = request.json[<span class="string">'price'</span>]</span><br><span class="line">    qty = request.json[<span class="string">'qty'</span>]</span><br><span class="line"></span><br><span class="line">    product.name = name</span><br><span class="line">    product.description = description</span><br><span class="line">    product.price = price</span><br><span class="line">    product.qty = qty</span><br><span class="line">    db.session.commit()</span><br><span class="line">    <span class="keyword">return</span> product_schema.jsonify(product)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/flaskimg/RESTful-put.PNG?raw=true" alt="RESTful-put.PNG"></p>
+<p>DELETE请求</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Delete Product</span></span><br><span class="line"><span class="meta">@app.route('/product/&lt;id&gt;',methods=['DELETE'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">delete_product</span><span class="params">(id)</span>:</span></span><br><span class="line">    product = Product.query.get(id)</span><br><span class="line">    db.session.delete(product)</span><br><span class="line">    db.session.commit()</span><br><span class="line">    <span class="keyword">return</span> product_schema.jsonify(product)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/flaskimg/RESTful-del.PNG?raw=true" alt="RESTful-del.PNG"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习日记/" rel="tag"># 学习日记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/31/学习日记-2019530/" rel="next" title="学习日记-2019530">
+                <i class="fa fa-chevron-left"></i> 学习日记-2019530
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/03/学习日记-20190603/" rel="prev" title="学习日记-20190604">
+                学习日记-20190604 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zheng Jiani</p>
+              <p class="site-description motion-element" itemprop="description">喜欢，成就梦想</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengjiani" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#阅读文献"><span class="nav-number">1.</span> <span class="nav-text">阅读文献</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event-tree-algorithms-to-generate-test-sequences-for-composite-Web-services"><span class="nav-number">2.</span> <span class="nav-text">Event tree algorithms to generate test sequences for composite Web services</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-RESTful-API-testing"><span class="nav-number">3.</span> <span class="nav-text">Python RESTful API testing</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zheng Jiani</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

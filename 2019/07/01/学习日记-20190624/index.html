@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习日记,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="MySQL5.7查看用户表、测试用例设计【总结】、Web网页信息抽取">
+<meta name="keywords" content="学习日记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习日记-20190624">
+<meta property="og:url" content="http://yoursite.com/2019/07/01/学习日记-20190624/index.html">
+<meta property="og:site_name" content="花茶树窝">
+<meta property="og:description" content="MySQL5.7查看用户表、测试用例设计【总结】、Web网页信息抽取">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pic2.zhimg.com/v2-25e522b24e82c8131d19ef4b25987109_b.gif">
+<meta property="og:updated_time" content="2019-10-11T08:53:17.308Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习日记-20190624">
+<meta name="twitter:description" content="MySQL5.7查看用户表、测试用例设计【总结】、Web网页信息抽取">
+<meta name="twitter:image" content="https://pic2.zhimg.com/v2-25e522b24e82c8131d19ef4b25987109_b.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/01/学习日记-20190624/">
+
+
+
+
+
+  <title>学习日记-20190624 | 花茶树窝</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?870e68ebac7b44a2e5fc2f00b965a03b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花茶树窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/01/学习日记-20190624/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zheng Jiani">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花茶树窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学习日记-20190624</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-01T21:01:11+08:00">
+                2019-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>MySQL5.7查看用户表、测试用例设计【总结】、Web网页信息抽取</p>
+<a id="more"></a>
+
+<h2 id="MySQL5-7查看用户表"><a href="#MySQL5-7查看用户表" class="headerlink" title="MySQL5.7查看用户表"></a>MySQL5.7查看用户表</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT CONCAT(&apos;User: &apos;&apos;&apos;,user,&apos;&apos;&apos;@&apos;&apos;&apos;,host,&apos;&apos;&apos;;&apos;) AS query FROM mysql.user;</span><br></pre></td></tr></table></figure>
+
+<p>密码字段更改，不是Password</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select User,Host,authentication_string from mysql.user;</span><br></pre></td></tr></table></figure>
+
+<p>更改用户密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">update mysql.user set authentication_string=password(&apos;ZhengJiaNi@88&apos;) where user=&apos;litemall&apos;;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<p>用dot画各种图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.chungkwong.cc/dot.html</span><br></pre></td></tr></table></figure>
+
+<p>用.dot文件生成图</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dot -Tpng -o page.png page.dot</span><br></pre></td></tr></table></figure>
+
+<p> 数据差距过大，设置为对数格式</p>
+<p>参考<a href="https://zhuanlan.zhihu.com/p/29802422" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/29802422</a></p>
+<p><img src="https://pic2.zhimg.com/v2-25e522b24e82c8131d19ef4b25987109_b.gif" alt="img"></p>
+<h2 id="测试用例设计【总结】"><a href="#测试用例设计【总结】" class="headerlink" title="测试用例设计【总结】"></a>测试用例设计【总结】</h2><p>【来源】51testing <a href="http://www.51testing.com/zhuanti/case.html" target="_blank" rel="noopener">http://www.51testing.com/zhuanti/case.html</a></p>
+<p>测试需要保证——程序做了它应该做的事情、程序没有做它不该做的事情</p>
+<p>用例中应该包含对测试结果的显式的验证手段，在数据库中执行查询语句进行查询，看查询结果和预期是否一致。</p>
+<h3 id="测试策略与用例设计"><a href="#测试策略与用例设计" class="headerlink" title="测试策略与用例设计"></a>测试策略与用例设计</h3><p><strong>快速划分测试用例优先级</strong></p>
+<p>构建验证测试（BVT）——冒烟测试集，如果该用例无法正确执行成功，其他测试用例都没有办法执行。</p>
+<p>高优先级——BVT中加入最常用的测试用例，用来验证重要或者主干流程的功能稳定、正确。测试用例中既包含了正确的数据流也包含了错误的数据流。</p>
+<p>中优先级——在新功能区域或者功能更加详尽。测试用例包含了大多数方面的功能，其中除了有正确数据流和错误数据流，还应该有一些配置方面的测试。</p>
+<p>低优先级——最不频繁的测试用例执行的部分。例如：错误消息，可用性、压力和性能测试。</p>
+<p><strong>划分标准</strong></p>
+<p>1.大概划分</p>
+<p>全部功能的正确性验证的测试用例定义为高优先级，有错误或者边界值验证的测试用例定义为中优先级，将其他定义为低优先级（非功能测试用例）</p>
+<p>2.Review测试用例，进行升级和降级。</p>
+<p>3.确定BVT</p>
+<p>将高优先级测试分为两组，分为致命和严重。</p>
+<p>BVT中高20-30%，中等40-60%，低10-15%</p>
+<p><strong>性能测试用例设计</strong></p>
+<p>性能指标：如并发用户数量、事务平均响应时间、系统容量、CPU使用情况等。最重要的两个指标是确定系统需要承受的并发用户数量，及在一定的用户规模下系统能够提供的应用响应时间。</p>
+<p><strong>负载测试</strong></p>
+<p>测试中将测试对象承担不用的工作量，查看系统的性能曲线和处理极限，以及是否有性能瓶颈存在（拐点）。负载测试的目标是确保系统在超过预期工作量的情况下仍能正常运作。</p>
+<p><strong>兼容性测试用例</strong></p>
+<p>用例在哪些不同平台上可能会出现不同结果，将这些用例打上平台的标签，放在不同平台。</p>
+<h3 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h3><p><strong>显式功能需求</strong></p>
+<p>等价类划分类、边界值分析法、错误推断法</p>
+<hr>
+<p>进行项目实现UI自动化评估的时候，页面元素的定位难度也是一个评估标准，如果处处都是很难定位的元素，会增加脚本的开发与维护成本，可以考虑将更多精力放在单元或接口层的自动化上。</p>
+<h2 id="Web网页信息抽取"><a href="#Web网页信息抽取" class="headerlink" title="Web网页信息抽取"></a>Web网页信息抽取</h2><h2 id="基于分类器的网页抽取算法"><a href="#基于分类器的网页抽取算法" class="headerlink" title="基于分类器的网页抽取算法"></a><strong>基于分类器的网页抽取算法</strong></h2><p>基于页面元素特征提取的搜索策略</p>
+<p>以支持向量机算法为基础，通过提取大量Web应用中重要性较高的请求事件特征进行训练，得出预测模型，进而在搜索Web应用的过程中对每个可点击事件进行预测分类，以此引导搜索过程。</p>
+<p>事件预测分类</p>
+<p>为了在搜索过程中能够识别重要的请求事件，需要事先搜集大量的重要程度较高的请求事件特征进行归一化处理，并通过机器学习算法训练得出一个离线的预测模型文件，在搜索过程中，通过此模型的预测得到每一个请求经模型预测的结果。通过支持向量机算法，对请求进行过滤。</p>
+<p>算法主要思想</p>
+<p>对Web应用中的每一个可能产生子女页面的请求进行过滤，只保留那些重要性程度比较高的请求，以期在有限的时间内生成一个包含主要功能的状态流图。提取当前状态下的所有请求，分析每个请求的特征元素，并用机器学习算法进行预测分类，将重要性程度较高的请求放入请求队列。对请求队列中的每个请求逐一触发，首先获取该请求绑定的DOM元素及与此元素绑定的输入等信息，然后模拟该元素的点击行为，以获得新的DOM状态。遍历Web应用状态流图中每一个已被搜索到的状态，运用页面状态相似性算法与获得的新状态进行相似性比较。如果和状态流图中已存在的状态相似，那么合并这两个状态并且添加一条当前状态到相似状态的边。如果在状态流图中不存在相似的状态，需要将新发现的状态加入状态流图并添加新状态到当前状态的边。</p>
+<h2 id="Diffbot的开发者密钥"><a href="#Diffbot的开发者密钥" class="headerlink" title="Diffbot的开发者密钥"></a>Diffbot的开发者密钥</h2><p> 222384d0ca54e0943b7c12ad7b23c5b1</p>
+<p>python创建虚拟环境</p>
+<p><a href="https://www.ctolib.com/topics-114933.html" target="_blank" rel="noopener">https://www.ctolib.com/topics-114933.html</a></p>
+<p>为可行路径产生输入，丢弃不可行路径</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习日记/" rel="tag"># 学习日记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/19/MBT测试文献-1/" rel="next" title="MBT测试文献[1]">
+                <i class="fa fa-chevron-left"></i> MBT测试文献[1]
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/10/学习日记-2019710/" rel="prev" title="学习日记-2019710">
+                学习日记-2019710 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zheng Jiani</p>
+              <p class="site-description motion-element" itemprop="description">喜欢，成就梦想</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengjiani" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL5-7查看用户表"><span class="nav-number">1.</span> <span class="nav-text">MySQL5.7查看用户表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试用例设计【总结】"><span class="nav-number">2.</span> <span class="nav-text">测试用例设计【总结】</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试策略与用例设计"><span class="nav-number">2.1.</span> <span class="nav-text">测试策略与用例设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#功能测试"><span class="nav-number">2.2.</span> <span class="nav-text">功能测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web网页信息抽取"><span class="nav-number">3.</span> <span class="nav-text">Web网页信息抽取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于分类器的网页抽取算法"><span class="nav-number">4.</span> <span class="nav-text">基于分类器的网页抽取算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Diffbot的开发者密钥"><span class="nav-number">5.</span> <span class="nav-text">Diffbot的开发者密钥</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zheng Jiani</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

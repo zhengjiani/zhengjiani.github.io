@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="web test,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Web应用测试的国内外文献总结[1]">
+<meta name="keywords" content="web test">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web应用测试的国内外文献总结">
+<meta property="og:url" content="http://yoursite.com/2019/05/24/Web应用测试的国内外文献总结/index.html">
+<meta property="og:site_name" content="花茶树窝">
+<meta property="og:description" content="Web应用测试的国内外文献总结[1]">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-11T08:53:17.307Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web应用测试的国内外文献总结">
+<meta name="twitter:description" content="Web应用测试的国内外文献总结[1]">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/24/Web应用测试的国内外文献总结/">
+
+
+
+
+
+  <title>Web应用测试的国内外文献总结 | 花茶树窝</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?870e68ebac7b44a2e5fc2f00b965a03b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花茶树窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/Web应用测试的国内外文献总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zheng Jiani">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花茶树窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Web应用测试的国内外文献总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-24T10:11:03+08:00">
+                2019-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Web应用测试的国内外文献总结[1]</p>
+<a id="more"></a>
+
+<h1 id="Web应用测试的国内外文献总结-1"><a href="#Web应用测试的国内外文献总结-1" class="headerlink" title="Web应用测试的国内外文献总结[1]"></a>Web应用测试的国内外文献总结[1]</h1><h2 id="国外文献"><a href="#国外文献" class="headerlink" title="国外文献"></a>国外文献</h2><p>[1]Biagiola M., Ricca F., Tonella P. (2017) Search Based Path and Input Data Generation for Web Application Testing. In: Menzies T., Petke J. (eds) Search Based Software Engineering. SSBSE 2017. Lecture Notes in Computer Science, vol 10452. Springer, Cham</p>
+<p>摘要： 在本文中，我们利用开发人员在编写用于Web测试的页面对象时隐式指定的导航结构，并且我们定义了一组支持联合生成测试输入和可行导航路径的新型遗传算子。 在一个案例研究中，我们的工具Subweb能够实现比基于爬行的方法更高的导航模型覆盖率。</p>
+<p>总结：我们已经介绍了Subweb，这是一个用于联合生成测试输入和可行导航路径的Web测试工具。 虽然Subweb需要手动步骤来编写PO，而基于爬行的方法是完全自动的，但这种手动步骤的效果非常有限，而另一方面，所获得的优势是主要的：导航图形要小得多; 相应地，从导航图中得到的测试结果大小不一; 通过构建，测试用例永远不会发散，而基于爬行的测试用例则不然; 最后，Subweb达到的过渡覆盖率平均更高（96％对83％）。 在我们未来的工作中，我们将研究从生成的测试套件开始支持自动生成断言的技术。 此外，除了AddressBook之外，我们计划在其他Web应用程序上评估Subweb。</p>
+<p>[2]Banerjee I. Advances in Model-Based Testing of GUI-Based Software[M]//Advances in Computers. Elsevier, 2017, 105: 45-78.</p>
+<p>摘要：近年来，已经开发出针对特定GUI交互的基于模型的方法。 这些方法根据GUI的规范，GUI的程序代码的可见GUI行为和静态分析，以及GUI与其程序代码之间的交互的动态分析，创建GUI输入空间的正式模型。 本章讨论了基于GUI的软件测试的最新进展。 它描述了为基于GUI的应用程序生成测试用例的技术。 描述了一些流行的方法，特别是创建GUI模型并基于GUI模型生成测试用例的方法。</p>
+<p>[3]Saswat Anand et al., 20xx, An Orchestrated Survey on Automated Software Test Case Generation, Antonia Bertolino, J. Jenny Li and Hong Zhu (Editor/Orchestrators), Journal of Systems and Software x(y), xxCyy</p>
+<p>摘要：测试用例生成是软件测试中最耗费人力的任务之一，也是对软件测试的有效性和效率有很大影响的测试用例。由于这些原因，它几十年来一直是软件测试研究中最活跃的主题之一，导致了许多不同的方法和工具。本文介绍了对自动生成软件测试用例的最突出技术的精心策划调查，并在独立部分进行了回顾。提出的技术包括：（a）使用符号执行的结构测试，（b）基于模型的测试，（c）组合测试，（d）随机测试及其自适应随机测试的变体，以及（e）基于搜索的测试。每个部分都由世界着名的活跃研究人员提供技术，简要介绍了该技术的基本思想，当前的技术状态，对开放式研究问题的讨论，以及该方法未来发展的前景。总的来说，本文旨在对自动测试用例生成的研究进行介绍性的，最新的和（相对）简短的概述，同时确保全面性和权威性。</p>
+<h2 id="基于模型的部分"><a href="#基于模型的部分" class="headerlink" title="基于模型的部分"></a>基于模型的部分</h2><p>基于模型的测试（MBT）是一种轻量级的形式化方法，它使用软件系统模型来推导测试套件。与旨在针对正式模型验证程序的传统形式方法相比，MBT旨在使用通常不完整的测试方法来收集关于程序正确性的见解。自2000年初以来，该技术在实践中获得了相关性。在撰写本文时，2011年，存在重要的行业应用，并且可以使用商业级工具，aswellasmanyarticlesareartmittedtoconferences和workshop。该地区多种多样，难以驾驭。本节试图对MBT的基础，工具和应用进行调查。其目标是为读者提供进一步阅读的灵感。重点放在行为上，有时也称为功能性黑盒测试，它测试一个程序w.r.t.其可观察的输入/输出行为。虽然还有许多其他方法可以称为MBT（随机，结构/建筑，白盒等），但包括它们在内，不适合本次调查。试图保留历史背景：即使存在较新的工作，我们也会尝试引用较旧的工作。</p>
+<p>[4]Di Geronimo L, Ferrucci F, Murolo A, et al. A parallel genetic algorithm based on hadoop mapreduce for the automatic generation of junit test suites[C]//Software Testing, Verification and Validation (ICST), 2012 IEEE Fifth International Conference on. IEEE, 2012: 785-793.</p>
+<p>摘要：软件测试代表了基于搜索的技术应用最广泛的应用领域之一，并且使用遗传算法成功解决了一系列测试问题。然而，迄今为止，基于搜索的软件测试（SBST）在工业中的应用有限。与基于搜索的软件工程的其他领域一样，这主要是因为当应用于大问题时，基于搜索的方法可能需要太多的计算工作。在这种情况下，并行化可能是改善性能的合适方式，特别是由于许多这些技术“可自然地并行化”。然而，很少有人尝试进行SBST并行化。在本文中，我们提出了一种用于自动生成测试套件的并行遗传算法。该解决方案基于Hadoop MapReduce，因为它也可以很好地支持在云和图形卡上工作，因此是遗传算法高度可扩展并行化的理想选择。对该提案进行了初步分析，旨在评估关于顺序执行的加速。该分析基于一个真实的开源库。</p>
+<p>总结：</p>
+<p>在本文中，我们提出了使用并行遗传算法（PGA）来开发利用Hadoop MapReduce的测试套件，并初步评估了它在小型集群上的使用。获得的结果强调，使用PGA允许我们节省超过50％的时间。由于并行SBST方法的使用仍处于早期阶段，因此可以将未来的工作视为几个方向。首先，需要对所提出的方法进行更深入的实证评估，以评估其他主题的优势或劣势，以及使用不同的GA设置，地图数量和更大的聚类来评估其实际可扩展性。此外，应评估Hadoop MapReduce的使用，不仅要在标准集群上运行，还要利用云计算和图形卡。此外，实现和比较更高级别的并行化可能是有趣的，例如通过并行化除了适应性评估之外的遗传操作。验证测试套件生成的其他方法（例如，EvoSuite [16]）如何利用本文所述的并行/分布式计算也是有趣的。最后，作为一个长期研究目标，最好将这些SBST方法集成到云中可用的整个验证即服务平台中，以支持整个软件测试过程。</p>
+<p>[5]Alshahwan N, Harman M. Automated web application testing using search based software engineering[C]//Proceedings of the 2011 26th IEEE/ACM International Conference on Automated Software Engineering. IEEE Computer Society, 2011: 3-12.</p>
+<p>摘要：</p>
+<p>本文介绍了三种相关算法和一种工具SWAT，用于使用基于搜索的软件测试（SBST）进行自动化Web应用程序测试。 该算法显着提高了利用静态和动态分析的传统搜索技术的效率和有效性。组合方法使分支覆盖率增加54％，测试工作量减少30％。 在对6个真实世界Web应用程序的实证研究中单独评估每个改进。</p>
+<p>[6]Kung D C, Liu C H, Hsia P. An object-oriented web test model for testing web applications[C]//Quality Software, 2000. Proceedings. First Asia-Pacific Conference on. IEEE, 2000: 111-120.</p>
+<p>摘要：</p>
+<p>近年来，Web应用程序迅速发展随着Web应用程序变得复杂，人们越来越关注它们的质量和可靠性。 在本文中，我们提出了一种使用面向对象的Web Est模型（WTM）来支持Web应用程序测试的方法。 测试模型捕获Web应用程序的结构和行为测试工件，并表示形成对象，行为和结构视角的artgacts。 基于测试模型，可以自动导出结构和行为测试用例，以确保Web应用程序的质量。 此外：该模型还可用作路线图，以识别变化的涟漪效应，并找到经济有效的测试策略，以减少回归测试所需的测试工作量。</p>
+<p>[7]Leotta, M., Clerissi, D., Ricca, F., Tonella, P.: Approaches and tools for automated end-to-end web testing. Adv. Comput. 101, 193–237 (2016) </p>
+<p>摘要：</p>
+<p>测试自动化在Web工程中的重要性来自广泛的Web应用程序预先使用以及相关的代码质量需求。 测试自动化对于提供用户期望的质量水平至关重要，因为它可以节省大量测试时间，并且可以帮助开发人员发布具有更少缺陷的Web应用程序。<br>测试自动化的优势来自于对Web应用程序进行一些更改后快速，无人参与的一组测试的执行。 此外，现代Web应用程序采用多层体系结构，其中实现分散在不同层上并在不同的机器上运行。 因此，需要端到端测试技术来测试Web应用程序的整体行为。</p>
+<p>在过去几年中，已经提出了几种自动化端到端Web测试方法，其中的选择取决于许多因素，包括用于Web测试的工具以及与其采用相关的成本。 它们可以使用两个主要标准进行分类：第一个涉及如何开发测试用例（即，捕获 - 重放和可编程方法），而第二个涉及测试用例如何本地化Web元素以进行交互（即，基于坐标， 基于DOM和Visual方法），即用于选择目标GUI组件的定位器类型。 对于开发人员和项目经理而言，不容易为现有的需求选择最合适的自动化端到端Web测试方法。 本章提供了自动化端到端网络测试方法的全面概述，并总结了旨在凭经验调查其优势和劣势的长期研究项目的结果。</p>
+<p><del>[8]Tonella, P., Ricca, F., Marchetto, A.: Recent advances in web testing. Adv. Comput. 93, 1–51 (2014)</del> </p>
+<p>[9]Yu, B., Ma, L., Zhang, C.: Incremental web application testing using page object. In: Proceedings of the 2015 Third IEEE Workshop on Hot Topics in Web Systems and Technologies (HotWeb), HOTWEB 2015, pp. 1–6. IEEE Computer Society, Washington, DC (2015)</p>
+<p>摘要：</p>
+<p>软件测试对于确保软件质量是必不可少的。传统的软件测试技术由于其独特的特性，高度可靠的动态生成以及与DOM元素的交互，对现代Web应用程序来说是不够的。同时，现有的Web测试技术在长期维护和演进中使用起来很麻烦，因为在网页快速变化的情况下测试通常很脆弱。在本文中，我们提出了一种动态Web应用程序的自动测试生成技术。我们的技术通过自动生成页面对象，有效地将测试代码与网页分离。基于页面对象，我们的技术执行迭代反馈定向随机测试生成。我们对七个真实世界的Web应用程序的评估表明，所提出的技术实现了合理的代码覆盖率（从23.3％到90.8％），并且可以有效地探索动态生成的网页（比原始静态网页大约14.7倍），揭示了数百个HTML问题并且真实存在应用程序中的错误。</p>
+<p><del>[10]van Deursen, A.: Testing web applications with state objects. Commun. ACM 58(8), 36–43 (2015)</del> </p>
+<p>[11]Fraser, G., Arcuri, A.: Whole test suite generation. IEEE Trans. Softw. Eng. 39(2), 276–291 (2013)</p>
+<p><del>[12]Pei H, Yin B, Xie M, et al. A cloud-based dynamic random software testing strategy[C]//Industrial Engineering and Engineering Management (IEEM), 2017 IEEE International Conference on. IEEE, 2017: 509-513.</del></p>
+<p>[13]Banerjee I. Advances in Model-Based Testing of GUI-Based Software[M]//Advances in Computers. Elsevier, 2017, 105: 45-78.</p>
+<p>摘要：</p>
+<p>图形用户界面（GUI）是当代计算机软件不可或缺的组成部分。由于表格和可靠的GUI是软件应用程序正确运行所必需的。 GUI的全面验证是大多数软件开发生命周期的常规部分。 GUI的输入空间通常很大，使得详尽的验证变得困难。 GUI缺陷通常通过锻炼彼此交互的GUI部分来揭示。</p>
+<p>近年来，已经开发出针对特定GUI交互的基于模型的方法。 这些方法根据GUI的规范，GUI的程序代码的可见GUI行为和静态分析，以及GUI与其程序代码之间的交互的动态分析，创建GUI输入空间的正式模型。 本章讨论了基于GUI的软件测试的最新进展。 它描述了为基于GUI的应用程序生成测试用例的技术。 描述了一些流行的方法，特别是创建GUI模型并基于GUI模型生成测试用例的方法。</p>
+<h2 id="国内文献"><a href="#国内文献" class="headerlink" title="国内文献"></a>国内文献</h2><p>[1]黄晓玲, 陈桂林, 赵生慧. 基于云计算的并行测试方案设计与实现[J]. 计算机工程, 2012, 38(24):27-31.</p>
+<p>[2]张绍康, 王曙燕, 孙家泽. 基于状态迁移的Web应用功能测试用例生成方法[J]. 计算机应用, 2014, 34(6):1779-1782.</p>
+<p>[3]刘晓强, 解筱梦, 杜明, et al. 面向云测试的并行测试用例自动生成方法[J]. 计算机应用, 2015, 35(4):1159-1163.</p>
+<p>[4]缪淮扣, 陈圣波, 曾红卫. 基于模型的Web应用测试[J]. 计算机学报, 2011, 34(6):1012-1028.</p>
+<p>[5]彭树深, 顾庆, 陈道蓄. Web应用测试用例生成研究[J]. 计算机科学, 2010, 37(6):159-163.</p>
+<p>[6]李乔, 柯栋梁, 王小林. 云测试研究现状综述[J]. 计算机应用研究, 2012, 29(12):4401-4406.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web-test/" rel="tag"># web test</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/23/bok-choy-PO测试框架/" rel="next" title="bok-choy PO测试框架">
+                <i class="fa fa-chevron-left"></i> bok-choy PO测试框架
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/24/python自动化测试/" rel="prev" title="python自动化测试">
+                python自动化测试 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zheng Jiani</p>
+              <p class="site-description motion-element" itemprop="description">喜欢，成就梦想</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengjiani" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Web应用测试的国内外文献总结-1"><span class="nav-number">1.</span> <span class="nav-text">Web应用测试的国内外文献总结[1]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#国外文献"><span class="nav-number">1.1.</span> <span class="nav-text">国外文献</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于模型的部分"><span class="nav-number">1.2.</span> <span class="nav-text">基于模型的部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#国内文献"><span class="nav-number">1.3.</span> <span class="nav-text">国内文献</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zheng Jiani</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

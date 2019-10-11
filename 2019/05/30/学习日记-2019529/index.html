@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习日记,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Flask脚本服务搭建、基于上下文环境的处理、Python从列表中随机抽取若干元素、Python中format格式化输出、Python多进程 【来源】https://www.u3v3.com/">
+<meta name="keywords" content="学习日记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习日记-2019529">
+<meta property="og:url" content="http://yoursite.com/2019/05/30/学习日记-2019529/index.html">
+<meta property="og:site_name" content="花茶树窝">
+<meta property="og:description" content="Flask脚本服务搭建、基于上下文环境的处理、Python从列表中随机抽取若干元素、Python中format格式化输出、Python多进程 【来源】https://www.u3v3.com/">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-11T08:53:17.309Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习日记-2019529">
+<meta name="twitter:description" content="Flask脚本服务搭建、基于上下文环境的处理、Python从列表中随机抽取若干元素、Python中format格式化输出、Python多进程 【来源】https://www.u3v3.com/">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/30/学习日记-2019529/">
+
+
+
+
+
+  <title>学习日记-2019529 | 花茶树窝</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?870e68ebac7b44a2e5fc2f00b965a03b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花茶树窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/30/学习日记-2019529/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zheng Jiani">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花茶树窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学习日记-2019529</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-30T08:32:52+08:00">
+                2019-05-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Flask脚本服务搭建、基于上下文环境的处理、Python从列表中随机抽取若干元素、Python中format格式化输出、Python多进程</p>
+<p>【来源】<a href="https://www.u3v3.com/" target="_blank" rel="noopener">https://www.u3v3.com/</a></p>
+<a id="more"></a>
+
+<p>学习日记 2019/5/29</p>
+<h2 id="Flask脚本服务搭建"><a href="#Flask脚本服务搭建" class="headerlink" title="Flask脚本服务搭建"></a>Flask脚本服务搭建</h2><p>flasky.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> dotenv <span class="keyword">import</span> load_dotenv</span><br><span class="line"></span><br><span class="line">dotenv_path = os.path.join(os.path.dirname(__file__), <span class="string">'.env'</span>)</span><br><span class="line"><span class="keyword">if</span> os.path.exists(dotenv_path):</span><br><span class="line">    load_dotenv(dotenv_path)</span><br><span class="line"></span><br><span class="line">COV = <span class="literal">None</span></span><br><span class="line"><span class="keyword">if</span> os.environ.get(<span class="string">'FLASK_COVERAGE'</span>):</span><br><span class="line">    <span class="keyword">import</span> coverage</span><br><span class="line">    COV = coverage.coverage(branch=<span class="literal">True</span>, include=<span class="string">'app/*'</span>)</span><br><span class="line">    COV.start()</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> click</span><br><span class="line"><span class="keyword">from</span> flask_migrate <span class="keyword">import</span> Migrate, upgrade</span><br><span class="line"><span class="keyword">from</span> app <span class="keyword">import</span> create_app, db</span><br><span class="line"><span class="keyword">from</span> app.models <span class="keyword">import</span> User, Follow, Role, Permission, Post, Comment</span><br><span class="line"></span><br><span class="line">app = create_app(os.getenv(<span class="string">'FLASK_CONFIG'</span>) <span class="keyword">or</span> <span class="string">'default'</span>)</span><br><span class="line">migrate = Migrate(app, db)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.shell_context_processor</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_shell_context</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> dict(db=db, User=User, Follow=Follow, Role=Role,</span><br><span class="line">                Permission=Permission, Post=Post, Comment=Comment)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.cli.command()</span></span><br><span class="line"><span class="meta">@click.option('--coverage/--no-coverage', default=False,</span></span><br><span class="line">              help=<span class="string">'Run tests under code coverage.'</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(coverage)</span>:</span></span><br><span class="line">    <span class="string">"""Run the unit tests."""</span></span><br><span class="line">    <span class="keyword">if</span> coverage <span class="keyword">and</span> <span class="keyword">not</span> os.environ.get(<span class="string">'FLASK_COVERAGE'</span>):</span><br><span class="line">        <span class="keyword">import</span> subprocess</span><br><span class="line">        os.environ[<span class="string">'FLASK_COVERAGE'</span>] = <span class="string">'1'</span></span><br><span class="line">        sys.exit(subprocess.call(sys.argv))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">import</span> unittest</span><br><span class="line">    tests = unittest.TestLoader().discover(<span class="string">'tests'</span>)</span><br><span class="line">    unittest.TextTestRunner(verbosity=<span class="number">2</span>).run(tests)</span><br><span class="line">    <span class="keyword">if</span> COV:</span><br><span class="line">        COV.stop()</span><br><span class="line">        COV.save()</span><br><span class="line">        print(<span class="string">'Coverage Summary:'</span>)</span><br><span class="line">        COV.report()</span><br><span class="line">        basedir = os.path.abspath(os.path.dirname(__file__))</span><br><span class="line">        covdir = os.path.join(basedir, <span class="string">'tmp/coverage'</span>)</span><br><span class="line">        COV.html_report(directory=covdir)</span><br><span class="line">        print(<span class="string">'HTML version: file://%s/index.html'</span> % covdir)</span><br><span class="line">        COV.erase()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.cli.command()</span></span><br><span class="line"><span class="meta">@click.option('--length', default=25,</span></span><br><span class="line">              help=<span class="string">'Number of functions to include in the profiler report.'</span>)</span><br><span class="line"><span class="meta">@click.option('--profile-dir', default=None,</span></span><br><span class="line">              help=<span class="string">'Directory where profiler data files are saved.'</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">profile</span><span class="params">(length, profile_dir)</span>:</span></span><br><span class="line">    <span class="string">"""Start the application under the code profiler."""</span></span><br><span class="line">    <span class="keyword">from</span> werkzeug.contrib.profiler <span class="keyword">import</span> ProfilerMiddleware</span><br><span class="line">    app.wsgi_app = ProfilerMiddleware(app.wsgi_app, restrictions=[length],</span><br><span class="line">                                      profile_dir=profile_dir)</span><br><span class="line">    app.run()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.cli.command()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deploy</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="string">"""Run deployment tasks."""</span></span><br><span class="line">    <span class="comment"># migrate database to latest revision</span></span><br><span class="line">    upgrade()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># create or update user roles</span></span><br><span class="line">    Role.insert_roles()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># ensure all users are following themselves</span></span><br><span class="line">    User.add_self_follows()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.cli()</span><br></pre></td></tr></table></figure>
+
+<p>运行文件</p>
+<p><code>python flasky.py</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">(microvenv) [root@iz2ze8rern8nx1sglo8ub1z microblog]<span class="comment"># python flasky.py</span></span><br><span class="line">Usage: flasky.py [OPTIONS] COMMAND [ARGS]...</span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line">  --help  Show this message <span class="keyword">and</span> exit.</span><br><span class="line"></span><br><span class="line">Commands:</span><br><span class="line">  deploy   Run deployment tasks.</span><br><span class="line">  profile  Start the application under the code...</span><br><span class="line">  test     Run the unit tests.<span class="comment">#新添加的内容</span></span><br></pre></td></tr></table></figure>
+
+<p><code>python flasky.py test</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(microvenv) [root@iz2ze8rern8nx1sglo8ub1z microblog]<span class="comment"># python flasky.py test</span></span><br><span class="line">test_password_setter (test_user_model.UserModelTestCase) ... ok</span><br><span class="line"></span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Ran <span class="number">1</span> test <span class="keyword">in</span> <span class="number">0.447</span>s</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<h2 id="基于上下文环境的处理"><a href="#基于上下文环境的处理" class="headerlink" title="基于上下文环境的处理"></a>基于上下文环境的处理</h2><p>在 create_app内做Flask相关的初始化，将这部分资源处理置于独立的模块中, 使用的时候直接引入, 在模块第一次引入的时候就完成了资源的连接处理, 但总有一些还是需要运行前要执行的内容, 比如应用参数设置。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_app</span><span class="params">(config_name)</span>:</span></span><br><span class="line">    app = Flask(__name__)</span><br><span class="line">    app.config.from_object(config[config_name])</span><br><span class="line">    config[config_name].init_app(app)</span><br><span class="line"></span><br><span class="line">    bootstrap.init_app(app)</span><br><span class="line">    mail.init_app(app)</span><br><span class="line">    moment.init_app(app)</span><br><span class="line">    db.init_app(app)</span><br><span class="line">    login_manager.init_app(app)</span><br><span class="line">    pagedown.init_app(app)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> app.config[<span class="string">'SSL_REDIRECT'</span>]:</span><br><span class="line">        <span class="keyword">from</span> flask_sslify <span class="keyword">import</span> SSLify</span><br><span class="line">        sslify = SSLify(app)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">from</span> .main <span class="keyword">import</span> main <span class="keyword">as</span> main_blueprint</span><br><span class="line">    app.register_blueprint(main_blueprint)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">from</span> .auth <span class="keyword">import</span> auth <span class="keyword">as</span> auth_blueprint</span><br><span class="line">    app.register_blueprint(auth_blueprint, url_prefix=<span class="string">'/auth'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">from</span> .api <span class="keyword">import</span> api <span class="keyword">as</span> api_blueprint</span><br><span class="line">    app.register_blueprint(api_blueprint, url_prefix=<span class="string">'/api/v1'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> app</span><br></pre></td></tr></table></figure>
+
+<h2 id="Python从列表中随机抽取若干元素"><a href="#Python从列表中随机抽取若干元素" class="headerlink" title="Python从列表中随机抽取若干元素"></a>Python从列表中随机抽取若干元素</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line">x = [<span class="number">283</span>,<span class="number">238</span>,<span class="number">46</span>,<span class="number">57</span>,<span class="number">82</span>,<span class="number">976</span>]</span><br><span class="line">random.choice(x)</span><br><span class="line">random.sample(x,<span class="number">3</span>)</span><br><span class="line"><span class="comment">#从某个范围内获取若干个</span></span><br><span class="line">random.sample(range(<span class="number">100000</span>),<span class="number">30</span>)</span><br><span class="line"><span class="comment">#选取随机字符</span></span><br><span class="line">random.choice(<span class="string">'abcdrfgsfffgr'</span>)</span><br><span class="line"><span class="comment">#生成随机整数</span></span><br><span class="line">random.randint(<span class="number">100</span>,<span class="number">200</span>)</span><br><span class="line"><span class="comment">#生成随机偶数</span></span><br><span class="line">random.randrange(<span class="number">0</span>,<span class="number">99</span>,<span class="number">2</span>)</span><br><span class="line"><span class="comment">#生成0-1随机浮点数</span></span><br><span class="line">random.random()</span><br></pre></td></tr></table></figure>
+
+<h2 id="Python中format格式化输出"><a href="#Python中format格式化输出" class="headerlink" title="Python中format格式化输出"></a>Python中format格式化输出</h2><p>通过key名填充字符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'My Name is &#123;name&#125;,Age is &#123;age&#125;'</span>.format(name=name,age=age))</span><br></pre></td></tr></table></figure>
+
+<p>通过字典的方式作参数传递</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">params = &#123;<span class="string">'name'</span>:name,<span class="string">'age'</span>:age&#125;</span><br><span class="line">print(<span class="string">'My Name is &#123;name&#125;,Age is &#123;age&#125;'</span>.format(**params))</span><br></pre></td></tr></table></figure>
+
+<p>将tuple作为可变参数传递特性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">params=(<span class="string">'Tony'</span>,<span class="number">18</span>)</span><br><span class="line">print(<span class="string">'My Name is &#123;0&#125;,Age is &#123;1&#125;,And Your Age is &#123;1&#125;'</span>.format(*params))</span><br></pre></td></tr></table></figure>
+
+<p>字符对齐</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'&#123;:&gt;10&#125;,&#123;:&gt;10&#125;'</span>.format(<span class="string">'tony'</span>,<span class="number">18</span>))<span class="comment">#左对齐</span></span><br><span class="line"><span class="comment">#右对齐&lt;</span></span><br><span class="line"><span class="comment">#居中对齐^</span></span><br></pre></td></tr></table></figure>
+
+<p>数字格式化</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#十进制转</span></span><br><span class="line"><span class="comment">#二进制</span></span><br><span class="line">print(<span class="string">'&#123;:b&#125;'</span>.format(x))</span><br><span class="line"><span class="comment">#八进制</span></span><br><span class="line">print(<span class="string">'&#123;:o&#125;'</span>.format(x))</span><br><span class="line"><span class="comment">#十六进制</span></span><br><span class="line">print(<span class="string">'&#123;:x&#125;'</span>.format(x))</span><br></pre></td></tr></table></figure>
+
+<p>浮点数精度控制</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pi = <span class="number">3.1415926</span></span><br><span class="line">print(<span class="string">'&#123;:.2f&#125;'</span>.format(pi))<span class="comment">#保留两位小数3.14</span></span><br></pre></td></tr></table></figure>
+
+<p>三层{}可以转义</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'&#123;&#123;&#123;0:.2f&#125;&#125;&#125;'</span>.format(pi))<span class="comment">#&#123;3.14&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Python多进程"><a href="#Python多进程" class="headerlink" title="Python多进程"></a>Python多进程</h2><ul>
+<li>进程创建</li>
+</ul>
+<p>unix下使用fork方式创建子进程</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Process <span class="number">24896</span> start ... </span><br><span class="line">This <span class="keyword">is</span> Father process,And Its child pid <span class="keyword">is</span> <span class="number">24897</span></span><br><span class="line">This <span class="keyword">is</span> child process <span class="keyword">and</span> my pid <span class="keyword">is</span> <span class="number">24897</span>,my father process <span class="keyword">is</span> <span class="number">1</span></span><br><span class="line"><span class="comment">#子进程fork的结果总是0，可以用来作为区分父子进程的标志</span></span><br></pre></td></tr></table></figure>
+
+<p>变量在多进程之间并没有什么影响</p>
+<p>windows下实现多进程用到了multiprocessing</p>
+<p><code>pro = Process(target=pro_do,args=(&quot;test&quot;,&quot;dev&quot;))</code></p>
+<p><code>pro.start()</code></p>
+<p>是否阻塞方式执行，如果有则阻塞，否则非阻塞</p>
+<p><code>pro.join()</code></p>
+<p>可以通过Pool进程池创建多个进程，可以指定启动的子进程数量</p>
+<ul>
+<li>进程间通信</li>
+</ul>
+<p>父进程可以指定子进程执行的方法及参数，达到父进程向子进程单项通信</p>
+<p>子进程可以通过Queue方式向父进程通信<code>write_queue</code>，<code>read_queue</code></p>
+<p>两个进程间的通信可以使用Pipe形式<code>send_pipe</code>，<code>recv_pipe</code></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习日记/" rel="tag"># 学习日记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/29/学习日记-2019527/" rel="next" title="学习日记-2019527">
+                <i class="fa fa-chevron-left"></i> 学习日记-2019527
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/31/学习日记-2019530/" rel="prev" title="学习日记-2019530">
+                学习日记-2019530 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zheng Jiani</p>
+              <p class="site-description motion-element" itemprop="description">喜欢，成就梦想</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengjiani" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Flask脚本服务搭建"><span class="nav-number">1.</span> <span class="nav-text">Flask脚本服务搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基于上下文环境的处理"><span class="nav-number">2.</span> <span class="nav-text">基于上下文环境的处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python从列表中随机抽取若干元素"><span class="nav-number">3.</span> <span class="nav-text">Python从列表中随机抽取若干元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python中format格式化输出"><span class="nav-number">4.</span> <span class="nav-text">Python中format格式化输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python多进程"><span class="nav-number">5.</span> <span class="nav-text">Python多进程</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zheng Jiani</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

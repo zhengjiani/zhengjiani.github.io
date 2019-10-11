@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="web test,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Web测试相关文献">
+<meta name="keywords" content="web test">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web测试文献阅读">
+<meta property="og:url" content="http://yoursite.com/2019/05/24/Web测试文献阅读/index.html">
+<meta property="og:site_name" content="花茶树窝">
+<meta property="og:description" content="Web测试相关文献">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546433817567.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546495147296.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546495187357.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546500628310.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1548125223205.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1548125418636.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1548126572760.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546503479525.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CDesktop%5Clitemall.PNG">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546515677792.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546516132915.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546603253213.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546604796193.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546612991541.png">
+<meta property="og:image" content="https://edmondfrank.github.io/images/lcs.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546746554848.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546757017469.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546757035405.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546757148745.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546757466210.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546777098076.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546778130130.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546778289834.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546997755964.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546999775774.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1547126456268.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/vuejs/vuejs.org/master/src/images/data.png">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2019/1/9/16831e6e3fa86c18?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1547605329506.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1547618260623.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1548317006989.png">
+<meta property="og:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1548320242420.png">
+<meta property="og:updated_time" content="2019-10-11T08:53:17.307Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Web测试文献阅读">
+<meta name="twitter:description" content="Web测试相关文献">
+<meta name="twitter:image" content="c:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546433817567.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/24/Web测试文献阅读/">
+
+
+
+
+
+  <title>Web测试文献阅读 | 花茶树窝</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?870e68ebac7b44a2e5fc2f00b965a03b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花茶树窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/Web测试文献阅读/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zheng Jiani">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花茶树窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Web测试文献阅读</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-24T10:48:07+08:00">
+                2019-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Web测试相关文献</p>
+<a id="more"></a>
+
+<p>2019年1月blog汇总</p>
+<h2 id="dot生成图"><a href="#dot生成图" class="headerlink" title="dot生成图"></a>dot生成图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dot -Tpng -o hello.png draw_graph.dot</span><br></pre></td></tr></table></figure>
+
+<h2 id="建模Ajax应用"><a href="#建模Ajax应用" class="headerlink" title="建模Ajax应用"></a>建模Ajax应用</h2><p>在 Ajax技术出现之前的Web系统的建模过程中，通常 的方法是将一张网页、一个构件等表示为Web模型的一个状 态。当发生超链接、表单提交、构件调用等同步请求时，会 触发当前网页跳转到下一个网页或者由一个构件跳转到一个 网页或者另一个构件，从而引起Web模型的状态迁移。 </p>
+<p>而在基于Ajax技术的Web应用中网页内通常会包含异 步的请求。通常,Ajax请求的结果只是引起原网页内局部内 容的刷新并不会使原网页跳转到其它网页或构件。当网页内 有多个不同Ajax请求分别引起网页内不同部分内容的局部 刷新时，其中的一个请求发生后就会造成整张网页的内容与 原网页内容不同，网页内显示的内容会因为不同的Ajax请求 的发生产生不同的组合结果。 </p>
+<p>状态之间只通过同步请求的方式进行迁移</p>
+<p>提出将Web应用的一张网页划分为能局部刷新的各个部分， 根据这些部分的内容的变化将网页分成多个不同的状态进行建模。</p>
+<p><strong>网页状态元素：</strong>将会随着Ajax请求产生的结果局部刷新内容的部分定义为网页状态元素e$_i$,网页状态元素可以是网页中局部的信息、表格数据、超链接、排序方式等所有可以被动态修改的内容，一张网页中包含的所有网页状态元素的集合为e={e0,e2,…..ei+1}</p>
+<p><strong>网页状态元素的Ajax操作集：</strong>将能引起网页状态元素ei内容发生变化的Ajax请求操作定义为ajax-op$_{ij}$,其中下标i表示第i个网页状态元素，j表示在e$_i$上的第j种Ajax请求操作。</p>
+<p><strong>网页状态元素值域：</strong>由于网页状态元素的内容会随着在它之上的Ajax请求而改变，因此每个网页状态元素会有一个值域。将网页状态元素e$<em>i$的值域描述成c$_i$={c$</em>{i0}$,c$<em>{i1}$,…,c$</em>{ij}$,}下标的i表示网页的第i个网页状态元素e$_i$,j表示e$_i$的第j种取值。规定网页状态元素的特殊取值Null,当取值为Null时表示网页在当前状态下不显示该网页状态元素。</p>
+<p>使用计算树逻辑(CTL)来设计系统的陷阱性质，对系统的<strong>可达性、活性、安全性</strong>进行检验。</p>
+<p>系统可达性指系统中的每一个状态节点都至少能被访问到一次。状态覆盖准则检验。</p>
+<p>系统活性指系统中每一条迁移都至少能被访问到一次。迁移覆盖准则来检验。</p>
+<p>系统的安全性指系统不存在非法的导航，迁移组合覆盖准则来检验。</p>
+<h2 id="反馈导向探索Web应用程序以推导测试模型"><a href="#反馈导向探索Web应用程序以推导测试模型" class="headerlink" title="反馈导向探索Web应用程序以推导测试模型"></a>反馈导向探索Web应用程序以推导测试模型</h2><p>feedback-directed /depth-first/ breadth-first/ random exploration</p>
+<p>许多工业级web应用有巨大的状态空间和详尽的爬虫，状态空间爆炸问题。</p>
+<p>测试模型的四个方面：code coverage impact,    navigational diversity,    page structural diversity,    test model size.即代码覆盖影响、导航多样性、页面结构多样性、测试模型的大小。</p>
+<p>Web2.0应用用户接口状态改变：</p>
+<p>1、事件驱动2、由客户端应用程序代码的执行引起的3、通过在浏览器中动态改变内部DOM树来表示</p>
+<p>有效性的不同表现：functionality Coverage.navigational coverage.page structural coverage</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546433817567.png" alt="1546433817567"></p>
+<p> [12]. Reducing the size of the test model can decrease both the cost of maintaining the generated test suite and the number of test cases that must be rerun after changes are made to the software 。</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546495147296.png" alt="1546495147296"></p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546495187357.png" alt="1546495187357"></p>
+<blockquote>
+<p>Given a Web 2.0 application, a maximum exploration time t, and a maximum number of states to explore n, the intent is to maximize the test model coverage while reducing the model size within t.</p>
+</blockquote>
+<p>探索策略中使用了贪心算法。</p>
+<p>步骤：</p>
+<p>1.对于每个部分展开状态，计算相对于其他未展开状态的状态分数(第4-6行)，该状态的得分是该状态的最低成对状态得分。</p>
+<p>2.选择具有最高准确度（得分）值的状态作为下一个要扩展的状态（第8行）</p>
+<p>3.在选择的扩展状态中，根据事件得分确定事件的优先级（第9行）</p>
+<p>4.使浏览器进入所选状态，并根据优先顺序执行排名最高的事件（第10-13行）</p>
+<p>5.如果在事件执行后更改了DOM状态，则相应地更新SFG（第14-16行），并调用Explore过程（第17行）</p>
+<p>可以说明，主要考虑客户端地代码覆盖率。</p>
+<p>有限状态机</p>
+<p>我们根据Web应用程序用户界面事件对应用程序状态转换行为的影响将其分为四组：</p>
+<p>1.self-loop一个事件不改变DOM的状态.例如刷新页面或者清除表单数据。</p>
+<p>2.state-independent event一个事件总是导致相同的结果状态。例如事件的结果总是Index Page</p>
+<p>3.A state-dependent event状态有关事件：一个事件在它第一次执行后，在从相同状态触发时始终导致相同状态的事件。</p>
+<p>4.Nondeterministic event不确定性事件： 无论从何处触发，都可能导致新状态的事件，当从相同状态触发时，这样的事件可以导致不同的状态。</p>
+<p>crawljax默认引擎支持深度优先和广度(多线程，多浏览器)爬行策略。[19]</p>
+<p>六个JS的开源项目：</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546500628310.png" alt="1546500628310"></p>
+<p>要从不同领域选择web应用程序以支持结论：gallery,task management,game,editor</p>
+<p>对于每个视图更改，仅在客户端和服务器之间交换状态更改，而不是多页Web应用程序中的整页检索方法。</p>
+<p>Web开发人员现在可以按照更加直观的单页面用户界面（UI）基于组件的方式编写应用程序，例如Java AWT和Swing，而不是根据Web页面的顺序进行思考。</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1548125223205.png" alt="1548125223205"></p>
+<blockquote>
+<p>1.检索页面<br>2.导航路径提取</p>
+<p>3.UI组件模型标识<br>4.单页UI模型定义<br>5.目标UI模型转换</p>
+</blockquote>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1548125418636.png" alt="1548125418636"></p>
+<p>静态分析可以检查页面并找到指向其他内部页面的href链接。 动态分析可以帮助检索需要特定请求参数的页面（基于表单）。例如，通过基于场景的测试用例或收集与web应用程序交互的用户动作（例如，会话，输入数据）的跟踪。 很明显，我们<strong>检索到的镜像副本与实际的Web应用程序</strong>类似，我们的导航路径和UI组件识别就越好。</p>
+<p>导航路径的提取：</p>
+<p>导航路径是用户在浏览Web应用程序时可以在页面上的链接之后执行的路径。 对于ajaxi fi cation，获得对此导航路径的理解对于能够在单页用户界面模型中建模导航至关重要。 例如，知道类别页面与产品项目列表页面链接，意味着在我们的单页面模型中，我们需要一个可以导航到产品项目列表UI组件的类别UI组件。</p>
+<p>在浏览Web应用程序时，结构更改，强制页面非常小，我们可以立即注意到我们正在浏览属于特定类别的页面，例如产品列表。 将这些类似页面分类为一组，简化了我们的导航模型。 我们的假设是这样的分类也提供了一种更好的模型来搜索候选用户界面组件。</p>
+<p>就HTML源代码而言，这意味着A和B中的大量代码是相同的，并且只有一小部分代码是B中的新代码。我们人类在浏览应用程序时将其区分为更改。</p>
+<p>我们可以简单地更新需要用B中的新分数替换的A部分。因此，来自页面B的这部分代码在我们的目标系统中成为一个UI组件。 候选组件的识别列表以及导航模型将帮助我们定义单页用户界面模型。</p>
+<p>这个抽象模型应该能够捕获动态变化，这些应用程序中需要的导航路径，以及抽象的一般Ajax组件，例如Button，Window，Modal，如图3.1所示。</p>
+<p>拥有抽象用户界面模型的优点是我们可以将其转换为不同的Ajax设置。 我们已经探索了许多Ajax框架，例如Backbase，Echo2和GWT，并且已经开始进行研究以采用模型驱动的Ajax方法（Gharavi et al。，2008）。</p>
+<p>这要求我们对页面进行分组，这些页面足够相似并且可以从给定页面直接访问。</p>
+<p><strong>Web页面相似度：</strong></p>
+<p>可以根据目标视图所需的模型以多种不同方式对网页进行分类</p>
+<p>Textual Identity如果它们具有完全相同的HTML代码，则认为两个页面相同</p>
+<p>Syntactical Identity根据语法树的比较，对具有完全相同结构的页面进行分组，忽略标记之间的文本</p>
+<p><strong>Syntactical Similarity根据在页面的语法树上计算的相似性度量，分类具有相似结构的页面</strong></p>
+<p>文本和句法身份分类概念在查找属于特定类别的页面时具有有限的能力，因为它们寻找完全匹配。 Syntactical Similarity是一种概念，它可以帮助我们通过定义两个页面被认为是克隆的相似性阈值来将页面聚类成有用的组。</p>
+<p>schema-based similarity.</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1548126572760.png" alt="1548126572760"></p>
+<p>在具有一组链接节点的树结构中，每个节点表示具有零个或多个子节点的网页，并且边表示到其他页面的web链接。 我们相信树结构可以为Web应用程序的导航路径提供简单但清晰且易于理解的抽象视图。</p>
+<p>显示了我们基于模式的集群过程。 从给定的根节点（例如，index.html）开始，目标是通过在每个导航级别上聚类类似的页面来提取导航路径。</p>
+<p>请务必注意，我们不会立即对所有页面进行聚类。 相反，我们沿着导航路径行走，对于每个节点，我们将与该节点链接的页面进行聚类。 随着导航路径进行聚类非常重要，因为我们希望恢复界面中的更改，然后确定候选UI组件。 如果我们将所有页面聚类为一个级别，那么导航信息将会丢失，这是我们试图避免的。</p>
+<h2 id="cloc代码统计工具命令行"><a href="#cloc代码统计工具命令行" class="headerlink" title="cloc代码统计工具命令行"></a>cloc代码统计工具命令行</h2><p>cloc使用规范：命令行下</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cloc-1.80.exe src(要检查的文件)</span><br></pre></td></tr></table></figure>
+
+<h2 id="遗传算法"><a href="#遗传算法" class="headerlink" title="遗传算法"></a>遗传算法</h2><blockquote>
+<p>遗传算法适合大海捞针，可以并行运算，离散型的，如反潜艇搜索。神经网络是黑箱模拟，适合无确定规律性的，如下围棋，有神经网络芯片，离散型的。粒子群算法是散弹，适合撒网捕鱼，解决目标难有行踪问题，如用于投资撒网，离散型的。模拟退火是跳山搜索，防止陷入局部最优解，适合组合优化问题，并行运算难。对于遗传算法，神经网络通用性比较强，研究应用比较多。深度学习的崛起，让神经网络在解决复杂难建模如图像识别，围棋，语音等领域应用方兴未艾。现代智能算法，往往结合大数据平台，gpu运算，并行计算，HPC，多模式结合等手段，来完成更加复杂多变的业务需求。</p>
+<p>常用的智能算法如下，可以结合使用：</p>
+<p><strong>基于仿生/模拟算法：</strong><br>人工神经网络</p>
+<p>深度学习</p>
+<p>遗传算法</p>
+<p>人工免疫算法</p>
+<p>蚁群算法</p>
+<p>粒子群算法</p>
+<p>人工鱼群算法</p>
+<p>文化算法</p>
+<p>禁忌搜索算法</p>
+<p>模拟退火算法</p>
+<p><strong>基于数学理论算法：</strong><br>线性规划</p>
+<p>回归分析</p>
+<p>梯度下降</p>
+<p>K近邻算法</p>
+<p>SVM支持向量机</p>
+<p>朴素贝叶斯</p>
+<p>决策树</p>
+<p>图论算法</p>
+<p>并行算法</p>
+<p>模糊数学</p>
+<p>混沌算法</p>
+<p>马尔可夫链</p>
+<p>作者：find goo</p>
+<p>链接：<a href="https://www.zhihu.com/question/29762576/answer/131582624" target="_blank" rel="noopener">https://www.zhihu.com/question/29762576/answer/131582624</a></p>
+<p>来源：知乎</p>
+<p>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</blockquote>
+<h2 id="测试数据部分"><a href="#测试数据部分" class="headerlink" title="测试数据部分"></a>测试数据部分</h2><p>测试数据可以分为两类，包括正面和负面测试数据。</p>
+<p>正测试数据用于验证给定函数的特定输入是否导致预期结果。 进行负面测试以检查程序处理异常和意外输入的能力。</p>
+<p>可以是从先前操作中获取的实际数据，也可以是专门为此目的设计的一组人工数据。</p>
+<p>测试数据的生成方式：</p>
+<p>1.Manual Test Data Generation</p>
+<p>2.Automated Test Data Generation</p>
+<p>自动化测试数据创建的主要好处之一是高精度。 使用这种技术还有更好的速度和输出。 该技术的最佳方面是它可以在没有任何人为干预的情况下以及在非工作时间内执行。 反过来，这有助于节省大量时间以及生成大量准确数据。</p>
+<p>3.Back-end Data Injection后端数据注入</p>
+<p>后端数据注入技术利用大型数据库提供的后端服务器。 这是因为可以使用存储在数据库中的测试数据直接更新现有数据库，这反过来又可以通过SQL查询快速获得大量数据。 但是，这种测试数据生成技术消除了对前端数据输入的需要，应该确保这一点得到了极大的关注和谨慎，以避免任何形式的数据库关系。</p>
+<p>4.Third-Party Tools</p>
+<p>市场上很容易获得的第三方工具是创建数据并将其注入系统的好方法。 这些工具完全了解后端应用程序数据，使这些工具能够抽取类似于实时场景的数据。 因此，它为测试人员提供了大量的大量数据。</p>
+<p>使用第三方工具的主要好处是提供的数据的准确性。 这是由于工具对系统和领域的透彻理解。 另一个优点是在处理回溯数据填充方面，允许用户对历史数据执行所有必需的测试。 此外，执行这些测试并不需要具备详细的领域知识和专业知识。</p>
+<p>5.Path wise Test Data Generators路径测试数据生成器</p>
+<p>被认为是生成测试数据的最佳技术之一，该技术为用户提供了一种特定的方法，而不是多条路径，以避免混淆。 使用此技术可帮助用户获得特定和更好的知识，并预测其覆盖范围。 该技术使用户输入要测试的程序，以及测试它的标准，例如路径覆盖，语句覆盖等。</p>
+<h2 id="Web应用状态流图的生成过程"><a href="#Web应用状态流图的生成过程" class="headerlink" title="Web应用状态流图的生成过程"></a>Web应用状态流图的生成过程</h2><p>1.初始化</p>
+<p>提供web应用入口、所需测试数据和设定测试终止条件等。</p>
+<p>2.请求</p>
+<p>首次请求一般通过URL直接访问Web服务器，后续的请求主要通过内置浏览器模拟用户操作进行发送。</p>
+<p>3.响应解析</p>
+<p>数据信息主要指HTML代码，其包含的超链接、鼠标点击和表单提交等事件将会被分析成新的请求依据不同的搜索策略放入栈或队列，供后续触发。同时，根据不同的页面分组策略，可以将HTML代码抽象成DOM树，对页面进行分组并加入到状态流图中。</p>
+<p>4.终止条件判定</p>
+<p>如果满足初始化阶段设置的终止条件，则终止本次测试并输出测试结果。</p>
+<p>5.获得新请求</p>
+<p>6.发送请求</p>
+<p>重复3、4、5、6，直到满足测试终止条件</p>
+<h2 id="web应用自动化测试框架实现"><a href="#web应用自动化测试框架实现" class="headerlink" title="web应用自动化测试框架实现"></a>web应用自动化测试框架实现</h2><p>事件控制器：</p>
+<p>1.接收新的请求，并加入请求队列和堆栈，并模拟用户行为，将请求从队列或堆栈中移出，通过加入和移出操作生成测试用例。</p>
+<p>2.根据系统所设置的单个测试用例终止条件，判断当前的测试用例生成过程是否可以终止。当DOM分析器发现环路、页面错误或达到单个测试用例运行的时间上限时，终止当前测试用例的运行。</p>
+<p>3.还原系统测试环境。将数据库和服务器恢复到测试开始时的设置。主要包括还原数据库和清理浏览器的Session和Cookie信息，必要的时候重启web应用服务器。</p>
+<p>4.根据系统设置的全局终止条件，决定本次测试是否终止。全局终止条件主要包括测试时间上限、请求栈或队列中是否还有未触发的请求和测试的请求深度等。</p>
+<p>导航图构造算法</p>
+<h2 id="导航图的构造算法"><a href="#导航图的构造算法" class="headerlink" title="导航图的构造算法"></a>导航图的构造算法</h2><p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546503479525.png" alt="1546503479525"></p>
+<p>导航图中的一些定义：G=&lt;N,E&gt;,测试路径p=&lt;ns,es,pr&gt;</p>
+<p>|es|=|ns|-1</p>
+<p>e$<em>i$=&lt;n,m&gt;属于es,n$_i$=n属于ns,n$</em>{i+1}$=m属于ns,pr是参数名序列</p>
+<p>Page定义部分：</p>
+<p><img src="C:%5CUsers%5Czjn%5CDesktop%5Clitemall.PNG" alt="litemall"></p>
+<ul>
+<li>sidebar部分：url变化，通过url跳转</li>
+</ul>
+<p>每一个url定义为一个page。</p>
+<ul>
+<li>navbar部分：静态，登出以及管理员账号维护部分。</li>
+<li>tags-view-container：标签部分，刷新以及标签关闭等，url不变。</li>
+<li>search部分：公用方法，传入的参数变化，其url不变。</li>
+</ul>
+<p>定义在basePage中。</p>
+<ul>
+<li>add部分：额外方法，url不变仅窗口弹出。</li>
+</ul>
+<p>分别定义在Page中的方法。</p>
+<ul>
+<li>app-main部分：结果展示部分，局部刷新Ajax.</li>
+</ul>
+<p>检验DOM树的状态。</p>
+<p>测试数据生成部分：</p>
+<p>提取参数名以及参数对应的约束，主要分配给公共方法以及额外方法部分。</p>
+<p>测试用例生成部分：</p>
+<p>初始化LoginPage和HomePage，沿着导航图的路径传入参数生成测试用例。</p>
+<p>并行处理测试用例：</p>
+<p>并发执行：多浏览器、多线程执行（后期应用于大型web应用）</p>
+<p>解耦以及抽象。</p>
+<p>并行分割路径的两种方法：</p>
+<p>url跳转的分为一类（顺序执行）、</p>
+<p>调用公共方法无url跳转的分为一类（顺序执行），可以同步执行。</p>
+<p><strong>评估标准：</strong></p>
+<p>导航图的状态数量states,转换数transitions.</p>
+<p>PO对象的代码行数LOC,PO的总数量、以及导航方法数量。</p>
+<p>litemall-admin的src的代码行数：</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546515677792.png" alt="1546515677792"></p>
+<p>PO对象的代码：</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546516132915.png" alt="1546516132915"></p>
+<p>测试数据生成中定义约束：</p>
+<p>染色体是一个可变长度的导航方法调用序列，每个调用都具有调用所需的实际参数值。引导测试用例生成的精确度函数基于执行序列与当前覆盖目标集之间的距离。</p>
+<p>每个导航方法应该指定安全执行的前提：</p>
+<p>这种情况可能取决于调用参数值以及应用程序的状态，该状态由在先前导航步骤中对应用程序执行的动作确定。</p>
+<p>可以通过静态代码分析获得参数范围。</p>
+<p>页面相似度</p>
+<p>表单数据是用户事先录入数据库，在测试执行的时候按照不同的组合算法生成不同的表单测试用例。</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546603253213.png" alt="1546603253213"></p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546604796193.png" alt="1546604796193"></p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546612991541.png" alt="1546612991541"></p>
+<hr>
+<h2 id="比较网页结构相似度"><a href="#比较网页结构相似度" class="headerlink" title="比较网页结构相似度"></a><a href="https://edmondfrank.github.io/blog/2017/04/23/bi-jiao-wang-ye-jie-gou-xiang-si-du/" target="_blank" rel="noopener">比较网页结构相似度</a></h2><p>一般网页分为三类：</p>
+<ul>
+<li>目录导航式页面(List\Index Page)</li>
+<li>详细页面(Detail Page)</li>
+<li>未知页面(Unknown Page)</li>
+</ul>
+<p>网页本身可以抽象成串行节点或者是DOM树，对于串行序列，可以用最长公共子序列来衡量相似度。</p>
+<p><img src="https://edmondfrank.github.io/images/lcs.png" alt="img"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">网页相似度的计算：</span><br><span class="line"><span class="comment">#-*-coding:utf-8-*-</span></span><br><span class="line"><span class="keyword">import</span> lxml.html.soupparser <span class="keyword">as</span> soupparser</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">"User-Agent"</span>:<span class="string">"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_domtree</span><span class="params">(html)</span>:</span></span><br><span class="line">    dom = soupparser.fromstring(html)</span><br><span class="line">    <span class="keyword">for</span> child <span class="keyword">in</span> dom.iter():</span><br><span class="line">        <span class="keyword">yield</span> child.tag</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">similar_web</span><span class="params">(a_url,b_url)</span>:</span></span><br><span class="line">    html1 = requests.get(a_url,headers=headers).text</span><br><span class="line">    html2 = requests.get(b_url,headers=headers).text</span><br><span class="line">    dom_tree1 = <span class="string">"&gt;"</span>.join(list(filter(<span class="keyword">lambda</span> e: isinstance(e,str),list(get_domtree(html1)))))</span><br><span class="line">    dom_tree2 = <span class="string">"&gt;"</span>.join(list(filter(<span class="keyword">lambda</span> e: isinstance(e,str),list(get_domtree(html2)))))</span><br><span class="line">    c,flag,length = lcs(dom_tree1,dom_tree2)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2.0</span>*length/(len(dom_tree1)+len(dom_tree2))</span><br><span class="line"></span><br><span class="line">percent = similar_web(</span><br><span class="line"><span class="string">'http://edmondfrank.github.io/blog/2017/04/05/qian-tan-mongodb/'</span>,</span><br><span class="line"><span class="string">'http://edmondfrank.github.io/blog/2017/03/27/emacsshi-yong-zhi-nan/'</span>)</span><br><span class="line">print(percent) <span class="comment">#相似度（百分比）</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="xpath进行页面相似度比较"><a href="#xpath进行页面相似度比较" class="headerlink" title="xpath进行页面相似度比较"></a>xpath进行页面相似度比较</h2><p>DOM结构的相似性公式</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546746554848.png" alt="1546746554848"></p>
+<p>我们从来自相同Xpath位置的每个新页面提取一个链接。</p>
+<p>通常页面相似性比较都是比较网页URL并进行模式搜索，而本文不是比较URL，而是比较原始Web文档中入站链接的XPath地址。</p>
+<p>用于选择和提取数据的建模HTML树和XPath语言被证明是在实际数据提取应用中非常有用的技术。</p>
+<p>本文使用XPATH表达式选择内部站点链接。</p>
+<p>pq-gram distance</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546757017469.png" alt="1546757017469"></p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546757035405.png" alt="1546757035405"></p>
+<p>bag of XPath string</p>
+<p>common paths distance(CPD)</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546757148745.png" alt="1546757148745"></p>
+<p>breadth-first crawling strategy</p>
+<p> first-in-first-out method </p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546757466210.png" alt="1546757466210"></p>
+<p>为了创建一个由网页组成的数据集，其中包含有关内部链接的所需附加信息，我们编写了一个基本的网站爬虫。 我们利用广度优先爬行方法，首先抓取所有相邻网页。 这与深度优先爬行相反，优先考虑在回溯之前沿着每个链接分支尽可能地探索网站。 据证明[35]，以广度优先搜索顺序遍历Web图是一种很好的爬行策略，因为它倾向于在爬行的早期发现高质量的页面。 已实施的爬网程序不使用cookie并且是单线程的，因此适合一次从一个站点下载一个页面。 但是，在爬网过程中，我们运行了多个爬虫实例 - 每个实例用于不同的Web站点。 爬网算法包含URL清理过程，该过程删除强制会话ID令牌，例如phpsessid，cfid，aspsessionid.</p>
+<p>网页中xpath的提取：</p>
+<p>安装beautifulsoup的过程：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install beautifulsoup4</span><br><span class="line">pip install lxml</span><br><span class="line">pip install html5lib</span><br></pre></td></tr></table></figure>
+
+<p>XPATH:</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546777098076.png" alt="1546777098076"></p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546778130130.png" alt="1546778130130"></p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546778289834.png" alt="1546778289834"></p>
+<ul>
+<li>Web site crawling</li>
+<li>link extraction </li>
+<li>URL and XPath tuple generation</li>
+</ul>
+<p>获取动态网页DOM树：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line">driver = webdriver.Chrome()</span><br><span class="line">driver.get(<span class="string">'http://localhost:9527/#/login?redirect=%2Fuser%2Fuser'</span>)</span><br><span class="line">driver.find_element_by_xpath(<span class="string">"//*[@id='app']/div/form/div[2]/div/div/input"</span>).send_keys(<span class="string">''</span>)</span><br><span class="line">driver.find_element_by_xpath(<span class="string">"//*[@id='app']/div/form/div[3]/div/div/input"</span>).send_keys(<span class="string">''</span>)</span><br><span class="line">driver.find_element_by_xpath(<span class="string">"//*[@id='app']/div/form/button"</span>).click()</span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line">cookie_list=driver.get_cookies()</span><br><span class="line">print(cookie_list)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> cookie_list:driver.add_cookie(</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">'domain'</span>: <span class="string">'localhost'</span>,</span><br><span class="line">        <span class="string">'httpOnly'</span>: <span class="literal">False</span>,</span><br><span class="line">        <span class="string">'name'</span>: <span class="string">'X-Litemall-Admin-Token'</span>,</span><br><span class="line">        <span class="string">'path'</span>: <span class="string">'/'</span>,</span><br><span class="line">        <span class="string">'secure'</span>: <span class="literal">False</span>,</span><br><span class="line">        <span class="string">'value'</span>: <span class="string">'1fpzctbhesj4eqfg5e2k6gkg77m2u220'</span></span><br><span class="line">    &#125;</span><br><span class="line">)</span><br><span class="line"><span class="comment">#</span></span><br><span class="line">time.sleep(<span class="number">5</span>)</span><br><span class="line">driver.get(<span class="string">'http://localhost:9527/#/user/user'</span>)</span><br><span class="line">html1=driver.page_source</span><br><span class="line">print(html1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># with open('D:\\code\\python\\bok-choy-master\\tests\\demo\\user.html', 'wt') as f:</span></span><br><span class="line"><span class="comment">#     print(html1, file=f)</span></span><br></pre></td></tr></table></figure>
+
+<p>参考：</p>
+<p><a href="https://www.jb51.net/article/128560.htm" target="_blank" rel="noopener">https://www.jb51.net/article/128560.htm</a></p>
+<p><a href="https://segmentfault.com/q/1010000004867625/a-1020000004867910" target="_blank" rel="noopener">https://segmentfault.com/q/1010000004867625/a-1020000004867910</a></p>
+<p><a href="https://blog.csdn.net/Together_CZ/article/details/74015599" target="_blank" rel="noopener">https://blog.csdn.net/Together_CZ/article/details/74015599</a></p>
+<p><a href="https://cuiqingcai.com/2621.html" target="_blank" rel="noopener">https://cuiqingcai.com/2621.html</a></p>
+<p>一个完整的 Web 应用信息提取流程中应当具有以下两个步骤：页面导航过程和数据抽取过程。</p>
+<ul>
+<li>页面集合（Page Set，PS）-&gt; POs</li>
+<li>页面导航路径（Page Navigation Path，PNP） </li>
+<li>页面数据（Page Data，PD） </li>
+</ul>
+<p>页面导航过程和数据抽取过程</p>
+<p>同一个URL对应不同页面xpath</p>
+<p>选用广度优先算法：程序健壮性好，信息提取算法并行执行</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546997755964.png" alt="1546997755964"></p>
+<p>初步思考改造：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">unvisitedPOQueen 待访问的PO存储集合</span><br><span class="line">visitedPOQueen 已访问的PO存储集合</span><br><span class="line">while(unvisitedPOQueen is not empty)</span><br><span class="line">	po&lt;-get po from unvisitedPOQueen</span><br><span class="line">	webPage&lt;-crawlPage(HomePage)</span><br><span class="line">	poset&lt;-parsePage(webPage)</span><br><span class="line">	formset&lt;-parseForm(webPage)</span><br><span class="line">	form auto fill process(faker)</span><br><span class="line">	add po to visitedPOQueen</span><br><span class="line">	for(po in poset)</span><br><span class="line">		new po(self.browser)</span><br><span class="line">		if po not in visitedPOQueen</span><br><span class="line">			add newpo to unvisitedPOQueen</span><br><span class="line">		endif</span><br><span class="line">	endfor</span><br><span class="line">	pageData&lt;-recordNavInfo(po,formset,poset)</span><br><span class="line">	webSiteInfo&lt;-webSiteInfo并pageData</span><br><span class="line">endwhile</span><br></pre></td></tr></table></figure>
+
+<p>等价类划分PO对象</p>
+<p>黑盒角度对页面节点和迁移边分类：</p>
+<p>普通页面节点：这类页面不存在和用户交互的输入点。</p>
+<p>输入页面节点：这类页面存在和用户交互的输入点，不同的输入可能会导致不同的页面迁移</p>
+<p>链接迁移边：表示页面之间的迁移是通过点击超链接来完成</p>
+<p>按钮迁移边：表示页面之间的迁移是通过点击按钮来完成触发的</p>
+<p>页面节点：PO相当于一堆xpath集合操作</p>
+<h2 id="PageObject对象生成"><a href="#PageObject对象生成" class="headerlink" title="PageObject对象生成"></a>PageObject对象生成</h2><p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1546999775774.png" alt="1546999775774"></p>
+<p><strong>基于PO的测试用例生成：</strong></p>
+<p>通过TESTGENERATOR函数提取PO对象的公共方法来产生测试用例，方法池和对象池用来存储和提供测试用例所必需的元素。通过测试生成的每一次迭代，我们的方法可以捕获新的DOM状态，由修改程序引入现有网页或通过链接到新网页。我们的方法再为新捕获的DOM状态产生新的pageobjects对象。</p>
+<p><strong>创建PO对象：</strong></p>
+<p>扩展了框架feed-back directed random testing去为po产生测试用例。迭代一直到满足测试准则。</p>
+<p>将初始页面对象集作为输入，测试生成器首先初始化方法池和对象池（第3行和第4行）。 使用输入页面对象中的公共方法初始化方法池。 对象池最初填充有随机原始值，例如常量数值和字符串文字，以及用于初始化浏览器实例的预定义语句。 初始化之后，测试生成器从方法池（第6行）中随机选择一个被测方法（MUT）。 为了生成测试用例，测试生成器在对象池中搜索MUT的输入参数。 然后它将MUT与作为测试生成的输入参数提供的找到的对象连接起来（第7行）。 每个测试用例在生成时执行（第8行）。 如果通过，则将其添加到输出测试用例集T中，并将其结果对象作为输入对象放入对象池以进行进一步的迭代（第9到12行）。</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1547126456268.png" alt="1547126456268"></p>
+<p>相比之下，自动生成的页面对象通常将页面元素映射到成员字段，并为元素上的所有可能操作创建成员方法。</p>
+<p>除了识别新的DOM状态并存储其网页代码之外，我们的技术还记录了导致每个新DOM状态的方法序列。 在新网页的测试用例中，记录的方法序列是初始化DOM和浏览器实例所必需的。 在当前测试生成完成之后（即，满足停止标准），测试生成器输出生成的测试用例和新发现的网页以及信息（例如URL，方法序列）以创建DOM状态。</p>
+<p>但是，Web界面的固定抽象限制了测试工具可以涵盖的功能范围。同时产生了测试用例和Page Object对象。可以自动覆盖客户端代码，探索新的DOM状态并且检测web应用的错误。<strong>理想情况下，测试用例应测试同一功能组中Web元素的事件或操作组合，因为跨组合通常不相关或无效。</strong>一种可能的解决方案是对网页进行程序分析，识别功能组，为各个功能组生成细粒度的页面对象，并控制方法序列的生成。</p>
+<p>现阶段测试JS和AJAX应用的技术方法和特点：它们执行随机测试以生成测试输入，并使用在执行期间提取的信息来生成新输入。我们采用反馈定向随机测试来生成测试用例并逐步探索更多状态。</p>
+<ul>
+<li><strong>通过去除不相关的方法序列组合来提高测试生成性能</strong></li>
+<li><strong>研究页面对象抽象范围对测试有效性的影响。</strong></li>
+</ul>
+<p>在测试生成的第一次迭代之前，我们的技术自动为被测Web应用程序的主页（例如，index.html，index.php）创建一组初始页面对象。 页面对象生成器分析网页以提取Web元素并使用这些元素生成页面对象的字段和公共方法。</p>
+<h2 id="网页功能测试的检查要领"><a href="#网页功能测试的检查要领" class="headerlink" title="网页功能测试的检查要领"></a>网页功能测试的检查要领</h2><p>超级链接：</p>
+<p>检查每一个链接的正确跳转，查找孤页</p>
+<p>表单：</p>
+<p>表单是指网页中用于输入和选择信息的文本框、列表框和其他域。域的大小能不能正确，能不能接受正确数据，拒绝不正确数据。</p>
+<p>功能测试：</p>
+<p>Web站点的功能是贵公司雇佣开发人员而不只是艺术家的原因。就是这一部分与服务器通讯并且最终完成任务。</p>
+<p><strong>⑵链接</strong></p>
+<p>链接是使用户从一个页面浏览到另一个页面的重要手段。对于每个链接，需要验证两件事情： 一是该链接将用户带到它所说明的地方，另外就是被链接页面是存在的。这句话听起来有些问题，但是有很多多站点的内部链接都是空的。这实在是无法忍受。</p>
+<p><strong>⑶表单</strong></p>
+<p>当用户通过表单提交信息的时候，都希望表单能正常工作。如果使用表单来进行在线注册，要确保提交按钮能正常工作，当注册完成后应返回注册成功的消息。如果使用表单收集配送信息，应确保程序能够正确处理这些数据，最后能让顾客能让客户收到包裹。要测试这些程序，需要验证服务器能正确保存这些数据，而且后台运行的程序能正确解释和使用这些信息。</p>
+<p><strong>⑷数据校验</strong></p>
+<p>如果系根据业务规则需要对用户输入进行校验，需要保证这些校验功能正常工作。例如，省份的字段可以用一个有效列表进行校验。在这种情况下，需要验证列表完整而且程序正确调用了该列表(例如在列表中添加一个测试值，确定系统能够接受这个测试值)。</p>
+<p><strong>⑸Cookies</strong></p>
+<p>很多用户喜欢甜食，但是开发人员喜欢web cookie (小甜饼)。如果系统使用了cookie，测试人员需要对它们进行检测。如果在cookies中保存了注册信息，请确认该cookie能够正常工作而且已对这些信息已经加密。如果使用cookie来统计次数，需要验证次数累计正确。</p>
+<p><strong>⑹应用程序特定的功能需求</strong></p>
+<p>最重要的是，测试人员需要对应用程序特定的功能需求进行验证。尝试用户可能进行的所有操作：</p>
+<p>下订单、更改订单、取消订单、核对订单状态、在货物发送之前更改送货信息、在线支付等等。这是用户之所以使用网站的原因，一定要确认网站能像广告宣传的那样神奇。</p>
+<h2 id="软件模块划分的好处"><a href="#软件模块划分的好处" class="headerlink" title="软件模块划分的好处"></a>软件模块划分的好处</h2><p><a href="https://blog.csdn.net/Rongbo_J/article/details/51228938" target="_blank" rel="noopener">软件模块划分</a></p>
+<p>(1) 使程序实现的逻辑更加清晰，可读性强。<br>(2) 使多人合作开发的分工更加明确，容易控制。<br>(3) 能充分利用可以重用的代码。<br>(4) 抽象出可公用的模块，可维护性强，以避免同一处修改在多个地方出现。<br>(5) 系统运行可方便地选择不同的流程。<br>(6) 可基于模块化设计优秀的遗留系统，方便的组装开发新的相似系统，甚至一个全新的系统。 </p>
+<h3 id="功能模块划分"><a href="#功能模块划分" class="headerlink" title="功能模块划分"></a>功能模块划分</h3><ol>
+<li>登录模块以及注销模块</li>
+<li>信息查找模块</li>
+<li>信息查找结果显示模块</li>
+<li>信息查找结果操作模块</li>
+<li>信息添加模块</li>
+<li>信息显示模块</li>
+<li>链接跳转模块</li>
+<li>外链等其他功能模块</li>
+</ol>
+<h3 id="页面对象抽象"><a href="#页面对象抽象" class="headerlink" title="页面对象抽象"></a>页面对象抽象</h3><ul>
+<li><p>LoginPage LogoutPage</p>
+<p>login() logout()</p>
+</li>
+<li><p>SearchPage</p>
+<p>所有服务的search统一为一种方法search,通过传入不同参数进行不同页面的search操作。模板模式。</p>
+</li>
+<li><p>ResultSearchPage</p>
+</li>
+<li><p>ResultActionPage</p>
+</li>
+</ul>
+<p>编辑//*[@id=”app”]/div/div[2]/section/div/div[2]/div[3]/table/tbody/tr[1]/td[8]/div/button[1]</p>
+<p>删除//*[@id=”app”]/div/div[2]/section/div/div[2]/div[3]/table/tbody/tr[1]/td[8]/div/button[2]</p>
+<ul>
+<li>AddPage</li>
+</ul>
+<p>页面内弹窗形式的添加，URL地址不改变。统一add方法，传入不同参数。</p>
+<p>//*[@id=”app”]/div/div[2]/section/div/div[4]/div/div[2]/form/div[1]/div/div/input用户</p>
+<p>//*[@id=”app”]/div/div[2]/section/div/div[4]/div/div[2]/form/div[1]/div/div/input广告</p>
+<p>页面跳转形式的添加，URL地址改变。单独创建add_product方法。</p>
+<p>//*[@id=”app”]/div/div[2]/section/div/div[1]/div/form/div[1]/div/div/input商品</p>
+<ul>
+<li>ViewPage</li>
+</ul>
+<p>非重要功能测试</p>
+<ul>
+<li>JumpPage</li>
+</ul>
+<p>验证链接跳转的正确性</p>
+<ul>
+<li>ExternalLinkPage</li>
+</ul>
+<p>同上</p>
+<hr>
+<h3 id="详细功能"><a href="#详细功能" class="headerlink" title="详细功能"></a>详细功能</h3><p>用户管理服务：</p>
+<ul>
+<li>会员管理服务，见AdminUserController类</li>
+</ul>
+<p>查找（用户名，手机号）、添加、导出</p>
+<p>数据的编辑、删除</p>
+<ul>
+<li>收货地址服务，见AdminAddressController类</li>
+</ul>
+<p>查找（用户ID、收货人名称）、导出</p>
+<ul>
+<li>会员收藏服务，见AdminCollectController类</li>
+</ul>
+<p>查找（用户ID、商品ID）、导出</p>
+<ul>
+<li>会员足迹服务，见AdminFootprintController类</li>
+</ul>
+<p>查找（用户ID、商品ID）、导出</p>
+<ul>
+<li>搜索历史服务，见AdminHistoryController类</li>
+</ul>
+<p>查找（用户ID、搜索历史关键字）、导出</p>
+<ul>
+<li>意见反馈服务，见AdminFeedbackController类</li>
+</ul>
+<p>查找（用户名、反馈ID）、导出</p>
+<p>商场管理服务：</p>
+<ul>
+<li>行政区域服务，见AdminRegionController类</li>
+</ul>
+<p>查找（行政区域名称、行政区域编码）、导出</p>
+<ul>
+<li>品牌制造商服务，见AdminBrandController类</li>
+</ul>
+<p>查找（品牌商ID、品牌商名称）、导出</p>
+<ul>
+<li>商品类目服务，见AdminCategoryController类</li>
+</ul>
+<p>查找（类目ID、类目名称）、添加、导出</p>
+<ul>
+<li>订单管理服务，见AdminOrderController类</li>
+</ul>
+<p>查找（用户ID、订单编号、订单编号）、导出</p>
+<ul>
+<li>通用问题服务，见AdminIssueController类</li>
+</ul>
+<p>查找（问题）、添加、导出</p>
+<ul>
+<li>关键词服务，见AdminKeywordController类</li>
+</ul>
+<p>查找（关键字、跳转链接）、添加、导出</p>
+<p>商品管理服务</p>
+<p>商品服务，见AdminAdminController类</p>
+<p>商品列表</p>
+<p>查找（商品编号、商品名称）、添加（跳转到商品上架页）、导出</p>
+<p>商品评论</p>
+<p>查找（用户ID\商品ID）、导出。</p>
+<p>推广管理服务</p>
+<ul>
+<li>广告服务，见AdminAdController类</li>
+</ul>
+<p>查找（广告标题、广告内容）、添加、导出</p>
+<ul>
+<li>专题服务，见AdminTopicController类</li>
+</ul>
+<p>查找（专题标题、专题子标题）、添加、导出</p>
+<ul>
+<li>团购服务，见AdminGrouponController类</li>
+</ul>
+<p>查找（商品编号）、添加、导出</p>
+<p>系统管理服务</p>
+<ul>
+<li>管理员服务，见AdminAdminController类</li>
+</ul>
+<p>查找（管理员名称）、添加、导出</p>
+<ul>
+<li>对象存储服务，见见AdminStorageController类</li>
+</ul>
+<p>查找（对象KEY,对象名称）、导出</p>
+<p>其他服务</p>
+<ul>
+<li>统计服务，见AdminStatController类</li>
+<li>个人服务，见AdminProfileController类</li>
+</ul>
+<p>显示类。</p>
+<p>外链：</p>
+<h3 id="现代前后端分离应用创建的web应用特点"><a href="#现代前后端分离应用创建的web应用特点" class="headerlink" title="现代前后端分离应用创建的web应用特点"></a>现代前后端分离应用创建的web应用特点</h3><p>现代JS框架存在的根本原因是保持UI与状态同步</p>
+<p>Vue.js和JQuery的区别在于声明式和命令式，当应用在运行时，内部状态会不断的发生变化，这时用户页面的某个局部区域需要不停的重新渲染。中等粒度绑定，一个状态对应某个组件，而不再是具体标签（细粒度绑定机制），当状态发生变化只通知到组件，组件内部通过VirtualDOM更新DOM标签。Vue通过变化侦测和VirtualDOM解决依赖追踪的开销问题。模板的作用是描述状态与DOM之间的映射关系，通过模板可以编译出一个渲染函数，执行这个渲染函数可以得到VirtualDOM中所提供的VNode。</p>
+<p><a href="https://github.com/berwin/Blog/issues/17" target="_blank" rel="noopener">Vue实现变化侦测</a></p>
+<p>getter中收集依赖，setter中触发依赖。</p>
+<p><img src="https://raw.githubusercontent.com/vuejs/vuejs.org/master/src/images/data.png" alt="ååºå¼ç&quot;æå¾"></p>
+<p><a href="https://ppt.baomitu.com/d/2afbd5b9" target="_blank" rel="noopener">VirtualDOM实现原理</a></p>
+<p>状态——&gt;VNode(节点描述对象)——&gt;DOM</p>
+<p>diff的目的是渲染页面、创建新增的节点、删除已经废弃的节点。修改需要更新的节点。</p>
+<p>更新节点（属性，内容）</p>
+<p>oldVnode没有children？</p>
+<p>空标签：将vnode中的children插入到DOM中</p>
+<p>有文本：先清空文本，然后在将children插入到DOM中</p>
+<p>oldVnode有children？</p>
+<p>对children进行diff与更新</p>
+<p>更新子节点四种操作：新增子节点、更新子节点、移动子节点、删除子节点</p>
+<p><a href="https://github.com/berwin/Blog/issues/18" target="_blank" rel="noopener">模板编译</a></p>
+<h2 id="Web系统的经典架构图"><a href="#Web系统的经典架构图" class="headerlink" title="Web系统的经典架构图"></a>Web系统的经典架构图</h2><p><img src="https://user-gold-cdn.xitu.io/2019/1/9/16831e6e3fa86c18?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<p><a href="https://juejin.im/post/5c32efccf265da61141cc26c" target="_blank" rel="noopener">用户信息传递流程</a></p>
+<p>采用<code>token</code>方式进行用户鉴权:</p>
+<ul>
+<li>客户端(pc，移动端，平板等)首次登录，服务端签发<code>token</code>，在<code>token</code>中放入<code>用户信息(如userId)</code>等返回给客户端</li>
+<li>客户端访问服务端接口，需要在头部携带<code>token</code>，跟表单一并提交到服务端</li>
+<li>服务端在<code>web</code>层统一解析<code>token</code>鉴权，同时取出<code>用户信息(如userId)</code>并继续向底层传递，传到服务层操作业务逻辑</li>
+<li>服务端在<code>service</code>层取到<code>用户信息(如userId)</code>后，执行相应的业务逻辑操作</li>
+</ul>
+<ul>
+<li>浏览器发送请求</li>
+<li>直接到达html页面（前端控制路由与渲染页面，整个项目开发的权重前移）</li>
+<li>html页面负责调用服务端接口产生数据（通过ajax等等，后台返回json格式数据，json数据格式因为简洁高效而取代xml）</li>
+<li>填充html，展现动态效果，在页面上进行解析并操作DOM。</li>
+</ul>
+<h2 id="page-object"><a href="#page-object" class="headerlink" title="page object"></a>page object</h2><p>pages offer :action,navigation,getter functionalities</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1547605329506.png" alt="1547605329506"></p>
+<p>state35和state39相同的导航web元素（例如，可以点击的链接）和两个不同的文本元素，而state44包含相同的导航web元素和动作（例如，可以填充的文本字段）。</p>
+<p>代码量比较图</p>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1547618260623.png" alt="1547618260623"></p>
+<h2 id="Selenium的等待"><a href="#Selenium的等待" class="headerlink" title="Selenium的等待"></a>Selenium的等待</h2><p>隐性等待：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">driver.implicitly_wait(<span class="number">30</span>)  <span class="comment"># 隐性等待，最长等30秒</span></span><br></pre></td></tr></table></figure>
+
+<p>隐性等待是设置了一个最长等待时间，如果在规定时间内网页加载完成，则执行下一步，否则一直等到时间截止，然后执行下一步。隐性等待对整个driver的周期都起作用，所以只要设置一次即可。</p>
+<p>显性等待：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    WebDriverWait(driver, <span class="number">20</span>, <span class="number">0.5</span>).until(EC.presence_of_element_located(locator))</span><br><span class="line">    <span class="keyword">print</span> driver.find_element_by_link_text(<span class="string">'CSDN'</span>).get_attribute(<span class="string">'href'</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    driver.close()</span><br></pre></td></tr></table></figure>
+
+<p><strong>最长的等待时间取决于两者之间的大者，此例中为20，如果隐性等待时间 &gt; 显性等待时间，则该句代码的最长等待时间等于隐性等待时间。</strong></p>
+<p>WebDriverWait类是显性等待类，参数与方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">selenium.webdriver.support.wait.WebDriverWait（类）</span><br><span class="line"></span><br><span class="line">__init__</span><br><span class="line">    driver: 传入WebDriver实例，即我们上例中的driver</span><br><span class="line">    timeout: 超时时间，等待的最长时间（同时要考虑隐性等待时间）</span><br><span class="line">    poll_frequency: 调用until或until_not中的方法的间隔时间，默认是0.5秒</span><br><span class="line">    ignored_exceptions: 忽略的异常，如果在调用until或until_not的过程中抛出这个元组中的异常，</span><br><span class="line">            则不中断代码，继续等待，如果抛出的是这个元组外的异常，则中断代码，抛出异常。默认只有NoSuchElementException。</span><br><span class="line"></span><br><span class="line">until</span><br><span class="line">    method: 在等待期间，每隔一段时间调用这个传入的方法，直到返回值不是False</span><br><span class="line">    message: 如果超时，抛出TimeoutException，将message传入异常</span><br><span class="line"></span><br><span class="line">until_not 与until相反，until是当某元素出现或什么条件成立则继续执行，</span><br><span class="line">        until_not是当某元素消失或什么条件不成立则继续执行，参数也相同，不再赘述。</span><br><span class="line">    method</span><br><span class="line">    message</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WebDriverWait(driver, 超时时长, 调用频率, 忽略异常).until(可执行方法, 超时时返回的信息)</span><br></pre></td></tr></table></figure>
+
+<p>expected_conditions</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">selenium.webdriver.support.expected_conditions（模块）</span><br><span class="line"></span><br><span class="line">这两个条件类验证title，验证传入的参数title是否等于或包含于driver.title</span><br><span class="line">title_is</span><br><span class="line">title_contains</span><br><span class="line"></span><br><span class="line">这两个人条件验证元素是否出现，传入的参数都是元组类型的locator，如(By.ID, &apos;kw&apos;)</span><br><span class="line">顾名思义，一个只要一个符合条件的元素加载出来就通过；另一个必须所有符合条件的元素都加载出来才行</span><br><span class="line">presence_of_element_located</span><br><span class="line">presence_of_all_elements_located</span><br><span class="line"></span><br><span class="line">这三个条件验证元素是否可见，前两个传入参数是元组类型的locator，第三个传入WebElement</span><br><span class="line">第一个和第三个其实质是一样的</span><br><span class="line">visibility_of_element_located</span><br><span class="line">invisibility_of_element_located</span><br><span class="line">visibility_of</span><br><span class="line"></span><br><span class="line">这两个人条件判断某段文本是否出现在某元素中，一个判断元素的text，一个判断元素的value</span><br><span class="line">text_to_be_present_in_element</span><br><span class="line">text_to_be_present_in_element_value</span><br><span class="line"></span><br><span class="line">这个条件判断frame是否可切入，可传入locator元组或者直接传入定位方式：id、name、index或WebElement</span><br><span class="line">frame_to_be_available_and_switch_to_it</span><br><span class="line"></span><br><span class="line">这个条件判断是否有alert出现</span><br><span class="line">alert_is_present</span><br><span class="line"></span><br><span class="line">这个条件判断元素是否可点击，传入locator</span><br><span class="line">element_to_be_clickable</span><br><span class="line"></span><br><span class="line">这四个条件判断元素是否被选中，第一个条件传入WebElement对象，第二个传入locator元组</span><br><span class="line">第三个传入WebElement对象以及状态，相等返回True，否则返回False</span><br><span class="line">第四个传入locator以及状态，相等返回True，否则返回False</span><br><span class="line">element_to_be_selected</span><br><span class="line">element_located_to_be_selected</span><br><span class="line">element_selection_state_to_be</span><br><span class="line">element_located_selection_state_to_be</span><br><span class="line"></span><br><span class="line">最后一个条件判断一个元素是否仍在DOM中，传入WebElement对象，可以判断页面是否刷新了</span><br><span class="line">staleness_of</span><br></pre></td></tr></table></figure>
+
+<p>python tox</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">bok-choy中的tox.ini</span><br><span class="line">[tox]</span><br><span class="line"><span class="comment"># pylint 1.7.1 doesn't support Python 3.7, astroid 1.5.2 doesn't support pypy3</span></span><br><span class="line">envlist = py&#123;<span class="number">27</span>,<span class="number">35</span>,<span class="number">36</span>,py&#125;-&#123;core,needle&#125;</span><br><span class="line"></span><br><span class="line">[pytest]</span><br><span class="line">addopts = --cov bok_choy --cov-report term-missing</span><br><span class="line">norecursedirs = .* docs requirements</span><br><span class="line">usefixtures = test_server<span class="comment">#执行的是conftest.py中</span></span><br><span class="line"></span><br><span class="line">[testenv]<span class="comment">#默认的集成方案</span></span><br><span class="line"><span class="comment">#集成需要的依赖</span></span><br><span class="line">deps =</span><br><span class="line">    core: -r &#123;toxinidir&#125;/requirements/test.txt</span><br><span class="line">    needle: -r &#123;toxinidir&#125;/requirements/needle.txt</span><br><span class="line">passenv =</span><br><span class="line">    DISPLAY</span><br><span class="line">    BOKCHOY_HEADLESS</span><br><span class="line">    MOZ_HEADLESS</span><br><span class="line">    SELENIUM_BROWSER</span><br><span class="line">setenv =</span><br><span class="line">    SCREENSHOT_DIR=&#123;toxinidir&#125;/logs</span><br><span class="line">    SELENIUM_DRIVER_LOG_DIR=&#123;toxinidir&#125;/logs</span><br><span class="line">whitelist_externals =</span><br><span class="line">    mkdir</span><br><span class="line">    rm</span><br><span class="line"><span class="comment">#可以把调用的命令的参数通过posargs传给tox来使用</span></span><br><span class="line">commands =</span><br><span class="line">    pylint bok_choy</span><br><span class="line">    pylint --py3k bok_choy</span><br><span class="line">    pylint tests</span><br><span class="line">    pylint --py3k tests</span><br><span class="line">    pycodestyle bok_choy</span><br><span class="line">    pycodestyle tests</span><br><span class="line">    mkdir -p $SELENIUM_DRIVER_LOG_DIR</span><br><span class="line">    rm -rf $SELENIUM_DRIVER_LOG_DIR/*</span><br><span class="line">    pytest &#123;posargs:tests&#125; --durations=<span class="number">10</span></span><br><span class="line"></span><br><span class="line">[testenv:doc]<span class="comment">#非默认的集成方案</span></span><br><span class="line">deps =</span><br><span class="line">    -r&#123;toxinidir&#125;/requirements/doc.txt</span><br><span class="line">commands =</span><br><span class="line">    pip install --quiet --requirement requirements/doc.txt</span><br><span class="line">    - pip uninstall bok-choy -y</span><br><span class="line">    python setup.py install</span><br><span class="line">    python docs/code/round_1/test_search.py</span><br><span class="line">    python docs/code/round_2/test_search.py</span><br><span class="line">    python docs/code/round_3/test_search.py</span><br><span class="line">    python setup.py build_sphinx</span><br><span class="line">    python setup.py check --restructuredtext --strict</span><br></pre></td></tr></table></figure>
+
+<p>conftest.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">..</span><br><span class="line"><span class="meta">@pytest.fixture(scope='session')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_server</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="string">"""Start server for test fixture site"""</span></span><br><span class="line">    server = Process(target=start_test_server)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fin</span><span class="params">()</span>:</span></span><br><span class="line">        <span class="string">"""Stop the test server"""</span></span><br><span class="line">        server.terminate()</span><br><span class="line">    request.addfinalizer(fin)</span><br><span class="line">    server.start()</span><br></pre></td></tr></table></figure>
+
+<p>详细解释：</p>
+<p>tox是通用的虚拟环境管理和测试命令行工具。tox能够让我们在同一个Host上自定义出多套相互独立且隔离的python环境（tox是openstack社区最基本的测试工具，比如python程序的兼容性、UT等）。它的目标是提供最先进的自动化打包、测试和发布功能。</p>
+<ul>
+<li>作为持续集成服务器的前端，大大减少测试工作所需时间；</li>
+<li>检查软件包能否在不同的python版本或解释器下正常安装；</li>
+<li>在不同的环境中运行测试代码。</li>
+</ul>
+<p>参考：</p>
+<p><a href="https://www.jianshu.com/p/20fdae9f8ab1" target="_blank" rel="noopener">tox使用介绍</a></p>
+<p>测试路径生成准则，用户会话的session获取：</p>
+<blockquote>
+<p>导航图的组成：</p>
+<p>G=&lt;N,E&gt;</p>
+<p>po(n)-&gt;po(m)：po(n)返回po(m)</p>
+<p>边：n-&gt;m</p>
+<p>n,m为结点</p>
+</blockquote>
+<p>有向图的深度优先生成树：</p>
+<p>有向图的特点：边的方向性导致即使两个顶点有边相连也不一定是可达的。树边(tree edges), 回退边(back edges)，向前边(forward edges), 横边(cross edges)。其中后三者是树实际不存在的边。</p>
+<p>事实上，有以下结论(其中num[]保存的是树节点的先序序列即DFS序列)：</p>
+<p>1、若num[v] &lt; num[w]，即v在w之前被访问，则(v,w)是树边或向前边；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">此时，若visited[v]= true, visited[w] = false,(v,w)为 树边；</span><br><span class="line">若visited[v]= true, visited[w] = true,(v,w) 为 向前边；比如上图的第2种情况，访问到节点3时，节点1已经被访问，且num[1]&lt;num[3],故边(1, 3)是向前边。</span><br></pre></td></tr></table></figure>
+
+<p>2、若num[v] &gt; num[w]，即v在w之后被访问，故visited[v] = true则visited[w] = true，则(v,w)是回退边或横边；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">当产生树边(i,j) 时，同时记下j的父节点：parent[j] = i, 于是对图中任一条边(v,w)，由结点v沿着树边向上(parent中)查找w（可能直到根）；</span><br><span class="line">若找到w,则(v,w)是回退边，否则是横边。比如上图第一种情况parent[3] = 1，故边(3, 1)为回退边，而第3种情况节点3无父节点，故为横边。</span><br></pre></td></tr></table></figure>
+
+<p>测试路径生成规则:</p>
+<p>规则1：将存在条件冲突的迁移放置在状态迁移树的不同分支上。</p>
+<p>不可行路径：无法找到一个可以同时满足两条迁移条件的变量值，考虑到用户权限。</p>
+<h2 id="python动态获取对象的属性和方法"><a href="#python动态获取对象的属性和方法" class="headerlink" title="python动态获取对象的属性和方法"></a>python动态获取对象的属性和方法</h2><p>参考：<a href="http://blog.51cto.com/ponyjia/1760673" target="_blank" rel="noopener">动态获取对象的属性和方法</a></p>
+<p><strong>getattr(obj, attr):</strong><br>​    调用这个方法将返回obj中名为attr值的属性的值，例如如果attr为’bar’，则返回obj.bar。</p>
+<h2 id="Testing-SPA-Youtobe"><a href="#Testing-SPA-Youtobe" class="headerlink" title="Testing SPA(Youtobe)"></a>Testing SPA(Youtobe)</h2><p>What are SPAs and why should you care about them?</p>
+<ul>
+<li>HTML+CSS+JS</li>
+<li>No Reloads</li>
+<li>Fluent,Interactive UX</li>
+<li>Build Once - Deploy Everywhere </li>
+</ul>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1548317006989.png" alt="1548317006989"></p>
+<ul>
+<li>benefits of SPA</li>
+<li>Interactive</li>
+<li>Faster</li>
+<li>Economical</li>
+<li>Cheaper - thick clients</li>
+<li>No install</li>
+<li>Build once,run everywhere</li>
+</ul>
+<p>Testing SPAs</p>
+<ul>
+<li>Manual testing is very similar to traditional web sites</li>
+<li>Mastering the browser console is a must</li>
+</ul>
+<p>Automation with Selenium</p>
+<ul>
+<li>The DOM changes very often</li>
+<li>Requires A lot of dynamic waits or long global implicit waits</li>
+<li>will make your tests slow or fragile</li>
+<li>will make you tests harder to read and maintain</li>
+</ul>
+<p><img src="C:%5CUsers%5Czjn%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1548320242420.png" alt="1548320242420"></p>
+<p>Implementation</p>
+<ul>
+<li>Requirements:</li>
+<li>Track app state</li>
+<li>Instrument each test step</li>
+</ul>
+<p>when is the application Ready</p>
+<p>wait for:</p>
+<ul>
+<li>AJAX(HTTP requests)</li>
+<li>Async code(setTimeout-s,WebWorkers,Animations)</li>
+</ul>
+<p>Do not wait for:</p>
+<ul>
+<li>Reoccurring actions(setInterval-s)</li>
+</ul>
+<p>Measuring Performance - What we need?</p>
+<ul>
+<li>Go through all the pages/states</li>
+<li>Measure how long does each one take</li>
+<li>find out where the time is spent - UI or server?</li>
+</ul>
+<p>Crawling Problem</p>
+<ul>
+<li>Need to sync first,so that we know when everything is processed</li>
+<li>How to automatically find all the pages/places in the application and to navigate to them</li>
+<li>No tool can automatically do it reliable and completely</li>
+<li>Navigation is done via JS - understanding of business logic is required</li>
+<li>No uniform way of doing it</li>
+</ul>
+<p>The solution - The Navigator Class</p>
+<ul>
+<li>A class that can navigate the application like a real user would</li>
+<li>Maintenance and update is very simple</li>
+<li>Automatic Synchronization</li>
+<li>Already had most of the code</li>
+<li>Allow for different scenarios/user journeys</li>
+</ul>
+<p>Layout Testing - Responsiveness</p>
+<p>Runs on a lot of different devices / resolutions</p>
+<p>Image comparison - ImageMagick , GraphicsMagick,pdiff,Guiffy</p>
+<p>Issues:</p>
+<ul>
+<li>Animations</li>
+<li>Different OS</li>
+<li>Manual verification</li>
+</ul>
+<p>Securing a SPA</p>
+<ul>
+<li>Obfuscation -UglifyJS</li>
+<li>Administration code</li>
+<li>Static Code Analysis - JSHint,JSLint,ESLint</li>
+<li>Navigator + security tool(ZAP,Nessus,Burp,etc.)</li>
+<li>Automate what is not caught by you tool(XSS mostly)</li>
+</ul>
+<p>Other uses of yhe navigator</p>
+<p>SEO</p>
+<p>Analytics</p>
+<p>i10n &amp; I10n</p>
+<p>HTTPS/HTTP Mixed Content</p>
+<h2 id="PICT实验部分"><a href="#PICT实验部分" class="headerlink" title="PICT实验部分"></a>PICT实验部分</h2><p><a href="https://blog.csdn.net/quiet_girl/article/details/50699543" target="_blank" rel="noopener">PICT中文乱码解决方案</a></p>
+<p>就是转为ANSI格式</p>
+<p><a href="https://blog.csdn.net/Poetic_Vienna/article/details/78772542" target="_blank" rel="noopener">PICT详细教程</a></p>
+<p>生成密钥:</p>
+<p>powershell</p>
+<p>ssh-keygen.exe -t rsa</p>
+<p>addUserForm因子表</p>
+<table>
+<thead>
+<tr>
+<th align="center">Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">name</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">phone</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">passwd</td>
+<td></td>
+</tr>
+<tr>
+<td align="center">gender_key</td>
+<td>男、女、未知</td>
+</tr>
+<tr>
+<td align="center">level_key</td>
+<td>普通用户、VIP用户、高级VIP用户</td>
+</tr>
+<tr>
+<td align="center">state_key</td>
+<td>可用、禁用、注销</td>
+</tr>
+<tr>
+<td align="center">birthday</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>正则表达式：</p>
+<p>username:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^[\w\u4e00-\u9fa5]&#123;6,20&#125;(?&lt;!_)$</span><br></pre></td></tr></table></figure>
+
+<p>phone:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^0\d&#123;2,3&#125;[- ]?\d&#123;7,8&#125;</span><br></pre></td></tr></table></figure>
+
+<p>birthday:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(?:(?!0000)[0-9]&#123;4&#125;-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]&#123;2&#125;(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$</span><br></pre></td></tr></table></figure>
+
+<p>Factory Boy</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> factory</span><br><span class="line"><span class="keyword">from</span> myapp.models <span class="keyword">import</span> Book</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BookFactory</span><span class="params">(factory.Factory)</span>:</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        model = Book</span><br><span class="line"></span><br><span class="line">    title = factory.Faker(<span class="string">'sentence'</span>, nb_words=<span class="number">4</span>)</span><br><span class="line">    author_name = factory.Faker(<span class="string">'name'</span>)</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.csdn.net/huilan_same/article/details/52298460" target="_blank" rel="noopener">selenium弹窗分辨</a></p>
+<p>alert，浏览器弹出框，一般是用来确认某些操作、输入简单的text或用户名、密码等，根据浏览器的不同，弹出框的样式也不一样，不过都是很简单的一个小框。<strong>在firebug中是无法获取到该框的元素的，也就是说alert是不属于网页DOM树的。</strong></p>
+<p>window，浏览器窗口，点击一个链接之后可能会打开一个新的浏览器窗口，跟之前的窗口是平行关系（alert跟窗口是父子关系，或者叫从属关系，alert必须依托于某一个窗口），有自己的地址栏、最大化、最小化按钮等。这个很容易分辨。</p>
+<p>div伪装对话框，是通过网页元素伪装成对话框，这种对话框一般比较花哨，内容比较多，而且跟浏览器一看就不是一套，在网页中用firebug能够获取到其的元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">script = dedent(<span class="string">"""</span></span><br><span class="line"><span class="string">            window.confirm = function() &#123;&#123; return &#123;0&#125;; &#125;&#125;;</span></span><br><span class="line"><span class="string">            window.alert = function() &#123;&#123; return; &#125;&#125;;</span></span><br><span class="line"><span class="string">        """</span>.format(<span class="string">"true"</span> <span class="keyword">if</span> confirm <span class="keyword">else</span> <span class="string">"false"</span>)).strip()</span><br><span class="line">        self.browser.execute_script(script)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.browser.Firefox.maximize_window()</span><br></pre></td></tr></table></figure>
+
+<p>上面代码可以使用selenium原生API</p>
+<p>答：自动化测试用例的执行策略是要看自动化测试的目的，通常有如下几种策略：</p>
+<p>一，自动化测试用例是用来监控的，在此目的下，我们就把自动化测试用例设置成定时执行的，如果每五分钟或是一个小时执行一次，在jenkins上创建一个定时任务即可。</p>
+<p>二，必须回归的用例。有些儿测试用例，如BVT测试用例，我们在公司产品任何变动上线之前都需要回归执行。那我们就把测试用例设置成触发式执行，在jenkins上将我们的自动化测试任务绑定到开发的build任务上。当开发人员在仿真环境上部代码的时候，我们的自动化测试用例就会被触发执行。</p>
+<p>三，不需要经常执行的测试用例。像全量测试用例，我们没有必要一直回归执行，必竟还是有时间消耗的，有些非主要业务线也不需要时时回归。这类测试用例我们就采用人工执行，在jenkins创建一个任务，需要执行的时候人工去构建即可。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web-test/" rel="tag"># web test</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/24/Maven-Evosuite/" rel="next" title="Maven Evosuite">
+                <i class="fa fa-chevron-left"></i> Maven Evosuite
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/29/学习日记-2019527/" rel="prev" title="学习日记-2019527">
+                学习日记-2019527 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zheng Jiani</p>
+              <p class="site-description motion-element" itemprop="description">喜欢，成就梦想</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengjiani" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#dot生成图"><span class="nav-number">1.</span> <span class="nav-text">dot生成图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建模Ajax应用"><span class="nav-number">2.</span> <span class="nav-text">建模Ajax应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反馈导向探索Web应用程序以推导测试模型"><span class="nav-number">3.</span> <span class="nav-text">反馈导向探索Web应用程序以推导测试模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cloc代码统计工具命令行"><span class="nav-number">4.</span> <span class="nav-text">cloc代码统计工具命令行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遗传算法"><span class="nav-number">5.</span> <span class="nav-text">遗传算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试数据部分"><span class="nav-number">6.</span> <span class="nav-text">测试数据部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web应用状态流图的生成过程"><span class="nav-number">7.</span> <span class="nav-text">Web应用状态流图的生成过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web应用自动化测试框架实现"><span class="nav-number">8.</span> <span class="nav-text">web应用自动化测试框架实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导航图的构造算法"><span class="nav-number">9.</span> <span class="nav-text">导航图的构造算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比较网页结构相似度"><span class="nav-number">10.</span> <span class="nav-text">比较网页结构相似度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xpath进行页面相似度比较"><span class="nav-number">11.</span> <span class="nav-text">xpath进行页面相似度比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PageObject对象生成"><span class="nav-number">12.</span> <span class="nav-text">PageObject对象生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网页功能测试的检查要领"><span class="nav-number">13.</span> <span class="nav-text">网页功能测试的检查要领</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件模块划分的好处"><span class="nav-number">14.</span> <span class="nav-text">软件模块划分的好处</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#功能模块划分"><span class="nav-number">14.1.</span> <span class="nav-text">功能模块划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面对象抽象"><span class="nav-number">14.2.</span> <span class="nav-text">页面对象抽象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详细功能"><span class="nav-number">14.3.</span> <span class="nav-text">详细功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#现代前后端分离应用创建的web应用特点"><span class="nav-number">14.4.</span> <span class="nav-text">现代前后端分离应用创建的web应用特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web系统的经典架构图"><span class="nav-number">15.</span> <span class="nav-text">Web系统的经典架构图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#page-object"><span class="nav-number">16.</span> <span class="nav-text">page object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Selenium的等待"><span class="nav-number">17.</span> <span class="nav-text">Selenium的等待</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python动态获取对象的属性和方法"><span class="nav-number">18.</span> <span class="nav-text">python动态获取对象的属性和方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Testing-SPA-Youtobe"><span class="nav-number">19.</span> <span class="nav-text">Testing SPA(Youtobe)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PICT实验部分"><span class="nav-number">20.</span> <span class="nav-text">PICT实验部分</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zheng Jiani</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

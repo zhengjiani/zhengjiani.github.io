@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="MBT,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Web测试用例产生的新思考">
+<meta name="keywords" content="MBT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MBT测试文献[1]">
+<meta property="og:url" content="http://yoursite.com/2019/06/19/MBT测试文献-1/index.html">
+<meta property="og:site_name" content="花茶树窝">
+<meta property="og:description" content="Web测试用例产生的新思考">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/%E6%96%87%E7%8C%AE%E5%9B%BE%E7%89%87/2019%E5%B9%B46%E6%9C%88/LJS.PNG?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/%E6%96%87%E7%8C%AE%E5%9B%BE%E7%89%87/2019%E5%B9%B46%E6%9C%88/Model%20construct.PNG?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/%E6%96%87%E7%8C%AE%E5%9B%BE%E7%89%87/2019%E5%B9%B46%E6%9C%88/POR.PNG?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/%E6%96%87%E7%8C%AE%E5%9B%BE%E7%89%87/2019%E5%B9%B46%E6%9C%88/Long%20EVENT.PNG?raw=true">
+<meta property="og:updated_time" content="2019-10-11T08:53:17.306Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MBT测试文献[1]">
+<meta name="twitter:description" content="Web测试用例产生的新思考">
+<meta name="twitter:image" content="https://github.com/zhengjiani/markdownImages/blob/master/%E6%96%87%E7%8C%AE%E5%9B%BE%E7%89%87/2019%E5%B9%B46%E6%9C%88/LJS.PNG?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/06/19/MBT测试文献-1/">
+
+
+
+
+
+  <title>MBT测试文献[1] | 花茶树窝</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?870e68ebac7b44a2e5fc2f00b965a03b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花茶树窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/19/MBT测试文献-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zheng Jiani">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花茶树窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MBT测试文献[1]</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-19T20:32:45+08:00">
+                2019-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Web测试用例产生的新思考</p>
+<a id="more"></a>
+
+<h2 id="Model-based-Automated-Testing-of-JavaScript-Web-Applications-via-Longer-Test-Sequences"><a href="#Model-based-Automated-Testing-of-JavaScript-Web-Applications-via-Longer-Test-Sequences" class="headerlink" title="Model-based Automated Testing of JavaScript Web Applications via Longer Test Sequences"></a>Model-based Automated Testing of JavaScript Web Applications via Longer Test Sequences</h2><p>arXiv:1905.07671v1  [cs.SE]  19 May 2019</p>
+<p>获得高代码覆盖率</p>
+<ul>
+<li>事件序列</li>
+<li>输入数据</li>
+</ul>
+<p>传统的白盒测试和GUI测试中<strong>已经表明，增加测试用例的长度可以改善覆盖范围和故障检测</strong> </p>
+<p>作者提出的问题：</p>
+<ul>
+<li>在测试JS Web应用时候，事件序列构造的时候会呈指数型爆炸，为了测试的有效性考虑，通常会指定一个序列长度的最大界限。例如6[12]，为了弥补测试的充分性，提出了变异测试和部分有序（partial order reduction）。在合理的时间将允许探索受限长度的事件序列。</li>
+<li>输入数据通常通过随机选取值或者轻量级的启发式策略，或者使用符号执行等重量级的技术。这些通常被考虑在单元测试中。</li>
+</ul>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/%E6%96%87%E7%8C%AE%E5%9B%BE%E7%89%87/2019%E5%B9%B46%E6%9C%88/LJS.PNG?raw=true" alt="LJS.PNG"></p>
+<p>使用FSM代表JS Web应用的行为</p>
+<p>非确定性的有限状态机 M = (S,I,δ,s0)：</p>
+<p>S是有限状态集合 s0 ∈ S 初始状态</p>
+<p>I是有限的输入字符集</p>
+<p>δ ⊆ S × I × S 转换关系</p>
+<blockquote>
+<p>(s1,e,s2) ∈ δ表示在状态s1读取了输入符e，便可以从状态s1跳转到状态s2。</p>
+</blockquote>
+<p>supp(s)= {(e,s0) ∈ I ×S | (s,e,s0) ∈ δ}</p>
+<blockquote>
+<p>Given a word <strong>e1···en ∈ I∗</strong>, a run of <strong>M</strong>(FSM) on <strong>e1···en</strong> is a sequence of states <strong>s0s1···sn</strong> such that for every <strong>1 ≤ i ≤ n, (si−1,ei,si) ∈ δ.</strong> </p>
+</blockquote>
+<p>LJS主要由四部分构成</p>
+<blockquote>
+<p>static analysis静态分析 <strong>JSDEP[22]</strong></p>
+<p>execution engine执行机  <strong>ARTEMIS [2]</strong> </p>
+<p>model construction模型构造 </p>
+<p>testcase generation测试用例生成 <strong>partial-order reduction(POR) &amp; random event sequence generation</strong></p>
+</blockquote>
+<p>通过静态分析计算DOM事件依赖性</p>
+<p>通过利用执行引擎和DOM事件依赖性，使用深度搜索的变体构建应用程序的FSM模型。</p>
+<p>所有生成的事件序列在执行引擎上迭代执行并输出覆盖率报告。</p>
+<p>在测试用例生成阶段，partial-order reduction(POR) 通常会产生很多短的事件序列，但是可以覆盖所有路径。</p>
+<p>random event sequence generation虽然不能够覆盖所有可行路径，但是可以产生数量比较少但是长度较长的测试序列。</p>
+<p>粗粒度状态抽象可能会造成的问题：</p>
+<ul>
+<li>一方面，FSM的状态应该包含足够的数据来区分不同的应用程序状态，因为如果之前<strong>已经探索过抽象状态，则可能会错误地跳过未探测的应用程序状态</strong>，如果采用粗粒度状态抽象，则可能会发生这种情况。</li>
+<li>另一方面，<strong>过度细化的状态抽象</strong>可能会产生一些与某些覆盖标准无法区分的状态，从而导致爆炸性的甚至是有限的状态空间。</li>
+</ul>
+<p>ARTEMIS构建的状态模型有一个问题在于过度细化，比如说一些源码中隐式(implicit)的属性。将会引起状态空间爆炸的问题。</p>
+<blockquote>
+<p>ARTEMIS但丢弃DOM树中隐式属性的随机值。 这允许关注通过执行事件而不是随机值赋值所做的状态更改。</p>
+</blockquote>
+<p>显然，事件的选择将影响FSM模型的质量。</p>
+<p>本文实现了两种事件选择策略：</p>
+<ul>
+<li>基于基准算法的随机事件选择策略</li>
+<li>权重事件选择策略</li>
+</ul>
+<p>已经执行过的事件具有较低的优先级，要使用长事件序列公开角落代码，<strong>依赖于先前所选事件的事件</strong>应该有更高的选择机会。</p>
+<p>​                                                            weight(e) =[α$_e$×x+βe×(1−x)] / N$_e$+1 </p>
+<p>α$_e$、βe是权重参数，x是布尔值表示是否选中，如果e依赖于之前选择的事件则x=1，否则x=0</p>
+<p>N$_e$表示事件已经被执行的次数</p>
+<p>基于模型的测试之间的不同主要在三方面：被测软件的模型、模型的构造、测试用例的生成。</p>
+<ul>
+<li>基于状态的（pre-/post-condition）</li>
+<li>基于迁移的（UML和I/O）</li>
+</ul>
+<p>[22][55]</p>
+<p>现在主要关注的研究点在两方面：</p>
+<p>一个是测试路径的生成，多考虑长序列的生成。</p>
+<p>一个是轻量级测试数据的产生。</p>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/%E6%96%87%E7%8C%AE%E5%9B%BE%E7%89%87/2019%E5%B9%B46%E6%9C%88/Model%20construct.PNG?raw=true" alt="Model construct.PNG"></p>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/%E6%96%87%E7%8C%AE%E5%9B%BE%E7%89%87/2019%E5%B9%B46%E6%9C%88/POR.PNG?raw=true" alt="POR.PNG"></p>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/%E6%96%87%E7%8C%AE%E5%9B%BE%E7%89%87/2019%E5%B9%B46%E6%9C%88/Long%20EVENT.PNG?raw=true" alt="Long EVENT.PNG"></p>
+<h2 id="Transferring-Tests-Across-Web-Applications"><a href="#Transferring-Tests-Across-Web-Applications" class="headerlink" title="Transferring Tests Across Web Applications"></a>Transferring Tests Across Web Applications</h2><p>利用应用之间的UI元素的<strong>语义相似度</strong>（semantic similarity）</p>
+<p>功能区分阶段：我们确定了现有Selenium测试套件的基本功能。 因此，特征被定义为任何用户UI元素，例如， 输入字段，按钮和其他元素以及附加的事件处理程序。 为了识别特征，我们分析给定测试套件执行命令的UI元素，并使用<strong>可视化聚类算法</strong>将它们与<strong>描述标签</strong>组合在一起。</p>
+<p>跨应用程序匹配功能阶段：使用语义文本相似度作为度量。 匹配的功能然后引导爬行。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MBT/" rel="tag"># MBT</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/13/学习日记-20190612/" rel="next" title="学习日记-20190612">
+                <i class="fa fa-chevron-left"></i> 学习日记-20190612
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/01/学习日记-20190624/" rel="prev" title="学习日记-20190624">
+                学习日记-20190624 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zheng Jiani</p>
+              <p class="site-description motion-element" itemprop="description">喜欢，成就梦想</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengjiani" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Model-based-Automated-Testing-of-JavaScript-Web-Applications-via-Longer-Test-Sequences"><span class="nav-number">1.</span> <span class="nav-text">Model-based Automated Testing of JavaScript Web Applications via Longer Test Sequences</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transferring-Tests-Across-Web-Applications"><span class="nav-number">2.</span> <span class="nav-text">Transferring Tests Across Web Applications</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zheng Jiani</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

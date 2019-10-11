@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习日记,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Flask测试客户端、测试Web服务、端到端测试（Selenium）、http状态码、centos7无GUI下使用selenium、Youtobe上Flask课程学习、爬虫部分、SQLAlchemy复习">
+<meta name="keywords" content="学习日记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习日记-2019530">
+<meta property="og:url" content="http://yoursite.com/2019/05/31/学习日记-2019530/index.html">
+<meta property="og:site_name" content="花茶树窝">
+<meta property="og:description" content="Flask测试客户端、测试Web服务、端到端测试（Selenium）、http状态码、centos7无GUI下使用selenium、Youtobe上Flask课程学习、爬虫部分、SQLAlchemy复习">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/flaskimg/403issue.PNG?raw=true">
+<meta property="og:updated_time" content="2019-10-11T08:53:17.309Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习日记-2019530">
+<meta name="twitter:description" content="Flask测试客户端、测试Web服务、端到端测试（Selenium）、http状态码、centos7无GUI下使用selenium、Youtobe上Flask课程学习、爬虫部分、SQLAlchemy复习">
+<meta name="twitter:image" content="https://github.com/zhengjiani/markdownImages/blob/master/flaskimg/403issue.PNG?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/31/学习日记-2019530/">
+
+
+
+
+
+  <title>学习日记-2019530 | 花茶树窝</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?870e68ebac7b44a2e5fc2f00b965a03b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花茶树窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/31/学习日记-2019530/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zheng Jiani">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花茶树窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学习日记-2019530</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-31T09:14:48+08:00">
+                2019-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Flask测试客户端、测试Web服务、端到端测试（Selenium）、http状态码、centos7无GUI下使用selenium、Youtobe上Flask课程学习、爬虫部分、SQLAlchemy复习</p>
+<a id="more"></a>
+
+<p>学习日记-2019530</p>
+<h2 id="Flask测试客户端"><a href="#Flask测试客户端" class="headerlink" title="Flask测试客户端"></a>Flask测试客户端</h2><p>视图函数只能在请求上下文和运行中的程序里运行</p>
+<p>在测试客户端中运行的视图函数和正常情况下的没有太大区别，服务器收到请求，将其分配给适当的视图函数，视图函数生成响应，将其返回给测试客户端。执行视图函数后，生成的响应会传入测试，检查是否正确。</p>
+<p>运行<code>Python flasky.py test</code>遇到报错：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">KeyError: &lt;flask.cli.ScriptInfo object at <span class="number">0x7fa84a4566a0</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>后来查到：<a href="https://stackoverflow.com/questions/54107915/got-keyerror-flask-cli-scriptinfo-object-at-0x0000000003c05b70-when-running" target="_blank" rel="noopener">https://stackoverflow.com/questions/54107915/got-keyerror-flask-cli-scriptinfo-object-at-0x0000000003c05b70-when-running</a></p>
+<p>解决</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(microvenv) [root@~ microblog]# export FLASK_APP=flasky.py</span><br></pre></td></tr></table></figure>
+
+<p>但是运行结果如下，并没有执行客户端测试，可能是命令不对</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(microvenv) [root@iz2ze8rern8nx1sglo8ub1z microblog]# python flasky.py test</span><br><span class="line">test_password_setter (test_user_model.UserModelTestCase) ... ok</span><br><span class="line"></span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Ran 1 test in 0.596s</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<p>好吧，是我把文件名写错了导致unittest发现不了以test_*开头的测试用例</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(microvenv) [root@iz2ze8rern8nx1sglo8ub1z microblog]<span class="comment"># python flasky.py test</span></span><br><span class="line">test_home_page (test_client.FlaskClientTestCase) ... ok</span><br><span class="line">test_password_setter (test_user_model.UserModelTestCase) ... ok</span><br><span class="line"></span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Ran <span class="number">2</span> tests <span class="keyword">in</span> <span class="number">0.915</span>s</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>测试用例</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">步骤：</span></span><br><span class="line"><span class="string">客户端向首页发起一个请求</span></span><br><span class="line"><span class="string">测试客户端调用get()方法得到结果Flask的Response对象-&gt;调用视图函数得到的响应</span></span><br><span class="line"><span class="string">响应主体使用response.get_data()获取，get_data()得到的响应主体是一个字节数组</span></span><br><span class="line"><span class="string">传入参数as_text=True得到Unicode字符串</span></span><br><span class="line"><span class="string">self.assertTrue('Stranger' in response.get_data(as_text=True))</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">from</span> app <span class="keyword">import</span> create_app,db</span><br><span class="line"><span class="keyword">from</span> app.models <span class="keyword">import</span> User,Role</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FlaskClientTestCase</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.app = create_app(<span class="string">'testing'</span>)</span><br><span class="line">        self.app_context = self.app.app_context()</span><br><span class="line">        self.app_context.push()</span><br><span class="line">        db.create_all()</span><br><span class="line">        Role.insert_roles()</span><br><span class="line">        self.client = self.app.test_client(use_cookies=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">tearDown</span><span class="params">(self)</span>:</span></span><br><span class="line">        db.session.remove()</span><br><span class="line">        db.drop_all()</span><br><span class="line">        self.app_context.pop()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 测试客户端向主页发起请求</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_home_page</span><span class="params">(self)</span>:</span></span><br><span class="line">        response = self.client.get(<span class="string">'/'</span>)</span><br><span class="line">        self.assertEqual(response.status_code,<span class="number">200</span>)</span><br><span class="line">        self.assertTrue(<span class="string">'Stranger'</span> <span class="keyword">in</span> response.get_data(as_text=<span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
+
+<p>使用post()方法发送包含表单数据的POST请求，Flask-WTF 生成的表单中包含一个隐藏字段，其内容是 CSRF 令牌，需要和表 单中的数据一起提交。为了复现这个功能，测试必须请求包含表单的页面，然后解析响应 返回的 HTML 代码并提取令牌，这样才能把令牌和表单中的数据一起发送。为了避免在测 试中处理 CSRF 令牌这一烦琐操作，最好在<strong>测试配置中禁用 CSRF 保护功能</strong>。</p>
+<p>test_client.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">测试先向注册路由提交一个表单</span></span><br><span class="line"><span class="string">/auth/register路由有两种响应方式：注册数据可用，返回一个重定向，用户转到登录页面。</span></span><br><span class="line"><span class="string">注册不可用，返回的响应会再次渲染注册表单。</span></span><br><span class="line"><span class="string">注册成功，测试会检查响应的状态码是否为302，表示重定向</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="comment"># 测试注册与登录</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_register_and_login</span><span class="params">(self)</span>:</span></span><br><span class="line">        response = self.client.post(<span class="string">'/auth/register'</span>,data=&#123;</span><br><span class="line">            <span class="string">'email'</span>: <span class="string">'nicezheng@foxmail.com'</span>,</span><br><span class="line">            <span class="string">'username'</span>: <span class="string">'zhengjiani'</span>,</span><br><span class="line">            <span class="string">'password'</span>: <span class="string">'cat'</span>,</span><br><span class="line">            <span class="string">'password2'</span>:<span class="string">'cat'</span></span><br><span class="line">        &#125;)</span><br><span class="line">        self.assertEqual(response.status_code,<span class="number">302</span>)</span><br></pre></td></tr></table></figure>
+
+<p>auth/views.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@auth.route('/register',methods=['GET','POST'])</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">register</span><span class="params">()</span>:</span></span><br><span class="line">    form=RegistrationForm()</span><br><span class="line">    <span class="keyword">if</span> form.validate_on_submit():</span><br><span class="line">        user = User(username=form.username.data, email=form.email.data,password=form.password.data)</span><br><span class="line">        db.session.add(user)</span><br><span class="line">        db.session.commit()</span><br><span class="line">        token = user.generate_confirmation_token()</span><br><span class="line">        send_email(user.email,<span class="string">'Confirm Your Account'</span>,<span class="string">'auth/email/confirm'</span>,user=user,token=token)</span><br><span class="line">        flash(<span class="string">"确认邮件已经发至您邮箱"</span>)</span><br><span class="line">        <span class="keyword">return</span> redirect(<span class="string">'auth.login'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>禁用CSRF保护功能</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestingConfig</span><span class="params">(Config)</span>:</span></span><br><span class="line">    TESTING = <span class="literal">True</span></span><br><span class="line">    SQLALCHEMY_DATABASE_URI = <span class="string">'mysql+pymysql://root:*'</span></span><br><span class="line">    WTF_CSRF_ENABLED = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<p>测试新账号登录失败</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">FAIL: test_register_and_login (test_client.FlaskClientTestCase)</span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File "/var/www/microblog/microblog/tests/test_client.py", line 42, in test_register_and_login</span><br><span class="line">    self.assertTrue(re.search('Hello,\s+zhengjiani!',response.get_data(as_text=True)))</span><br><span class="line">AssertionError: None is not true</span><br><span class="line"></span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Ran 3 tests in 1.563s</span><br></pre></td></tr></table></figure>
+
+<p>说明响应主体有问题，尝试把响应主体打印出来发现问题是模板渲染时错误</p>
+<p>unconfirmed.html</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#123;% extends <span class="string">"base1.html"</span> %&#125;<span class="comment">#这里引的我原来的基础模板导致出错</span></span><br><span class="line"></span><br><span class="line">&#123;% block title %&#125;花茶书窝 - Confirm your account&#123;% endblock %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% block page_content %&#125;</span><br><span class="line">&lt;div class="page-header"&gt;</span><br><span class="line">    &lt;h1&gt;</span><br><span class="line">        Hello, &#123;&#123; current_user.username &#125;&#125;!</span><br><span class="line">    &lt;/h1&gt;</span><br><span class="line">    &lt;h3&gt;You have not confirmed your account yet.&lt;/h3&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">        Before you can access this site you need to confirm your account.</span><br><span class="line">        Check your inbox, you should have received an email <span class="keyword">with</span> a confirmation link.</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">        Need another confirmation email?</span><br><span class="line">        &lt;a href="&#123;&#123; url_for('auth.resend_confirmation') &#125;&#125;"&gt;Click here&lt;/a&gt;</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这就说明工程大的时候测试是十分必要的，需要一个模块一个模块的测试</p>
+<p><code>response.get_data(as_text=True)</code>返回的是渲染后的html文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">测试刚才注册的账号的登录程序</span></span><br><span class="line"><span class="string">通过向/auth/login路由发起POST请求完成，指定了参数follow_redirects=True,即返回的不是302状态码，而是请求重定向的URL返回的响应</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="comment"># 测试确认token</span></span><br><span class="line">        user = User.query.filter_by(email=<span class="string">'nicezheng@foxmail.com'</span>).first()</span><br><span class="line">        token = user.generate_confirmation_token()</span><br><span class="line">        response = self.client.get(<span class="string">'/auth/confirm/&#123;&#125;'</span>.format(token),follow_redirects=<span class="literal">True</span>)</span><br><span class="line">        user.confirm(token)</span><br><span class="line">        self.assertEqual(response.status_code,<span class="number">200</span>)</span><br><span class="line">        <span class="comment"># print(response.get_data)</span></span><br><span class="line">        self.assertTrue(</span><br><span class="line">            <span class="string">'You have confirmed your account'</span> <span class="keyword">in</span> response.get_data(</span><br><span class="line">                as_text=<span class="literal">True</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="测试Web服务"><a href="#测试Web服务" class="headerlink" title="测试Web服务"></a>测试Web服务</h2><p>测试API不使用cookie，所以无需配置。get_api_headers()是一个辅助方法，返回所有请求都要发送的通用首部，包括认证密令和MIME类型相关的首部。</p>
+<p>很神奇，我测试权限的时候返回403状态码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 确保web服务拒绝没有提供认证密令的请求，返回401错误码</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_no_auth</span><span class="params">(self)</span>:</span></span><br><span class="line">        response = self.client.get(<span class="string">'/api/v1/posts/'</span>,content_type=<span class="string">'application/json'</span>)</span><br><span class="line">        self.assertEqual(response.status_code,<span class="number">401</span>)</span><br><span class="line">        </span><br><span class="line">======================================================================</span><br><span class="line">FAIL: test_no_auth (test_api.APITestCase)</span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"/var/www/microblog/microblog/tests/test_api.py"</span>, line <span class="number">43</span>, <span class="keyword">in</span> test_no_auth</span><br><span class="line">    self.assertEqual(response.status_code,<span class="number">401</span>)</span><br><span class="line">AssertionError: <span class="number">403</span> != <span class="number">401</span></span><br><span class="line"></span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Ran <span class="number">5</span> tests <span class="keyword">in</span> <span class="number">1.965</span>s</span><br><span class="line"></span><br><span class="line">FAILED (failures=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>于是我搜了一下403和401状态码区别【下转http状态码】</p>
+<p>收到403响应表示服务器完成认证过程，但是客户端请求没有权限去访问要求的资源。那就说明这个请求的时候服务器已经完成认证过程，what?</p>
+<p>然后我打印了一下响应主体</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_token_auth</span><span class="params">(self)</span>:</span></span><br><span class="line">       <span class="comment"># add a user</span></span><br><span class="line">       r = Role.query.filter_by(name=<span class="string">'User'</span>).first()</span><br><span class="line">       self.assertIsNotNone(r)</span><br><span class="line">       u = User(email=<span class="string">'john@example.com'</span>, password=<span class="string">'cat'</span>, confirmed=<span class="literal">True</span>,</span><br><span class="line">                role=r)</span><br><span class="line">       db.session.add(u)</span><br><span class="line">       db.session.commit()</span><br><span class="line"></span><br><span class="line">       <span class="comment"># issue a request with a bad token</span></span><br><span class="line">       response = self.client.get(</span><br><span class="line">           <span class="string">'/api/v1/posts/'</span>,</span><br><span class="line">           headers=self.get_api_headers(<span class="string">'bad-token'</span>, <span class="string">''</span>))</span><br><span class="line">       print(response.get_data(as_text=<span class="literal">True</span>))</span><br><span class="line">       <span class="comment">#self.assertEqual(response.status_code, 401)</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test_token_auth (test_api.APITestCase) ... &#123;"error":"forbidden","message":"Invalid credentials"&#125;</span><br></pre></td></tr></table></figure>
+
+<p>看我们写的api/authentication.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@auth.error_handler</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">auth_error</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> unauthorized(<span class="string">'Invalid credentials'</span>)</span><br></pre></td></tr></table></figure>
+
+<p>stackoverflow中说同一用户过于频繁的刷新服务器将导致403</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Make sure you are caching the access tokens and that you are making a reasonable number of refresh requests. Refreshing in a tight loop (or too frequently from multiple threads or servers in a cluster) for the same user will lead to 403.</span><br><span class="line"></span><br><span class="line">The 401 error is most likely due to the fact that getting a new access token failed and you are using an expired one.</span><br></pre></td></tr></table></figure>
+
+<p>然后考虑一下是否是权限问题导致，测试时使用的是用户权限，如果改成管理员呢</p>
+<p>###提出issue，我有点方</p>
+<p>大佬的回复，看来是我api代码有误</p>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/flaskimg/403issue.PNG?raw=true" alt="403issue.PNG"></p>
+<p>明天再检查。。。</p>
+<h2 id="端到端测试（Selenium）"><a href="#端到端测试（Selenium）" class="headerlink" title="端到端测试（Selenium）"></a>端到端测试（Selenium）</h2><p>因为我的microblog是在阿里云下，所以，对于无界面浏览器采用phantomjs+selenium</p>
+<p>【下转：centos7无GUI下使用selenium】</p>
+<p>不折腾，等部署好以后在windows下测试</p>
+<h2 id="http状态码"><a href="#http状态码" class="headerlink" title="http状态码"></a>http状态码</h2><p>【来源】<a href="https://blog.csdn.net/grandPang/article/details/47448395" target="_blank" rel="noopener">https://blog.csdn.net/grandPang/article/details/47448395</a></p>
+<p>301和302状态码都表示重定向，浏览器在拿到这个状态码后会自动跳转到一个新的URL地址</p>
+<p><strong>301表示旧地址A的资源已经被永久地移除了（这个资源不可访问了），搜索引擎在抓取新内容的同时也将旧的网址交换为重定向之后的网址；302表示旧地址A的资源还在（仍然可以访问），这个重定向只是临时地从旧地址A跳转到地址B，搜索引擎会抓取新的内容而保存旧的网址。</strong></p>
+<p>301-代表永久性转移(Permanently Moved)</p>
+<p>302-代表暂时性转移(Temporarily Moved )</p>
+<p>【百度百科】</p>
+<p>401错误码</p>
+<p>HTTP 错误 401.1 - 未经授权：访问由于凭据无效被拒绝。</p>
+<p>您的Web服务器认为，客户端（例如您的浏览器或我们的 CheckUpDown 机器人）发送的 HTTP 数据流是正确的，但进入网址 (URL) 资源 ， 需要用户身份验证 ， 而相关信息 1 ）尚未被提供, 或 2 ）已提供但没有通过授权测试。这就是通常所知的“ HTTP 基本验证 ”。 需客户端提供的验证请求在 HTTP 协议中被定义为 WWW – 验证标头字段 (WWW-Authenticate header field) 。</p>
+<p>403错误码</p>
+<p>403错误，表示资源不可用。服务器理解客户的请求，但拒绝处理它，通常由于服务器上文件或目录的权限设置导致的WEB访问错误。</p>
+<p>【来源】<a href="https://juejin.im/post/5ad04750518825558b3e57bd" target="_blank" rel="noopener">https://juejin.im/post/5ad04750518825558b3e57bd</a></p>
+<p>401 “Unauthenticated”<br>403 Forbidden</p>
+<blockquote>
+<p>401是没有带认证信息或者带了错误的认证信息, 这时客户端可以修改认证信息进行重试; 而403是客户端带了正确的认证信息, 但服务器认为这个认证信息对应的用户是没有对应资源的访问权限的, 因此, 在向管理员获取相关权限之前, 是没有重试的必要的.</p>
+</blockquote>
+<h2 id="centos7无GUI下使用selenium"><a href="#centos7无GUI下使用selenium" class="headerlink" title="centos7无GUI下使用selenium"></a>centos7无GUI下使用selenium</h2><p>【来源】<a href="https://blog.csdn.net/xds2ml/article/details/52982748" target="_blank" rel="noopener">https://blog.csdn.net/xds2ml/article/details/52982748</a></p>
+<p><code>vi /etc/yum.repos.d/google.repo</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[google]</span><br><span class="line">name=Google-x86_64</span><br><span class="line">baseurl=http://dl.google.com/linux/rpm/stable/x86_64</span><br><span class="line">enabled=1</span><br><span class="line">gpgcheck=0</span><br><span class="line">gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub</span><br></pre></td></tr></table></figure>
+
+<p><code>yum install google-chrome-stable</code></p>
+<p><code>yum update</code></p>
+<p><code>yum install Xvfb</code></p>
+<p><code>yum install libXfont</code></p>
+<p><code>yum install xorg-x11-fonts*</code></p>
+<p>chromedriver下载</p>
+<p>wget <a href="https://chromedriver.storage.googleapis.com/74.0.3729.6/chromedriver_linux64.zip" target="_blank" rel="noopener">https://chromedriver.storage.googleapis.com/74.0.3729.6/chromedriver_linux64.zip</a></p>
+<h2 id="Youtobe上Flask课程学习"><a href="#Youtobe上Flask课程学习" class="headerlink" title="Youtobe上Flask课程学习"></a>Youtobe上Flask课程学习</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#linux下</span><br><span class="line">export FLASK_APP=flaskblog.py</span><br><span class="line">#windows下</span><br><span class="line">set FLASK_APP=flaskblog.py</span><br></pre></td></tr></table></figure>
+
+<p>查看一下 Nginx 的在 SELinux 中的类型 <code>http_port_t</code> 绑定的端口</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@iz2ze8rern8nx1sglo8ub1z ~]<span class="comment"># semanage port -l | grep http_port_t</span></span><br><span class="line">http_port_t                    tcp      <span class="number">80</span>, <span class="number">81</span>, <span class="number">443</span>, <span class="number">488</span>, <span class="number">8008</span>, <span class="number">8009</span>, <span class="number">8443</span>, <span class="number">9000</span></span><br><span class="line">pegasus_http_port_t            tcp      <span class="number">5988</span></span><br></pre></td></tr></table></figure>
+
+<p>开启debug模式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">	app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+<p>CSS引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link type=&quot;text/css&quot; href=&quot;&#123;&#123; url_for(&apos;static&apos;, filename=&apos;main.css&apos;) &#125;&#125;&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="爬虫部分"><a href="#爬虫部分" class="headerlink" title="爬虫部分"></a>爬虫部分</h2><p>1.中文词频统计jieba</p>
+<p>2.词云<a href="https://wordart.com/login?next=/edit/gvh0mvzkyzem" target="_blank" rel="noopener">https://wordart.com/login?next=/edit/gvh0mvzkyzem</a></p>
+<h2 id="SQLAlchemy复习"><a href="#SQLAlchemy复习" class="headerlink" title="SQLAlchemy复习"></a>SQLAlchemy复习</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask_sqlalchemy <span class="keyword">import</span> SQLAlchemy</span><br><span class="line">app.config[<span class="string">'SECRET_KEY'</span>]</span><br><span class="line">app.config[<span class="string">'SQLALCHEMY_DATABASE_URI'</span>] </span><br><span class="line">db = SQLAlchemy(app)</span><br></pre></td></tr></table></figure>
+
+<p>数据库中一对多关系</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">User model主要引用实际的Post Class</span></span><br><span class="line"><span class="string">而外键引用实际上是“表的名字.字段名”</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">User</span><span class="params">(db.Model)</span>:</span></span><br><span class="line">	...</span><br><span class="line">    posts = db.relationship(<span class="string">'Post'</span>,backref=<span class="string">'author'</span>,lazy=<span class="literal">True</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 外键</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Post</span><span class="params">(db.Model)</span>:</span></span><br><span class="line">    ...</span><br><span class="line">    user_id = db.Column(db.Integer,db.ForeignKey(<span class="string">'user.id'</span>),nullable=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<p>一个表只能有一个主键，可以有多个唯一性索引，主键可以被其他字段作外键引用，而索引不能作为外键引用。</p>
+<p><strong>外键在其他表是主键，是唯一值。在本表可以有多个，如果其他表没有某个主键值，在本表就不能插入这个外键值。</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">db.create_all()</span><br><span class="line">db.session.add(user_1)</span><br><span class="line">db.session.commit()</span><br><span class="line">User.query.all()</span><br><span class="line">User.query.first()</span><br><span class="line">User.query.filter_by(username='Corey').all()</span><br><span class="line">User.query.filter_by(username='Corey').first()</span><br><span class="line">user</span><br><span class="line">user=User.query.get(1)</span><br><span class="line">user.posts</span><br><span class="line">post_1 = Post(title='Blog 1',content='First Post Content!',user_id=user.id)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">db.drop_all()</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习日记/" rel="tag"># 学习日记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/30/学习日记-2019529/" rel="next" title="学习日记-2019529">
+                <i class="fa fa-chevron-left"></i> 学习日记-2019529
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/01/事件树算法（ETA）/" rel="prev" title="事件树算法(ETA)">
+                事件树算法(ETA) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zheng Jiani</p>
+              <p class="site-description motion-element" itemprop="description">喜欢，成就梦想</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengjiani" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Flask测试客户端"><span class="nav-number">1.</span> <span class="nav-text">Flask测试客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试Web服务"><span class="nav-number">2.</span> <span class="nav-text">测试Web服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#端到端测试（Selenium）"><span class="nav-number">3.</span> <span class="nav-text">端到端测试（Selenium）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http状态码"><span class="nav-number">4.</span> <span class="nav-text">http状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#centos7无GUI下使用selenium"><span class="nav-number">5.</span> <span class="nav-text">centos7无GUI下使用selenium</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Youtobe上Flask课程学习"><span class="nav-number">6.</span> <span class="nav-text">Youtobe上Flask课程学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爬虫部分"><span class="nav-number">7.</span> <span class="nav-text">爬虫部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQLAlchemy复习"><span class="nav-number">8.</span> <span class="nav-text">SQLAlchemy复习</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zheng Jiani</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

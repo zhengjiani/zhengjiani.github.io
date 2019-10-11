@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="software test,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="并行测试、变异测试">
+<meta name="keywords" content="software test">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件测试-文献阅读">
+<meta property="og:url" content="http://yoursite.com/2019/05/24/软件测试-文献阅读/index.html">
+<meta property="og:site_name" content="花茶树窝">
+<meta property="og:description" content="并行测试、变异测试">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdn.net/20180928163047241?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180928163121940?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180928163154385?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180928163216189?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/2018092816334630?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180928163406925?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180928190219789?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180928190242383?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180928190256270?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180928190311703?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://wiki.mbalib.com/w/images/math/3/c/f/3cf3bbc61815f1765ecb247ea443f16f.png">
+<meta property="og:image" content="https://wiki.mbalib.com/w/images/math/3/c/f/3cf3bbc61815f1765ecb247ea443f16f.png">
+<meta property="og:image" content="https://wiki.mbalib.com/w/images/math/9/5/7/9572939b197df452a7ea151e28a7faf7.png">
+<meta property="og:image" content="https://wiki.mbalib.com/w/images/math/1/3/6/13671e162bdf0a638b3334fa05301802.png">
+<meta property="og:image" content="https://img-blog.csdn.net/20180928190400477?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/2018092819041973?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180928190435350?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/2018092819101216?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180928191040215?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180928191105871?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/2018092819113510?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180928191153815?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2019-10-11T08:53:17.309Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件测试-文献阅读">
+<meta name="twitter:description" content="并行测试、变异测试">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180928163047241?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/24/软件测试-文献阅读/">
+
+
+
+
+
+  <title>软件测试-文献阅读 | 花茶树窝</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?870e68ebac7b44a2e5fc2f00b965a03b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花茶树窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/软件测试-文献阅读/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zheng Jiani">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花茶树窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">软件测试-文献阅读</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-24T10:36:59+08:00">
+                2019-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>并行测试、变异测试</p>
+<a id="more"></a>
+
+<h1 id="Using-Evolutionary-Computation-to-Improve-Mutation-Testing"><a href="#Using-Evolutionary-Computation-to-Improve-Mutation-Testing" class="headerlink" title="Using Evolutionary Computation to Improve Mutation Testing"></a>Using Evolutionary Computation to Improve Mutation Testing</h1><p>主要讲变异测试中使用遗传算法。</p>
+<p>Motivation:遗传算法可以减少变异体子集而不会丢失重要信息。分析了突变测试的最新进展，这有助于降低与此技术相关的成本，并提出应用它们来解决进化突变测试（EMT）中的当前缺陷.</p>
+<p>将重点放在突变测试中提出的方法应用于进化突变测试，这是一种基于遗传算法选择减少的突变体集的技术,并且整合以下方法：</p>
+<h4 id="1-基于质量度量的选择性变异。"><a href="#1-基于质量度量的选择性变异。" class="headerlink" title="1.基于质量度量的选择性变异。"></a>1.基于质量度量的选择性变异。</h4><p>​    我们可以选择丢弃一部分突变操作符（基于操作符的选择性突变）或优先选择最有价值的操作符（基于秩的突变体选择）的突变体。</p>
+<p>进化变异测试的提出：</p>
+<p>Dom´ınguez-Jim´enez, J.J., Estero-Botaro, A., Garc´ıa-Dom´ınguez, A., Medina-Bulo, I.: Evolutionary mutation testing. Inf. Softw. Technol. 53(10), 1108–1123 (2011). <a href="http://dx.doi.org/10.1016/j.infsof.2011.03.008" target="_blank" rel="noopener">http://dx.doi.org/10.1016/j.infsof.2011.03.008</a>                                                                                                                                                                                                                                                                                                                                                                                                                                     </p>
+<p>潜在等效变异体：测试套件未检测到的变异体</p>
+<p>难以杀死的变异体:仅通过特异性测试案例杀死的变异体，不会杀死其他变异体</p>
+<p>EMT可以找到强突变体。</p>
+<p>EMT降低变异测试成本的两个途径：</p>
+<ul>
+<li>EMT不是从所有变异算子生成突变体，而是仅根据质量度量在排名后从最佳值运算符生成突变体。</li>
+<li>不是以相同的概率产生突变体，而是以基于秩的方式选择突变体：从最佳值算子中选择突变体的概率更高。 该标准应用于在每一代遗传算法中随机产生的突变体子集。</li>
+</ul>
+<p>应用于C ++中的类级别的变异算子时，基于突变的选择产生比基于变异算子的选择更好的结果。</p>
+<p>EMT的优点：</p>
+<p>通过删除分类底部的变异算子，EMT的效率得到提高，因为它将避免遗传算法产生低质量的突变体。遗传算法可以更快地找到可以导致测试套件增强的那些突变体。 这些突变体可以标记为抗性突变体。</p>
+<p><strong>非等价变异体存活的原因是：1.测试套件不覆盖突变体。2.测试套件覆盖突变体但是却不能揭示其突变。</strong></p>
+<p>而第二点可以通过基于质量度量的突变体生成方式来改进。</p>
+<h4 id="2-多目标进化突变测试"><a href="#2-多目标进化突变测试" class="headerlink" title="2.多目标进化突变测试"></a>2.多目标进化突变测试</h4><p>在遗传算法的适应度函数方面应该考虑：</p>
+<ul>
+<li>最大化覆盖范围的影响：EMT不能区分等价变异体和抗性变异体，这样可以选择具有最高概率的非等价变异体。</li>
+<li>最大化代码的覆盖范围：最好在整个程序的代码中传播突变。</li>
+<li>最大化变异算子集中的散射</li>
+</ul>
+<h4 id="3-TCE-Trivial-Compiler-Equivalence"><a href="#3-TCE-Trivial-Compiler-Equivalence" class="headerlink" title="3.TCE (Trivial Compiler Equivalence)"></a>3.TCE (Trivial Compiler Equivalence)</h4><p>TCE可以自动的检测一些等价变异体。显示出能够在C编码的程序中平均减少30％的等效突变体集.</p>
+<p>TCE结合使用编译器gcc和实用程序diff：gcc用于编译代码并生成优化的可执行文件，而diff允许比较这些可执行文件以搜索程序的不同版本之间的等价。</p>
+<p>该机制可以检测两种类型的变异体：</p>
+<ul>
+<li>等价突变体的一个子集：原始程序的二元文件与突变体之间没有差异时，突变体被识别为等价。</li>
+<li>重复突变体的子集：当从突变体衍生的二元文件等于从另一个突变体衍生的二元文件时，突变体被识别为重复的。</li>
+</ul>
+<p>TCE中最昂贵的任务就是编译时间。</p>
+<h3 id="将EMT和TCE结合使用："><a href="#将EMT和TCE结合使用：" class="headerlink" title="将EMT和TCE结合使用："></a>将EMT和TCE结合使用：</h3><ul>
+<li>在执行EMT之前应用TCE，在这种情况下，编译所有突变体以创建可执行文件，TCE将它们与原始程序的可执行文件进行比较。然后标记由TCE检测为等价的那些突变体以避免它们可以在EMT的执行期间使用。</li>
+<li>在执行EMT期间应用TCE。 在这种情况下，使用TCE分析在每一代中选择的突变体。 那些被认定为等价的突变体通过分配给它们的适应值来惩罚。</li>
+</ul>
+<p>注意：</p>
+<p>TCE仅适用于C程序。</p>
+<p>在等价突变体和抗性突变体稍微不同的前提下，一些等价的突变体可能可以指导遗传算法选择新一代的抗性突变体。 因此，去除等价的突变体可能会影响对潜在等价突变体的搜索。</p>
+<p>future:</p>
+<p>尝试找到一种方法避免执行所有的测试用例来计算适应度函数，特别是在执行时间较长的时候。</p>
+<h1 id="CUT-Automatic-Unit-Testing-in-the-Cloud"><a href="#CUT-Automatic-Unit-Testing-in-the-Cloud" class="headerlink" title="CUT:Automatic Unit Testing in the Cloud"></a>CUT:Automatic Unit Testing in the Cloud</h1><p>ISSTA’17-DEMOS, July 2017, Santa Barbara, CA, USA</p>
+<p>Alessio Gambi, Sebastian Kappler, Johannes Lampel, and Andreas Zeller</p>
+<p>通过分布式环境并行运行单元测试。</p>
+<p>本文提出了一种云单元测试。一种在分布式执行环境中自动执行单元测试的工具。CUT为虚拟机或者容器分配适当的计算资源，并安排对它们执行测试，开发人员不需要更改现有的单元测试代码，并且可以轻松控制测试执行的资源分配和测试调度。执行期间，CUT监视器发布有关正在运行的测试的事件，这些事件启用了流分析。</p>
+<p>网址：<a href="https://www.st.cs.uni-saarland.de/testing/cut/" target="_blank" rel="noopener">https://www.st.cs.uni-saarland.de/testing/cut/</a></p>
+<p>在本文中，我们通过利用云等分布式执行环境的强大功能来解决加速测试执行的问题。</p>
+<p>CUT的优势：</p>
+<p><strong>完全自动化和透明度</strong>，CUT采用面向切面编程（AOP）来隐藏访问云的低级机制，并且将测试执行分布在开发人员的远程资源上。包括在多个单一测试方法级别自动并行化测试执行的能力。</p>
+<p><strong>高效的资源分配和灵活性</strong>。大多数基于云的测试解决方案。开发人员无法轻松控制测试运行的位置和每个测试的资源数量。CUT开发人员可以决定单元测试是在本地还是远程，以及需要多少资源。CUT允许测试执行共享计算资源，从而提高测试的成本和效率。</p>
+<p><strong>测试依赖性</strong>，当前用于并行化测试的解决方案假设完全依赖于单元测试。但是，测试并不总是独立的，这导致了非确定性的测试执行和误报。CUT可以采取考虑到测试依赖性信息以实现确定性执行。</p>
+<p><img src="https://img-blog.csdn.net/20180928163047241?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p>步骤：</p>
+<p><strong>set up:</strong></p>
+<p>config</p>
+<p>test runners</p>
+<p>准备好虚拟机后，根据集群策略将测试集中到独立的执行单元。根据部署策略将集群部署到本地或远程的测试运行器。根据调度策略命令测试执行。</p>
+<p>这些策略都由开发者定义。</p>
+<p><strong>Execution：</strong></p>
+<p>每个测试运行器从其队列中查看要执行的下一个测试（对象）的引用。然后，自定义类加载器尝试延迟加载正确执行单元测试所需的类和数据。如果测试运行器已经可以使用它们，则执行继续。否则，自定义类加载器从类中提取类的字节码和数据。同时，测试运行器缓存类和数据，使得这些可以在后续测试执行中重用，可能最小化总体执行开销。</p>
+<p><strong>Monitoring and Reporting</strong>：</p>
+<p>所有CUT组件都连接到共享事件序列以发布和接收监听事件。</p>
+<p>云管理器发布事件，如虚拟机的启动或关闭。</p>
+<p>测试运行器发布有关单元测试生命周期的事件：测试开始，完成和失败。</p>
+<p>分析和报告组件将所有事件存储为pository以进行进一步数据分析。</p>
+<p>porter组件面向开发人员并提供两种类型的报告：1.alive-report它捕获有关开发人员单元测试状态和上下文的事件流。2.测试执行的最终摘要，其中包括基本统计信息和有关失败测试的详细信息，即堆栈跟踪。</p>
+<p>消息中间件采用Apache ActiveMQ</p>
+<h4 id="技术实现："><a href="#技术实现：" class="headerlink" title="技术实现："></a>技术实现：</h4><p>采用Java实现。测试开源工具Junit。采用maven自动化构建。云的中间件选用 JCloud-Scale 。</p>
+<h4 id="实验环境："><a href="#实验环境：" class="headerlink" title="实验环境："></a>实验环境：</h4><p>使用<strong>Tachyon</strong>（加州大学伯克利分校AMPLab开发的高效虚拟分布式存储，附带一个广泛的测试套件）作为测试主题使我们有机会评估CUT在具有大型测试套件的系统环境中并行化测试执行的能力。</p>
+<p>使用<strong>Crystal</strong>评估CUT是否能正确处理测试的依赖性。</p>
+<p>对于此评估，我们选择使用轻量级容器而不是标准虚拟机，因为它们可以在逻辑上隔离测试执行，因为容器启动时间比VM要长。 但是，我们必须注意到CUT不仅限于容器;事实上，它可以在容器，虚拟机和虚拟机内的容器上分配单元测试。此外，CUT可以跨测试执行重复使用虚拟机，从而它们启动造成的开销。</p>
+<p>CUT构建测试依赖图，将属于同一弱连接的测试集群在一起，并根据拓扑排序在同一VM上的每个集群中执行测试。</p>
+<h4 id="最近工作："><a href="#最近工作：" class="headerlink" title="最近工作："></a>最近工作：</h4><p>将软件测试移植到云端。</p>
+<p>与HadoopUnit相比，CUT不需要广泛而繁琐的设置，允许开发人员控制资源分配，并且可以处理测试依赖性。</p>
+<p>future:</p>
+<p>Improved Strategies</p>
+<p>Continuous Integration in the Cloud</p>
+<p>Continuous Testing in the Cloud</p>
+<p>Concolic testing导向性随机测试</p>
+<h1 id="Distributed-software-testing"><a href="#Distributed-software-testing" class="headerlink" title="Distributed software testing"></a>Distributed software testing</h1><p><a href="https://patents.google.com/patent/US9811451B1/en" target="_blank" rel="noopener">https://patents.google.com/patent/US9811451B1/en</a></p>
+<p> 测试实例还可以配置被测软件和能够对软件执行测试的测试运行器。 软件测试服务可以将测试放在队列上，例如队列服务提供的队列。 在测试实例上执行的测试运行程序可以使测试出列并对软件执行测试。 一旦完成了测试软件的测试，就可以取消配置测试实例。</p>
+<p>背景：</p>
+<p>如果软件开发团队利用此类测试来批准对软件的更改，则执行测试所需的大量时间可能会限制团队进行代码更改的能力，并使更改能够及时部署到生产环境中。</p>
+<p>由于执行软件测试有时需要很长时间，因此一些软件开发团队最终会减少对软件执行的测试数量。 这意味着代码更改可以更快地到达生产环境。 但是，这也意味着软件包含错误的风险大于执行更彻底的测试的风险。 在许多环境中，部署包含错误的软件的风险较高是不可接受的。</p>
+<p>上述问题的一种解决方案是<strong>利用允许多线程执行测试的测试平台</strong>。 使用这样的平台，可以在同一过程中同时执行多个测试。 但是，这种解决方案通常有其自身的局限性。 例如，为了执行多线程测试执行，测试开发人员必须以确保测试对多线程执行安全的方式编写测试。 因此，为多线程执行创建测试可能需要软件开发人员进行大量额外的工作。 另外，<strong>多线程执行仅扩展到执行它们的计算机的计算资源（例如CPU和存储器）的限制。</strong> 因此，多线程执行测试的好处可能会受到限制。</p>
+<p>分布式软件测试的技术。通过这些技术的实现，开发人员创建的软件测试可以分发到多个测试实例，以便并行执行。通过以这种方式并行执行软件测试，与非并行执行相比，可以减少执行测试所需的时间量。此外，通过并行执行软件测试，可以执行确保高质量软件所需的大量测试，同时允许软件及时部署到生产环境中。这些技术使得能够并行执行软件测试，而不需要软件开发者以任何方式修改他们现有的测试。</p>
+<p>这里公开的软件测试服务<strong>被配置为接收对软件执行测试的请求（这里可以称为“被测软件”）</strong>。 该请求可以包括软件或对软件的引用，测试或对测试的引用，以及可能的一个或多个测试偏好。 例如，该请求可以由被测软件的软件开发者生成并提交给软件测试服务。</p>
+<p>开发人员指定的<strong>测试首选项</strong>可以定义关于<strong>如何将测试分发到测试实例以便并行执行的各种首选项</strong>。例如但不限于，测试首选项<strong>可以明确指定用于对软件执行测试的测试实例的数量</strong>。作为另一个示例，测试首选项可以<strong>指定测试的最大执行时间</strong>。在这种情况下，可以基于测试的历史测试执行时间数据来确定用于在大约最大执行时间内完成测试的测试实例的数量。或者，如果历史测试执行时间数据不可用于测试，则可以基于与测试类似的其他测试的历史测试执行时间数据来确定用于在大约最大执行时间内完成测试的测试实例的数量。要进行。<strong>测试偏好</strong>还可以指定关于执行测试的方式的其他或替代偏好。</p>
+<p>一旦确定了用于测试的测试实例的数量，软件测试服务就可以使测试实例被供应。 例如，在一种配置中，<strong>软件测试服务可以利用在服务提供商网络中执行的按需计算服务来提供测试实例</strong>。 测试实例可以是VM实例，软件容器，专用服务器计算机或适合于对被测软件执行测试的其他类型的软件执行环境。 一旦配置了测试实例，就可以将测试中的软件和测试运行器部署到测试实例。 <strong>测试运行器是可执行软件，配置为获得测试，对被测软件执行测试，并提供测试结果。</strong></p>
+<p>在一个特定配置中，<strong>软件测试服务被配置为利用由在服务提供商网络中执行的队列服务提供的队列来向在测试实例上执行的测试运行器提供测试。</strong> 例如，软件测试服务可以在这样的队列上放置测试或包括对测试的引用的消息。 在测试实例上执行的测试运行器可以使测试从队列中出列，并对测试中的软件执行测试。 <strong>测试运行器将继续出列测试并执行测试，直到队列中没有进一步的测试。</strong></p>
+<p>软件测试服务还可以确定是否所有测试都已完成。 <strong>如果已完成测试软件的所有测试，则可以取消配置测试实例</strong>。 例如但不限于，可以指示在服务提供商网络中执行的按需计算服务来取消供应测试实例。 通过这种方式，测试实例仅在测试期间使用，并且一旦测试完成就可以销毁。</p>
+<h1 id="Cloud-Based-Parallel-Concolic-Execution"><a href="#Cloud-Based-Parallel-Concolic-Execution" class="headerlink" title="Cloud-Based Parallel Concolic Execution"></a>Cloud-Based Parallel Concolic Execution</h1><p>解决路径爆炸（Path explosion）问题，本文提出了一种名为PACCI的方法，通过利用云基础设施来并行化执行并适应计算资源的剧烈变化。PACCI为MapReduce编程模型量身定制了执行，并考虑了云基础架构的功能。</p>
+<p>主要解决了几个挑战性的问题：</p>
+<p>独立探索不同的程序路径。</p>
+<p>构建可扩展的路径探索模块，以支持从全局角度确定测试输入的优先级。</p>
+<p>初步实验结果表明，PACCI是可扩展的（例如，使用24个节点获得大约20倍的加速），并且其效率分别在资源波动和节点故障下略微下降约5％和6.1％。</p>
+<p>具体而言，PACCI通过将程序的复杂执行视为任务来定制对MapReduce编程模型的执行，并动态地将任务划分为映射子任务并减少子任务。一个map子任务收集一个路径条件并生成一个测试输入组，而一个reduce子任务优先生成测试输入。</p>
+<p>设计PACCI时面临的挑战：</p>
+<ul>
+<li>首先，由于具有执行性的迭代性，因此独立探索每条路径并非易事。我们通过仔细设计并行的concolic执行来解决这个问题，包括由子任务完成的工作，子任务的连接和接口，子任务的维护和调度等。</li>
+<li>其次，设计可扩展的并不简单。</li>
+<li>路径探索模块，用于支持测试输入的全局优先级。</li>
+</ul>
+<p>PACCI将路径探索算法放在减少子任务中，以便它具有由映射子任务产生的所有数据的全局视图，并允许用户包括更多路径探索算法。</p>
+<p>我们已经在Spark和Mesos之上实现了PACCI。 初步评估结果表明，PACCI与计算节点的数量呈线性关系，在资源波动和节点故障下的效率方面表现良好。</p>
+<p>主要贡献：</p>
+<p>  •<strong>我们提出了PACCI，这是一种新颖的并行执行器，可以加速执行，并通过利用云来适应计算资源的变化。</strong><br>  •<strong>我们实现了PACCI，初步结果表明PACCI具有可扩展性，即使存在资源波动和节点故障也能很好地运行。 PACCI是<a href="https://github.com/SymSecGroup/PACCI的开源软件。" target="_blank" rel="noopener">https://github.com/SymSecGroup/PACCI的开源软件。</a></strong></p>
+<p><img src="https://img-blog.csdn.net/20180928163121940?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p><strong>如何确保每个程序路径的探索独立于其他路径？</strong></p>
+<p>遵循MapReduce编程模型，PACCI使用映射子任务来探索单个路径。 每个map子任务都使用一个测试输入运行程序，收集路径条件，并生成新的测试输入（如果有的话）。 我们使用驱动程序来维护和分派map subtasks，以便map subtasks不需要相互协调。</p>
+<p><strong>如何实现可扩展的globalaware路径探索模块？</strong></p>
+<p>我们在减少例程中实现路径探索算法，以便PACCI可以处理所有未执行的测试输入，即使它们位于不同的从站中。 此外，我们在单独的模块中包含路径探索的代码，因此分析人员可以通过简单地扩展reduce子任务例程来添加自己的路径探索算法。</p>
+<h1 id="Test-Driven-Development-for-Parallel-Applications"><a href="#Test-Driven-Development-for-Parallel-Applications" class="headerlink" title="Test-Driven Development for Parallel Applications"></a>Test-Driven Development for Parallel Applications</h1><p>2017 Second International Conference on Information Systems Engineering</p>
+<p>John W. Burris </p>
+<p>本文将介绍一种使用TDD进程进行并行请求开发的方法，介绍TestDriven开发过程，一个用于并行编程的示例API，以及由xUnit单元测试框架促进的单元测试。</p>
+<p>MPI</p>
+<p>The MPI standard is widely used in <strong>the high-performance computing industry</strong> and has <strong>multiple cross-platform implementations</strong>. </p>
+<p>MPI规范允许特定于并行应用程序的逻辑错误，这些错误不容易使用TDD捕获。</p>
+<p><strong>死锁</strong>和<strong>竞争条件</strong>是两个这样的逻辑错误</p>
+<p>竞争条件是执行结果可以根据从其他异步执行线程接收的消息顺序而改变的条件。</p>
+<p>用于确定这些错误中任何一个错误的可能性的用例的有效性是未来研究的一个领域。</p>
+<p>将TDD应用到并行应用的步骤：</p>
+<p>识别将在<strong>单个执行线程中</strong>运行的应用程序的部分（在需求中给出）以及将<strong>并行运行的软件部分</strong>。</p>
+<p>在单个执行线程中运行的部分采用传统的TDD方法，并且可以和并行部分独立开来。</p>
+<p>并行软件设计的四部分：</p>
+<p>partition(分区), communication(通信), agglomeration(集聚), and mapping(映射).</p>
+<p>分区涉及将系统分解为较小的任务。 通信是为了实现并行性而创建如何传递消息的计划。 集聚将流程组合在一起以提高表现。 映射将特定任务分配给特定进程。</p>
+<p>Designing and Building Parallel Programs: Concepts and Tools for Parallel Software Engineering. Reading, </p>
+<h1 id="COMPI-Concolic-Testing-for-MPI-Applications"><a href="#COMPI-Concolic-Testing-for-MPI-Applications" class="headerlink" title="COMPI:Concolic Testing for MPI Applications"></a>COMPI:Concolic Testing for MPI Applications</h1><p>Concolic Testing：concrete and symbolic混合实际执行和符号执行的测试</p>
+<p>Concolic执行维护一个实际状态和一个符号化状态：实际状态将所有变量映射到实际值，符号状态只映射那些有非实际值的变量。Concolic执行首先用一些给定的或者随机的输入来执行程序，收集执行过程中条件语句对输入的符号化约束，然后使用约束求解器去推理输入的变化，从而将下一次程序的执行导向另一条执行路径。</p>
+<p><strong>就是在已有实际输入得到的路径上，对分支路径条件进行取反，就可以让执行走向另外一条路径。</strong>这个过程会不断地重复，加上系统化或启发式的路径选择算法，直到所有的路径都被探索，或者用户定义的覆盖目标达到，或者时间开销超过预计。</p>
+<p>COMPI:</p>
+<p>MPI应用程序的第一个实用的concolic测试工具。</p>
+<p>对MPI程序检测的要求：</p>
+<ul>
+<li>检测MPI语义相关的错误</li>
+<li>大规模检测或诊断复杂的错误</li>
+<li>最终复制并表现出非确定性错误</li>
+</ul>
+<p>MPI程序的特点：</p>
+<ul>
+<li>只测试一个进程的标准的concolic测试对于运行多个进程的MPI应用程序来说是不够的。</li>
+<li>测试不能发现只能在使用一定数量的进程后才能执行的分支，因为它忽略了MPI语义使得它无法改变进程的数量。</li>
+</ul>
+<p>开销：</p>
+<ul>
+<li>首先，太大的输入会使测试变得非常慢，有时甚至会因为所需的内存超出计算平台的内存限制而失败。</li>
+<li>其次，使用相同的重量级仪器运行所有进程会产生不必要的高开销，因为并非所有进程都需要执行符号执行。</li>
+<li>第三，在存在表征MPI应用程序的循环时浪费了太多的努力，因为循环导致生成太多冗余约束并且解决以及使用它们进行测试无助于提高分支覆盖率。</li>
+</ul>
+<p>COMPI降低开销的策略:</p>
+<p>输入上限、双向控制、减少约束集</p>
+<p>COMPI的工作流程:</p>
+<p>Instrumentation</p>
+<p>Testing</p>
+<p>由于其对MPI语义的了解，它通过改变进程数量和焦点过程自动驱动测试。 记录所有流程的覆盖范围可确保准确记录整体覆盖范围。</p>
+<p>选用的搜索策略：</p>
+<p>BoundedDFS</p>
+<h1 id="Parallel-mutation-testing"><a href="#Parallel-mutation-testing" class="headerlink" title="Parallel mutation testing"></a>Parallel mutation testing</h1><p>并行运行突变体以提高变异测试的效率</p>
+<p>变异测试的开销：</p>
+<p> the number of mutants generated </p>
+<p> on the number of test cases</p>
+<p><strong>Nm</strong>:number of mutants(变异体的数量)</p>
+<p><strong>Gt</strong>:generation time of one mutant一个变异体的产生时间</p>
+<p><strong>Ntc</strong>:number of test cases测试用例的数量</p>
+<p><strong>Et</strong>:execution time of one test case一个测试用例的执行时间</p>
+<p>M$<em>t$=G$_t$*N$_m$+max{Et$_i$ * N$</em>{tci}$ * (N$_{mi}$+1)}</p>
+<p>因此，研究并行变异测试技术是减少突变体执行时间而不失去有效性的必要任务。</p>
+<p><img src="https://img-blog.csdn.net/20180928163154385?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p>本论文主要关注测试执行阶段的执行时间</p>
+<p>降低执行阶段的计算成本。</p>
+<p>文章结构：</p>
+<p>第2节描述了并行变异测试的一些工作，并证明了对该技术的新研究的必要性。</p>
+<p>第3节描述了研究中使用的分布算法。</p>
+<p>第4节用于执行实验的工具。</p>
+<p>第5节显示了实验的设计。</p>
+<p>第6节描述了获得的结果。</p>
+<p>第7节给出了一些结论和未来的工作。</p>
+<p>作者提出了三种分布算法：</p>
+<p>按原始顺序分发变异体，随机均匀的分发变异体，突变型变异体的均匀分布。</p>
+<p>关于静态分布算法，作者确定最有效的算法通过<strong>突变类型分配突变体</strong>，因为它实现了最高的加速。</p>
+<p>突变体分布的动静态策略以及测试用例分布的动静态策略。</p>
+<p>优化计算资源的使用：</p>
+<p>通常，使用比处理器更多的块并且具有相对小的块来获得最佳结果。chunk是一组发送到处理器的任务。</p>
+<p>动态策略：</p>
+<p>‘Guided Self-Scheduling’ 引导式自我调度</p>
+<p>Factoring Self-Scheduling保理自我调度</p>
+<p>‘Trapezoid Self-Scheduling’ 梯形自我调度</p>
+<p> ‘Quadratic Self-Scheduling’ 二次自我调度</p>
+<p>实现了两种静态和三种动态算法</p>
+<ul>
+<li>DMBO(Distribute Mutants Between Operators )在算子之间分配突变体。<strong>根据变异体集合划分</strong>。这是一种静态算法，将给定变异算子生成的突变体分布在与处理器一样多的块中。每个块包含m$_{op}$/p个变异体。这种算法减少了节点之间通信的时间，并且网络流量是最小的。因为每个处理器仅在突变过程中接收一次块。但是每个处理器的处理时间不同。 然而，由于突变体和测试用例的性质，并非所有的执行都需要相同的时间，因此可能和Offutt等人的工作一样。 [16]显示，某些处理器将先于其他处理器完成，总处理时间将是最慢处理器所用的时间。</li>
+<li>DTC(Distribute Test Cases )适应负载均衡策略的变异测试。静态算法，<strong>根据测试用例的数量划分。</strong>每个块包含t/p个测试用例。缺点是处理器之间不通信。</li>
+<li>GMOD(Give Mutants On Demand )按需提供突变体算法。是一个动态算法。将执行分成仅包含一个具有所有测试用例的突变体的块。因此，分几次将块传送到并行处理器，直到所有块都被传送出去。增加了节点之间的通信，因为许多块被发送到每个处理器并且网络流量也增加了。因此网络特性可能对总时间有很大影响。由于算法的动态特性，所有并行处理器几乎可以同时完成。</li>
+<li>GTCOD(Give Test Cases On Demand )适应负载均衡分配策略的。动态算法，将执行分成块，每个块只包含一个测试用例和所有突变体。增加了节点之间的通信，因为许多快被发送到每个处理器并且网络流量增加，这个算法增加了传输GOD的算法，因为突变体的数量通常远高于测试用例的数量。处理器之间没有通信。</li>
+<li>PEDRO( Dynamic Ranking and Ordering )动态排序算法。包含俩个阶段：<strong>1，排名阶段类似于DMBO算法。2，排序阶段与GMOD算法类似。</strong>第一个阶段不会增加网络流量，第二个阶段可以防止某些并行处理器在其他处理器之前完成。可以配置的两个参数：1，用户确定的整数用于确定每个阶段中要执行的块的数量。2，并行处理器的数量，提供使算法适应并行系统所需的信息。排名阶段向每个处理器发送相同数量的工作。这个阶段对于后续订购阶段的节点排名很有用。 在此第一阶段，执行仅发送到处理器节点一次，从而减少了网络流量。</li>
+</ul>
+<p>工具介绍：</p>
+<p>Bacterio：</p>
+<p><strong>local node;remote executor node;facade node</strong></p>
+<p>每一个节点都可以放在不同的计算机上。</p>
+<p>local node:</p>
+<p> create mutants, execute mutants and view results</p>
+<p>执行过程：</p>
+<p>突变体创建和结果计算在本地节点中执行，并且只有测试用例的执行在远程执行器节点上并行执行。这些节点接收测试和突变体，执行突变体并发送回 检测结果。 外观节点负责根据所选择的分发算法从本地节点接收所有突变体和测试以及它们在远程执行器节点之间的分布。</p>
+<p><img src="https://img-blog.csdn.net/20180928163216189?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p>本地节点：</p>
+<p>它生成突变体并使用从其他节点获得的测试结果计算测试实现的突变分数。</p>
+<p>远程节点：</p>
+<p>充当执行程序服务器，当突变过程开始时，该节点未被通知并询问块（由突变体和测试集组成）。当接收到存储空间时，远程执行程序会执行测试，以获得包含块的重要信息，并将测试结果发送回去。 然后它要求更多的执行。 如果没有更多的执行要运行，它会再次等待另一个突变过</p>
+<p>外观节点:</p>
+<p><img src="https://img-blog.csdn.net/2018092816334630?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p>实验在四个应用程序上进行。 其中三个用于比较第3节中描述的五种算法。然后将两种最相似的算法与第四种应用进行比较。 所有应用程序都是用Java编写的。</p>
+<p>这四种应用程序分别使:</p>
+<p>Monopoly:用程序模拟Monopoly棋盘游戏。</p>
+<p>Cinema：电影院管理系统。</p>
+<p> Chess：在线国际象棋游戏，实验中仅使用服务器部分。</p>
+<p>Analysis package of Commons Math:包含数学和统计功能的类库。</p>
+<p><img src="https://img-blog.csdn.net/20180928163406925?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p>每个应用都有一个Junit的测试套件。</p>
+<p>实验结果及分析：</p>
+<p>PEDRO and GMOD 算法获得了较好的结果。 DMBO是第三个比较好的算法。</p>
+<p>主要原因在于等待时间。另一个原因是通信时间的影响。因此，等待时间对总时间几乎没有影响，这意味着以等待时间为代价减少总时间的算法（GMOD和PEDRO算法）优于反向算法（DMBO算法）。</p>
+<p>remoteExecutor节点无法知道被其他remoteExecutor节点杀死的突变体，因此，它可能执行已经被另一个节点杀死的突变体。</p>
+<p> the DTC and GTCOD algorithms ran more executions than the others, with GTCOD algorithm being worse than DTC algorithm</p>
+<p>(i)研究并行执行技术在增加并行节点数量时的行为，以及（ii）研究该技术在同构和异构环境中的行为。</p>
+<p>当计算机数量显着增长时，就会达到一个点，效率不会增加而是会降低。</p>
+<p>并行执行技术可以快速有效地降低突变的计算成本。 由于它是第一个快速降低计算成本的部分，因此只需要少量计算机即可。 例如，在实验中使用具有八个并行计算机的环境，即8C1异构环境。 在Analysis包的情况下，总时间将执行时间减少了86.55％（从6131减少到825秒）。</p>
+<p>﻿</p>
+<h1 id="A-Path-Coverage-Based-Reduction-of-Test-Cases-and-Execution-Time-Using-Parallel-Execution"><a href="#A-Path-Coverage-Based-Reduction-of-Test-Cases-and-Execution-Time-Using-Parallel-Execution" class="headerlink" title="A Path Coverage-Based Reduction of Test Cases and Execution Time Using Parallel Execution"></a>A Path Coverage-Based Reduction of Test Cases and Execution Time Using Parallel Execution</h1><p>基于路径覆盖的并行执行减少测试用例和执行时间</p>
+<p>© Springer Nature Singapore Pte Ltd. 2019 M. N. Hoda et al. (eds.), Software Engineering, Advances in Intelligent Systems and Computing </p>
+<p>在本文中，生成一组测试，每个测试遍历指定的路径。 目的是确保代码中没有任何路径不被覆盖。 对于这些路径，生成大量测试数据是非常繁琐的任务。 结果，应该应用某种策略来减少大量冗余的测试用例的数量，即重复的同一组测试用例。 通过应用策略来避免冲突，将超出测试路径生成以减少冗余并生成有效的测试用例以覆盖控制流图中的所有路径。</p>
+<p>现有技术的潜在缺点是它们仅覆盖了一条单一路径。</p>
+<p>算法的过程：</p>
+<p>1.使用源代码（对于确定三个给定整数f，s和t 的中间值的程序），绘制问题的相应<strong>控制流图</strong>。</p>
+<p>2.然后，从图（流图）确定<strong>圈复杂度</strong>。</p>
+<p>3.之后，确定<strong>线性独立路径</strong>的基组。</p>
+<p>4.然后，使用<strong>ReduceDomains算法</strong>减少每个输入变量的域。</p>
+<p>5.在生成测试套件之后，通过使用<strong>代数条件</strong>将特定值分配给变量并检查覆盖标准，判断是否满足。</p>
+<p>6.应用<strong>并行测试用例执行器</strong>，以减少大量冗余的测试用例。</p>
+<p>控制流图的描述信息：</p>
+<p><img src="https://img-blog.csdn.net/20180928190219789?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p>每一个状态由一个节点表示，每一个边表示状态的转移。圈复杂度用于确定来自流图的线性独立路径的数量，它是获得最大代码覆盖率所需的测试集总数的标志，随后的测试集提供了比语句和分支覆盖更深入的测试，</p>
+<p>V (G)=e − n +2 p，e和n是控制流图中边的总数和节点总数,p是图的连接组件数目(图的组件数是相连节点的最大集合)。控制流图都是连通的，所以p=1。<strong>V(G)的值是程序中所有可能执行路径的标志，表示完全测试方法所需的测试用例数量的下界。</strong></p>
+<p><img src="https://img-blog.csdn.net/20180928190242383?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdn.net/20180928190256270?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdn.net/20180928190311703?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p>由于每个独立的路径都是通过线程并行执行的，所以它包含了测试用例的所有组合。</p>
+<p><strong>圈复杂度详解：</strong></p>
+<p><a href="https://www.jianshu.com/p/a21cc7579691" target="_blank" rel="noopener">https://www.jianshu.com/p/a21cc7579691</a></p>
+<p>其他计算圈复杂度的方法：</p>
+<p>计算公式2：V(G)=区域数=判定节点数+1。其实，圈复杂度的计算还有更直观的方法，因为圈复杂度所反映的是“判定条件”的数量，所以圈复杂度实际上就是等于判定节点的数量再加上1，也即控制流图的区域数。</p>
+<p>对于多分支的CASE结构或IF-ELSEIF-ELSE结构，统计判定节点的个数时需要特别注意一点，要求必须统计全部实际的判定节点数，也即每个ELSEIF语句，以及每个CASE语句，都应该算为一个判定节点。</p>
+<p>计算公式3：V(G)=R。其中R代表平面被控制流图划分成的区域数。</p>
+<p>适用场景：</p>
+<p>针对程序的控制流图计算圈复杂度V(G)时，最好还是采用第一个公式，也即V(G)=e-n+2；而针对模块的控制流图时，可以直接统计判定节点数，这样更为简单；针对复杂的控制流图是，使用区域计算公式V(G)=R更为简单。</p>
+<p><strong>路径覆盖：</strong></p>
+<p><strong>路径覆盖</strong>是指选取足够多的测试数据，使程序的每条可能路径都至少执行一次（如果程序图中有环，则要求每个环至少经过一次）。路径覆盖是覆盖率最高的一种覆盖技术。</p>
+<p>路径覆盖率的公式：路径覆盖率=被执行到的路径数/程序中总的路径数。</p>
+<p>独立路径数的计算：</p>
+<blockquote>
+<p>第一步，从流图中找出程序所有的必经节点（流图中任何独立路径都必定经过的节点叫做必经节点），记作IV（i），其中i为整数且。</p>
+<p>第二步，从流图中找出从必经节点N（i）到必经节点N（i+1）的独立路径数W（i），其中i为整数且<img src="https://wiki.mbalib.com/w/images/math/3/c/f/3cf3bbc61815f1765ecb247ea443f16f.png" alt="0 \le i&lt;N">。</p>
+<p>第三步，重复上一步，直到程序结尾。</p>
+<p>第四步，根据乘法法则，独立路径数= W（i），其中i为整数且<img src="https://wiki.mbalib.com/w/images/math/3/c/f/3cf3bbc61815f1765ecb247ea443f16f.png" alt="0 \le i &lt; N">，即独立路径数=W（0） * W（1） * ⋯ * W（N一1）。</p>
+</blockquote>
+<p>完全路径是指所有独立路径的集合，非完全路径就是所有独立路径集合的真子集。由于程序中可能会包含有多个条件的判定，所以<a href="https://wiki.mbalib.com/wiki/%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E5%9B%BE" target="_blank" rel="noopener">程序流程图</a>可能包含有隐含路径，从而有程序流图转换成的对应流图可能包含有隐藏路径。</p>
+<p>消除隐含路径的办法就是将含有多个条件的判定分为多个判定。</p>
+<p>完全路径覆盖的具体步骤：</p>
+<blockquote>
+<p>1、将判定语句的条件进行分离，细化程序流程图，使其不含隐含路径。</p>
+<p>2、根据程序流程图画出流图，找出必经节点，必经节点数为N。</p>
+<p>3、将<a href="https://wiki.mbalib.com/wiki/%E7%A8%8B%E5%BA%8F%E6%B5%81%E7%A8%8B%E5%9B%BE" target="_blank" rel="noopener">程序流程图</a>在必经节点处割断，将整个程序<a href="https://wiki.mbalib.com/wiki/%E5%88%86%E8%A7%A3" target="_blank" rel="noopener">分解</a>为N+1个程序片断。</p>
+<p>4、找出程序片断i的完全路径，为程序片断i的每条独立路径设计用例，其中：<img src="https://wiki.mbalib.com/w/images/math/9/5/7/9572939b197df452a7ea151e28a7faf7.png" alt="1 \le i \le N+l">。</p>
+<p>5、结合所设计的测试用例，将程序片断i的参数初始化，其中<img src="https://wiki.mbalib.com/w/images/math/1/3/6/13671e162bdf0a638b3334fa05301802.png" alt="1 \le i \le N+1">。</p>
+<p>6、将测试用例付诸测试，重复第四步至第六步，直到i=N+1。</p>
+</blockquote>
+<p>Coverall algorithm覆盖算法</p>
+<h1 id="A-path-aware-approach-to-mutant-reduction-in-mutation-testing"><a href="#A-path-aware-approach-to-mutant-reduction-in-mutation-testing" class="headerlink" title="A path-aware approach to mutant reduction in mutation testing"></a>A path-aware approach to mutant reduction in mutation testing</h1><p>Information and Software Technology</p>
+<p>Chang-ai Sun ，Feifei Xue， Huai Liu ，Xiangyu Zhang</p>
+<p>减少变异体的数量来减少测试代价。定义了两个path-aware启发式规则：分别名为模块深度和循环深度规则，并且结合基于状态和变异算子选择提出四种变异体选择策略。与随机变异体选择策略相比，有更高的有效性。</p>
+<p><img src="https://img-blog.csdn.net/20180928190400477?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p>我们应该对变异体给予更高的优先级，因为变异体的相关缺陷位于较深的位置。</p>
+<p>减少变异体数量的一些前期工作：</p>
+<p>1.random mutant selection(可能会丢弃一些很难被杀死的变异体)</p>
+<p>2.operator-based mutant selection</p>
+<p>一些定义：</p>
+<p>m-&gt;n 模块m调用模块n</p>
+<p>Callers(m)={x|x-&gt;m}模块m直接调用者的集合。</p>
+<p>MD(m$_i$):m$_i$基于所有模块调用关系的模块深度</p>
+<p><img src="https://img-blog.csdn.net/2018092819041973?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p><img src="https://img-blog.csdn.net/20180928190435350?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p>LD(b$_i$)循环/分支深度</p>
+<p><img src="https://img-blog.csdn.net/2018092819101216?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"><br>路径感知减少变异体的方法：<br><img src="https://img-blog.csdn.net/20180928191040215?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"><br>Depth:变异体的相关缺陷位于较深的位置</p>
+<p>Diversity:选择变异体的多样性由不同的启发式规则获得</p>
+<p>传统变异分析 T=&lt;P,S,D,L,A&gt;</p>
+<p>本文的方法中：</p>
+<p>E=&lt;P,S,D,L,A,P$_r$&gt;</p>
+<p>P$<em>r$是A$_i$中每一个可替代a$</em>{i,j}$发生的可能性</p>
+<p>L=&lt;Loc,MD,LD&gt;</p>
+<p>启发式规则：</p>
+<p><strong>module depth,loop/branch depth,</strong>statement selection,Operator selection</p>
+<p>减少变异体的策略：</p>
+<p>md-ld-op,<strong>ld-md-op</strong>表现最好,</p>
+<p>stm-ld-md,op-ld-md非path-qware技术</p>
+<p>实验步骤：</p>
+<p>a.选择与所有非等价变异体相关的目标程序Mu$_{all}$</p>
+<p>b.取0到100的实数x,变异体的抽样比x%。</p>
+<p>c.应用一个变异体减少策略选择x%以获得变异体子集Mu$_{reduced}$</p>
+<p>d.使用随机测试技术构建测试套件，在目标程序的测试池中随机选择测试用例直到所有Mu$_{reduced}$中的变异体被杀死。</p>
+<p>e.应用TS去测试Mu$<em>{all}$中所有的变异体并且计算变异评分MS$</em>{all}$</p>
+<p>未来工作：</p>
+<p>1.发现更多的启发式规则并且设计更多的精确减少策略。</p>
+<p>2.构建在大型系统中评估路径感知方法有效性和应用的方法，不同领域的应用。</p>
+<p>文献：</p>
+<p>[28]对于单元和集成测试选择部分变异算子，这个方法可以有效减少变异体数量没有考虑变异评分的危害。</p>
+<p>[29]java程序的三种典型的变异算子，发现已经存在的冗余变异体可能会影响包括有效性和变异测试的质量，并且也给出了一些移除冗余变异体的方法。</p>
+<p>[30]one-op变异。</p>
+<p>[10]随机变异体选择等价于基于变异算子的选择。</p>
+<p>[31]并行变异算子的选择可以有效地减少变异体的数量，并且表现胜过随机选择。</p>
+<p>[32]随机选择和基于变异算子的变异体选择结合。</p>
+<p>[33]高阶变异体</p>
+<p>[44]检测等价变异体的技术</p>
+<p><strong>优化执行时间的方法：</strong></p>
+<p>[19]在编译器中使用工具减少变异体生成和编译的时间。</p>
+<p>[45]schema-based方法，字节码翻译技术允许变异体直接执行因此可以节省编译时间</p>
+<p>[47]提出一个技术ReMT去提高变异测试有效性通过软件测试进化过程</p>
+<p>[48]提出了另一种技术FaMT最小化和最优化每个变异体的测试用例</p>
+<p>[49,50]变异测试工具</p>
+<p>[51]变异测试中应用程序路径，提出了一种基于路径的测试用例生成方法，在杀死变异体方面是有效的</p>
+<h1 id="Selective-Mutation-Testing-for-Concurrent-Code"><a href="#Selective-Mutation-Testing-for-Concurrent-Code" class="headerlink" title="Selective Mutation Testing for Concurrent Code"></a>Selective Mutation Testing for Concurrent Code</h1><p>并发代码的选择性突变测试<br>这篇论文关注的并发代码是指shared-memory concurrent code.也就是共享内存的并发代码。<br>共享内存系统的主要特性是：</p>
+<ul>
+<li>内存对于所有处理器来说是一样的，例如，所有处理器所对应的相同数据结构都存在于相同的逻辑地址，也就是说可以从相同的内存单元中获得该数据结构。</li>
+<li>通过控制处理器对共享内存的访问权限可以达到同步控制的效果。实际上，每次只有一个处理器拥有对内存资源的访问权限。</li>
+</ul>
+<ul>
+<li>当一个任务正在访问共享内存的时候，其它所有任务都不能改变内存单元的内容。</li>
+</ul>
+<ul>
+<li>共享内存很快，两个任务通讯的时间和读取单个内存单元的时间相等（取决于内存的访问速度）</li>
+</ul>
+<p><img src="https://img-blog.csdn.net/20180928191105871?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"><br>选择性变异：仅使用一部分来减少变异体数量，使得杀死由该子集产生的所有变异体的测试套件也能杀死所有变异算子产生的所有变异体。</p>
+<p><strong>并发bug:数据竞争，原子性违背，死锁。</strong></p>
+<p>选择变异体子集的两种方式：</p>
+<p>1.selective mutation</p>
+<p>2.random selection</p>
+<p>比较的方面：</p>
+<p>1.<strong>变异体数量：</strong>未选择的变异体数量/产生的变异体总数</p>
+<p>2.<strong>非选择性变异得分的有效性：</strong>杀死所有选定的非等价变异体的测试套件杀死的所有生成的非等价变异体的百分比。</p>
+<p>对于并发代码的评估：</p>
+<p>1.详尽的分析了所有可能的变异算子子集 的cost和effectiveness的权衡。</p>
+<p>（用尽可能少的并发算子，尝试所有可能变异子集最佳成本效率）</p>
+<p>2.比较不同选择性方法之间的成本。</p>
+<p>（突变体的数量，并发测试的勘探成本）</p>
+<p>3.评估顺序程序和并发程序的变异算子是独立的还是相互包含的。</p>
+<p>并发测试套件可以获得对于顺序执行程序来说<strong>高变异分数</strong>。</p>
+<p><strong>本文提出了三种新的变异算子：RTS,MTS,WTIS</strong></p>
+<p>RTS:删除Thread对象上start方法的调用。</p>
+<p>MTS:在Thread对象上移动start方法的调用。</p>
+<p>RTS和MTS产生的变异体可能会导致程序死锁。</p>
+<p>WTIS：在同步块内将while替换成if,可能会导致原子性违背。</p>
+<p><strong>插入变异体的方法：</strong></p>
+<p>1.创建SUT的多个拷贝并在每个拷贝中插入一个变异体，从而产生与变异体一样多的拷贝。</p>
+<p>2.使用变异模式：为所有变异体仅创建SUT的一个变异版本，使得全局ID指定启用哪个变异体。</p>
+<p>并行测试与顺序执行程序之间的测试的一个显著差异在于并行测试依赖于线程调度。</p>
+<p>难点：给定并发程序，测试和变异体，有必要执行原始程序和变异体所有可能的进程以确定变异体是否被杀死。</p>
+<p>false negative:变异代码中从未执行导致不同输出的调度，则可能无法检测变异体被杀死。</p>
+<p>false positive:变异代码上获得的输出与原始代码上获得的输出不同，则可能会报告变异体被杀死。</p>
+<blockquote>
+<p>研究中提出9个问题，分别是：</p>
+<p><strong>1.并发代码中最主要的变异算子是什么？</strong></p>
+<p>Answer:RSK是并发代码中最主要的变异操作符，其次是MSP和RSB。</p>
+<p><strong>2.n-选择性变异是否适用于并发代码的变异测试？</strong></p>
+<p>不同于选择性突变序列变异算子,n-selective突变测试(n∈{ 2 4 6 })并不适用于突变测试并发突变算子。</p>
+<p><strong>3.哪一类的变异算子能够获得最高的(非选择性的)变异分数？</strong></p>
+<p>“修改关键字”(MK)类别是最有效的。然而，与顺序程序变异算子不同的是，没有一个类别能够获得足够的分数。</p>
+<p><strong>4.获得高(非选择性)突变分数和显著节省(就突变体数量而言)的变异算子集是什么?</strong></p>
+<p>{MSP, RSK, RTXC, SHCR, SKCR, SPCR, WTIS}是在充分突变得分(99.67%)的情况下达到最高节约(46.37%)的集合。</p>
+<p><strong>5.对于(非选择性)变异分数的不同值，可以实现的最大节省是什么?</strong></p>
+<p>图1显示了每个突变值的最大节省。如果得分超过95%，则可节省40%至50%。如果节省超过90%，分数约为60%。</p>
+<p><strong>6.在未来的研究中，哪组并发变异算子为使用提供了良好的权衡?</strong><br><img src="https://img-blog.csdn.net/2018092819113510?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p><strong>7.如何比较基于操作符和随机变异算子的并发变异算子?</strong></p>
+<p>对于并发变异算子，基于操作符的突变选择要比随机选择好一点。</p>
+<p><strong>8.突变体数量上的节约和勘探成本上的节约有什么关系?</strong></p>
+<p>从突变体数量上的节省对应于从并发代码的探索成本上的节省。</p>
+<p><strong>9.并发和顺序突变操作符是独立的，即没有一个能包含另一个?</strong></p>
+<p>并发和顺序变异算子是独立的。两者均不包含，说明了并发变异算子研究的重要性</p>
+</blockquote>
+<p>实验所研究的程序：<br><img src="https://img-blog.csdn.net/20180928191153815?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L25pY2V6aGVuZ18xOTk1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p>三个(大)程序来自真实世界的开放源代码:Guava[21]是一个谷歌项目，包括并发集合和并发库;Lucene[32]是一个实现并发文本搜索引擎的Apache项目;而Pool[46]是一个Apache项目，它提供了并发的对象池API。</p>
+<p>小程序是由并发构造实现的。</p>
+<p><strong>变异体的产生：</strong></p>
+<p>选择性突变是多线程代码的理想选择。</p>
+<p>并发突变算子生成的突变体分布高度不均匀。</p>
+<p><strong>测试组件：</strong></p>
+<p><strong>变异体执行：</strong></p>
+<p>(1)压力测试只是在常规JVM上运行原始的或突变的SUT(不需要进一步修改)。</p>
+<p>(2) Java PathFinder (JPF)[52]是一个明确的模型检查器，实现为一个特殊的JVM，可以探索所有可能的时间表;它还支持有限数量的线程抢占。</p>
+<p><strong>杀死变异体：</strong></p>
+<p>(1)选择一个突变算子子集;</p>
+<p>(2)为所选择的突变算子生成的突变体找到合适的测试套件;</p>
+<p>(3)测量测试套件对所有突变算子的非选择性突变得分。</p>
+<p><strong>选择性变异的结果：</strong><br>测试套件(Test Suites)之前的研究是通过生成大量的测试套件来消除一个测试套件的潜在偏差，并平均所有结果。而测试套件更适用于串行代码，因为串行代码可以生成巨大的测试池。<br>为了更加精确，在收集数据开销-有效时，采用以下三步：</p>
+<ol>
+<li>选择变异算子子集。 </li>
+<li>寻找一个合适的测试套件，针对选择的变异算子产生的变异算子集。寻找一个合适的测试套件，针对选择的变异算子产生的变异算子集。</li>
+<li>衡量通过关于所有的变异算子测试套件获得的非选择性变异评分。</li>
+</ol>
+<p>未来的工作就是通过实验发现更多的在新的并行结构中的变异算子。<br>相关工作：<br>一些变异工具的介绍：MuJava；Jumble是工业级的变异测试工具，并且更关注有效性；ConMAn实现了并发变异算子集；Javalanche适用于选择性变异的工具。<br>如果大家也在研究关于选择性变异方向或者并发代码变异测试或者并行计算方向欢迎给我留言，我们可以一起交流哟~</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/software-test/" rel="tag"># software test</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/24/蜕变测试/" rel="next" title="蜕变测试">
+                <i class="fa fa-chevron-left"></i> 蜕变测试
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/24/Docker初尝/" rel="prev" title="Docker初尝">
+                Docker初尝 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zheng Jiani</p>
+              <p class="site-description motion-element" itemprop="description">喜欢，成就梦想</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengjiani" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Using-Evolutionary-Computation-to-Improve-Mutation-Testing"><span class="nav-number">1.</span> <span class="nav-text">Using Evolutionary Computation to Improve Mutation Testing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-基于质量度量的选择性变异。"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1.基于质量度量的选择性变异。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-多目标进化突变测试"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2.多目标进化突变测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-TCE-Trivial-Compiler-Equivalence"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3.TCE (Trivial Compiler Equivalence)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将EMT和TCE结合使用："><span class="nav-number">1.0.1.</span> <span class="nav-text">将EMT和TCE结合使用：</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#CUT-Automatic-Unit-Testing-in-the-Cloud"><span class="nav-number">2.</span> <span class="nav-text">CUT:Automatic Unit Testing in the Cloud</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#技术实现："><span class="nav-number">2.0.0.1.</span> <span class="nav-text">技术实现：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实验环境："><span class="nav-number">2.0.0.2.</span> <span class="nav-text">实验环境：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#最近工作："><span class="nav-number">2.0.0.3.</span> <span class="nav-text">最近工作：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Distributed-software-testing"><span class="nav-number">3.</span> <span class="nav-text">Distributed software testing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cloud-Based-Parallel-Concolic-Execution"><span class="nav-number">4.</span> <span class="nav-text">Cloud-Based Parallel Concolic Execution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Test-Driven-Development-for-Parallel-Applications"><span class="nav-number">5.</span> <span class="nav-text">Test-Driven Development for Parallel Applications</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#COMPI-Concolic-Testing-for-MPI-Applications"><span class="nav-number">6.</span> <span class="nav-text">COMPI:Concolic Testing for MPI Applications</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Parallel-mutation-testing"><span class="nav-number">7.</span> <span class="nav-text">Parallel mutation testing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A-Path-Coverage-Based-Reduction-of-Test-Cases-and-Execution-Time-Using-Parallel-Execution"><span class="nav-number">8.</span> <span class="nav-text">A Path Coverage-Based Reduction of Test Cases and Execution Time Using Parallel Execution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A-path-aware-approach-to-mutant-reduction-in-mutation-testing"><span class="nav-number">9.</span> <span class="nav-text">A path-aware approach to mutant reduction in mutation testing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Selective-Mutation-Testing-for-Concurrent-Code"><span class="nav-number">10.</span> <span class="nav-text">Selective Mutation Testing for Concurrent Code</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zheng Jiani</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

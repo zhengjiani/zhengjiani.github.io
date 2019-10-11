@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="web test,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文恢复2018-11-20博客">
+<meta name="keywords" content="web test">
+<meta property="og:type" content="article">
+<meta property="og:title" content="bok-choy PO测试框架">
+<meta property="og:url" content="http://yoursite.com/2019/05/23/bok-choy-PO测试框架/index.html">
+<meta property="og:site_name" content="花茶树窝">
+<meta property="og:description" content="本文恢复2018-11-20博客">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-11T08:53:17.307Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="bok-choy PO测试框架">
+<meta name="twitter:description" content="本文恢复2018-11-20博客">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/23/bok-choy-PO测试框架/">
+
+
+
+
+
+  <title>bok-choy PO测试框架 | 花茶树窝</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?870e68ebac7b44a2e5fc2f00b965a03b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花茶树窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/23/bok-choy-PO测试框架/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zheng Jiani">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花茶树窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">bok-choy PO测试框架</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-23T21:51:34+08:00">
+                2019-05-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本文恢复2018-11-20博客</p>
+<a id="more"></a>
+
+<p>首先是在简书上看到介个，激起了我的兴趣。</p>
+<p><a href="https://www.jianshu.com/p/4ec8b22601fa" target="_blank" rel="noopener">bok-choy(selenium+python+page object)使用介绍</a></p>
+<p>接下来我把这个代码搬移，结果测试失败，原来是因为找不到我firefox的路径，emmmmm…</p>
+<p>这个时候更改这个参数就好啦：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#test_search.py文件</span></span><br><span class="line">os.environ[<span class="string">"SELENIUM_FIREFOX_PATH"</span>]=<span class="string">"/usr/local/firefox/firefox"</span></span><br></pre></td></tr></table></figure>
+
+<p>然后今天我要根据bok-choy的API测试一下百度的其他页面以及功能：</p>
+<p><a href="https://github.com/edx/bok-choy" target="_blank" rel="noopener">bok-choy Github</a></p>
+<p><a href="https://bok-choy.readthedocs.io/en/latest/tutorial.html" target="_blank" rel="noopener">bok-choy Doc</a></p>
+<p>先看bok-choy给了一些测试设计准则：</p>
+<ul>
+<li>将浏览器交互放在页面对象中，而不是测试中。</li>
+<li>将断言放在测试中，而不是页面对象。</li>
+<li>永远不要使用time.sleep()</li>
+<li>始终让页面等待操作完成。</li>
+<li>等待JavaScript加载。</li>
+</ul>
+<ol>
+<li><strong>将浏览器交互放在页面对象中，而不是测试中:</strong></li>
+</ol>
+<p>有的时候你需要验证网页到达的正确性，你可能会这么写代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BarTest</span><span class="params">(WebAppTest)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_bar</span><span class="params">(self)</span>:</span></span><br><span class="line">        bar_text = self.browser.find_elements_by_css_selector(<span class="string">'div.bar'</span>).text</span><br><span class="line">        self.assertEqual(bar_text, <span class="string">"Bar"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>然而，这么写的缺点是：</p>
+<p>前端CSS改变，你包含CSS的所有测试用例都得改。</p>
+<p>如果出现超时问题，selenium不会进行重试，相反，bok-choy用于浏览器交互的高级界面包括强大的错误检查和重试逻辑。(emmmmm,自家产品就是好哈)</p>
+<p>所以你得这么写：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BarPage</span><span class="params">(PageObject)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_browser_on_page</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.q(css=<span class="string">'section#bar'</span>).is_present()</span><br><span class="line"></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">text</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.q(css=<span class="string">'div.bar'</span>).text</span><br><span class="line">        <span class="keyword">if</span> len(text_items) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> text_items[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span></span><br></pre></td></tr></table></figure>
+
+<p>然后写测试用例的时候介么写：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BarTest</span><span class="params">(WebAppTest)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_bar</span><span class="params">(self)</span>:</span></span><br><span class="line">        bar_page = BarPage(self.browser)</span><br><span class="line">        self.assertEqual(bar_page.text, <span class="string">"Bar"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>逻辑就是：在尝试使用这个页面时PO会首先检查浏览器是否在正确页面，例如，如果JavaScript在我们检索它和获取元素文本之间修改<div>，它也会重试（否则会导致运行时异常）。 最后，如果页面上的CSS选择器发生更改，我们可以修改页面对象，从而更新与页面交互的每个测试。</div></p>
+<p>2.<strong>将断言放在测试中，而不是页面对象。</strong></p>
+<p>因为页面对象的可重用性较低，所以建议把断言放入测试中。</p>
+<p>比如说，如果你把断言放在页面对象中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BarPage</span><span class="params">(PageObject)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">check_section_title</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">assert</span> self.q(css=<span class="string">'div.bar'</span>).text == [<span class="string">'Test Section'</span>]</span><br></pre></td></tr></table></figure>
+
+<p>如果另一个测试期望页面标题不是“Test Section”，则它不能重复使用check_section_title（）。</p>
+<p>所以你得这么写：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BarPage</span><span class="params">(PageObject)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">section_title</span><span class="params">(self)</span>:</span></span><br><span class="line">        text_items = self.q(css=<span class="string">'div.bar'</span>).text</span><br><span class="line">        <span class="keyword">if</span> len(text_items) &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> text_items[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span></span><br></pre></td></tr></table></figure>
+
+<p>3.<strong>永远不要使用time.sleep()</strong></p>
+<p>有时候测试失败是因为检查页面太快(反应不过来么哈哈)，所以我们测试一般要等待页面上的JavaScript完成对DOM的操作，例如添加元素或甚至附加事件侦听器时。这个时候我们就会加入time.sleep()</p>
+<p>但是这种方法会存在两个问题：</p>
+<p>一个是即使都加载完成了也要等待你设置得时间，那么测试时间就会延长。</p>
+<p>一个是你估计得不对，等待的时间可能不够。</p>
+<p>对于这个问题，bok-choy提供了两种解决方案：</p>
+<p>一种是在你对页面操作前先判断是否到达了正确页面</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FooPage</span><span class="params">(PageObject)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_browser_on_page</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.q(css=<span class="string">'section.bar'</span>).is_present()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">do_foo</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.q(css=<span class="string">'button.foo'</span>).click()</span><br></pre></td></tr></table></figure>
+
+<p>另一种是你可以采用Promise来检查DOM的某种状态</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FooPage</span><span class="params">(PageObject)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_browser_on_page</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.q(css=<span class="string">'button.foo'</span>).is_present()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">do_foo</span><span class="params">(self)</span>:</span></span><br><span class="line">        ready_promise = EmptyPromise(</span><br><span class="line">            <span class="keyword">lambda</span>: <span class="string">'Loading...'</span> <span class="keyword">not</span> <span class="keyword">in</span> self.q(css=<span class="string">'div.msg'</span>).text,</span><br><span class="line">            <span class="string">"Page finished loading"</span></span><br><span class="line">        ).fulfill()</span><br><span class="line"></span><br><span class="line">        self.q(css=<span class="string">'button.foo'</span>).click()</span><br></pre></td></tr></table></figure>
+
+<p>4.<strong>始终让页面等待操作完成。</strong></p>
+<p>页面对象通常提供两种与页面交互的方式：1。查询页面以获取信息。 2.在页面上执行操作。</p>
+<p>在第二种情况下，页面对象应该在返回之前等待操作完成。 例如，假设页面对象具有单击“保存”按钮的方法save_document()。然后页面重定向到不同的页面。 在这种情况下，页面对象应该等待下一页加载，然后再将控制权返回给调用者。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FooPage</span><span class="params">(PageObject)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">save_document</span><span class="params">()</span>:</span></span><br><span class="line">        self.q(css=<span class="string">'button.save'</span>).click()</span><br><span class="line">        <span class="keyword">return</span> BarPage(self.browser).wait_for_page()</span><br></pre></td></tr></table></figure>
+
+<p>5.<strong>等待JavaScript加载。</strong></p>
+<p>有时，在页面上的JavaScript完成加载之前，页面尚未就绪。 对于异步加载JavaScript的页面（例如，使用RequireJS时），这尤其成问题。</p>
+<p>bok-choy提供了一个等待RequireJS模块加载的简单机制：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@requirejs('foo')</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FooPage</span><span class="params">(PageObject)</span>:</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @wait_for_js</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">text</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.q(css=<span class="string">'div.foo'</span>).text</span><br></pre></td></tr></table></figure>
+
+<p>接着看一下今天的测试场景</p>
+<p>测试场景一：百度新闻端</p>
+<p>进入百度新闻页-&gt;点击新闻链接-&gt;查看新闻详情页</p>
+<p>进入百度新闻页-&gt;搜索框输入要搜索的新闻内容-&gt;返回搜索结果页</p>
+<p>部分代码如下，完整代码请至Github:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#test_news.py</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">from</span> bok_choy.web_app_test <span class="keyword">import</span> WebAppTest</span><br><span class="line"><span class="keyword">from</span> pages <span class="keyword">import</span> BaiduNewsPage,BaiduSearchPage,NewsDetailPage,NewsResultPage</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestBaiduNews</span><span class="params">(WebAppTest)</span>:</span></span><br><span class="line">    <span class="string">""" </span></span><br><span class="line"><span class="string">    Tests for the News site</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line">        super(TestBaiduNews,self).setUp()</span><br><span class="line">        self.baidu_news_page=BaiduNewsPage(self.browser)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_page_existence</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="string">""" </span></span><br><span class="line"><span class="string">        make sure news page is accessible</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        self.baidu_news_page.visit()</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_search</span><span class="params">(self)</span>:</span></span><br><span class="line">        test_key=<span class="string">u"钢铁侠"</span></span><br><span class="line">        self.baidu_news_page.visit().search_news(test_key)</span><br><span class="line">        self.news_results_page=NewsResultPage(self.browser)</span><br><span class="line">        result=self.news_results_page.search_results</span><br><span class="line">        <span class="keyword">assert</span> test_key <span class="keyword">in</span> result[<span class="number">0</span>]</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_detail</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.news_detail_page=NewsDetailPage(self.browser)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    os.environ[<span class="string">"SELENIUM_FIREFOX_PATH"</span>]=<span class="string">"/usr/local/firefox/firefox"</span></span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaiduNewsPage</span><span class="params">(PageObject)</span>:</span></span><br><span class="line">    <span class="string">""" </span></span><br><span class="line"><span class="string">    Baidu news page</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    url=<span class="string">'http://news.baidu.com/'</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">see_news_link</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.q(xpath=<span class="string">'//*[@id="pane-news"]/div/ul/li[1]/i'</span>).click()</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">input_search_key</span><span class="params">(self,keyword)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.q(css=<span class="string">'#ww'</span>).fill(keyword)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">click_search_btn</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.q(css=<span class="string">'#s_btn_wr'</span>).click()</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_browser_on_page</span><span class="params">(self)</span>:</span>    </span><br><span class="line">        title = self.browser.title</span><br><span class="line">        matches = re.match(<span class="string">u'百度新闻——全球最大的中文新闻平台'</span>, title)</span><br><span class="line">        <span class="keyword">return</span> matches <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search_news</span><span class="params">(self,keyword)</span>:</span></span><br><span class="line">        self.input_search_key(keyword)</span><br><span class="line">        self.click_search_btn()</span><br><span class="line">        NewsResultPage(self.browser).wait_for_page()</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">see_news</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.see_news_link()</span><br><span class="line">        NewsDetailPage(self.browser).wait_for_page()</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewsResultPage</span><span class="params">(PageObject)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    News search result page</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    url=<span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_browser_on_page</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.q(css=<span class="string">'h3'</span>).is_present()</span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">search_results</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.q(css=<span class="string">'h3'</span>).first.text</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NewsDetailPage</span><span class="params">(PageObject)</span>:</span></span><br><span class="line">    url=<span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_browser_on_page</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.q(xpath=<span class="string">'/html/body/div[4]/div[2]/div[4]/div[2]/div/div[1]'</span>).is_present()</span><br></pre></td></tr></table></figure>
+
+<p>控制台结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost shiyan]# python test_news.py</span><br><span class="line">...</span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Ran 3 tests in 34.570s</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<p>我现在有一个疑问，就是它运行一个测试用例就要重新打开一次浏览器，说明测试用例之间是独立的，那么我如何解决在只打开一次浏览器的情况下一次性完成这些测试用例的执行捏，emmmm,吃饭时间到了，吃完饭以后回来想，顺便也做一下百度页面的链接测试~</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/web-test/" rel="tag"># web test</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/24/Web应用测试的国内外文献总结/" rel="prev" title="Web应用测试的国内外文献总结">
+                Web应用测试的国内外文献总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zheng Jiani</p>
+              <p class="site-description motion-element" itemprop="description">喜欢，成就梦想</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengjiani" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zheng Jiani</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

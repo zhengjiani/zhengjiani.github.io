@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Evosuite,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="基于搜索的测试工具Evosuite-内附学习详细过程 Macos10.14 Idea maven">
+<meta name="keywords" content="Evosuite">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于搜索的测试工具Evosuite(内附学习详细过程)">
+<meta property="og:url" content="http://yoursite.com/2019/10/11/基于搜索的测试工具Evosuite-内附学习详细过程/index.html">
+<meta property="og:site_name" content="花茶树窝">
+<meta property="og:description" content="基于搜索的测试工具Evosuite-内附学习详细过程 Macos10.14 Idea maven">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010085825261.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010090307730.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010094520435.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010095447633.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010095715846.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010110250245.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010142356313.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010142606316.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010143526789.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010144851622.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010155018710.png?raw=true">
+<meta property="og:updated_time" content="2019-10-11T09:03:42.912Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于搜索的测试工具Evosuite(内附学习详细过程)">
+<meta name="twitter:description" content="基于搜索的测试工具Evosuite-内附学习详细过程 Macos10.14 Idea maven">
+<meta name="twitter:image" content="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010085825261.png?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/11/基于搜索的测试工具Evosuite-内附学习详细过程/">
+
+
+
+
+
+  <title>基于搜索的测试工具Evosuite(内附学习详细过程) | 花茶树窝</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?870e68ebac7b44a2e5fc2f00b965a03b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花茶树窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/11/基于搜索的测试工具Evosuite-内附学习详细过程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zheng Jiani">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花茶树窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">基于搜索的测试工具Evosuite(内附学习详细过程)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-11T16:59:23+08:00">
+                2019-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>基于搜索的测试工具Evosuite-内附学习详细过程</p>
+<p>Macos10.14 Idea maven</p>
+<a id="more"></a>
+
+<h1 id="Evosuite用maven构建"><a href="#Evosuite用maven构建" class="headerlink" title="Evosuite用maven构建"></a>Evosuite用maven构建</h1><p>【参考来源】<a href="http://www.evosuite.org/documentation/tutorial-part-2/" target="_blank" rel="noopener">http://www.evosuite.org/documentation/tutorial-part-2/</a></p>
+<p><strong>！如果在照着做出现找不到文件的情况，请翻到本文最后看最终的pom.xml配置以及文件结构</strong></p>
+<p>pom.xml</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span><br><span class="line">         xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">         xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;groupId&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;JdbcDemo&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;!-- https:<span class="comment">//mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;</span></span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;6.0.6&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.evosuite&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;evosuite-standalone-runtime&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;evosuiteVersion&#125;&lt;/version&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;4.12&lt;/version&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   &lt;build&gt;</span><br><span class="line">       &lt;pluginManagement&gt;</span><br><span class="line">           &lt;plugins&gt;</span><br><span class="line">               &lt;plugin&gt;</span><br><span class="line">                   &lt;groupId&gt;org.evosuite.plugins&lt;/groupId&gt;</span><br><span class="line">                   &lt;artifactId&gt;evosuite-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">                   &lt;version&gt;$&#123;evosuiteVersion&#125;&lt;/version&gt;</span><br><span class="line">                   &lt;executions&gt;&lt;execution&gt;</span><br><span class="line">                       &lt;goals&gt; &lt;goal&gt; prepare &lt;/goal&gt; &lt;/goals&gt;</span><br><span class="line">                       &lt;phase&gt; process-test-classes &lt;/phase&gt;</span><br><span class="line">                   &lt;/execution&gt;&lt;/executions&gt;</span><br><span class="line">               &lt;/plugin&gt;</span><br><span class="line">               &lt;plugin&gt;</span><br><span class="line">                   &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">                   &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;</span><br><span class="line">                   &lt;version&gt;2.17&lt;/version&gt;</span><br><span class="line">                   &lt;configuration&gt;</span><br><span class="line">                       &lt;properties&gt;</span><br><span class="line">                           &lt;property&gt;</span><br><span class="line">                               &lt;name&gt;listener&lt;/name&gt;</span><br><span class="line">                               &lt;value&gt;org.evosuite.runtime.InitializingListener&lt;/value&gt;</span><br><span class="line">                           &lt;/property&gt;</span><br><span class="line">                       &lt;/properties&gt;</span><br><span class="line">                   &lt;/configuration&gt;</span><br><span class="line">               &lt;/plugin&gt;</span><br><span class="line">               &lt;plugin&gt;</span><br><span class="line">                   &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;</span><br><span class="line">                   &lt;artifactId&gt;build-helper-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">                   &lt;version&gt;1.8&lt;/version&gt;</span><br><span class="line">                   &lt;executions&gt;</span><br><span class="line">                       &lt;execution&gt;</span><br><span class="line">                           &lt;id&gt;add-test-source&lt;/id&gt;</span><br><span class="line">                           &lt;phase&gt;generate-test-sources&lt;/phase&gt;</span><br><span class="line">                           &lt;goals&gt;</span><br><span class="line">                               &lt;goal&gt;add-test-source&lt;/goal&gt;</span><br><span class="line">                           &lt;/goals&gt;</span><br><span class="line">                           &lt;configuration&gt;</span><br><span class="line">                               &lt;sources&gt;</span><br><span class="line">                                   &lt;source&gt;$&#123;customFolder&#125;&lt;/source&gt;</span><br><span class="line">                               &lt;/sources&gt;</span><br><span class="line">                           &lt;/configuration&gt;</span><br><span class="line">                       &lt;/execution&gt;</span><br><span class="line">                   &lt;/executions&gt;</span><br><span class="line">               &lt;/plugin&gt;</span><br><span class="line">           &lt;/plugins&gt;</span><br><span class="line">       &lt;/pluginManagement&gt;</span><br><span class="line">   &lt;/build&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">        &lt;evosuiteVersion&gt;1.0.6&lt;/evosuiteVersion&gt;</span><br><span class="line">        &lt;customFolder&gt;src/test/java&lt;/customFolder&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="The-EvoSuite-Maven-plugin命令简介"><a href="#The-EvoSuite-Maven-plugin命令简介" class="headerlink" title="The EvoSuite Maven plugin命令简介"></a>The EvoSuite Maven plugin命令简介</h2><p>1）generate</p>
+<p>这用于通过EvoSuite生成测试用例。 将为所有子模块中的所有类生成测试。 您需要确保代码已编译。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn compile evosuite:generate</span><br></pre></td></tr></table></figure>
+
+<p>可以跟的参数</p>
+<p>memoryInMB：EvoSuite允许分配的总兆字节数（默认为800）</p>
+<p>cores：EvoSuite可以使用的CPU内核总数（默认为1）</p>
+<p>timeInMinutesPerClass：EvoSuite可以花多少分钟为每个类生成测试（默认2）</p>
+<p>2）info：提供到目前为止所有已生成测试的信息</p>
+<p>3）export: 默认情况下，EvoSuite在“ .evosuite”文件夹中创建测试。 通过使用“导出”，将生成的测试复制到另一个文件夹，该文件夹可以使用“ targetFolder”选项设置（默认值为“ src / test / java”）。</p>
+<p>如果不使用“ mvn evosuite：export”将测试导出到“ src / test / java”，则“ mvn test”之类的命令将不会执行这些测试，因为它们的源代码不在构建路径中。 您可以使用“ build-helper-maven-plugin”插件添加自定义源文件夹.</p>
+<p>4）clean：删除“ .evosuite”文件夹中的所有数据，该文件夹用于存储到目前为止生成的所有最佳测试.</p>
+<p>5）prepare：需要同时运行EvoSuite测试和现有测试.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn evosuite:prepare test</span><br></pre></td></tr></table></figure>
+
+<p>最好仅将evosuite插件配置为始终运行，如前所述。</p>
+<p>eg.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn -DmemoryInMB=<span class="number">2000</span> -Dcores=<span class="number">2</span> evosuite:generate evosuite:export  test</span><br></pre></td></tr></table></figure>
+
+<p>这将使用2个内核和2GB内存为所有类生成测试，将生成的测试复制到“ src / test / java”，然后执行它们。 注意：如果项目已经进行了一些测试，那么这些测试将作为常规“测试”阶段的一部分执行。</p>
+<h2 id="maven集成"><a href="#maven集成" class="headerlink" title="maven集成"></a>maven集成</h2><p>准备被测项目</p>
+<p>下载被测项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget http://evosuite.org/files/tutorial/Tutorial_Maven.zip</span><br><span class="line">unzip Tutorial_Maven.zip</span><br><span class="line">cd Tutorial_Maven</span><br></pre></td></tr></table></figure>
+
+<p>和以前一样，我们可以使用以下命令来编译项目中的类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn compile</span><br></pre></td></tr></table></figure>
+
+<p>目录如下</p>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010085825261.png?raw=true" alt></p>
+<p>然后这个项目本身有测试，位于JdbcDemo/src/test/java/StackTest.java</p>
+<p>这个属于已有测试，可以使用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn test</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010090307730.png?raw=true" alt="image-20191010090307730"></p>
+<p><strong>更近一步看pom.xml</strong></p>
+<p>如果您已经非常熟悉Maven，那么本节可能不会告诉您任何新内容。 但是，了解如何配置Maven项目以配置项目以使用EvoSuite至关重要。 因此，我们现在将仔细研究示例项目的主要Maven配置文件，即文件pom.xml。</p>
+<p>我们的示例项目中的pom.xml基于使用mvn archetype：generate生成的基本版本。 它从有关该项目的一些基本元信息开始</p>
+<p>查看help命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn evosuite:help</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">[INFO] Maven Plugin <span class="keyword">for</span> EvoSuite <span class="number">1.0</span>.6</span><br><span class="line">  Plugin used to run EvoSuite to automatically generate high coverage JUnit</span><br><span class="line">  tests</span><br><span class="line"></span><br><span class="line">This plugin has <span class="number">7</span> goals:</span><br><span class="line"></span><br><span class="line">evosuite:clean</span><br><span class="line">  Remove all local files created by EvoSuite so far</span><br><span class="line"></span><br><span class="line">evosuite:coverage</span><br><span class="line">  <span class="function">Execute the manually written test <span class="title">suites</span> <span class="params">(usually located under src/test/java)</span></span></span><br><span class="line"><span class="function">  and return the coverage of each class.</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">evosuite:export</span></span><br><span class="line"><span class="function">  When run, EvoSuite generate tests in a specific folder. New runs of EvoSuite</span></span><br><span class="line"><span class="function">  can exploit the tests in such folder, and/or modify them.</span></span><br><span class="line"><span class="function">  </span></span><br><span class="line"><span class="function">  So, with 'export' we can copy all generated tests to a specific folder, which</span></span><br><span class="line"><span class="function">  by <span class="keyword">default</span> points to where Maven searches <span class="keyword">for</span> tests. If another folder is</span></span><br><span class="line"><span class="function">  rather <span class="title">used</span> <span class="params">(or <span class="keyword">if</span> we want to run with Maven the tests in the <span class="keyword">default</span> EvoSuite</span></span></span><br><span class="line"><span class="function"><span class="params">  folder)</span>, then Maven plugins like build-helper-maven-plugin are needed</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">evosuite:generate</span></span><br><span class="line"><span class="function">  Generate JUnit tests</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">evosuite:help</span></span><br><span class="line"><span class="function">  Display help information on evosuite-maven-plugin.</span></span><br><span class="line"><span class="function">  Call mvn evosuite:help -Ddetail</span>=<span class="keyword">true</span> -Dgoal=&lt;goal-name&gt; to display parameter</span><br><span class="line">  details.</span><br><span class="line"></span><br><span class="line">evosuite:info</span><br><span class="line">  Obtain info of generated tests so far</span><br><span class="line"></span><br><span class="line">evosuite:prepare</span><br><span class="line">  Mojo needed to prepare the EvoSuite tests <span class="keyword">for</span> execution. This is needed to</span><br><span class="line">  make sure that bytecode is properly instrumented.</span><br></pre></td></tr></table></figure>
+
+<p>我们可以使用-Dproperty = value语法为插件目标设置属性，就像为任何Java进程设置属性一样。 例如，要获取有关在执行帮助插件目标时生成插件目标的更多详细信息，我们可以运行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn evosuite:help -Ddetail=true -Dgoal=generate</span><br></pre></td></tr></table></figure>
+
+<p>如果运行此命令，应该会看到可以为生成插件目标设置的所有属性的列表。这个是显示generate参数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">evosuite:generate</span><br><span class="line">  Generate JUnit tests</span><br><span class="line"></span><br><span class="line">  Available parameters:</span><br><span class="line"></span><br><span class="line">    criterion (Default:</span><br><span class="line">    LINE:BRANCH:EXCEPTION:WEAKMUTATION:OUTPUT:METHOD:METHODNOEXCEPTION:CBRANCH)</span><br><span class="line">    <span class="comment">//行：语句：异常：弱变异：输出：方法：方法异常：分支结构</span></span><br><span class="line">      Coverage criterion. Can define more than one criterion by using a <span class="string">':'</span></span><br><span class="line">      separated list</span><br><span class="line">      User property: criterion</span><br><span class="line">   <span class="comment">// 覆盖准则，可以定义不止一个覆盖准则，使用:隔开</span></span><br><span class="line"></span><br><span class="line">    cuts</span><br><span class="line">      Comma <span class="string">','</span> separated list of CUTs to use in CTG. If none specified, then</span><br><span class="line">      test all classes</span><br><span class="line">      User property: cuts</span><br><span class="line">		<span class="comment">// 用逗号“，”分隔CTG中要使用的CUT（被测类）列表。 如果未指定，则测试所有类</span></span><br><span class="line">    cutsFile</span><br><span class="line">      Absolute path to a file having the list of CUTs specified. This is needed</span><br><span class="line">      <span class="keyword">for</span> operating systems like Windows that have constraints on the size of</span><br><span class="line">      input parameters and so could not use <span class="string">'cuts'</span> parameter instead <span class="keyword">if</span> too many</span><br><span class="line">      CUTs are specified</span><br><span class="line">      User property: cutsFile</span><br><span class="line">		<span class="comment">// 指定了CUT列表的文件的绝对路径。 对于Windows等大小受限制的操作系统，这是必需的</span></span><br><span class="line">输入参数，因此如果指定了太多的CUT，则不能使用“ cuts”参数</span><br><span class="line">    extraArgs (Default: )</span><br><span class="line">      </span><br><span class="line">      User property: extraArgs</span><br><span class="line"></span><br><span class="line">    memoryInMB (Default: <span class="number">800</span>)</span><br><span class="line">      <span class="function">Total <span class="title">Memory</span> <span class="params">(in MB)</span> that CTG will use</span></span><br><span class="line"><span class="function">      User property: memoryInMB</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="title">numberOfCores</span> <span class="params">(Default: <span class="number">1</span>)</span></span></span><br><span class="line"><span class="function">      Number of cores CTG will use</span></span><br><span class="line"><span class="function">      User property: cores</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="title">schedule</span> <span class="params">(Default: BUDGET)</span></span></span><br><span class="line"><span class="function">      Schedule used to run <span class="title">CTG</span> <span class="params">(SIMPLE, BUDGET, SEEDING, BUDGET_AND_SEEDING,</span></span></span><br><span class="line"><span class="function"><span class="params">      HISTORY)</span></span></span><br><span class="line"><span class="function">      User property: schedule</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="title">spawnManagerPort</span> <span class="params">(Default: )</span></span></span><br><span class="line"><span class="function">      </span></span><br><span class="line"><span class="function">      User property: spawnManagerPort</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">    <span class="title">timeInMinutesPerClass</span> <span class="params">(Default: <span class="number">2</span>)</span></span></span><br><span class="line"><span class="function">      How many minutes to allocate <span class="keyword">for</span> each class</span></span><br><span class="line"><span class="function">      User property: timeInMinutesPerClass</span></span><br><span class="line"><span class="function">	<span class="comment">//每个类分配多少分钟</span></span></span><br><span class="line"><span class="function">    <span class="title">timeInMinutesPerProject</span> <span class="params">(Default: <span class="number">0</span>)</span></span></span><br><span class="line"><span class="function">      How many minutes to allocate <span class="keyword">for</span> each project/<span class="keyword">module</span>. If <span class="keyword">this</span> parameter is</span></span><br><span class="line"><span class="function">      not set, then the total time will be timeInMinutesPerClass x</span></span><br><span class="line"><span class="function">      number_of_classes</span></span><br><span class="line"><span class="function">      User property: timeInMinutesPerProject</span></span><br><span class="line"><span class="function">	<span class="comment">//为每个项目/模块分配多少分钟。 如果未设置此参数，则总时间为timeInMinutesPerClass x</span></span></span><br></pre></td></tr></table></figure>
+
+<p>现在让我们使用evosuite生成些测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn evosuite:generate</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">[INFO] * EvoSuite 1.0.6</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59667</span><br><span class="line">[INFO] Going to execute 10 jobs</span><br><span class="line">[INFO] Estimated completion time: 20 minutes, by 2019-10-10T09:46:48.318</span><br><span class="line">[INFO] Going to start job for: jdbc.Demo04. Expected to end in 179 seconds, by 2019-10-10T09:29:47.340</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59671</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59677</span><br><span class="line">[INFO] Completed job. Left: 9</span><br><span class="line">[INFO] Going to start job for: jdbc.Demo06. Expected to end in 170 seconds, by 2019-10-10T09:31:21.353</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59730</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59737</span><br><span class="line">[INFO] Completed job. Left: 8</span><br><span class="line">[INFO] Going to start job for: jdbc.Demo05. Expected to end in 143 seconds, by 2019-10-10T09:32:28.330</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59780</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59786</span><br><span class="line">[INFO] Completed job. Left: 7</span><br><span class="line">[INFO] Going to start job for: jdbc.Demo03. Expected to end in 133 seconds, by 2019-10-10T09:33:43.435</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59819</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59825</span><br><span class="line">[INFO] Completed job. Left: 6</span><br><span class="line">[INFO] Going to start job for: jdbc.Demo02. Expected to end in 133 seconds, by 2019-10-10T09:34:58.170</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59863</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59869</span><br><span class="line">[INFO] Completed job. Left: 5</span><br><span class="line">[INFO] Going to start job for: Tutorial_Maven.LinkedList. Expected to end in 115 seconds, by 2019-10-10T09:35:55.028</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59906</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59912</span><br><span class="line">[INFO] Completed job. Left: 4</span><br><span class="line">[INFO] Going to start job for: jdbc.Demo01. Expected to end in 96 seconds, by 2019-10-10T09:36:43.878</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59946</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59953</span><br><span class="line">[INFO] Completed job. Left: 3</span><br><span class="line">[INFO] Going to start job for: Tutorial_Maven.Stack. Expected to end in 87 seconds, by 2019-10-10T09:37:30.592</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59981</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:59987</span><br><span class="line">[INFO] Completed job. Left: 2</span><br><span class="line">[INFO] Going to start job for: Tutorial_Maven.LinkedListIterator. Expected to end in 78 seconds, by 2019-10-10T09:38:13.216</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:60005</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:60011</span><br><span class="line">[INFO] Completed job. Left: 1</span><br><span class="line">[INFO] Going to start job for: Tutorial_Maven.Node. Expected to end in 60 seconds, by 2019-10-10T09:38:43.341</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:60043</span><br><span class="line">[INFO] Registered remote process from /127.0.0.1:60049</span><br><span class="line">[INFO] Completed job. Left: 0</span><br><span class="line">[INFO] * Updating database to Tutorial_Maven.Node</span><br><span class="line">[INFO] * Updating database to Tutorial_Maven.LinkedListIterator</span><br><span class="line">[INFO] * Updating database to jdbc.Demo01</span><br><span class="line">[INFO] * Updating database to Tutorial_Maven.LinkedList</span><br><span class="line">[INFO] * Updating database to jdbc.Demo05</span><br><span class="line">[INFO] * Updating database to jdbc.Demo04</span><br><span class="line">[INFO] * Updating database to Tutorial_Maven.Stack</span><br><span class="line">[INFO] * Updating database to jdbc.Demo03</span><br><span class="line">[INFO] * Updating database to jdbc.Demo02</span><br><span class="line">[INFO] * Updating database to jdbc.Demo06</span><br><span class="line">[INFO] === CTG run results ===</span><br><span class="line">[INFO] Removed test suites: 0</span><br><span class="line">[INFO] New test suites: 10</span><br><span class="line">[INFO] Stopping spawn process manager</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] BUILD SUCCESS</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Total time:  11:10 min</span><br><span class="line">[INFO] Finished at: 2019-10-10T09:37:49+08:00</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+
+<p>我的电脑烫的。。。，让我们来看看这个优秀的工具生成的测试用例,生成的没有成功导出到src/main/test/java，暂时先在目录~/IdeaProjects/JdbcDemo/.evosuite/best-tests下看</p>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010094520435.png?raw=true" alt="image-20191010094520435"></p>
+<p>为了对比人工和自动生成的，我们就看一下Stack的测试类ba</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * This file was automatically generated by EvoSuite</span></span><br><span class="line"><span class="comment"> * Thu Oct 10 01:36:54 GMT 2019</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> Tutorial_Maven;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.Assert.*;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.evosuite.runtime.EvoAssertions.*;</span><br><span class="line"><span class="keyword">import</span> Tutorial_Maven.Stack;</span><br><span class="line"><span class="keyword">import</span> org.evosuite.runtime.EvoRunner;</span><br><span class="line"><span class="keyword">import</span> org.evosuite.runtime.EvoRunnerParameters;</span><br><span class="line"><span class="keyword">import</span> org.junit.runner.RunWith;</span><br><span class="line"></span><br><span class="line"><span class="meta">@RunWith</span>(EvoRunner.class) <span class="meta">@EvoRunnerParameters</span>(mockJVMNonDeterminism = <span class="keyword">true</span>, useVFS = <span class="keyword">true</span>, useVNET = <span class="keyword">true</span>, resetStaticState = <span class="keyword">true</span>, separateClassLoader = <span class="keyword">true</span>, useJEE = <span class="keyword">true</span>) </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Stack_ESTest</span> <span class="keyword">extends</span> <span class="title">Stack_ESTest_scaffolding</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**判断栈空测试-1*/</span></span><br><span class="line">  <span class="meta">@Test</span>(timeout = <span class="number">4000</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test0</span><span class="params">()</span>  <span class="keyword">throws</span> Throwable  </span>&#123;</span><br><span class="line">      Stack&lt;Object&gt; stack0 = <span class="keyword">new</span> Stack&lt;Object&gt;();</span><br><span class="line">      assertTrue(stack0.isEmpty());</span><br><span class="line">      </span><br><span class="line">      stack0.push(stack0);</span><br><span class="line">      stack0.push(stack0);</span><br><span class="line">      stack0.pop();</span><br><span class="line">      assertFalse(stack0.isEmpty());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**判断栈空测试-2*/</span></span><br><span class="line">  <span class="meta">@Test</span>(timeout = <span class="number">4000</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span>  <span class="keyword">throws</span> Throwable  </span>&#123;</span><br><span class="line">      Stack&lt;Object&gt; stack0 = <span class="keyword">new</span> Stack&lt;Object&gt;();</span><br><span class="line">      stack0.push((Object) <span class="keyword">null</span>);</span><br><span class="line">      assertFalse(stack0.isEmpty());</span><br><span class="line">      </span><br><span class="line">      stack0.pop();</span><br><span class="line">      assertTrue(stack0.isEmpty());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span>(timeout = <span class="number">4000</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span>  <span class="keyword">throws</span> Throwable  </span>&#123;</span><br><span class="line">      Stack&lt;String&gt; stack0 = <span class="keyword">new</span> Stack&lt;String&gt;();</span><br><span class="line">      <span class="keyword">boolean</span> boolean0 = stack0.isEmpty();</span><br><span class="line">      assertTrue(boolean0);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Test</span>(timeout = <span class="number">4000</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test3</span><span class="params">()</span>  <span class="keyword">throws</span> Throwable  </span>&#123;</span><br><span class="line">      Stack&lt;Object&gt; stack0 = <span class="keyword">new</span> Stack&lt;Object&gt;();</span><br><span class="line">      assertTrue(stack0.isEmpty());</span><br><span class="line">      </span><br><span class="line">      Integer integer0 = <span class="keyword">new</span> Integer(<span class="number">724</span>);</span><br><span class="line">      stack0.push(integer0);</span><br><span class="line">      <span class="keyword">boolean</span> boolean0 = stack0.isEmpty();</span><br><span class="line">      assertFalse(boolean0);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**测试异常*/</span></span><br><span class="line">  <span class="meta">@Test</span>(timeout = <span class="number">4000</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test4</span><span class="params">()</span>  <span class="keyword">throws</span> Throwable  </span>&#123;</span><br><span class="line">      Stack&lt;Object&gt; stack0 = <span class="keyword">new</span> Stack&lt;Object&gt;();</span><br><span class="line">      <span class="comment">// Undeclared exception!</span></span><br><span class="line">      <span class="keyword">try</span> &#123; </span><br><span class="line">        stack0.pop();</span><br><span class="line">        fail(<span class="string">"Expecting exception: IllegalArgumentException"</span>);</span><br><span class="line">      </span><br><span class="line">      &#125; <span class="keyword">catch</span>(IllegalArgumentException e) &#123;</span><br><span class="line">         <span class="comment">//</span></span><br><span class="line">         <span class="comment">// Stack empty</span></span><br><span class="line">         <span class="comment">//</span></span><br><span class="line">         verifyException(<span class="string">"Tutorial_Maven.Stack"</span>, e);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**测试入栈和出栈*/</span></span><br><span class="line">  <span class="meta">@Test</span>(timeout = <span class="number">4000</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test5</span><span class="params">()</span>  <span class="keyword">throws</span> Throwable  </span>&#123;</span><br><span class="line">      Stack&lt;Object&gt; stack0 = <span class="keyword">new</span> Stack&lt;Object&gt;();</span><br><span class="line">      Integer integer0 = <span class="keyword">new</span> Integer(<span class="number">724</span>);</span><br><span class="line">      stack0.push(integer0);</span><br><span class="line">      stack0.push(stack0);</span><br><span class="line">      stack0.push(stack0);</span><br><span class="line">      Object object0 = <span class="keyword">new</span> Object();</span><br><span class="line">      stack0.push(stack0);</span><br><span class="line">      stack0.push(object0);</span><br><span class="line">      stack0.push(object0);</span><br><span class="line">      stack0.push(object0);</span><br><span class="line">      stack0.push(object0);</span><br><span class="line">      stack0.push(object0);</span><br><span class="line">      stack0.push(<span class="string">""</span>);</span><br><span class="line">      <span class="comment">// Undeclared exception!</span></span><br><span class="line">      <span class="keyword">try</span> &#123; </span><br><span class="line">        stack0.push(<span class="string">""</span>);</span><br><span class="line">        fail(<span class="string">"Expecting exception: IllegalArgumentException"</span>);</span><br><span class="line">      </span><br><span class="line">      &#125; <span class="keyword">catch</span>(IllegalArgumentException e) &#123;</span><br><span class="line">         <span class="comment">//</span></span><br><span class="line">         <span class="comment">// Stack exceeded capacity!</span></span><br><span class="line">         <span class="comment">//</span></span><br><span class="line">         verifyException(<span class="string">"Tutorial_Maven.Stack"</span>, e);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>手工测试类只有一个判断栈空操作。假设您对这些测试套件感到满意，我们可以将它们集成到源代码树中。 默认情况下，JUnit测试应该位于Maven项目的src / test / java中，因此EvoSuite将在其中放置测试套件。 为此，请调用以下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn evosuite:export</span><br></pre></td></tr></table></figure>
+
+<p>现在，您应该将测试套件复制到src / test / java-确保它们在那里</p>
+<p>o天，我文件路径写错了。。。。我就说，既然已经产生了测试，那就先注释掉pom文件，开始导出</p>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010095447633.png?raw=true" alt="image-20191010095447633"></p>
+<p><strong>执行evosuite产生的测试</strong></p>
+<p>现在我们在源代码树中有了这些测试，执行它们将是很棒的。 使用Maven，可以通过调用测试生命周期阶段来完成</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn test</span><br></pre></td></tr></table></figure>
+
+<p>jdbc那部分测试报错先不看，先看官方那个例子</p>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010095715846.png?raw=true" alt="image-20191010095715846"></p>
+<p>请注意，测试的数量不可避免地会有所不同– EvoSuite使用随机算法生成测试，因此每次调用它时，您都会得到不同的结果。</p>
+<p><strong>将EvoSuite测试与开发人员编写的测试分开</strong></p>
+<p>当我们使用mvn evosuite：export导出测试时，它们被复制到src / test / java中，这是Maven希望所有测试都在的位置。 有时，开发人员可能更愿意将自己的测试与生成的测试分开。</p>
+<p>假设我们不希望在src / test / java中生成测试。 删除我们已经在那里导出的测试</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">~/IdeaProjects/JdbcDemo » rm -r src/test/java/jdbc src/test/java/Tutorial_Maven</span><br><span class="line">-r是因为删除的是文件夹</span><br></pre></td></tr></table></figure>
+
+<p>导出目标提供了一个属性，用于指定将测试导出到的位置–回想一下，我们可以使用以下命令来获取有关此目标的详细信息，有两种方式可以导出到指定位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn evosuite:export -DtargetFolder=src/test/evosuite</span><br></pre></td></tr></table></figure>
+
+<p>或者在pom中配置</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;properties&gt;</span><br><span class="line">      &lt;targetFolder&gt;src/test/evosuite&lt;/targetFolder&gt;</span><br><span class="line">&lt;/properties&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>与开发人员书写测试一起执行EvoSuite测试</strong></p>
+<p>为了确保该工具仅对EvoSuite测试有效，我们需要为EvoSuite测试添加初始化侦听器。 为此，将以下部分添加到pom.xml文件的&lt;build&gt;部分的&lt;plugins&gt;部分中</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;plugin&gt;</span><br><span class="line">   &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">   &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;</span><br><span class="line">   &lt;version&gt;2.17&lt;/version&gt;</span><br><span class="line">   &lt;configuration&gt;</span><br><span class="line">     &lt;properties&gt;</span><br><span class="line">       &lt;property&gt;</span><br><span class="line">          &lt;name&gt;listener&lt;/name&gt;</span><br><span class="line">          &lt;value&gt;org.evosuite.runtime.InitializingListener&lt;/value&gt;</span><br><span class="line">      &lt;/property&gt;</span><br><span class="line">     &lt;/properties&gt;</span><br><span class="line">  &lt;/configuration&gt;</span><br><span class="line">&lt;/plugin&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行实验"><a href="#运行实验" class="headerlink" title="运行实验"></a>运行实验</h2><p>【参考来源】<a href="http://www.evosuite.org/documentation/tutorial-part-3/" target="_blank" rel="noopener">http://www.evosuite.org/documentation/tutorial-part-3/</a></p>
+<p>收集有关测试生成结果的数据</p>
+<p>选择输出变量进行数据收集</p>
+<p>生成数据的基本分析</p>
+<p>使用EvoSuite运行大型实验</p>
+<p>实验前准备-当然是下载官方提供的项目咯</p>
+<p>对于本教程的第三部分，我们将研究<strong>如何收集有关测试生成的数据</strong>，这是在测试生成上运行实验时通常需要的。 我们将使用一个简单的示例场景：默认情况下，EvoSuite使用不同覆盖标准的组合。 与仅将分支覆盖范围用作目标条件相比，这种组合有什么影响？ 一个合理的假设是，这种组合会导致更多的测试和更好的测试套件。 但这是真的吗？ 让我们做一些实验来找出答案！</p>
+<p>实验将涉及在多个类中使用其默认配置运行EvoSuite，并将其配置为仅使用<strong>分支覆盖率</strong>，然后对所得测试套件进行不同的测量。 在进行此类实验时，类别的选择会影响我们得出的结论的概括程度：如果我们使用非常具体且很小的类别选择，那么无论我们的发现如何，它们可能仅与特定类型的类别相关。 因此，我们通常希望选择尽可能多的，尽可能多样的并且具有代表性的类，以便获得概括的结果。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">wget http://evosuite.org/files/tutorial/Tutorial_Experiments.zip</span><br><span class="line">unzip Tutorial_Experiments.zip</span><br><span class="line">cd Tutorial_Experiments</span><br><span class="line">mvn compile</span><br><span class="line">//下载依赖项</span><br><span class="line">mvn dependency:copy-dependencies -DincludeScope=runtime</span><br></pre></td></tr></table></figure>
+
+<p>此命令下载所有依赖项jar文件，并将它们放入target / dependency目录。 使用-DincludeScope = runtime将范围指定为运行时的原因是，该项目具有对JUnit和EvoSuite的测试依赖关系-但是这些依赖关系都不是为了为被测类生成一些测试所必需的，我们只需要 编译和运行时依赖项。因此，完整的项目类路径由target / classes中的类和jar文件target / dependency / commons-collections-3.2.2.jar组成。 要创建保存此类路径的evosuite.properties文件，请使用以下命令:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>EVOSUITE -setup target/classes target/dependency/commons-collections-3.2.2.jar</span><br></pre></td></tr></table></figure>
+
+<p>然后在evosuite.properties文件内的顶部指定路径</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CP=target/classes:target/dependency/commons-collections-3.2.2.jar</span><br></pre></td></tr></table></figure>
+
+<p>首先下载jar包，地址<a href="http://www.evosuite.org/downloads/" target="_blank" rel="noopener">http://www.evosuite.org/downloads/</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar evosuite-1.0.6.jar -setup target/classes target/dependency/commons-collections-3.2.2.jar</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010110250245.png?raw=true" alt="image-20191010110250245"></p>
+<p><strong>使用Evosuite收集数据</strong></p>
+<p>一定要记住更改POM文件后，要导入依赖</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn dependency:copy-dependencies -DincludeScope=runtime</span><br></pre></td></tr></table></figure>
+
+<p>然后编译</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn compile</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">~/IdeaProjects/JdbcDemo » java -jar evosuite-1.0.6.jar -class Tutorial_Experiments.Person                                                              zhengjiani@zhengjianideMacBook-Pro</span><br><span class="line">* EvoSuite 1.0.6</span><br><span class="line">* Going to generate test cases for class: Tutorial_Experiments.Person</span><br><span class="line">* Starting client</span><br><span class="line">* Properties loaded from /Users/zhengjiani/IdeaProjects/JdbcDemo/evosuite-files/evosuite.properties</span><br><span class="line">* Connecting to master process on port 10356</span><br><span class="line">* Analyzing classpath: </span><br><span class="line">  - target/classes</span><br><span class="line">  - target/dependency/commons-collections-3.2.2.jar</span><br><span class="line">* Finished analyzing classpath</span><br><span class="line">* Generating tests for class Tutorial_Experiments.Person</span><br><span class="line">* Test criteria:</span><br><span class="line">  - Line Coverage</span><br><span class="line">  - Branch Coverage</span><br><span class="line">  - Exception</span><br><span class="line">  - Mutation testing (weak)</span><br><span class="line">  - Method-Output Coverage</span><br><span class="line">  - Top-Level Method Coverage</span><br><span class="line">  - No-Exception Top-Level Method Coverage</span><br><span class="line">  - Context Branch Coverage</span><br><span class="line">* Setting up search algorithm for whole suite generation</span><br><span class="line">* Total number of test goals: </span><br><span class="line">  - Line 6</span><br><span class="line">  - Branch 3</span><br><span class="line">  - Exception 0</span><br><span class="line">  - MutationFactory 0</span><br><span class="line">  - Output 6</span><br><span class="line">  - Method 3</span><br><span class="line">  - MethodNoException 3</span><br><span class="line">  - CBranchFitnessFactory 3</span><br><span class="line">[Progress:&gt;                             0%] [Cov:&gt;                                  0%]* Using seed 1570678542089</span><br><span class="line">* Starting evolution</span><br><span class="line">[Progress:&gt;                             0%] [Cov:===================================100%]</span><br><span class="line">* Search finished after 0s and 0 generations, 5315 statements, best individual has fitness: 1.0</span><br><span class="line">* Minimizing test suite</span><br><span class="line">* Going to analyze the coverage criteria</span><br><span class="line">* Coverage analysis for criterion LINE</span><br><span class="line">* Coverage of criterion LINE: 100%</span><br><span class="line">* Total number of goals: 6</span><br><span class="line">* Number of covered goals: 6</span><br><span class="line">* Coverage analysis for criterion BRANCH</span><br><span class="line">* Coverage of criterion BRANCH: 100%</span><br><span class="line">* Total number of goals: 3</span><br><span class="line">* Number of covered goals: 3</span><br><span class="line">* Coverage analysis for criterion EXCEPTION</span><br><span class="line">* Coverage of criterion EXCEPTION: 100% (no goals)</span><br><span class="line">* Coverage analysis for criterion WEAKMUTATION</span><br><span class="line">* Coverage of criterion WEAKMUTATION: 100% (no goals)</span><br><span class="line">* Coverage analysis for criterion OUTPUT</span><br><span class="line">* Coverage of criterion OUTPUT: 100%</span><br><span class="line">* Total number of goals: 6</span><br><span class="line">* Number of covered goals: 6</span><br><span class="line">* Coverage analysis for criterion METHOD</span><br><span class="line">* Coverage of criterion METHOD: 100%</span><br><span class="line">* Total number of goals: 3</span><br><span class="line">* Number of covered goals: 3</span><br><span class="line">* Coverage analysis for criterion METHODNOEXCEPTION</span><br><span class="line">* Coverage of criterion METHODNOEXCEPTION: 100%</span><br><span class="line">* Total number of goals: 3</span><br><span class="line">* Number of covered goals: 3</span><br><span class="line">* Coverage analysis for criterion CBRANCH</span><br><span class="line">* Coverage of criterion CBRANCH: 100%</span><br><span class="line">* Total number of goals: 3</span><br><span class="line">* Number of covered goals: 3</span><br><span class="line">* Generated 6 tests with total length 12</span><br><span class="line">* Resulting test suite's coverage: 100% (average coverage for all fitness functions)</span><br><span class="line">* Generating assertions</span><br><span class="line">* Resulting test suite's mutation score: 100%</span><br><span class="line">* Compiling and checking tests</span><br><span class="line">* Writing JUnit test case 'Person_ESTest' to evosuite-tests</span><br><span class="line">* Done!</span><br><span class="line"></span><br><span class="line">* Computation finished</span><br></pre></td></tr></table></figure>
+
+<p>查看文件evosuite-report/statistics.csv</p>
+<p>该文件为逗号分隔值格式。 第一行包含显示各个列所包含内容的标题，然后各行包含实际数据。 第一列包含我们测试的类的名称（tutorial.Person）。 第二列向我们显示了我们使用的覆盖标准–在这种情况下，我们将看到EvoSuite默认使用的标准的完整列表，以分号分隔。 第三列告诉我们已实现的覆盖率–在这种情况下为1.0，这意味着我们有100％的覆盖率（是的！），这是根据覆盖率目标与总目标的比率计算得出的（最后两列）。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TARGET_CLASS,criterion,Coverage,Total_Goals,Covered_Goals</span><br><span class="line">Tutorial_Experiments.Person,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,<span class="number">1.0</span>,<span class="number">24</span>,<span class="number">24</span></span><br></pre></td></tr></table></figure>
+
+<p>让我们再测试一些类，使用分支覆盖率</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">~/IdeaProjects/JdbcDemo » java -jar evosuite-1.0.6.jar -class Tutorial_Experiments.Person -criterion branch                    zhengjiani@zhengjianideMacBook-Pro</span><br><span class="line">* EvoSuite 1.0.6</span><br><span class="line">* Going to generate test cases for class: Tutorial_Experiments.Person</span><br><span class="line">* Starting client</span><br><span class="line">* Properties loaded from /Users/zhengjiani/IdeaProjects/JdbcDemo/evosuite-files/evosuite.properties</span><br><span class="line">* Connecting to master process on port 9487</span><br><span class="line">* Analyzing classpath: </span><br><span class="line">  - target/classes</span><br><span class="line">  - target/dependency/commons-collections-3.2.2.jar</span><br><span class="line">* Finished analyzing classpath</span><br><span class="line">* Generating tests for class Tutorial_Experiments.Person</span><br><span class="line">* Test criterion:</span><br><span class="line">  - Branch Coverage</span><br><span class="line">* Setting up search algorithm for whole suite generation</span><br><span class="line">[Progress:&gt;                             0%] [Cov:&gt;                                  0%]* Total number of test goals: 3</span><br><span class="line">* Using seed 1570678801008</span><br><span class="line">* Starting evolution</span><br><span class="line">[Progress:&gt;                             0%] [Cov:===================================100%]</span><br><span class="line">* Search finished after 1s and 0 generations, 5395 statements, best individual has fitness: 0.0</span><br><span class="line">* Minimizing test suite</span><br><span class="line">* Going to analyze the coverage criteria</span><br><span class="line">* Coverage analysis for criterion BRANCH</span><br><span class="line">* Coverage of criterion BRANCH: 100%</span><br><span class="line">* Total number of goals: 3</span><br><span class="line">* Number of covered goals: 3</span><br><span class="line">* Generated 2 tests with total length 4</span><br><span class="line">* Resulting test suite's coverage: 100%</span><br><span class="line">* Generating assertions</span><br><span class="line">* Resulting test suite's mutation score: 100%</span><br><span class="line">* Compiling and checking tests</span><br><span class="line">* Writing JUnit test case 'Person_ESTest' to evosuite-tests</span><br><span class="line">* Done!</span><br><span class="line"></span><br><span class="line">* Computation finished</span><br></pre></td></tr></table></figure>
+
+<p>然后evosuite-report/statistics.csv文件更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TARGET_CLASS,criterion,Coverage,Total_Goals,Covered_Goals</span><br><span class="line">Tutorial_Experiments.Person,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,1.0,24,24</span><br><span class="line">Tutorial_Experiments.Person,BRANCH,1.0,3,3</span><br><span class="line">Tutorial_Experiments.Person,BRANCH,1.0,3,3</span><br></pre></td></tr></table></figure>
+
+<p><strong>设置输出变量</strong></p>
+<p>我们可以生成的数据不仅仅是数据文件到目前为止向我们显示的列。 EvoSuite具有属性output_variables，该属性确定应将哪些值写入statistics.csv文件。在做这件事之前先删除旧的.csv文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm evosuite-report/statistics.csv</span><br></pre></td></tr></table></figure>
+
+<p>输出变量主要有两种类型1）运行时变量，即为计算的结果（coverage）。2）而属性是我们可以设置的输入属性。 例如，TARGET_CRITERION和coverage是属性，而Total_Goals和Covered_Goals是运行时变量。</p>
+<p>总而言之，对于我们的实验，我们希望获得以下数据</p>
+<p>Class under test (TARGET_CLASS) </p>
+<ul>
+<li>Criteria (criterion) 覆盖准则</li>
+<li>Size (Size) 规模</li>
+<li>Length (Length) 语句长度</li>
+<li>Mutation score (MutationScore) 变异评分</li>
+</ul>
+<p>变量列表以逗号分隔的形式传递给output_varibles属性。 让我们尝试一下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">~/IdeaProjects/JdbcDemo » java -jar evosuite-1.0.6.jar -class Tutorial_Experiments.Company -criterion branch -Doutput_variables=TARGET_CLASS,criterion,Size,Length,MutationScore</span><br><span class="line">* EvoSuite 1.0.6</span><br><span class="line">* Going to generate <span class="built_in">test</span> cases <span class="keyword">for</span> class: Tutorial_Experiments.Company</span><br><span class="line">* Starting client</span><br><span class="line">* Properties loaded from /Users/zhengjiani/IdeaProjects/JdbcDemo/evosuite-files/evosuite.properties</span><br><span class="line">* Connecting to master process on port 13621</span><br><span class="line">* Analyzing classpath: </span><br><span class="line">  - target/classes</span><br><span class="line">  - target/dependency/commons-collections-3.2.2.jar</span><br><span class="line">* Finished analyzing classpath</span><br><span class="line">* Generating tests <span class="keyword">for</span> class Tutorial_Experiments.Company</span><br><span class="line">* Test criterion:</span><br><span class="line">  - Branch Coverage</span><br><span class="line">* Setting up search algorithm <span class="keyword">for</span> whole suite generation</span><br><span class="line">[Progress:&gt;                             0%] [Cov:&gt;                                  0%]* Total number of <span class="built_in">test</span> goals: 2</span><br><span class="line">* Using seed 1570688573084</span><br><span class="line">* Starting evolution</span><br><span class="line">[Progress:&gt;                             0%] [Cov:===================================100%]</span><br><span class="line">* Search finished after 1s and 0 generations, 4923 statements, best individual has fitness: 0.0</span><br><span class="line">* Minimizing <span class="built_in">test</span> suite</span><br><span class="line">* Going to analyze the coverage criteria</span><br><span class="line">* Coverage analysis <span class="keyword">for</span> criterion BRANCH</span><br><span class="line">* Coverage of criterion BRANCH: 100%</span><br><span class="line">* Total number of goals: 2</span><br><span class="line">* Number of covered goals: 2</span><br><span class="line">* Generated 1 tests with total length 2</span><br><span class="line">* Resulting <span class="built_in">test</span> suite<span class="string">'s coverage: 100%</span></span><br><span class="line"><span class="string">* Generating assertions</span></span><br><span class="line"><span class="string">* Resulting test suite'</span>s mutation score: 100%</span><br><span class="line">* Compiling and checking tests</span><br><span class="line">* Writing JUnit <span class="built_in">test</span> <span class="keyword">case</span> <span class="string">'Company_ESTest'</span> to evosuite-tests</span><br><span class="line">* Done!</span><br><span class="line"></span><br><span class="line">* Computation finished</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010142356313.png?raw=true" alt="image-20191010142356313"></p>
+<p>因此，我们刚刚生成了一个包含两个语句的测试，该测试杀死了为EvoSuite该类生成的所有突变体。</p>
+<p>请注意，该断言不包括在EvoSuite的语句计数中。 这是因为断言不是作为基于搜索的测试生成的一部分而生成的，而是在后处理步骤中添加的。</p>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010142606316.png?raw=true" alt="image-20191010142606316"></p>
+<p><strong>运行一个实验</strong></p>
+<p>EvoSuite是随机的：如果连续运行两次，您将获得不同的结果。 这也意味着，如果您在一次运行中得到一个非常大的测试套件，那么在下一轮中您可能会获得一个具有不同大小的测试套件。 通常，当我们使用随机算法时，我们需要进行重复操作，并对统计数据进行统计分析。 因此，我们将对所有类进行测试，并重复10次。 此外，我们需要重复两次，一次仅使用分支覆盖，一次使用默认条件。</p>
+<p>在开始实验前，还是要删除旧的.csv文件</p>
+<p>使用<code>-prefix</code>表示测试包前缀，我实验无效。。。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/IdeaProjects/JdbcDemo » java -jar evosuite-1.0.6.jar -criterion branch -prefix Tutorial_ -Doutput_variables=TARGET_CLASS,criterion,Size,Length,MutationScore</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010143526789.png?raw=true" alt="image-20191010143526789"></p>
+<p>我们可以使用-Dconfiguration_id = &lt;name&gt;语法告诉EvoSuite为正在运行的特定配置添加名称，然后将该属性包含在输出变量中。 因此，要运行实验，我们需要以下两个命令，一个用于分支覆盖，一个用于默认组合</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~/IdeaProjects/JdbcDemo » java -jar evosuite-1.0.6.jar -criterion branch -prefix Tutorial_Experiments -Doutput_variables=TARGET_CLASS,criterion,Size,Length,MutationScore</span><br><span class="line"></span><br><span class="line">~/IdeaProjects/JdbcDemo » java -jar evosuite-1.0.6.jar -Dconfiguration_id=Default -criterion branch -prefix Tutorial_Experiments -Doutput_variables=configuration_id,TARGET_CLASS,criterion,Size,Length,MutationScore</span><br></pre></td></tr></table></figure>
+
+<p>现在输出中有configuration_id了</p>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010144851622.png?raw=true" alt="image-20191010144851622"></p>
+<p>我们需要确定的不是在一种特定的运行中一种配置是否优于另一种配置，而是平均而言。 因此，我们需要重复几次实验，并做一些更严格的分析。</p>
+<p>一种简单的重复方法是将调用简单地包装在bash循环中以运行它，例如5次</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~/IdeaProjects/JdbcDemo » <span class="keyword">for</span> I <span class="keyword">in</span> &#123;1..5&#125;; <span class="keyword">do</span> java -jar evosuite-1.0.6.jar -Dconfiguration_id=Branch -criterion branch -prefix Tutorial_Experiments -Doutput_variables=TARGET_CLASS,criterion,Size,Length,MutationScore ; <span class="keyword">done</span> </span><br><span class="line">-------------------------两条命令啊，分两次执行-------------------------------------------</span><br><span class="line"><span class="keyword">for</span> I <span class="keyword">in</span> &#123;1..5&#125;; <span class="keyword">do</span> java -jar evosuite-1.0.6.jar -Dconfiguration_id=Default  -prefix Tutorial_Experiments -Doutput_variables=configuration_id,TARGET_CLASS,criterion,Size,Length,MutationScore ; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<p>后期还是用脚本写吧。。。在控制台里太造孽了</p>
+<p>这将需要一段时间。 实际上，对于严肃的实验而言，重复5次甚至不是一个合适的数目，理想情况下，您希望重复30次或更多次才能获得代表性的结果。 稍后我们将讨论如何进行较大的实验。</p>
+<p>您可能会注意到<strong>分支覆盖范围的运行速度更快</strong>–这是<strong>因为EvoSuite一旦达到100％的分支覆盖范围，就会停止生成测试</strong>。 默认配置将包括一些不可行的测试目标，即没有测试的测试目标，在这种情况下，EvoSuite将尝试生成测试，直到用尽整个时间预算。</p>
+<p>第一行命令的执行结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">TARGET_CLASS,criterion,Size,Length,MutationScore</span><br><span class="line">Tutorial_Experiments.SavingsAccount,BRANCH,3,8,0.7058823529411765</span><br><span class="line">Tutorial_Experiments.BankAccount,BRANCH,2,6,0.8</span><br><span class="line">Tutorial_Experiments.Company,BRANCH,1,2,1.0</span><br><span class="line">Tutorial_Experiments.Owner,BRANCH,1,1,1.0</span><br><span class="line">Tutorial_Experiments.CurrentAccount,BRANCH,2,7,0.6739130434782609</span><br><span class="line">Tutorial_Experiments.Bank,BRANCH,4,15,0.8</span><br><span class="line">Tutorial_Experiments.ATMCard,BRANCH,8,40,0.6666666666666666</span><br><span class="line">Tutorial_Experiments.Person,BRANCH,2,4,0.0</span><br><span class="line">Tutorial_Experiments.ATM,BRANCH,10,72,0.3888888888888889</span><br><span class="line">Tutorial_Experiments.SavingsAccount,BRANCH,3,9,0.7058823529411765</span><br><span class="line">Tutorial_Experiments.BankAccount,BRANCH,2,6,0.8</span><br><span class="line">Tutorial_Experiments.Company,BRANCH,1,2,1.0</span><br><span class="line">Tutorial_Experiments.Owner,BRANCH,1,1,1.0</span><br><span class="line">Tutorial_Experiments.CurrentAccount,BRANCH,2,7,0.6956521739130435</span><br><span class="line">Tutorial_Experiments.Bank,BRANCH,4,11,0.8</span><br><span class="line">Tutorial_Experiments.ATMCard,BRANCH,8,48,0.6666666666666666</span><br><span class="line">Tutorial_Experiments.Person,BRANCH,2,4,0.0</span><br><span class="line">Tutorial_Experiments.ATM,BRANCH,10,74,0.4166666666666667</span><br><span class="line">Tutorial_Experiments.SavingsAccount,BRANCH,2,7,0.8529411764705882</span><br><span class="line">Tutorial_Experiments.BankAccount,BRANCH,2,6,0.8</span><br><span class="line">Tutorial_Experiments.Company,BRANCH,1,2,1.0</span><br><span class="line">Tutorial_Experiments.Owner,BRANCH,1,1,1.0</span><br><span class="line">Tutorial_Experiments.CurrentAccount,BRANCH,2,7,0.6304347826086957</span><br><span class="line">Tutorial_Experiments.Bank,BRANCH,4,13,0.8</span><br><span class="line">Tutorial_Experiments.ATMCard,BRANCH,8,40,0.6666666666666666</span><br><span class="line">Tutorial_Experiments.Person,BRANCH,2,4,0.0</span><br><span class="line">Tutorial_Experiments.ATM,BRANCH,9,70,0.5277777777777778</span><br><span class="line">Tutorial_Experiments.SavingsAccount,BRANCH,3,9,0.7352941176470589</span><br><span class="line">Tutorial_Experiments.BankAccount,BRANCH,2,6,0.8</span><br><span class="line">Tutorial_Experiments.Company,BRANCH,1,2,1.0</span><br><span class="line">Tutorial_Experiments.Owner,BRANCH,1,1,1.0</span><br><span class="line">Tutorial_Experiments.CurrentAccount,BRANCH,3,9,0.5652173913043478</span><br><span class="line">Tutorial_Experiments.Bank,BRANCH,4,15,0.8</span><br><span class="line">Tutorial_Experiments.ATMCard,BRANCH,8,43,0.6666666666666666</span><br><span class="line">Tutorial_Experiments.Person,BRANCH,2,4,0.0</span><br><span class="line">Tutorial_Experiments.ATM,BRANCH,9,68,0.5555555555555556</span><br><span class="line">Tutorial_Experiments.SavingsAccount,BRANCH,3,9,0.6176470588235294</span><br><span class="line">Tutorial_Experiments.BankAccount,BRANCH,2,6,0.8</span><br><span class="line">Tutorial_Experiments.Company,BRANCH,1,2,1.0</span><br><span class="line">Tutorial_Experiments.Owner,BRANCH,1,1,1.0</span><br><span class="line">Tutorial_Experiments.CurrentAccount,BRANCH,2,9,0.7391304347826086</span><br><span class="line">Tutorial_Experiments.Bank,BRANCH,4,9,0.8</span><br><span class="line">Tutorial_Experiments.ATMCard,BRANCH,8,24,0.6666666666666666</span><br><span class="line">Tutorial_Experiments.Person,BRANCH,2,4,0.0</span><br><span class="line">Tutorial_Experiments.ATM,BRANCH,10,76,0.3333333333333333</span><br></pre></td></tr></table></figure>
+
+<p>第二行命令的执行结果</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">configuration_id,TARGET_CLASS,criterion,Size,Length,MutationScore</span><br><span class="line">Default,Tutorial_Experiments.BankAccount,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,7,23,1.0</span><br><span class="line">Default,Tutorial_Experiments.Company,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,3,6,1.0</span><br><span class="line">Default,Tutorial_Experiments.Owner,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,1,1,1.0</span><br><span class="line">Default,Tutorial_Experiments.CurrentAccount,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,3,13,0.9130434782608695</span><br><span class="line">Default,Tutorial_Experiments.Bank,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,4,9,0.8</span><br><span class="line">Default,Tutorial_Experiments.ATMCard,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,14,77,0.6666666666666666</span><br><span class="line">Default,Tutorial_Experiments.Person,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,6,12,1.0</span><br><span class="line">Default,Tutorial_Experiments.ATM,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,16,123,0.4166666666666667</span><br><span class="line">Default,Tutorial_Experiments.SavingsAccount,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,4,13,0.9411764705882353</span><br><span class="line">Default,Tutorial_Experiments.BankAccount,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,7,22,1.0</span><br><span class="line">Default,Tutorial_Experiments.Company,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,3,6,1.0</span><br><span class="line">Default,Tutorial_Experiments.Owner,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,1,1,1.0</span><br><span class="line">Default,Tutorial_Experiments.CurrentAccount,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,4,12,0.9130434782608695</span><br><span class="line">Default,Tutorial_Experiments.Bank,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,4,15,0.8</span><br><span class="line">Default,Tutorial_Experiments.ATMCard,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,13,63,0.6666666666666666</span><br><span class="line">Default,Tutorial_Experiments.Person,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,6,12,1.0</span><br><span class="line">Default,Tutorial_Experiments.ATM,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,16,118,0.4166666666666667</span><br><span class="line">Default,Tutorial_Experiments.SavingsAccount,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,4,10,0.9411764705882353</span><br><span class="line">Default,Tutorial_Experiments.BankAccount,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,8,23,1.0</span><br><span class="line">Default,Tutorial_Experiments.Company,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,3,6,1.0</span><br><span class="line">Default,Tutorial_Experiments.Owner,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,1,1,1.0</span><br><span class="line">Default,Tutorial_Experiments.CurrentAccount,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,3,12,0.8043478260869565</span><br><span class="line">Default,Tutorial_Experiments.Bank,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,4,11,0.8</span><br><span class="line">Default,Tutorial_Experiments.ATMCard,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,14,70,0.6666666666666666</span><br><span class="line">Default,Tutorial_Experiments.Person,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,6,12,1.0</span><br><span class="line">Default,Tutorial_Experiments.ATM,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,15,111,0.4166666666666667</span><br><span class="line">Default,Tutorial_Experiments.SavingsAccount,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,3,11,0.9411764705882353</span><br><span class="line">Default,Tutorial_Experiments.BankAccount,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,8,24,1.0</span><br><span class="line">Default,Tutorial_Experiments.Company,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,3,6,1.0</span><br><span class="line">Default,Tutorial_Experiments.Owner,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,1,1,1.0</span><br><span class="line">Default,Tutorial_Experiments.CurrentAccount,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,3,10,0.8695652173913043</span><br><span class="line">Default,Tutorial_Experiments.Bank,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,4,9,0.8</span><br><span class="line">Default,Tutorial_Experiments.ATMCard,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,14,68,0.6666666666666666</span><br><span class="line">Default,Tutorial_Experiments.Person,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,6,12,0.0</span><br><span class="line">Default,Tutorial_Experiments.ATM,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,14,105,0.5277777777777778</span><br><span class="line">Default,Tutorial_Experiments.SavingsAccount,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,4,13,0.9411764705882353</span><br><span class="line">Default,Tutorial_Experiments.BankAccount,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,7,21,1.0</span><br><span class="line">Default,Tutorial_Experiments.Company,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,3,6,1.0</span><br><span class="line">Default,Tutorial_Experiments.Owner,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,1,1,1.0</span><br><span class="line">Default,Tutorial_Experiments.CurrentAccount,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,3,8,0.8695652173913043</span><br><span class="line">Default,Tutorial_Experiments.Bank,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,4,12,0.8</span><br><span class="line">Default,Tutorial_Experiments.ATMCard,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,14,66,0.6666666666666666</span><br><span class="line">Default,Tutorial_Experiments.Person,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,6,12,0.0</span><br><span class="line">Default,Tutorial_Experiments.ATM,LINE;BRANCH;EXCEPTION;WEAKMUTATION;OUTPUT;METHOD;METHODNOEXCEPTION;CBRANCH,17,131,0.3611111111111111</span><br></pre></td></tr></table></figure>
+
+<p><strong>分析结果</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">easy_install numpy</span><br><span class="line">easy_install matplotlib</span><br><span class="line">easy_install pandas</span><br></pre></td></tr></table></figure>
+
+<p>上面结果太乱，我们用python写个脚本来分析一下，脚本应该和statistics.csv文件放在一起并且命名为analy-data.py</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python</span><br><span class="line"></span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(&apos;statistics.csv&apos;) # Make sure the path is correct</span><br><span class="line">bp = df.boxplot(column=&apos;Size&apos;, by=&apos;configuration_id&apos;)</span><br><span class="line">bp = df.boxplot(column=&apos;Length&apos;, by=&apos;configuration_id&apos;)</span><br><span class="line">bp = df.boxplot(column=&apos;MutationScore&apos;, by=&apos;configuration_id&apos;)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>最后一条命令（plt.show（））将使用matplotlib打开三个图的三个窗口。在所有图中，我们可以清楚地看到，分支覆盖范围平均产生的测试更少，语句更少，并且这些测试的突变得分更低。</p>
+<p>执行<code>python3 analy-data.py</code></p>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/Evosuite/image-20191010155018710.png?raw=true" alt="image-20191010155018710"></p>
+<p>尽管在箱图中可以看到这种差异，但是在科学的背景下，最好还是使用统计分析来证明这种差异。特别是，我们通常希望量化效果的大小，并且希望量化对差异的信心。对于这些值中的第一个，可以使用不同的效果大小测量。让我们使用[Cohen’s-d（<a href="https://en.wikiversity.org/wiki/Cohen%27s_d）]，它是[-1，1]范围内的值。为了量化我们对结果的信心，我们将使用众所周知的[p值（https://en.wikipedia.org/wiki/P-value）]，这是观察到的结果无效的可能性我们实际测试的内容。要计算p值，我们需要选择适当的统计检验。让我们使用Wilcoxon等级检验，但统计检验的选择实际上超出了本教程。幸运的是，统计测试可以作为SciPy的一部分使用，因此请确保已安装" target="_blank" rel="noopener">https://en.wikiversity.org/wiki/Cohen%27s_d）]，它是[-1，1]范围内的值。为了量化我们对结果的信心，我们将使用众所周知的[p值（https://en.wikipedia.org/wiki/P-value）]，这是观察到的结果无效的可能性我们实际测试的内容。要计算p值，我们需要选择适当的统计检验。让我们使用Wilcoxon等级检验，但统计检验的选择实际上超出了本教程。幸运的是，统计测试可以作为SciPy的一部分使用，因此请确保已安装</a>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install scipy</span><br></pre></td></tr></table></figure>
+
+<p>我们执行统计测试所需要做的就是创建值数组，并将其作为参数传递给scipy.stats.wilcoxon函数，该函数随后将为我们提供p值。 通常，小于0.05的p值被视为具有统计意义的结果的证据，因此这就是我们所希望的。</p>
+<p>为了产生用于统计检验的输入数组，我们可以再次使用pandas库； 我们只需要选择数据的子集。 例如，要选择属于默认配置的所有数据，我们将使用df [df [‘configuration_id] ==’Default’]过滤数据集。 在结果数据中，我们可以选择列，例如 尺寸。 要计算Cohen的d，我们只需从Stackoverflow中提取一个片段：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> wilcoxon</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> mean, std <span class="comment"># version &gt;= 1.7.1 &amp;&amp; &lt;= 1.9.1</span></span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> sqrt</span><br><span class="line"></span><br><span class="line"><span class="comment"># From http://stackoverflow.com/questions/21532471/how-to-calculate-cohens-d-in-python</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cohen_d</span><span class="params">(x,y)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> (mean(x) - mean(y)) / sqrt((std(x, ddof=<span class="number">1</span>) ** <span class="number">2</span> + std(y, ddof=<span class="number">1</span>) ** <span class="number">2</span>) / <span class="number">2.0</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">'statistics.csv'</span>)</span><br><span class="line"></span><br><span class="line">cat1 = df[df[<span class="string">'configuration_id'</span>]==<span class="string">'Default'</span>]</span><br><span class="line">cat2 = df[df[<span class="string">'configuration_id'</span>]==<span class="string">'Branch'</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> column <span class="keyword">in</span> [<span class="string">'Size'</span>, <span class="string">'Length'</span>, <span class="string">'MutationScore'</span>]:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">"%s: %.2f (%f)"</span> % (column, cohen_d(cat1[column], cat2[column]), wilcoxon(cat1[column], cat2[column]).pvalue)</span><br></pre></td></tr></table></figure>
+
+<p>这个代码我运行后报错。。。有知道的小伙伴可以告诉我。。。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">~/IdeaProjects/JdbcDemo/evosuite-report » python3 analy-data1.py                                                              zhengjiani@zhengjianideMacBook-Pro</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;analy-data1.py&quot;, line 15, in &lt;module&gt;</span><br><span class="line">    print(column, cohen_d(cat1[column], cat2[column]), wilcoxon(cat1[column], cat2[column]).pvalue)</span><br><span class="line">  File &quot;/usr/local/lib/python3.7/site-packages/scipy/stats/morestats.py&quot;, line 2848, in wilcoxon</span><br><span class="line">    raise ValueError(&apos;The samples x and y must have the same length.&apos;)</span><br><span class="line">ValueError: The samples x and y must have the same length.</span><br></pre></td></tr></table></figure>
+
+<p><strong>其他有用的变量</strong>【这个实验我没有做，感兴趣的可以看哈】</p>
+<p>要获得可用输出变量的完整概述，当前最好的地方是源代码，尤其是文件[RuntimeVariable.java（<a href="https://github.com/EvoSuite/evosuite/blob/master/client/src/main/java/org/evosuite/statistics/RuntimeVariable.java）]。" target="_blank" rel="noopener">https://github.com/EvoSuite/evosuite/blob/master/client/src/main/java/org/evosuite/statistics/RuntimeVariable.java）]。</a></p>
+<p>例如，如果您想知道某些值随时间变化的方式，可以使用时间轴变量为您捕获这些数据。 假设我们想了解分支覆盖范围在搜索的前30秒如何演变，并且我们想每秒采样一次。 为此，我们将添加一个输出变量“ CoverageTimeline”，并使用-Dtimeline_interval = 1000指定采样间隔：</p>
+<p>当我们指定总共30秒的时间预算（-Dsearch_budget = 30）时，statistics.csv文件现在将具有30列标记为CoverageTimeline_T1的列，直到CoverageTimeline_T30，并分别显示搜索的每一秒的值。</p>
+<p>再举一个有趣的例子，BranchCoverageBitString变量将产生一个字符串“ 0”和“ 1”，其中每个数字代表程序中的一个分支，而1则表示该分支已被覆盖。 该位串使我们能够比较特定分支是否被特定配置覆盖。</p>
+<p><strong>运行大型实验</strong>《并行化》</p>
+<p>运行大型实验时，EvoSuite在命令行上显示的进度条将浪费日志文件中的空间。通过添加-Dshow_progress = false禁用它。<br>当并行运行多个EvoSuite作业时，请确保它们不要尝试写入同一evosuite-report / statistics.csv，因为同时访问会破坏该文件。而是使用属性-Dreport_dir = &lt;目录&gt;为不同的作业设置不同的目录。实验完成后，您将需要再次将单个结果文件聚合到一个大数据文件中。</p>
+<h2 id="扩展EvoSuite-以下大部分内容为翻译"><a href="#扩展EvoSuite-以下大部分内容为翻译" class="headerlink" title="扩展EvoSuite(以下大部分内容为翻译)"></a>扩展EvoSuite(以下大部分内容为翻译)</h2><p>主要从下面4个方面扩展</p>
+<ul>
+<li>Building EvoSuite</li>
+<li>Modifying the search algorithm 改变搜索算法</li>
+<li>Adding new fitness functions 增加新的适应度函数</li>
+<li>Adding new runtime variables 增加新的运行时变量</li>
+</ul>
+<p>预先准备</p>
+<ul>
+<li>A git client to check out the EvoSuite source code</li>
+<li>JDK (version 8) </li>
+<li>Apache Maven (version 3.1 or newer)</li>
+<li>An IDE (e.g., IntelliJ or Eclipse) in order to edit the source code</li>
+</ul>
+<p>获取Evosuite的源码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/EvoSuite/evosuite.git</span><br></pre></td></tr></table></figure>
+
+<p>源代码被组织成几个Maven子模块。 也就是说，刚签出的源代码的主目录中有一个父pom.xml，然后在子目录中有几个单独的子项目。 让我们仔细看一下主要的子模块</p>
+<p>master：EvoSuite使用主客户端架构，因为执行随机生成的测试时可能会出错（例如，我们可能会耗尽内存）。 客户端会不时地将当前的搜索结果发送到主进程，这样即使出现问题，最终我们仍然会进行一些测试。 主模块处理命令行上的用户输入（例如，解析命令行选项），然后生成客户端进程以进行实际的测试生成。</p>
+<p>client：客户端承担了所有繁重的工作。 遗传算法位于此处，它是算法使用的测试用例和测试套件的内部表示形式，搜索运算符，执行测试用例的机制，生成跟踪信息以从中计算适用性值所需的所有字节码工具。</p>
+<p>runtime：这是运行时库，即确定测试执行确定性所需的所有工具，模拟的Java API等。</p>
+<p>plugins：这里有几个子项目，它们是各种第三方工具（如Maven，IntelliJ，Eclipse或Jenkins）的插件。</p>
+<p>除了这些Maven模块之外，还有其他几个模块或子目录。 通常，您将不需要访问其中任何一个，但是如果您好奇它们是什么，则可以</p>
+<p>standalone_runtime：该库中没有源代码，这只是一个Maven子模块，它生成一个独立的jar文件，即，其中包含运行时库的所有依赖项</p>
+<p>shaded：这里也没有源代码。 这是一个Maven模块，它生成EvoSuite的版本，其中，包名称从org.evosuite重命名为其他名称。 这是为了允许将EvoSuite应用于自身（否则将无法正常运行，因为EvoSuite拒绝使用其自己的代码）。</p>
+<p>generated：这是一个子模块，我们在其中放置EvoSuite生成的测试以测试EvoSuite。 这项工作仍在进行中。</p>
+<p>release_results：这不是Maven子模块，它只是代表我们每次执行发布时在SF110数据集上进行的实验结果的数据集合。</p>
+<p>src：这里没有Java源代码，只有一些与Maven相关的元数据。</p>
+<p>removed：一些源代码文件未在主源代码树中使用，但对于保留作为参考很有用。</p>
+<p><strong>构建EvoSuite</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn compile</span><br></pre></td></tr></table></figure>
+
+<p>IDE很可能会自动为您执行此操作。 但是，重要的是您的IDE支持Maven，并且已将项目配置为Maven项目。 如果您尚未执行此操作，则会收到错误消息，提示编译器无法在org.evosuite.xsd包中找到类。 jaxb会基于XML模式自动生成这些类，只有在您使用Maven正确编译了项目的情况下，才能完成这些类。</p>
+<p>回顾本教程的第1部分，EvoSuite发行版包含两个jar文件-一个具有独立的运行时依赖项，另一个用于测试生成。 您可以通过调用以下命令生成它们：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
+
+<p>EvoSuite jar文件主要由以下主子模块生成：master / target / evosuite-master-1.0.4-SNAPSHOT.jar。 您可以通过使用Java调用可执行文件来验证这种情况。(这一步我就不做了。。)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar master/target/evosuite-master-1.0.4-SNAPSHOT.jar</span><br></pre></td></tr></table></figure>
+
+<p>省略一部分，直接看扩展遗传算法</p>
+<h2 id="扩展遗传算法"><a href="#扩展遗传算法" class="headerlink" title="扩展遗传算法"></a>扩展遗传算法</h2><p>现在，让我们对EvoSuite进行一些更改。 我们将考虑的第一个示例场景是实际的搜索算法。 您可能知道，EvoSuite使用遗传算法来驱动测试生成。 简而言之，这意味着存在大量候选解决方案（染色体，在这种情况下为测试套件），并且这些测试套件是使用旨在模拟自然进化的搜索运算符进行进化的。 适应度函数估计每个候选解决方案的质量。 优胜劣汰的个体繁殖的可能性最高，如果选择繁殖的个体，那么两个母体个体将使用交叉算子组合在一起以产生两个新的子孙个体，然后突变对这些子代进行较小的改变。</p>
+<p>所有这些都在<code>org.evosuite.ga</code>软件包的客户端模块中实现。 有一个抽象的超类<code>org.evosuite.ga.metaheuristics</code>，然后有几个具体的实现，例如StandardGA，SteadyStateGA或EvoSuite的默认值MonotonicGA。 如果查看GeneticAlgorithm类，您将看到搜索算法具有很多成员，例如<strong>选择运算符</strong>selectionFunction，<strong>交叉运算符</strong>crossoverFunction和总体（种群）。 种群是一个列表，因为根据其适合度对个人进行排名； 该值由FitnessFunctions计算。 反过来，这是一个列表，因为EvoSuite通常同时使用多个适应功能，并且每个适应功能都有一个适应值。 </p>
+<p>如果您想了解有关遗传算法如何工作的更多详细信息，可以阅读[<a href="https://www.cs.colostate.edu/~genitor/MiscPubs/tutorial.pdf（或网络上无数的一些教程）。" target="_blank" rel="noopener">https://www.cs.colostate.edu/~genitor/MiscPubs/tutorial.pdf（或网络上无数的一些教程）。</a></p>
+<p>如您所见，默认情况下，GeneticAlgorithm类使用SinglePointCrossOver实例化。 让我们仔细看看该类的外观–在编辑器中打开<code>org.evosuite.ga.operators.crossover.SinglePointCrossover</code>类。 该类扩展了抽象类CrossOverFunction，并实现了crossOver方法。 该方法接收两个个体作为父级，并随机选择两个交叉点point1和point2，两个个体中的每一个。 然后，它克隆了父母，并在生成的个体上调用了交叉方法来完成实际工作。 这就是元启发式搜索算法的优点：该算法与染色体代表的无关。</p>
+<p>假设我们要实现一个替代的交叉算子，该算子总是在中间切掉染色体，而现有的交叉算子全都选择随机的交换点。 让我们在客户端模块（文件client / src / main / java / org / evosuite / ga / operators / crossover / MiddleCrossOver.java）中创建一个新的Java类org.evosuite.ga.operators.crossover.MiddleCrossOver。 该类应扩展抽象类CrossOverFunction，这意味着它必须实现方法crossOver。 因此，骨架看起来像这样</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.evosuite.ga.operators.crossover;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.evosuite.ga.Chromosome;</span><br><span class="line"><span class="keyword">import</span> org.evosuite.ga.ConstructionFailedException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MiddleCrossOver</span> <span class="keyword">extends</span> <span class="title">CrossOverFunction</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">crossOver</span><span class="params">(Chromosome parent1, Chromosome parent2)</span> <span class="keyword">throws</span> ConstructionFailedException </span>&#123;</span><br><span class="line">       <span class="comment">// TODO </span></span><br><span class="line">      <span class="comment">// 因此，我们需要检查的第一件事是我们的个体是否有多个测试用例。 如果他们没有，我们将无法进行任何交叉</span></span><br><span class="line">      <span class="keyword">if</span> (parent1.size() &lt; <span class="number">2</span> || parent2.size() &lt; <span class="number">2</span>) &#123;</span><br><span class="line">    		<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">      <span class="comment">// 在此之后，我们可以假设两个亲本染色体都至少进行了两次测试，因此我们可以计算它们各自的中间值</span></span><br><span class="line">      <span class="keyword">int</span> middle1 = (<span class="keyword">int</span>) Math.round(parent1.size() / <span class="number">2.0</span>);</span><br><span class="line">			<span class="keyword">int</span> middle2 = (<span class="keyword">int</span>) Math.round(parent2.size() / <span class="number">2.0</span>);</span><br><span class="line">      <span class="comment">// EvoSuite中的交叉算子会在原处更改染色体。 这意味着我们首先需要将后代创建为父母的直接副本</span></span><br><span class="line">      Chromosome t1 = parent1.clone();</span><br><span class="line">			Chromosome t2 = parent2.clone();</span><br><span class="line">      <span class="comment">// 现在，我们可以使用crossOver方法更改后代，该方法将（1）与之相交的另一条染色体作为参数，（2）调用该方法的染色体中的交点，以及（3）与之相交的交点。 另一条染色体</span></span><br><span class="line">      parent1.crossOver(t2, middle1, middle2);</span><br><span class="line">      parent2.crossOver(t1, middle2, middle1);</span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>为了实现这种交叉功能，我们需要了解一个重要方面：遗传算法的教科书示例通常会假设染色体中固定数量的基因。 但是，与遗传算法的许多其他标准应用程序不同，EvoSuite中的个体大小可能会有所不同，因为我们甚至在开始搜索之前就无法知道正确数量的测试用例。 因此，每个个体的“中间”是不同的</p>
+<p>它行得通吗？ 让我们写一个测试案例来找出答案。 让我们添加一个新文件<code>client / src / test / java / org / evosuite / ga / operators / crossover / MiddleCrossOverTest.java</code>。</p>
+<p>客户端模块中的测试具有用于测试的DummyChromosome实现。 DummyChromosome需要一个整数列表，并进行突变和交叉。 例如，我们可以为不同大小（例如4和2）的父母创建，然后检查生成的个体是否具有正确的基因。 例如，测试可能如下所示</p>
+<h2 id="添加新的覆盖率标准和适应度函数"><a href="#添加新的覆盖率标准和适应度函数" class="headerlink" title="添加新的覆盖率标准和适应度函数"></a>添加新的覆盖率标准和适应度函数</h2><p>例如正交测试（pairwise testing）中我们要覆盖所有的方法调用对。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Foo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bar</span><span class="params">()</span> </span>&#123; ... &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123; ... &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">zoo</span><span class="params">()</span> </span>&#123; ... &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>根据默认的覆盖标准，EvoSuite的目标是尽可能全面覆盖这三种方法。 有了成对方法覆盖的新思想，我们希望EvoSuite还可以创建对象，这些对象依次调用bar和foo，bar和zoo以及foo和zoo。 </p>
+<p>EvoSuite中的覆盖标准作为适应性函数实现。 对于每个覆盖标准，有三个主要类别</p>
+<ul>
+<li>Test suite适应度函数，该准则指导在测试套件空间中进行搜索，以实现对准则的完全覆盖。</li>
+<li>Test case适应度函数，它指导在测试用例空间中进行搜索，以实现单个覆盖目标。 这也可用于确定测试套件是否涵盖单个覆盖目标。</li>
+<li>Test goal factory,产生一组测试用例的适应度函数，当测试套件覆盖了每个测试用例的适应度函数时，同时，这些测试套件也有最佳适应度函数。</li>
+</ul>
+<p>您可以在<code>org.evosuite.coverage</code>包的客户端模块中找到大量示例。</p>
+<p>让我们添加一个新包：<code>org.evosuite.coverage.methodpair</code>。 我们将从为单个测试添加适应度函数开始。 尽管<strong>EvoSuite的默认设置是演化测试套件而不是单个测试，但是EvoSuite也可以演化包含个体的种群，例如，使用基线方法-generateTests</strong>，或使用新的<strong>多目标“ MOSA”方法</strong>-<code>generateMOSuite</code>。 此外，即使EvoSuite开发了测试套件，所有后处理都要求将覆盖标准表示为一组测试适用性函数。 创建类<code>org.evosuite.coverage.methodpair.MethodPairTestFitness</code>。 此类将从<code>org.evosuite.testcase.TestFitnessFunction</code>继承</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodPairTestFitness</span> <span class="keyword">extends</span> <span class="title">TestFitnessFunction</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//测试适应性函数是针对特定的一对方法实例化的，因此我们需要将这些方法的名称存储在适应性函数中。 让我们简单地使用字符串来记住类名和两个方法的名称:</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String className;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String methodName1;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String methodName2;</span><br><span class="line">  </span><br><span class="line">    <span class="comment">//当然，我们还需要常用的样板代码来处理这些属性的设置和读取。 我们将在构造函数中设置这些值，并添加一些getter：</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MethodPairTestFitness</span><span class="params">(String className, String methodName1, String methodName2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.className = className;</span><br><span class="line">        <span class="keyword">this</span>.methodName1 = methodName1;</span><br><span class="line">        <span class="keyword">this</span>.methodName2 = methodName2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getClassName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> className;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getMethodName1</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> methodName1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getMethodName2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> methodName2;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**ExecutionResult是运行测试用例结果所包含的信息（执行轨迹，抛出异常），事实上，方法getFitness(TesChromosome individual)在测试适应度函数时可以简单的运行测试并且产生这个结果， EvoSuite的一个重要功能是仅在更改后重新执行测试用例。ExecutionResult是TestChromosome类的缓存，如果我们想计算未经变异的测试的适应度，我们可以简单的使用缓存结果，而不是重新运行测试，这节省了大量时间*/</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getFitness</span><span class="params">(TestChromosome individual, ExecutionResult result)</span> </span>&#123;</span><br><span class="line">    		<span class="comment">// 让我们为适应性值定义一个变量。 我们将用1.0进行初始化，并将最佳值定义为0.0</span></span><br><span class="line">      <span class="keyword">double</span> fitness = <span class="number">1.0</span>;</span><br><span class="line">      <span class="comment">// 现在，我们只需要遍历测试的所有语句，选择MethodStatements和ConstructorStatements，检查是否有一对，并更新fitness的值以反映这一点（即，如果发现，则将其设置为0 我们正在寻找的方法对）。</span></span><br><span class="line">      Set&lt;Integer&gt; exceptionPositions = result.getPositionsWhereExceptionsWereThrown(); </span><br><span class="line">      <span class="keyword">for</span> (Statement stmt : result.test) &#123;</span><br><span class="line">            <span class="comment">// <span class="doctag">TODO:</span> check if we have hit a pair</span></span><br><span class="line">            <span class="keyword">if</span>(exceptionPositions.contains(stmt.getPosition()))</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">if</span> ((stmt <span class="keyword">instanceof</span> MethodStatement || stmt <span class="keyword">instanceof</span> ConstructorStatement)) &#123;</span><br><span class="line">                <span class="comment">// <span class="doctag">TODO:</span> Handle name of method</span></span><br><span class="line">                EntityWithParametersStatement ps = (EntityWithParametersStatement)stmt;</span><br><span class="line">                String className  = ps.getDeclaringClassName();</span><br><span class="line">                String methodName = ps.getMethodName() + ps.getDescriptor();</span><br><span class="line">                <span class="keyword">if</span>(haveSeenMethod1) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (<span class="keyword">this</span>.className.equals(className) &amp;&amp; <span class="keyword">this</span>.methodName2.equals(methodName)) &#123;</span><br><span class="line">                        fitness = <span class="number">0.0</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">this</span>.className.equals(className) &amp;&amp; <span class="keyword">this</span>.methodName1.equals(methodName)) &#123;</span><br><span class="line">                    haveSeenMethod1 = <span class="keyword">true</span>;</span><br><span class="line">                    fitness = <span class="number">0.5</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    haveSeenMethod1 = <span class="keyword">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(exceptionPositions.contains(stmt.getPosition()))</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        updateIndividual(<span class="keyword">this</span>, individual, fitness);</span><br><span class="line">        <span class="keyword">return</span> fitness;</span><br><span class="line">        &#125;</span><br><span class="line">				<span class="comment">// 进行一些内务处理需要调用updateIndividual，特别是每个染色体都存储了用于评估其的每个适应度函数的最后适应度值。</span></span><br><span class="line">      <span class="comment">// TestChromossome的基因型之间存在差异，例如：这是调用序列，并且是测试用例的结果：测试执行过程中的语句可能导致未捕获的异常。默认情况下，EvoSuite遇到第一个异常后立即停止执行，但也可以将其配置为继续执行（属性。BREAK_ON_EXCEPTION），因此，基因型可能包含方法对，但测试执行实际上并未到达它们。我们可以从ExecutionResult获取有关异常的信息，例如，通过调用方法getPositionsWhereExceptionsWereThrown，该方法返回发生异常的位置集。 让我们在循环之前添加以下行</span></span><br><span class="line">      </span><br><span class="line">      <span class="comment">// 为简单起见，让我们在发现异常后立即停止查看方法对； 也就是说，一旦遇到引发异常的语句，我们需要停止对语句的迭代</span></span><br><span class="line">      <span class="comment">// 剩下要做的唯一事情就是比较一个给定的语句是否与我们要寻找的一对匹配。 为此，我们首先需要首先知道该语句是MethodStatement还是ConstructorStatement，例如</span></span><br><span class="line">      </span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>到目前为止，这很容易。适应度函数功能的主要部分是getFitness方法，我们必须重写该方法。</p>
+<p>这是重载的方法；有一个版本将<code>TestChromosome</code>作为输入，而另一个版本将<code>TestChromosome</code>和<code>ExecutionResult</code>作为输入。 </p>
+<p><code>org.evosuite.testcase.TestChromosome</code>类是方法调用序列的遗传编码。</p>
+<p>如果查看该类，将看到它包含类<code>org.evosuite.testcase.TestCase</code>的测试用例，然后TestChromosome的主要功能在于mutate和crossover方法。</p>
+<p>反过来，TestCase接口由<code>org.evosuite.testcase.DefaultTestCase</code>类实现，该类由<code>org.evosuite.testcase.Statement</code>实现的列表组成。在<code>org.evosuite.testcase.statements</code>包中实现了各种不同类型的语句，最好再仔细研究一下该包。对于每个语句类，最关键的功能可能是execute方法的实现，这是Java Reflectionon用于执行测试的地方。每个语句类还利用许多VariableReference实例-这些是测试中使用的变量，并指向由测试的语句创建的对象。在EvoSuite中，每个语句都创建一个这样的VariableReference-无效方法调用除外。</p>
+<p>为了创建method-pair覆盖率，我们需要看的两个语句是<code>ConstructorStatement</code>和<code>MethodStatement</code>。顾名思义，它们分别调用构造函数和方法。此信息由以下三种方法提供：<code>getDeclaringClass</code>，<code>getMethodName</code>和<code>getDescriptor</code>。什么是描述符？描述符表示方法所采用的参数及其返回的值（请参阅[StackOverflow说明（<a href="http://stackoverflow.com/questions/7526483/what-is-the-difference-between-descriptor-and-signature）]]" target="_blank" rel="noopener">http://stackoverflow.com/questions/7526483/what-is-the-difference-between-descriptor-and-signature）]]</a> ）。例如，如果我们有一个方法将两个整数作为输入并返回一个布尔值，则描述符将为“（II）Z”，其中I代表一个整数，Z则为布尔值。对我们而言，最重要的是描述符使我们能够区分重载方法。由于这通常需要在EvoSuite中完成，因此在大多数情况下，EvoSuite实际上使用方法名称和描述符的串联，而不仅仅是普通方法名称。</p>
+<p><code>org.evosuite.coverage.methodpair.MethodPairFactory</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodPairFactory</span> <span class="keyword">extends</span> <span class="title">AbstractFitnessFactory</span>&lt;<span class="title">MethodPairTestFitness</span>&gt; </span>&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;MethodPairTestFitness&gt; <span class="title">getCoverageGoals</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        List&lt;MethodPairTestFitness&gt; goals = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        String className = Properties.TARGET_CLASS;</span><br><span class="line">        Class&lt;?&gt; clazz = Properties.getTargetClass();</span><br><span class="line">        Set&lt;String&gt; constructors = getUsableConstructors(clazz);</span><br><span class="line">        Set&lt;String&gt; methods      = getUsableMethods(clazz);</span><br><span class="line">        <span class="comment">// pair each constructor with each method and add to goals</span></span><br><span class="line">        <span class="keyword">for</span>(String constructor : constructors)</span><br><span class="line">            <span class="keyword">for</span>(String method : methods)</span><br><span class="line">                goals.add(<span class="keyword">new</span> MethodPairTestFitness(className, constructor, method));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// pair each method with each other method and add to goals</span></span><br><span class="line">        <span class="keyword">for</span>(String method1 : methods)</span><br><span class="line">            <span class="keyword">for</span>(String method2 : methods)</span><br><span class="line">                goals.add(<span class="keyword">new</span> MethodPairTestFitness(className, method1, method2));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> goals;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">protected</span> Set&lt;String&gt; <span class="title">getUsableConstructors</span><span class="params">(Class&lt;?&gt; clazz)</span> </span>&#123;</span><br><span class="line">        Set&lt;String&gt; constructors = <span class="keyword">new</span> LinkedHashSet&lt;&gt;();</span><br><span class="line">        Constructor&lt;?&gt;[] allConstructors = clazz.getDeclaredConstructors();</span><br><span class="line">        <span class="keyword">for</span> (Constructor&lt;?&gt; c : allConstructors) &#123;</span><br><span class="line">            <span class="keyword">if</span> (TestUsageChecker.canUse(c)) &#123;</span><br><span class="line">                String methodName = <span class="string">"&lt;init&gt;"</span> + Type.getConstructorDescriptor(c);</span><br><span class="line">                constructors.add(methodName);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> constructors;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> Set&lt;String&gt; <span class="title">getUsableMethods</span><span class="params">(Class&lt;?&gt; clazz)</span> </span>&#123;</span><br><span class="line">        Set&lt;String&gt; methods = <span class="keyword">new</span> LinkedHashSet&lt;&gt;();</span><br><span class="line">        Method[] allMethods= clazz.getDeclaredMethods();</span><br><span class="line">        <span class="keyword">for</span> (Method m : allMethods) &#123;</span><br><span class="line">            <span class="keyword">if</span> (TestUsageChecker.canUse(m)) &#123;</span><br><span class="line">                String methodName = m.getName()+ Type.getMethodDescriptor(m);</span><br><span class="line">                methods.add(methodName);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> methods;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>MethodPairSuiteFitness</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MethodPairSuiteFitness</span> <span class="keyword">extends</span> <span class="title">TestSuiteFitnessFunction</span> </span>&#123;</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getFitness</span><span class="params">(AbstractTestSuiteChromosome&lt;? extends ExecutableChromosome&gt; suite)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> fitness = <span class="number">0.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// <span class="doctag">TODO:</span> calculate fitness value</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Set&lt;MethodPairTestFitness&gt; allMethodPairs = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MethodPairSuiteFitness</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    methodPairGoals.addAll(<span class="keyword">new</span> MethodPairFactory().getCoverageGoals());</span><br><span class="line">&#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getFitness</span><span class="params">(AbstractTestSuiteChromosome&lt;? extends ExecutableChromosome&gt; suite)</span> </span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> fitness = <span class="number">0.0</span>;</span><br><span class="line"></span><br><span class="line">        List&lt;ExecutionResult&gt; results = runTestSuite(suite);</span><br><span class="line">        Set&lt;MethodPairTestFitness&gt; coveredMethodPairs = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(MethodPairTestFitness goal : allMethodPairs) &#123;</span><br><span class="line">            <span class="keyword">for</span>(ExecutionResult result : results) &#123;</span><br><span class="line">                <span class="keyword">if</span>(goal.isCovered(result)) &#123;</span><br><span class="line">                    coveredMethodPairs.add(goal);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (result.hasTimeout() || result.hasTestException()) &#123;</span><br><span class="line">            fitness = allMethodPairs.size();</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">            &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    fitness = methodPairGoals.size() - coveredMethodPairs.size();   </span><br><span class="line">    updateIndividual(<span class="keyword">this</span>, suite, fitness);</span><br><span class="line">    suite.setNumOfCoveredGoals(<span class="keyword">this</span>, coveredMethodPairs.size());        </span><br><span class="line">    <span class="keyword">if</span> (!allGoals.isEmpty())</span><br><span class="line">        suite.setCoverage(<span class="keyword">this</span>, (<span class="keyword">double</span>) calledMethodPairs.size() / (<span class="keyword">double</span>) methodPairGoals.size());</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        suite.setCoverage(<span class="keyword">this</span>, <span class="number">1.0</span>);</span><br><span class="line">    <span class="keyword">return</span> fitness;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>具体参考官网哦，十分详细的<a href="http://www.evosuite.org/documentation/tutorial-part-4/" target="_blank" rel="noopener">http://www.evosuite.org/documentation/tutorial-part-4/</a></p>
+<p>我也正在研究这部分，有兴趣的可以一起交流～</p>
+<p>最后附上我的pom.xml文件的最终配置</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</span><br><span class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></span><br><span class="line">         xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">         xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span><br><span class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</span><br><span class="line"></span><br><span class="line">    &lt;groupId&gt;groupId&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;JdbcDemo&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dependencies&gt;</span><br><span class="line">        &lt;!-- https:<span class="comment">//mvnrepository.com/artifact/mysql/mysql-connector-java --&gt;</span></span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;6.0.6&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;org.evosuite&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;evosuite-standalone-runtime&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;$&#123;evosuiteVersion&#125;&lt;/version&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;junit&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;junit&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;4.12&lt;/version&gt;</span><br><span class="line">            &lt;scope&gt;test&lt;/scope&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">        &lt;dependency&gt; &lt;!-- For the sake of having a dependency --&gt;</span><br><span class="line">            &lt;groupId&gt;commons-collections&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;commons-collections&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;3.2.2&lt;/version&gt;</span><br><span class="line">        &lt;/dependency&gt;</span><br><span class="line">    &lt;/dependencies&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   &lt;build&gt;</span><br><span class="line">       &lt;pluginManagement&gt;</span><br><span class="line">           &lt;plugins&gt;</span><br><span class="line">               &lt;plugin&gt;</span><br><span class="line">                   &lt;groupId&gt;org.evosuite.plugins&lt;/groupId&gt;</span><br><span class="line">                   &lt;artifactId&gt;evosuite-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">                   &lt;version&gt;$&#123;evosuiteVersion&#125;&lt;/version&gt;</span><br><span class="line">                   &lt;executions&gt;&lt;execution&gt;</span><br><span class="line">                       &lt;goals&gt; &lt;goal&gt; prepare &lt;/goal&gt; &lt;/goals&gt;</span><br><span class="line">                       &lt;phase&gt; process-test-classes &lt;/phase&gt;</span><br><span class="line">                   &lt;/execution&gt;&lt;/executions&gt;</span><br><span class="line">               &lt;/plugin&gt;</span><br><span class="line">               &lt;plugin&gt;</span><br><span class="line">                   &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">                   &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;</span><br><span class="line">                   &lt;version&gt;2.17&lt;/version&gt;</span><br><span class="line">                   &lt;configuration&gt;</span><br><span class="line">                       &lt;properties&gt;</span><br><span class="line">                           &lt;property&gt;</span><br><span class="line">                               &lt;name&gt;listener&lt;/name&gt;</span><br><span class="line">                               &lt;value&gt;org.evosuite.runtime.InitializingListener&lt;/value&gt;</span><br><span class="line">                           &lt;/property&gt;</span><br><span class="line">                       &lt;/properties&gt;</span><br><span class="line">                   &lt;/configuration&gt;</span><br><span class="line">               &lt;/plugin&gt;</span><br><span class="line">               &lt;plugin&gt;</span><br><span class="line">                   &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;</span><br><span class="line">                   &lt;artifactId&gt;build-helper-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">                   &lt;version&gt;1.8&lt;/version&gt;</span><br><span class="line">                   &lt;executions&gt;</span><br><span class="line">                       &lt;execution&gt;</span><br><span class="line">                           &lt;id&gt;add-test-source&lt;/id&gt;</span><br><span class="line">                           &lt;phase&gt;generate-test-sources&lt;/phase&gt;</span><br><span class="line">                           &lt;goals&gt;</span><br><span class="line">                               &lt;goal&gt;add-test-source&lt;/goal&gt;</span><br><span class="line">                           &lt;/goals&gt;</span><br><span class="line">                           &lt;configuration&gt;</span><br><span class="line">                               &lt;sources&gt;</span><br><span class="line">                                   &lt;source&gt;$&#123;customFolder&#125;&lt;/source&gt;</span><br><span class="line">                               &lt;/sources&gt;</span><br><span class="line">                           &lt;/configuration&gt;</span><br><span class="line">                       &lt;/execution&gt;</span><br><span class="line">                   &lt;/executions&gt;</span><br><span class="line">               &lt;/plugin&gt;</span><br><span class="line">               &lt;plugin&gt;</span><br><span class="line">                   &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">                   &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;</span><br><span class="line">                   &lt;version&gt;2.17&lt;/version&gt;</span><br><span class="line">                   &lt;configuration&gt;</span><br><span class="line">                       &lt;properties&gt;</span><br><span class="line">                           &lt;property&gt;</span><br><span class="line">                               &lt;name&gt;listener&lt;/name&gt;</span><br><span class="line">                               &lt;value&gt;org.evosuite.runtime.InitializingListener&lt;/value&gt;</span><br><span class="line">                           &lt;/property&gt;</span><br><span class="line">                       &lt;/properties&gt;</span><br><span class="line">                   &lt;/configuration&gt;</span><br><span class="line">               &lt;/plugin&gt;</span><br><span class="line">           &lt;/plugins&gt;</span><br><span class="line">       &lt;/pluginManagement&gt;</span><br><span class="line">       &lt;plugins&gt;</span><br><span class="line">           &lt;plugin&gt;</span><br><span class="line">               &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">               &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;</span><br><span class="line">               &lt;configuration&gt;</span><br><span class="line">                   &lt;source&gt;6&lt;/source&gt;</span><br><span class="line">                   &lt;target&gt;6&lt;/target&gt;</span><br><span class="line">               &lt;/configuration&gt;</span><br><span class="line">           &lt;/plugin&gt;</span><br><span class="line">       &lt;/plugins&gt;</span><br><span class="line">   &lt;/build&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;properties&gt;</span><br><span class="line">        &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;</span><br><span class="line">        &lt;evosuiteVersion&gt;1.0.6&lt;/evosuiteVersion&gt;</span><br><span class="line">        &lt;customFolder&gt;src/test/evosuite&lt;/customFolder&gt;</span><br><span class="line">    &lt;/properties&gt;</span><br><span class="line"></span><br><span class="line">    &lt;pluginRepositories&gt;</span><br><span class="line">        &lt;pluginRepository&gt;</span><br><span class="line">            &lt;id&gt;EvoSuite&lt;/id&gt;</span><br><span class="line">            &lt;name&gt;EvoSuite Repository&lt;/name&gt;</span><br><span class="line">            &lt;url&gt;http:<span class="comment">//www.evosuite.org/m2&lt;/url&gt;</span></span><br><span class="line">        &lt;/pluginRepository&gt;</span><br><span class="line">    &lt;/pluginRepositories&gt;</span><br><span class="line">&lt;/project&gt;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Evosuite/" rel="tag"># Evosuite</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/23/Appium环境配置/" rel="next" title="Appium环境配置">
+                <i class="fa fa-chevron-left"></i> Appium环境配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/11/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zheng Jiani</p>
+              <p class="site-description motion-element" itemprop="description">喜欢，成就梦想</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengjiani" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Evosuite用maven构建"><span class="nav-number">1.</span> <span class="nav-text">Evosuite用maven构建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-EvoSuite-Maven-plugin命令简介"><span class="nav-number">1.1.</span> <span class="nav-text">The EvoSuite Maven plugin命令简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#maven集成"><span class="nav-number">1.2.</span> <span class="nav-text">maven集成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行实验"><span class="nav-number">1.3.</span> <span class="nav-text">运行实验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展EvoSuite-以下大部分内容为翻译"><span class="nav-number">1.4.</span> <span class="nav-text">扩展EvoSuite(以下大部分内容为翻译)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展遗传算法"><span class="nav-number">1.5.</span> <span class="nav-text">扩展遗传算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加新的覆盖率标准和适应度函数"><span class="nav-number">1.6.</span> <span class="nav-text">添加新的覆盖率标准和适应度函数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zheng Jiani</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

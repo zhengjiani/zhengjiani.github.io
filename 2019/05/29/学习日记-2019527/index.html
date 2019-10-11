@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="学习日记,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="AcWing 137雪花雪花雪花，Python逆序循环，Python List删除元素，Python re模块解析，Python KMP算法实现字符串匹配">
+<meta name="keywords" content="学习日记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习日记-2019527">
+<meta property="og:url" content="http://yoursite.com/2019/05/29/学习日记-2019527/index.html">
+<meta property="og:site_name" content="花茶树窝">
+<meta property="og:description" content="AcWing 137雪花雪花雪花，Python逆序循环，Python List删除元素，Python re模块解析，Python KMP算法实现字符串匹配">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-11T08:53:17.309Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习日记-2019527">
+<meta name="twitter:description" content="AcWing 137雪花雪花雪花，Python逆序循环，Python List删除元素，Python re模块解析，Python KMP算法实现字符串匹配">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/29/学习日记-2019527/">
+
+
+
+
+
+  <title>学习日记-2019527 | 花茶树窝</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?870e68ebac7b44a2e5fc2f00b965a03b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花茶树窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/29/学习日记-2019527/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zheng Jiani">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花茶树窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">学习日记-2019527</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-29T08:30:40+08:00">
+                2019-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>AcWing 137雪花雪花雪花，Python逆序循环，Python List删除元素，Python re模块解析，Python KMP算法实现字符串匹配</p>
+<a id="more"></a>
+
+<p>剑指刷题：2019/5/27</p>
+<h2 id="AcWing-137雪花雪花雪花"><a href="#AcWing-137雪花雪花雪花" class="headerlink" title="AcWing 137雪花雪花雪花"></a>AcWing 137雪花雪花雪花</h2><p>【转】<a href="https://blog.csdn.net/qq_30277239/article/details/90273218" target="_blank" rel="noopener">https://blog.csdn.net/qq_30277239/article/details/90273218</a></p>
+<p>字符串的最小表示法：</p>
+<p>求一个字符串的循环同构体中最小字典序的那个。比如bcda的循环同构体有bcda，cdab，dabc，abcd，其中最小表示法是abcd。</p>
+<p>暴力求解O(n$^2$)：</p>
+<p>定义双指针i = 0，j = 1，首先a &lt; b所以字符串的第二个位置不会作为最优解字符串的开头，同理，后面的cd也都不会作为字符串的开头，直到j = 4匹配到了另一个a，于是i，j均右移，发现后面的bc也都相等，继续右移，直至遇见了d &lt; e,所以abce不可能是最小表示法的前缀，然后j又回到下标为5的位置，i也回到开头，a &lt; b，继续比较。</p>
+<p>优化：</p>
+<p>j指针不再跳回原位置进行下一次匹配，直接从字典序大的那个开始</p>
+<p>例如：</p>
+<p>abcdabcebdd</p>
+<p>adcebddabcd</p>
+<p>两个循环同构体在d和e的位置失配时，第一个指针重新回到下标为0的位置，而第二个指针不需要在从下标为0的位置的后一个位置再进行比较，既然abce都失去了前缀的资格，那么第二个指针从第五个字符b再次开始比较即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time    : 2019/5/27 14:46</span></span><br><span class="line"><span class="comment"># @Author  : zhengjiani</span></span><br><span class="line"><span class="comment"># @Software: PyCharm</span></span><br><span class="line"><span class="comment"># @Blog    ：https://zhengjiani.github.io/</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">题目描述：</span></span><br><span class="line"><span class="string">有N片雪花，每片雪花由六个角组成，每个角都有长度。第i片雪花六个角的长度从某个角开始顺时针依次记为ai,1,ai,2,…,ai,6。</span></span><br><span class="line"><span class="string">因为雪花的形状是封闭的环形，所以从任何一个角开始顺时针或逆时针往后记录长度，得到的六元组都代表形状相同的雪花。</span></span><br><span class="line"><span class="string">例如ai,1,ai,2,…,ai,6和ai,2,ai,3,…,ai,6，ai,1就是形状相同的雪花。ai,1,ai,2,…,ai,6和ai,6,ai,5,…,ai,1也是形状相同的雪花。</span></span><br><span class="line"><span class="string">我们称两片雪花形状相同，当且仅当它们各自从某一角开始顺时针或逆时针记录长度，能得到两个相同的六元组。求这N片雪花中是否存在两片形状相同的雪花。</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="comment">#字符串的最小表示法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_min</span><span class="params">(s)</span>:</span></span><br><span class="line">    i = <span class="number">0</span> <span class="comment">#起始指针</span></span><br><span class="line">    j = <span class="number">1</span> <span class="comment">#指向第一位</span></span><br><span class="line">    k = <span class="number">0</span> <span class="comment">#匹配长度</span></span><br><span class="line">    size = len(s)</span><br><span class="line">    <span class="keyword">while</span> i&lt;size <span class="keyword">and</span> j&lt;size <span class="keyword">and</span> k&lt;size:</span><br><span class="line">        a = (i+k) % size</span><br><span class="line">        b = (j+k) % size</span><br><span class="line">        <span class="keyword">if</span> s[a] == s[b]:</span><br><span class="line">            k += <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> s[a]&gt;s[b]:</span><br><span class="line">            i += k+<span class="number">1</span></span><br><span class="line">            k = <span class="number">0</span> <span class="comment">#已匹配长度置0</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            j += k+<span class="number">1</span></span><br><span class="line">            k = <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> i==j:</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> min(i,j)<span class="comment">#返回最小表示的位置</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    s = <span class="string">'bcdabcebdd'</span></span><br><span class="line">    print(find_min(s)+<span class="number">1</span>)<span class="comment">#4,也就是a所在字符串的位置</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<p>本题需要判断雪花是否相同，只要两片雪花的六个角的<strong>最小表示法</strong>相同，我们就可以断定这两片雪花完全相同，所不同的是：上面介绍的最小表示法只能自左往右循环，而本题可以自右向左循环，只需读入时备份一下<strong>逆置的数组</strong>，然后仅保留两个数组的<strong>最小表示</strong>即可。</p>
+<p>本题的主要思路就是，先对所有雪花都哈希映射到某个值，只有两片雪花散列后的值相等时他们才可能相等，再比较他们的最小表示法即可验证。</p>
+<h2 id="Python逆序循环"><a href="#Python逆序循环" class="headerlink" title="Python逆序循环"></a>Python逆序循环</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#逆序循环</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">removeElement2</span><span class="params">(nums,val)</span>:</span></span><br><span class="line">    <span class="string">"""原地删除指定元素"""</span></span><br><span class="line">    j = len(nums)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(j<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">if</span> nums[i] == val:</span><br><span class="line">            nums.pop(i)</span><br><span class="line">    <span class="keyword">return</span> len(nums)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Python-List删除元素"><a href="#Python-List删除元素" class="headerlink" title="Python List删除元素"></a>Python List删除元素</h2><p>1.使用del删除元素</p>
+<p>根据索引删除，删除索引范围内的元素，删除整个列表，del操作没有返回值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="keyword">del</span> l[<span class="number">3</span>]</span><br><span class="line"><span class="comment">#[1,2,3]</span></span><br></pre></td></tr></table></figure>
+
+<p>2.使用list方法pop删除元素</p>
+<p>根据索引删除，返回索引位置的元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">l.pop(<span class="number">2</span>)</span><br><span class="line"><span class="comment">#[1,2,4]</span></span><br></pre></td></tr></table></figure>
+
+<p>3.使用切片删除元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">l = l[:<span class="number">2</span>]+l[<span class="number">3</span>:]</span><br><span class="line"><span class="comment">#[1,2,4]</span></span><br></pre></td></tr></table></figure>
+
+<p>4.使用list方法remove删除指定值的元素</p>
+<p>删除第一个符合条件的元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">l.remove(<span class="number">3</span>)</span><br><span class="line"><span class="comment">#[1,2,4]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Python-re模块解析"><a href="#Python-re模块解析" class="headerlink" title="Python re模块解析"></a>Python re模块解析</h2><p>提前编译正则表达式</p>
+<p><a href="http://www.codebelief.com/article/2017/01/python-standard-library-re-module-functions/" target="_blank" rel="noopener">http://www.codebelief.com/article/2017/01/python-standard-library-re-module-functions/</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">re.compile(pattern,flags=<span class="number">0</span>)</span><br><span class="line"><span class="comment">#等价写法</span></span><br><span class="line">prog = re.compile(pattern)</span><br><span class="line">result = prog.match(string)</span><br><span class="line"><span class="comment">#等价于</span></span><br><span class="line">result = re.match(pattern,string)</span><br><span class="line"><span class="comment">#提前编译可以提高速度</span></span><br></pre></td></tr></table></figure>
+
+<p>仅匹配第一个满足条件的字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">re.search(pattern, string, flags=<span class="number">0</span>)</span><br><span class="line"><span class="comment">#eg1</span></span><br><span class="line">re.search(<span class="string">'ll'</span>, <span class="string">'helloll'</span>, flags=<span class="number">0</span>)</span><br><span class="line"><span class="comment">#output:&lt;re.Match object; span=(2, 4), match='ll'&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>仅匹配字符串的起始位置子串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">re.match(pattern, string, flags=<span class="number">0</span>)</span><br><span class="line"><span class="comment">#eg1</span></span><br><span class="line">re.match(<span class="string">'ll'</span>, <span class="string">'helloll'</span>, flags=<span class="number">0</span>)</span><br><span class="line"><span class="comment">#output:None</span></span><br></pre></td></tr></table></figure>
+
+<p>通过匹配表达式来切割字符串</p>
+<p>如果指定了 <code>maxsplit</code> 的值，且不为0，那么最多进行 <code>maxsplit</code> 次的字符串切割操作。最后剩下的未被切割的字符串，将作为一个整体添加到结果列表中。这种情况下，结果列表最多会有 <code>maxsplit</code> + 1 项。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">re.split(pattern, string, maxsplit=<span class="number">0</span>, flags=<span class="number">0</span>)</span><br><span class="line"><span class="comment">#eg1</span></span><br><span class="line">re.split(<span class="string">'ll'</span>, <span class="string">'helloll'</span>, flags=<span class="number">0</span>)</span><br><span class="line"><span class="comment">#output:['he', 'o', '']</span></span><br><span class="line">re.split(<span class="string">'ll'</span>, <span class="string">'helloll'</span>, maxsplit=<span class="number">1</span>,flags=<span class="number">0</span>)</span><br><span class="line"><span class="comment">#output:['he', 'oll']</span></span><br></pre></td></tr></table></figure>
+
+<p>以列表的形式返回所有不重叠的匹配结果,空匹配结果同样会被添加到列表中。</p>
+<p>如果表达式中含有捕获分组，那么表达式匹配到的结果中，只有捕获分组里的内容会被添加到结果列表中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">re.findall(<span class="string">r'(\w)\d'</span>, <span class="string">'a1 b2 c3 d4'</span>)</span><br><span class="line"><span class="comment">#output:['a', 'b', 'c', 'd']</span></span><br><span class="line"><span class="comment">#捕获分组</span></span><br><span class="line">re.findall(<span class="string">r'(\w)(\d)'</span>, <span class="string">'a1 b2 c3 d4'</span>)</span><br><span class="line">[(<span class="string">'a'</span>, <span class="string">'1'</span>), (<span class="string">'b'</span>, <span class="string">'2'</span>), (<span class="string">'c'</span>, <span class="string">'3'</span>), (<span class="string">'d'</span>, <span class="string">'4'</span>)]</span><br></pre></td></tr></table></figure>
+
+<p>返回一个迭代器，包含所有不重叠的匹配结果，空匹配结果同样会被添加到列表中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">f = re.finditer(pattern, string, flags=<span class="number">0</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> f:</span><br><span class="line">    print(i)</span><br><span class="line">    print(i.span())<span class="comment">#元组形式</span></span><br><span class="line"><span class="comment">#eg:</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">给定一个 haystack 字符串和一个 needle 字符串，在 haystack 字符串中找出 needle 字符串出现的第一个位置 (从0开始)。如果不存在，则返回  -1。</span></span><br><span class="line"><span class="string">输入: haystack = "hello", needle = "ll"</span></span><br><span class="line"><span class="string">输出: 2</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">strStr</span><span class="params">(self, haystack, needle)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type haystack: str</span></span><br><span class="line"><span class="string">        :type needle: str</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="keyword">if</span> needle <span class="keyword">not</span> <span class="keyword">in</span> haystack:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        <span class="keyword">if</span> needle == <span class="string">''</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        n1 = len(haystack)</span><br><span class="line">        n2 = len(needle)</span><br><span class="line">        f = re.finditer(needle,haystack)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> f:</span><br><span class="line">            <span class="keyword">return</span> i.span()[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<p>返回一个被替换后的字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">re.sub(pattern, repl, string, count=<span class="number">0</span>, flags=<span class="number">0</span>)</span><br><span class="line"><span class="comment">#count指定匹配次数</span></span><br><span class="line">text = <span class="string">'a1 b2 c3'</span></span><br><span class="line">re.sub(<span class="string">r'(\w)(\d)'</span>, <span class="string">r'\2\1'</span>, text)</span><br><span class="line"><span class="comment">#output:'1a 2b 3c'</span></span><br><span class="line"><span class="comment">#repl是函数，每一次匹配成功时被调用，返回值是替换后的字符串</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(matchobj)</span>:</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">if</span> matchobj.group(<span class="number">0</span>) == <span class="string">'-'</span>: <span class="keyword">return</span> <span class="string">'+'</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">else</span>: <span class="keyword">return</span> <span class="string">'*'</span></span><br><span class="line">re.sub(<span class="string">r'\D'</span>, foo, <span class="string">'1-2/4'</span>)</span><br><span class="line"><span class="comment">#output:'1+2*4'</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Python-KMP算法实现字符串匹配"><a href="#Python-KMP算法实现字符串匹配" class="headerlink" title="Python KMP算法实现字符串匹配"></a>Python KMP算法实现字符串匹配</h2><p>KMP算法：</p>
+<p><a href="http://www.ruanyifeng.com/blog/2013/05/Knuth–Morris–Pratt_algorithm.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html</a></p>
+<p>部分匹配值表：前缀和后缀的最长的共有元素长度</p>
+<p>移动位数 = 已匹配的字符数 - 对应的部分匹配值</p>
+<p>nexts数组即为部分匹配值表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">部分匹配表</span></span><br><span class="line"><span class="string">获取“模式串”的部分匹配值</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pmt</span><span class="params">(s)</span>:</span></span><br><span class="line">    prefix = set()</span><br><span class="line">    postfix = set()</span><br><span class="line">    ret = [<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len(s)):</span><br><span class="line">        prefix.add(s[:i])</span><br><span class="line">        postfix = &#123;s[j:i + <span class="number">1</span>] <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">1</span>, i + <span class="number">1</span>)&#125;</span><br><span class="line">        ret.append(len(prefix &amp; postfix))</span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    _next = [<span class="number">0</span>]*len(<span class="string">"ABCDA"</span>)</span><br><span class="line">    getNext(<span class="string">"ABCDA"</span>,_next)</span><br><span class="line">    print(_next)</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/学习日记/" rel="tag"># 学习日记</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/24/Web测试文献阅读/" rel="next" title="Web测试文献阅读">
+                <i class="fa fa-chevron-left"></i> Web测试文献阅读
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/30/学习日记-2019529/" rel="prev" title="学习日记-2019529">
+                学习日记-2019529 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zheng Jiani</p>
+              <p class="site-description motion-element" itemprop="description">喜欢，成就梦想</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengjiani" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AcWing-137雪花雪花雪花"><span class="nav-number">1.</span> <span class="nav-text">AcWing 137雪花雪花雪花</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python逆序循环"><span class="nav-number">2.</span> <span class="nav-text">Python逆序循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-List删除元素"><span class="nav-number">3.</span> <span class="nav-text">Python List删除元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-re模块解析"><span class="nav-number">4.</span> <span class="nav-text">Python re模块解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-KMP算法实现字符串匹配"><span class="nav-number">5.</span> <span class="nav-text">Python KMP算法实现字符串匹配</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zheng Jiani</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

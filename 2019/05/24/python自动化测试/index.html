@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="python test,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="selenium webdriver 和并行测试 本文恢复2018-10-09">
+<meta name="keywords" content="python test">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python自动化测试">
+<meta property="og:url" content="http://yoursite.com/2019/05/24/python自动化测试/index.html">
+<meta property="og:site_name" content="花茶树窝">
+<meta property="og:description" content="selenium webdriver 和并行测试 本文恢复2018-10-09">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/1538832115545.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/1538832221692.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/markdownImages/w3school2.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/markdownImages/test1.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/markdownImages/w3school.png?raw=true">
+<meta property="og:image" content="https://github.com/zhengjiani/markdownImages/blob/master/markdownImages/test_email.png?raw=true">
+<meta property="og:updated_time" content="2019-10-11T08:53:17.307Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python自动化测试">
+<meta name="twitter:description" content="selenium webdriver 和并行测试 本文恢复2018-10-09">
+<meta name="twitter:image" content="https://github.com/zhengjiani/markdownImages/blob/master/1538832115545.png?raw=true">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/05/24/python自动化测试/">
+
+
+
+
+
+  <title>python自动化测试 | 花茶树窝</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?870e68ebac7b44a2e5fc2f00b965a03b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">花茶树窝</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/python自动化测试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zheng Jiani">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="花茶树窝">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python自动化测试</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-24T10:13:57+08:00">
+                2019-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>selenium webdriver 和并行测试</p>
+<p>本文恢复2018-10-09</p>
+<a id="more"></a>
+
+<h2 id="python-用selenium做自动化测试-1"><a href="#python-用selenium做自动化测试-1" class="headerlink" title="python 用selenium做自动化测试[1]"></a>python 用selenium做自动化测试[1]</h2><p><img src="https://github.com/zhengjiani/markdownImages/blob/master/1538832115545.png?raw=true" alt="1538832115545"></p>
+<p>在w3school里搜索css</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 test_w3school_search.py</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/1538832221692.png?raw=true" alt="1538832221692"></p>
+<p>XPath路径表达式：</p>
+<p><a href="http://www.ruanyifeng.com/blog/2009/07/xpath_path_expressions.html阮一峰" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2009/07/xpath_path_expressions.html阮一峰</a></p>
+<p>1.基于Python的Selenium自动化测试</p>
+<p>练习实例，把官方教程中能实现的方法都实现一下(在上面的案例中进行更改)</p>
+<p>直接执行：直接用<code>unittest.main()</code> 执行，这里它搜索所有以test开头的测试用例方法，按照ASCII的顺序执行多个用例。</p>
+<ul>
+<li><p>与页面交互(输出W3School中HTML教程中的相关列表文本)</p>
+<p>因为我没有用到测试套件，所以测试的时候打开了两次浏览器，但其实在第一次打开浏览器的时候就已经看到了输出，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">W3schoollist</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line"> <span class="number">26</span>     <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line"> <span class="number">27</span>         binary=FirefoxBinary(<span class="string">'/usr/local/firefox/firefox'</span>)</span><br><span class="line"> <span class="number">28</span>         self.driver=webdriver.Firefox(firefox_binary=binary)</span><br><span class="line"> <span class="number">29</span>     <span class="function"><span class="keyword">def</span> <span class="title">test_list_in_w3school</span><span class="params">(self)</span>:</span>    </span><br><span class="line"> <span class="number">30</span>         driver=self.driver</span><br><span class="line"> <span class="number">31</span>         driver.get(<span class="string">"http://www.w3school.com.cn"</span>)</span><br><span class="line">    		<span class="comment">#google开发者工具里面可以直接copy XPath.</span></span><br><span class="line"> <span class="number">32</span>         elems=driver.find_elements_by_xpath(<span class="string">"//*[@id='navsecond']/ul[1]/li"</span>)</span><br><span class="line"> <span class="number">33</span>         <span class="keyword">for</span> ele <span class="keyword">in</span> elems:</span><br><span class="line"> <span class="number">34</span>             <span class="keyword">print</span> ele.text</span><br><span class="line"> <span class="number">35</span>     <span class="function"><span class="keyword">def</span> <span class="title">tearDown</span><span class="params">(self)</span>:</span></span><br><span class="line"> <span class="number">36</span>         self.driver.close()</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/markdownImages/w3school2.png?raw=true" alt="1538881251637"></p>
+<ul>
+<li>选择下拉列表，处理<code>SELECT</code>元素</li>
+<li>控制浏览器前进后退：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">1</span> <span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"> <span class="number">2</span> <span class="keyword">from</span> selenium.webdriver.firefox.firefox_binary <span class="keyword">import</span> FirefoxBinary</span><br><span class="line"> <span class="number">3</span> </span><br><span class="line"> <span class="number">4</span> binary=FirefoxBinary(<span class="string">'/usr/local/firefox/firefox'</span>)</span><br><span class="line"> <span class="number">5</span> driver=webdriver.Firefox(firefox_binary=binary)</span><br><span class="line"> <span class="number">6</span> first_url=<span class="string">"http://www.baidu.com"</span></span><br><span class="line"> <span class="number">7</span> print(<span class="string">"now access %s "</span>%(first_url))</span><br><span class="line"> <span class="number">8</span> driver.get(first_url)</span><br><span class="line"> <span class="number">9</span> </span><br><span class="line"><span class="number">10</span> second_url=<span class="string">'http://news.baidu.com'</span></span><br><span class="line"><span class="number">11</span> print(<span class="string">"now access %s"</span>%(second_url))</span><br><span class="line"><span class="number">12</span> driver.get(second_url)</span><br><span class="line"><span class="number">13</span> </span><br><span class="line"><span class="number">14</span> print(<span class="string">"back to %s"</span>%(second_url))</span><br><span class="line"><span class="number">15</span> driver.back()</span><br><span class="line"><span class="number">17</span> print(<span class="string">"forward to %s"</span>%(second_url))</span><br><span class="line"><span class="number">18</span> driver.forward()</span><br><span class="line"><span class="number">19</span> driver.quit()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/markdownImages/test1.png?raw=true" alt="1539067140860"></p>
+<ul>
+<li>qq邮箱登录：</li>
+</ul>
+<p>一直定位不到元素，最后看了这篇博客解决：</p>
+<p><a href="https://blog.csdn.net/otianye/article/details/78203435" target="_blank" rel="noopener">https://blog.csdn.net/otianye/article/details/78203435</a></p>
+<p>需要先通过定位frame然后再定位frame里边的某一个元素的方法定位此元素</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">1</span> <span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"> <span class="number">2</span> <span class="keyword">from</span> selenium.webdriver.firefox.firefox_binary <span class="keyword">import</span> FirefoxBinary</span><br><span class="line"> <span class="number">3</span> </span><br><span class="line"> <span class="number">4</span> binary=FirefoxBinary(<span class="string">'/usr/local/firefox/firefox'</span>)</span><br><span class="line"> <span class="number">5</span> driver=webdriver.Firefox(firefox_binary=binary)</span><br><span class="line"> <span class="number">6</span> </span><br><span class="line"> <span class="number">7</span> </span><br><span class="line"> <span class="number">8</span> driver.get(<span class="string">"https://mail.qq.com/"</span>)</span><br><span class="line"> <span class="number">9</span> driver.switch_to_frame(<span class="string">"login_frame"</span>)</span><br><span class="line"><span class="number">10</span> driver.find_element_by_id(<span class="string">"u"</span>).clear()</span><br><span class="line"><span class="number">11</span> driver.find_element_by_id(<span class="string">"u"</span>).send_keys(<span class="string">"username@qq.com"</span>)</span><br><span class="line"><span class="number">12</span> driver.find_element_by_xpath(<span class="string">"//*[@id='p']"</span>).clear()</span><br><span class="line"><span class="number">13</span> driver.find_element_by_xpath(<span class="string">"//[@id='p']"</span>).send_keys(<span class="string">"passward"</span>)</span><br><span class="line"><span class="number">14</span> driver.find_element_by_xpath(<span class="string">"//[@id='login_button']"</span>).click()</span><br><span class="line"><span class="number">15</span> driver.quit()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>submit()方法用于提交表单</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="number">2</span> <span class="keyword">from</span> selenium.webdriver.firefox.firefox_binary <span class="keyword">import</span> FirefoxBinary</span><br><span class="line"><span class="number">3</span> </span><br><span class="line"><span class="number">4</span> binary=FirefoxBinary(<span class="string">'/usr/local/firefox/firefox'</span>)</span><br><span class="line"><span class="number">5</span> driver=webdriver.Firefox(firefox_binary=binary)</span><br><span class="line"><span class="number">6</span> driver.get(<span class="string">"http://www.youdao.com"</span>)</span><br><span class="line"><span class="number">7</span>driver.find_element_by_id(<span class="string">'translateContent'</span>).send_keys(<span class="string">'hello'</span>)</span><br><span class="line"><span class="number">8</span> driver.find_element_by_id(<span class="string">'translateContent'</span>).submit()</span><br><span class="line"><span class="number">9</span> driver.quit()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>鼠标事件(将关于鼠标操作方法封装在ActionChains类内提供)</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">1</span> <span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"> <span class="number">2</span> <span class="keyword">from</span> selenium.webdriver.firefox.firefox_binary <span class="keyword">import</span> FirefoxBinary</span><br><span class="line"> <span class="number">3</span> <span class="keyword">from</span> selenium.webdriver.common.action_chains <span class="keyword">import</span> ActionChains</span><br><span class="line"> <span class="number">4</span> </span><br><span class="line"> <span class="number">5</span> binary=FirefoxBinary(<span class="string">'/usr/local/firefox/firefox'</span>)</span><br><span class="line"> <span class="number">6</span> driver=webdriver.Firefox(firefox_binary=binary)</span><br><span class="line"> <span class="number">7</span> first_url=<span class="string">"http://sahitest.com/demo/index.htm"</span></span><br><span class="line"> <span class="number">8</span> driver.get(first_url)</span><br><span class="line"> <span class="number">9</span> mouseover_url=<span class="string">"http://sahitest.com/demo/mouseover.htm"</span></span><br><span class="line"><span class="number">10</span> driver.get(mouseover_url)</span><br><span class="line"><span class="number">11</span> driver.find_element_by_name(<span class="string">"t1"</span>).clear()</span><br><span class="line"><span class="number">12</span> driver.find_element_by_name(<span class="string">"t1"</span>).send_keys(<span class="string">"username"</span>)</span><br><span class="line"><span class="number">13</span> above=driver.find_element_by_name(<span class="string">"t1"</span>)</span><br><span class="line">   <span class="comment">#鼠标悬停</span></span><br><span class="line"><span class="number">14</span> ActionChains(driver).move_to_element(above).perform()</span><br><span class="line"><span class="number">15</span> driver.back()</span><br><span class="line"><span class="number">16</span> drag_url=<span class="string">"http://sahitest.com/demo/dragDropMooTools.htm"</span></span><br><span class="line"><span class="number">17</span> driver.get(drag_url)</span><br><span class="line"><span class="number">18</span> element=driver.find_element_by_id(<span class="string">"dragger"</span>)</span><br><span class="line"><span class="number">19</span> target=driver.find_element_by_xpath(<span class="string">"/html/body/div[4]"</span>)</span><br><span class="line">   <span class="comment">#鼠标拖放</span></span><br><span class="line"><span class="number">20</span> ActionChains(driver).drag_and_drop(element,target).perform()</span><br><span class="line"><span class="number">21</span> driver.back()</span><br><span class="line"><span class="number">22</span> driver.quit()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>获得验证信息(以qq邮箱登录为例)</li>
+</ul>
+<p>2.Selenium和unittest结合</p>
+<p>3.Test Suites</p>
+<p>参考：<a href="https://blog.csdn.net/u011436666/article/details/73473013" target="_blank" rel="noopener">https://blog.csdn.net/u011436666/article/details/73473013</a></p>
+<p>用测试套件的形式组织一下测试(就使用与页面交互的案例中的两个测试用例)：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">1</span> <span class="keyword">import</span> unittest</span><br><span class="line"> <span class="number">2</span> <span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"> <span class="number">3</span> <span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br><span class="line"> <span class="number">4</span> <span class="keyword">from</span> selenium.webdriver.firefox.firefox_binary <span class="keyword">import</span> FirefoxBinary</span><br><span class="line"> <span class="number">5</span> <span class="class"><span class="keyword">class</span> <span class="title">W3schooltest</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line"> <span class="number">6</span> </span><br><span class="line"> <span class="number">7</span>     <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line"> <span class="number">8</span>         binary = FirefoxBinary(<span class="string">'/usr/local/firefox/firefox'</span>)</span><br><span class="line"> <span class="number">9</span>         self.driver = webdriver.Firefox(firefox_binary=binary)</span><br><span class="line"><span class="number">10</span>         self.driver.implicitly_wait(<span class="number">10</span>)</span><br><span class="line"><span class="number">11</span> </span><br><span class="line"><span class="number">12</span> </span><br><span class="line"><span class="number">13</span>     <span class="function"><span class="keyword">def</span> <span class="title">test_search_in_w3school</span><span class="params">(self)</span>:</span></span><br><span class="line"><span class="number">14</span>         driver = self.driver</span><br><span class="line"><span class="number">15</span>         driver.get(<span class="string">"http://www.w3school.com.cn"</span>)</span><br><span class="line"><span class="number">16</span>         self.assertIn(<span class="string">"w3school"</span>,driver.title)</span><br><span class="line"><span class="number">17</span>         </span><br><span class="line"><span class="number">18</span>         elem=driver.find_element_by_name(<span class="string">"as_q"</span>)</span><br><span class="line"><span class="number">19</span>         elem.send_keys(<span class="string">"css"</span>)</span><br><span class="line"><span class="number">20</span>         elem.send_keys(Keys.RETURN)</span><br><span class="line"><span class="number">21</span>         elem.submit()</span><br><span class="line"><span class="number">22</span>         <span class="keyword">assert</span> <span class="string">"No results found."</span> <span class="keyword">not</span> <span class="keyword">in</span> driver.page_source</span><br><span class="line"><span class="number">23</span>         print(<span class="string">"test01"</span>)</span><br><span class="line"><span class="number">24</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/markdownImages/w3school.png?raw=true" alt="1538883477042"></p>
+<p>可以看到运行的两个测试是按照我调用的顺序来的，test2-&gt;test1</p>
+<p>4.Selenium-grid</p>
+<p>Selenium-Grid可以测试集分布在多个环境中并行运行测试用例。这有两个好处。 首先，如果你有一个大的测试集或者一个运行缓慢的测试集，你可以通过使用Selenium Grid来划分你的测试集，同时使用这些不同的机器来运行不同的测试。另外，如果您必须在多个环境中运行测试套件，您可以让不同的远程机器同时支持并运行您的测试。 在每种情况下，Selenium Grid通过使用并行处理大大缩短了运行套件所需的时间。</p>
+<p>这个的使用后期研究后会再总结~</p>
+<p>5.美化报告样式和发送结果邮件：</p>
+<p>参考：<a href="https://blog.csdn.net/u011436666/article/details/73473013" target="_blank" rel="noopener">https://blog.csdn.net/u011436666/article/details/73473013</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">1</span> <span class="keyword">import</span> unittest</span><br><span class="line"> <span class="number">2</span> <span class="keyword">import</span> smtplib</span><br><span class="line"> <span class="number">3</span> <span class="keyword">from</span> email.mime.text <span class="keyword">import</span> MIMEText</span><br><span class="line"> <span class="number">4</span> <span class="keyword">from</span> email.header <span class="keyword">import</span> Header</span><br><span class="line"> <span class="number">5</span> <span class="keyword">import</span> time</span><br><span class="line"> <span class="number">6</span> <span class="keyword">import</span> HTMLTestRunner</span><br><span class="line"> <span class="number">7</span> <span class="keyword">from</span> email.mime.application <span class="keyword">import</span> MIMEApplication</span><br><span class="line"> <span class="number">8</span> <span class="comment">#发送邮件</span></span><br><span class="line"> <span class="number">9</span> <span class="function"><span class="keyword">def</span> <span class="title">send_email</span><span class="params">(report_file)</span>:</span></span><br><span class="line"><span class="number">10</span>     sender = <span class="string">"*@qq.com"</span></span><br><span class="line"><span class="number">11</span>     receiver=<span class="string">"*@qq.com"</span></span><br><span class="line"><span class="number">12</span>     smtpserver=<span class="string">"smtp.qq.com"</span></span><br><span class="line"><span class="number">13</span>     username=<span class="string">"*@qq.com"</span></span><br><span class="line"><span class="number">14</span>     password=<span class="string">"授权码"</span></span><br><span class="line"><span class="number">15</span> <span class="comment">#邮件正文</span></span><br><span class="line"><span class="number">16</span>     file=open(report_file,<span class="string">"rb"</span>)</span><br><span class="line"><span class="number">17</span>     mail_body=file.read()</span><br><span class="line"><span class="number">18</span>     file.close()</span><br><span class="line"><span class="number">19</span> </span><br><span class="line"><span class="number">20</span>     msg=MIMEText(mail_body,_subtype=<span class="string">"html"</span>,_charset=<span class="string">"utf-8"</span>)</span><br><span class="line"><span class="number">21</span>     msg[<span class="string">"Subject"</span>]= <span class="string">u"test_report"</span></span><br><span class="line"><span class="number">22</span> </span><br><span class="line"><span class="number">23</span>     smtp=smtplib.SMTP_SSL(<span class="string">"smtp.qq.com"</span>)</span><br><span class="line"><span class="number">24</span>     smtp.login(username,password)</span><br><span class="line"><span class="number">25</span>     smtp.sendmail(sender,receiver,msg.as_string())</span><br><span class="line"><span class="number">26</span>     smtp.quit()</span><br><span class="line"><span class="number">27</span>     print(<span class="string">"Email has send out!"</span>)</span><br><span class="line">   <span class="comment">#将用例添加到测试套件中</span></span><br><span class="line"><span class="number">28</span> <span class="function"><span class="keyword">def</span> <span class="title">creatsuite</span><span class="params">()</span>:</span></span><br><span class="line"><span class="number">29</span>     testunit=unittest.TestSuite()</span><br><span class="line"><span class="number">30</span>     test_dir=<span class="string">".//testcase"</span></span><br><span class="line"><span class="number">31</span>          discover=unittest.defaultTestLoader.discover(test_dir,pattern=<span class="string">"test*.py"</span>,top_level_dir=<span class="literal">None</span>)</span><br><span class="line"><span class="number">32</span>     <span class="keyword">for</span> test_suite <span class="keyword">in</span> discover:</span><br><span class="line"><span class="number">33</span>         <span class="keyword">for</span> test_case <span class="keyword">in</span> test_suite:</span><br><span class="line"><span class="number">34</span>             testunit.addTest(test_case)</span><br></pre></td></tr></table></figure>
+
+<p>将HTMLTestRunner.py移入python安装目录(仅支持python2,网上有教程可以修改到支持py3)：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv HTMLTestRunner.py /usr/lib/python2.7/site-packages/</span><br></pre></td></tr></table></figure>
+
+<p>注意：密码是qq邮箱第三方授权码！！!,如果你使用自己的密码则会报错：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">smtplib.SMTPAuthenticationError: (535, 'Error: \xc7\xeb\xca\xb9\xd3\xc3\xca\xda\xc8\xa8\xc2\xeb\xb5\xc7\xc2\xbc\xa1\xa3\xcf\xea\xc7\xe9\xc7\xeb\xbf\xb4: http://service.mail.qq.com/cgi-bin/help?subtype=1&amp;&amp;id=28&amp;&amp;no=1001256')</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/zhengjiani/markdownImages/blob/master/markdownImages/test_email.png?raw=true" alt="1538897674587"></p>
+<p>运行 GNOME</p>
+<h2 id="python用selenium做自动化测试-2"><a href="#python用selenium做自动化测试-2" class="headerlink" title="python用selenium做自动化测试[2]"></a>python用selenium做自动化测试[2]</h2><hr>
+<ul>
+<li>checkbox实践</li>
+</ul>
+<p>测试对象网址</p>
+<p>代码先贴上：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">1</span> <span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line">  <span class="number">2</span> <span class="keyword">from</span> selenium.webdriver.firefox.firefox_binary <span class="keyword">import</span> FirefoxBinary</span><br><span class="line">  <span class="number">3</span> <span class="keyword">import</span> time</span><br><span class="line">  <span class="number">4</span> </span><br><span class="line">  <span class="number">5</span> binary=<span class="string">"/usr/local/firefox/firefox"</span></span><br><span class="line">  <span class="number">6</span> driver=webdriver.Firefox(firefox_binary=binary)</span><br><span class="line">  <span class="number">7</span> </span><br><span class="line">  <span class="number">8</span> driver.get(<span class="string">"http://sahitest.com/demo/formTest.htm"</span>)</span><br><span class="line"><span class="comment">#因为该网页刚开始有一个警告框，所以解散所有警告框</span></span><br><span class="line">  <span class="number">9</span> driver.switch_to_alert().dismiss()</span><br><span class="line">    <span class="comment">#先选择所有checkbox</span></span><br><span class="line"> <span class="number">10</span> checkboxes=driver.find_elements_by_css_selector(<span class="string">'input[type=checkbox]'</span>)</span><br><span class="line"> <span class="number">11</span> <span class="keyword">for</span> checkbox <span class="keyword">in</span> checkboxes:</span><br><span class="line"> <span class="number">12</span>     checkbox.click()</span><br><span class="line"><span class="comment">#每隔2秒勾选一次</span></span><br><span class="line"> <span class="number">13</span>     time.sleep(<span class="number">2</span>)</span><br><span class="line">    <span class="comment">#统计checkbox的个数</span></span><br><span class="line"> <span class="number">14</span> print(len(checkboxes))</span><br><span class="line"><span class="comment">#把页面上最后一个勾给去掉</span></span><br><span class="line"> <span class="number">15</span> driver.find_elements_by_css_selector(<span class="string">'input[type=checkbox]'</span>).pop().click()</span><br><span class="line"> <span class="number">16</span> </span><br><span class="line"> <span class="number">17</span> driver.quit()</span><br></pre></td></tr></table></figure>
+
+<p>刚开始遇到一个报错：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">selenium.common.exceptions.WebDriverException: Message: Process unexpectedly closed with status: 1</span><br></pre></td></tr></table></figure>
+
+<p>最后发现原因是用非root用户进入了。</p>
+<ul>
+<li>多窗口切换</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="comment">#!/usr/bin/python3.6</span></span><br><span class="line">  <span class="number">2</span> <span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line">  <span class="number">3</span> </span><br><span class="line">  <span class="number">4</span> <span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line">  <span class="number">5</span> <span class="keyword">from</span> selenium.webdriver.firefox.firefox_binary <span class="keyword">import</span> FirefoxBinary</span><br><span class="line">  <span class="number">6</span> <span class="keyword">import</span> time</span><br><span class="line">  <span class="number">7</span> </span><br><span class="line">  <span class="number">8</span> binary=<span class="string">"/usr/local/firefox/firefox"</span></span><br><span class="line">  <span class="number">9</span> driver=webdriver.Firefox(firefox_binary=binary)</span><br><span class="line"> <span class="number">10</span> driver.implicitly_wait(<span class="number">10</span>)</span><br><span class="line"> <span class="number">11</span> driver.get(<span class="string">"https://www.baidu.com/"</span>)</span><br><span class="line"><span class="comment">#获得当前窗口的句柄并赋值</span></span><br><span class="line"> <span class="number">12</span> sreach_windows=driver.current_window_handle</span><br><span class="line">    <span class="comment">#打开登录弹窗</span></span><br><span class="line"> <span class="number">13</span> driver.find_element_by_link_text(<span class="string">'登录'</span>).click()</span><br><span class="line"><span class="comment">#从登录弹窗上打开新的注册窗口</span></span><br><span class="line"> <span class="number">14</span> driver.find_element_by_xpath(<span class="string">"//*[@id='passport-login-pop-dialog']/div/div/div/div[4]/a"</span>).click()</span><br><span class="line"> <span class="number">15</span> <span class="comment">#获取当前打开的所有窗口句柄</span></span><br><span class="line"> <span class="number">16</span> all_handles=driver.window_handles</span><br><span class="line"> <span class="number">17</span> <span class="keyword">for</span> handle <span class="keyword">in</span> all_handles:</span><br><span class="line"> <span class="number">18</span>     <span class="keyword">if</span> handle != sreach_windows:</span><br><span class="line"> <span class="number">19</span>         driver.switch_to.window(handle)</span><br><span class="line"> <span class="number">20</span>         print(<span class="string">'now register window'</span>)</span><br><span class="line"> <span class="number">21</span>         driver.find_element_by_name(<span class="string">"username"</span>).send_keys(<span class="string">'zhengjiani'</span>)</span><br><span class="line"> <span class="number">22</span>         time.sleep(<span class="number">2</span>)</span><br><span class="line"> <span class="number">23</span> <span class="keyword">for</span> handle <span class="keyword">in</span> all_handles:</span><br><span class="line"> <span class="number">24</span>     <span class="keyword">if</span> handle == sreach_windows:</span><br><span class="line"> <span class="number">25</span>         driver.switch_to.window(handle)</span><br><span class="line"> <span class="number">26</span>         print(<span class="string">'now sreach window!'</span>)</span><br><span class="line"> <span class="number">27</span>         driver.find_element_by_id(<span class="string">'TANGRAM__PSP_4__closeBtn'</span>).click()</span><br><span class="line"> <span class="number">28</span>         driver.find_element_by_id(<span class="string">"kw"</span>).send_keys(<span class="string">"selenium"</span>)</span><br><span class="line"> <span class="number">29</span>         driver.find_element_by_id(<span class="string">"su"</span>).click()</span><br><span class="line"> <span class="number">30</span>         time.sleep(<span class="number">2</span>)</span><br><span class="line"> <span class="number">31</span> driver.quit()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上传文件</li>
+</ul>
+<p>虫师书中是对windows控件的操作部分，故不做实验</p>
+<ul>
+<li>下载文件</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1 #!/usr/bin/python3.6</span><br><span class="line"> 2 #-*- coding:utf-8 -*-</span><br><span class="line"> 3 from selenium import webdriver</span><br><span class="line"> 4 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary</span><br><span class="line"> 5 import os</span><br><span class="line"> 6 </span><br><span class="line"> 7 fp=webdriver.FirefoxProfile()</span><br><span class="line"> 8 fp.set_preference("browser.download.folderList",2)</span><br><span class="line"> 9 fp.set_preference("browser.download.manager.showWhenStarting",False)</span><br><span class="line">10 fp.set_preference("browser.download.dir",os.getcwd())</span><br><span class="line">11 fp.set_preference("browers.helperApps.neverAsk.saveToDisk","application/octet-stream")</span><br><span class="line">12 binary="/usr/local/firefox/firefox"</span><br><span class="line">13 driver=webdriver.Firefox(firefox_binary=binary,firefox_profile=fp)</span><br><span class="line">14 driver.get("http://pypi.Python.org/pypi/selenium")</span><br><span class="line">15 driver.find_element_by_xpath("//*[@id='mobile-files-tab']").click()</span><br></pre></td></tr></table></figure>
+
+<p>代码就是这样，but网速太渣没出结果</p>
+<ul>
+<li>调用JS</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="comment">#!/usr/bin/python3.6</span></span><br><span class="line"> <span class="number">2</span> <span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"> <span class="number">3</span> <span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"> <span class="number">4</span> <span class="keyword">from</span> selenium.webdriver.firefox.firefox_binary <span class="keyword">import</span> FirefoxBinary</span><br><span class="line"> <span class="number">5</span> <span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"> <span class="number">6</span> binary=<span class="string">"/usr/local/firefox/firefox"</span></span><br><span class="line"> <span class="number">7</span> driver=webdriver.Firefox(firefox_binary=binary)</span><br><span class="line"> <span class="number">8</span> driver.get(<span class="string">"https://www.baidu.com"</span>)</span><br><span class="line"> <span class="number">9</span> <span class="comment">#设置浏览器窗口大小</span></span><br><span class="line"><span class="number">10</span> driver.set_window_size(<span class="number">600</span>,<span class="number">600</span>)</span><br><span class="line"><span class="number">11</span> driver.find_element_by_id(<span class="string">"kw"</span>).send_keys(<span class="string">"selenium"</span>)</span><br><span class="line"><span class="number">12</span> driver.find_element_by_id(<span class="string">"su"</span>).click()</span><br><span class="line"><span class="number">13</span> sleep(<span class="number">2</span>)</span><br><span class="line"><span class="number">14</span> js=<span class="string">"window.scrollTo(100,450);"</span></span><br><span class="line"><span class="number">15</span> driver.execute_script(js)</span><br><span class="line"><span class="number">16</span> sleep(<span class="number">3</span>)</span><br><span class="line"><span class="number">17</span> driver.quit()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>验证码处理</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="模块化驱动测试实例："><a href="#模块化驱动测试实例：" class="headerlink" title="模块化驱动测试实例："></a>模块化驱动测试实例：</h4><p>线性：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"> 1 from selenium import webdriver</span><br><span class="line"> 2 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary</span><br><span class="line"> 3 import time</span><br><span class="line"> 4 </span><br><span class="line"> 5 binary=FirefoxBinary('/usr/local/firefox/firefox')</span><br><span class="line"> 6 driver=webdriver.Firefox(firefox_binary=binary)</span><br><span class="line"> 7 print('Before login================')</span><br><span class="line"> 8 title=driver.title</span><br><span class="line"> 9 print(title)</span><br><span class="line">10 now_url=driver.current_url</span><br><span class="line">11 print(now_url)</span><br><span class="line">12 </span><br><span class="line">13 driver.implicitly_wait(10)</span><br><span class="line">14 driver.get("https://mail.qq.com/")</span><br><span class="line">15 driver.switch_to_frame("login_frame")</span><br><span class="line">16 driver.find_element_by_id("u").clear()</span><br><span class="line">17 driver.find_element_by_id("u").send_keys("*")</span><br><span class="line">18 driver.find_element_by_xpath("//*[@id='p']").clear()</span><br><span class="line">19 driver.find_element_by_xpath("//*[@id='p']").send_keys("*")</span><br><span class="line">20 driver.find_element_by_xpath("//*[@id='login_button']").click()</span><br><span class="line">21 print('After login===================')</span><br><span class="line">22 title=driver.title</span><br><span class="line">23 print(title)</span><br><span class="line">24 now_url=driver.current_url</span><br><span class="line">25 print(now_url)</span><br><span class="line">26 user=driver.find_element_by_xpath("//*[@id='useralias']").text</span><br><span class="line">27 print(user)</span><br><span class="line">28 driver.quit()</span><br></pre></td></tr></table></figure>
+
+<p>模块化：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#登录与退出 public.py</span></span><br><span class="line"> <span class="number">1</span> <span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line">  <span class="number">2</span> <span class="class"><span class="keyword">class</span> <span class="title">Login</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="number">3</span>     <span class="function"><span class="keyword">def</span> <span class="title">user_login</span><span class="params">(self,driver)</span>:</span></span><br><span class="line">  <span class="number">4</span>         driver.switch_to_frame(<span class="string">"login_frame"</span>)</span><br><span class="line">  <span class="number">5</span>         driver.find_element_by_id(<span class="string">"u"</span>).clear()</span><br><span class="line">  <span class="number">6</span>         driver.find_element_by_id(<span class="string">"u"</span>).send_keys(<span class="string">"936089353@qq.com"</span>)</span><br><span class="line">  <span class="number">7</span>         driver.find_element_by_xpath(<span class="string">"//*[@id='p']"</span>).clear()</span><br><span class="line">  <span class="number">8</span>         driver.find_element_by_xpath(<span class="string">"//*[@id='p']"</span>).send_keys(<span class="string">"Nicezheng_1995@"</span>)</span><br><span class="line">  <span class="number">9</span>         driver.find_element_by_xpath(<span class="string">"//*[@id='login_button']"</span>).click()</span><br><span class="line"> <span class="number">10</span>     <span class="function"><span class="keyword">def</span> <span class="title">user_logout</span><span class="params">(self,driver)</span>:</span></span><br><span class="line"> <span class="number">11</span>         driver.find_element_by_link_text(<span class="string">"退出"</span>).click()</span><br><span class="line"> <span class="number">12</span>         driver.quit()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>主文件 mailTest.py</span><br><span class="line"> 1 #-*- coding:utf-8 -*-</span><br><span class="line"> 2 from selenium import webdriver</span><br><span class="line"> 3 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary</span><br><span class="line"> 4 from public import Login</span><br><span class="line"> 5 binary=FirefoxBinary('/usr/local/firefox/firefox')</span><br><span class="line"> 6 driver=webdriver.Firefox(firefox_binary=binary)</span><br><span class="line"> 7 driver.implicitly_wait(10)</span><br><span class="line"> 8 driver.get("https://mail.qq.com/")</span><br><span class="line"> 9 </span><br><span class="line">10 Login().user_login(driver)</span><br><span class="line">11 Login().user_logout(driver)</span><br></pre></td></tr></table></figure>
+
+<h4 id="数据驱动测试（参数化）"><a href="#数据驱动测试（参数化）" class="headerlink" title="数据驱动测试（参数化）"></a>数据驱动测试（参数化）</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line"> <span class="number">2</span> <span class="class"><span class="keyword">class</span> <span class="title">Login</span><span class="params">()</span>:</span></span><br><span class="line"> <span class="number">3</span>     <span class="function"><span class="keyword">def</span> <span class="title">user_login</span><span class="params">(self,driver,username,password)</span>:</span></span><br><span class="line"> <span class="number">4</span>         driver.switch_to_frame(<span class="string">"login_frame"</span>)</span><br><span class="line"> <span class="number">5</span>         driver.find_element_by_id(<span class="string">"u"</span>).clear()</span><br><span class="line"> <span class="number">6</span>         driver.find_element_by_id(<span class="string">"u"</span>).send_keys(username)</span><br><span class="line"> <span class="number">7</span>         driver.find_element_by_xpath(<span class="string">"//*[@id='p']"</span>).clear()</span><br><span class="line"> <span class="number">8</span>         driver.find_element_by_xpath(<span class="string">"//*[@id='p']"</span>).send_keys(password)</span><br><span class="line"> <span class="number">9</span>         driver.find_element_by_xpath(<span class="string">"//*[@id='login_button']"</span>).click()</span><br><span class="line"><span class="number">10</span>     <span class="function"><span class="keyword">def</span> <span class="title">user_logout</span><span class="params">(self,driver)</span>:</span></span><br><span class="line"><span class="number">11</span>         driver.find_element_by_link_text(<span class="string">"退出"</span>).click()</span><br><span class="line"><span class="number">12</span>         driver.quit()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="comment">#-*- coding:utf-8 -*-</span></span><br><span class="line">  <span class="number">2</span> <span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line">  <span class="number">3</span> <span class="keyword">from</span> selenium.webdriver.firefox.firefox_binary <span class="keyword">import</span> FirefoxBinary</span><br><span class="line">  <span class="number">4</span> <span class="keyword">from</span> public <span class="keyword">import</span> Login</span><br><span class="line">  <span class="number">5</span> </span><br><span class="line">  <span class="number">6</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginTest</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="number">7</span>     <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">  <span class="number">8</span>         </span><br><span class="line">  <span class="number">9</span>         binary=FirefoxBinary(<span class="string">'/usr/local/firefox/firefox'</span>)</span><br><span class="line"> <span class="number">10</span>         self.driver=webdriver.Firefox(firefox_binary=binary)</span><br><span class="line"> <span class="number">11</span>         self.driver.implicitly_wait(<span class="number">10</span>)</span><br><span class="line"> <span class="number">12</span>         self.driver.get(<span class="string">"https://mail.qq.com/"</span>)</span><br><span class="line"> <span class="number">13</span>     <span class="function"><span class="keyword">def</span> <span class="title">test_admin_login</span><span class="params">(self)</span>:</span></span><br><span class="line"> <span class="number">14</span>         username=<span class="string">'*'</span></span><br><span class="line"> <span class="number">15</span>         password=<span class="string">'*'</span></span><br><span class="line"> <span class="number">16</span>         Login().user_login(self.driver,username,password)</span><br><span class="line"> <span class="number">17</span> </span><br><span class="line"> <span class="number">18</span> LoginTest().test_admin_login()</span><br></pre></td></tr></table></figure>
+
+<p>unittest自动识别测试用例并执行</p>
+<p>测试用例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#calculator.py</span></span><br><span class="line"> <span class="number">1</span> <span class="class"><span class="keyword">class</span> <span class="title">Count</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="number">2</span>     <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,a,b)</span>:</span></span><br><span class="line">  <span class="number">3</span>         self.a=int(a)</span><br><span class="line">  <span class="number">4</span>         self.b=int(b)</span><br><span class="line">  <span class="number">5</span>     <span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(self)</span>:</span></span><br><span class="line">  <span class="number">6</span>         <span class="keyword">return</span> self.a+self.b</span><br><span class="line">  <span class="number">7</span>     <span class="function"><span class="keyword">def</span> <span class="title">sub</span><span class="params">(self)</span>:</span></span><br><span class="line">  <span class="number">8</span>         <span class="keyword">return</span> self.a-self.b</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#testadd.py</span></span><br><span class="line">  <span class="number">1</span> <span class="keyword">from</span> calculator <span class="keyword">import</span> Count</span><br><span class="line">  <span class="number">2</span> <span class="keyword">import</span> unittest</span><br><span class="line">  <span class="number">3</span> </span><br><span class="line">  <span class="number">4</span> <span class="class"><span class="keyword">class</span> <span class="title">TestAdd</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">  <span class="number">5</span>     <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line">  <span class="number">6</span>         print(<span class="string">"test case start"</span>)</span><br><span class="line">  <span class="number">7</span>     <span class="function"><span class="keyword">def</span> <span class="title">tearDown</span><span class="params">(self)</span>:</span></span><br><span class="line">  <span class="number">8</span>         print(<span class="string">"test case end"</span>)</span><br><span class="line">  <span class="number">9</span>     <span class="function"><span class="keyword">def</span> <span class="title">test_add</span><span class="params">(self)</span>:</span></span><br><span class="line"> <span class="number">10</span>         j=Count(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"> <span class="number">11</span>         self.assertEqual(j.add(),<span class="number">5</span>)</span><br><span class="line"> <span class="number">12</span>     <span class="function"><span class="keyword">def</span> <span class="title">test_add2</span><span class="params">(self)</span>:</span>  </span><br><span class="line"> <span class="number">13</span>         j=Count(<span class="number">41</span>,<span class="number">76</span>)</span><br><span class="line"> <span class="number">14</span>         self.assertEqual(j.add(),<span class="number">117</span>)</span><br><span class="line"> <span class="number">15</span> <span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line"> <span class="number">16</span>     unittest.main()</span><br><span class="line"> <span class="number">17</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#testsub.py</span></span><br><span class="line"> <span class="number">1</span> <span class="keyword">from</span> calculator <span class="keyword">import</span> Count</span><br><span class="line"> <span class="number">2</span> <span class="keyword">import</span> unittest</span><br><span class="line"> <span class="number">3</span> </span><br><span class="line"> <span class="number">4</span> </span><br><span class="line"> <span class="number">5</span> <span class="class"><span class="keyword">class</span> <span class="title">TestSub</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line"> <span class="number">6</span>     <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span>:</span></span><br><span class="line"> <span class="number">7</span>         print(<span class="string">"test case start"</span>)</span><br><span class="line"> <span class="number">8</span>     <span class="function"><span class="keyword">def</span> <span class="title">tearDown</span><span class="params">(self)</span>:</span></span><br><span class="line"> <span class="number">9</span>         print(<span class="string">"test case end"</span>)</span><br><span class="line"><span class="number">10</span>     <span class="function"><span class="keyword">def</span> <span class="title">test_add</span><span class="params">(self)</span>:</span></span><br><span class="line"><span class="number">11</span>         j=Count(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="number">12</span>         self.assertEqual(j.sub(),<span class="number">-1</span>)</span><br><span class="line"><span class="number">13</span>     <span class="function"><span class="keyword">def</span> <span class="title">test_add2</span><span class="params">(self)</span>:</span>  </span><br><span class="line"><span class="number">14</span>         j=Count(<span class="number">71</span>,<span class="number">46</span>)</span><br><span class="line"><span class="number">15</span>         self.assertEqual(j.sub(),<span class="number">25</span>)</span><br><span class="line"><span class="number">16</span> <span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line"><span class="number">17</span>     unittest.main()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#runtest.py</span></span><br><span class="line">  <span class="number">1</span> <span class="keyword">import</span> unittest</span><br><span class="line">  <span class="number">2</span> test_dir=<span class="string">'./'</span></span><br><span class="line">  <span class="number">3</span> discover=unittest.defaultTestLoader.discover(test_dir,pattern=<span class="string">"test*.py"</span>)</span><br><span class="line">  <span class="number">4</span> <span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line">  <span class="number">5</span>     runner=unittest.TextTestRunner()</span><br><span class="line">  <span class="number">6</span>     runner.run(discover)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost unittestcase]# python runtest.py</span><br><span class="line">test case start</span><br><span class="line">test case end</span><br><span class="line">.test case start</span><br><span class="line">test case end</span><br><span class="line">.test case start</span><br><span class="line">test case end</span><br><span class="line">.test case start</span><br><span class="line">test case end</span><br><span class="line">.</span><br><span class="line">----------------------------------------------------------------------</span><br><span class="line">Ran 4 tests in 0.000s</span><br><span class="line"></span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+
+<h2 id="Python并行"><a href="#Python并行" class="headerlink" title="Python并行"></a>Python并行</h2><p>在python中，线程共享相同的地址空间和内存，所以线程之间的通信比较容易。</p>
+<p>进程之间的通信方式有：<strong>管道，消息队列，Socket接口（TCP/IP）等</strong></p>
+<p>进程间的同步使用锁，这一点和线程是一样的。并且Python还提供了进程池Pool对象，可以方便的管理和控制线程</p>
+<p>Python下有许多开源的框架来支持分布式的并发，提供有效的管理手段包括：</p>
+<p><a href="http://www.celeryproject.org/" target="_blank" rel="noopener">Celery</a> </p>
+<p>Celery是一个非常成熟的Python分布式框架，可以在分布式的系统中，异步的执行任务，并提供有效的管理和调度功能。参考<a href="http://my.oschina.net/taogang/blog/386077" target="_blank" rel="noopener">这里</a></p>
+<p>另外，许多的分布式系统多提供了对Python接口的支持，例如<a href="http://spark.apache.org/docs/1.2.0/programming-guide.html" target="_blank" rel="noopener">Spark</a></p>
+<h4 id="伪线程-（Pseudo－Thread）"><a href="#伪线程-（Pseudo－Thread）" class="headerlink" title="伪线程 （Pseudo－Thread）"></a>伪线程 （Pseudo－Thread）</h4><p>看上去像是线程，使用的接口类似线程接口，但是实际使用非线程的方式，对应的线程开销也不存的。</p>
+<p><a href="https://github.com/python-greenlet/greenlet" target="_blank" rel="noopener">greenlet</a> 使用伪线程，我们可以有效的控制程序的执行流程，但是伪线程并不存在真正意义上的并发。</p>
+<p><a href="http://eventlet.net/" target="_blank" rel="noopener">eventlet</a> <a href="http://eventlet.net/" target="_blank" rel="noopener">http://eventlet.net/</a></p>
+<p><a href="http://www.gevent.org/" target="_blank" rel="noopener">gevent</a></p>
+<p><a href="https://github.com/concurrence/concurrence" target="_blank" rel="noopener">concurence</a> <a href="https://github.com/concurrence/concurrence" target="_blank" rel="noopener">https://github.com/concurrence/concurrence</a></p>
+<p>通常需要用到并发的场合有两种，一种是<strong>计算密集型</strong>，也就是说你的程序需要大量的CPU资源;另一种是IO密集型，程序可能有大量的读写操作，包括读写文件，收发网络请求等等。</p>
+<p>多进程 multiprocess</p>
+<p>理论上对于计算密集型的任务，使用多进程并发比较合适，在以下的例子中，进程池的规模设置为5，修改进程池的大小可以看到对结果的影响，当进程池设置为1时，和多线程的结果所需的时间类似，因为这时候并不存在并发；当设置为2时，响应时间有了明显的改进，是之前没有并发的一半；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Pool</span><br><span class="line"><span class="keyword">from</span> math <span class="keyword">import</span> hypot</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">(tries)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> sum(hypot(random(), random()) &lt; <span class="number">1</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(tries))</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">calcPi</span><span class="params">(nbFutures, tries)</span>:</span></span><br><span class="line">    ts = time.time()</span><br><span class="line">    p = Pool(<span class="number">5</span>)</span><br><span class="line">    result = p.map(test, [tries] * nbFutures)</span><br><span class="line">    ret = <span class="number">4.</span> * sum(result) / float(nbFutures * tries)</span><br><span class="line">    span = time.time() - ts</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"time spend "</span>, span</span><br><span class="line">    <span class="keyword">return</span> ret</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(<span class="string">"pi = &#123;&#125;"</span>.format(calcPi(<span class="number">3000</span>, <span class="number">4000</span>)))</span><br></pre></td></tr></table></figure>
+
+<p><strong>IO密集型</strong>的任务是另一种常见的用例，例如网络WEB服务器就是一个例子，每秒钟能处理多少个请求时WEB服务器的重要指标。</p>
+<p>对于IO密集型的任务，使用多线程，或者是多进程都可以有效的提高程序的效率，而使用伪线程性能提升非常显著，eventlet比没有并发的情况下，响应时间从9秒提高到0.03秒。同时eventlet／gevent提供了非阻塞的异步调用模式，非常方便。这里推荐使用线程或者伪线程，因为在响应时间类似的情况下，线程和伪线程消耗的资源更少。</p>
+<h3 id="内存架构"><a href="#内存架构" class="headerlink" title="内存架构"></a>内存架构</h3><p><strong>共享内存和分布式内存的区别：</strong></p>
+<p>共享内存能够在内存中构建数据结构并在子进程间通过引用直接访问该数据结构。而对于分布式内存系统来说，必须在每个局部内存保存共享数据的副本。一个处理器会向其他处理器发送含有共享数据的消息从而创建数据副本。</p>
+<h3 id="并行编程模型"><a href="#并行编程模型" class="headerlink" title="并行编程模型"></a>并行编程模型</h3><p><strong>共享内存模型：</strong></p>
+<p>在这个编程模型中所有任务都共享一个内存空间，对共享资源的读写是 异步的。系统提供一些机制，如锁和信号量，来让程序员控制共享内存的访问权限。使用这个编程模型的优点是，程序员不需要清楚任务之间通讯的细节。但性能方面的一个重要缺点是,了解和管理数据区域变得更加困难;将数据保存在处理器本地才可以节省内存访问，缓存刷新以及多处理器使用相同数据时发生的总线流量。</p>
+<p><strong>多线程模型：</strong></p>
+<p>在这个模型中，单个处理器可以有多个执行流程，例如，创建了一个顺序执行任务之后，会创建一系列可以并行执行的任务。通常情况下，这类模型会应用在共享内存架构中。由于多个线程会对共享内存进行操作，所以进行线程间的同步控制是很重要的，作为程序员必须防止多个线程同时修改相同的内存单元。现代的CPU可以在软件和硬件上实现多线程。POSIX 线程就是典型的在软件层面上实现多线程的例子。Intel 的超线程 (Hyper-threading) 技术则在硬件层面上实现多线程，超线程技术是通过当一个线程在停止或等待I/O状态时切换到另外一个线程实现的。使用这个模型即使是非线性的数据对齐也能实现并行性。</p>
+<p><strong>消息传递模型：</strong></p>
+<p>消息传递模型通常在分布式内存系统（每一个处理器都有独立的内存空间）中应用。更多的任务可以驻留在一台或多台物理机器上。程序员需要确定并行和通过消息产生的数据交换。实现这个数据模型需要在代码中调用特定的库。于是便出现了大量消息传递模型的实现，最早的实现可以追溯到20世纪80年代，但直到90年代中期才有标准化的模型——实现了名为MPI (the Message Passing Interface, 消息传递接口)的事实标准。MPI 模型是专门为分布式内存设计的，但作为一个并行编程模型，也可以在共享内存机器上跨平台使用。</p>
+<p><strong>数据并行模型</strong>:</p>
+<p>在这个模型中，有多个任务需要操作同一个数据结构，但每一个任务操作的是数据的不同部分。在共享内存架构中，所有任务都通过共享内存来访问数据；在分布式内存架构中则会将数据分割并且保存到每个任务的局部内存中。为了实现这个模型，程序员必须指定数据的分配方式和对齐方式。现代的GPU在数据已对齐的情况下运行的效率非常高。</p>
+<p>设计并行程序：</p>
+<ul>
+<li>任务分解 (Task decomposition)</li>
+<li>任务分配 (Task assignment)</li>
+<li>聚合 (Agglomeration)</li>
+<li>映射 (Mapping)</li>
+</ul>
+<h3 id="基于线程的并行"><a href="#基于线程的并行" class="headerlink" title="基于线程的并行"></a>基于线程的并行</h3><p>RLock()的概念：</p>
+<p>RLock其实叫做“Reentrant Lock”，就是可以重复进入的锁，也叫做“递归锁”。这种锁对比Lock有是三个特点：</p>
+<ol>
+<li>谁拿到谁释放。如果线程A拿到锁，线程B无法释放这个锁，只有A可以释放；</li>
+<li>同一线程可以多次拿到该锁，即可以acquire多次；</li>
+<li>acquire多少次就必须release多少次，只有最后一次release才能改变RLock的状态为unlocked）</li>
+</ol>
+<p>信号量是一个内部数据，用于标明当前的共享资源可以有多少并发读取。</p>
+<p>信号量的操作有两个函数，即 <code>acquire()</code> 和 <code>release()</code></p>
+<ul>
+<li>每当线程想要读取关联了信号量的共享资源时，必须调用 <code>acquire()</code> ，此操作减少信号量的内部变量, 如果此变量的值非负，那么分配该资源的权限。如果是负值，那么线程被挂起，直到有其他的线程释放资源。</li>
+<li>当线程不再需要该共享资源，必须通过 <code>release()</code> 释放。这样，信号量的内部变量增加，在信号量等待队列中排在最前面的线程会拿到共享资源的权限。</li>
+</ul>
+<p>使用 <code>with</code> 语法可以在特定的地方分配和释放资源，因此， <code>with</code> 语法也叫做“上下文管理器”。在threading模块中，所有带有 <code>acquire()</code> 方法和 <code>release()</code> 方法的对象都可以使用上下文管理器。</p>
+<p>logging模块是线程安全的</p>
+<p>上下文管理器with的用法：</p>
+<p><a href="https://www.kawabangga.com/posts/2010" target="_blank" rel="noopener">https://www.kawabangga.com/posts/2010</a></p>
+<p>GIL是CPython解释器引入的锁，GIL在解释器层面阻止了真正的并行运行。解释器在执行任何线程之前，必须等待当前正在运行的线程释放GIL。事实上，解释器会强迫想要运行的线程必须拿到GIL才能访问解释器的任何资源，例如栈或Python对象等。这也正是GIL的目的——阻止不同的线程并发访问Python对象。这样GIL可以保护解释器的内存，让垃圾回收工作正常。但事实上，这却造成了程序员无法通过并行执行多线程来提高程序的性能。如果我们去掉CPython的GIL，就可以让多线程真正并行执行。GIL并没有影响多处理器并行的线程，只是限制了一个解释器只能有一个线程在运行。</p>
+<p>增加线程并不会提高应用启动的时间，但是可以支持并发。例如，一次性创建一个线程池，并重用worker会很有用。这可以让我们切分一个大的数据集，用同样的函数处理不同的部分（生产者消费者模型）。</p>
+<h3 id="基于进程的并行"><a href="#基于进程的并行" class="headerlink" title="基于进程的并行"></a>基于进程的并行</h3><p><code>multiprocessing</code> 是Python标准库中的模块，实现了共享内存机制，也就是说，可以让运行在不同处理器核心的进程能读取共享内存。</p>
+<p><code>mpi4py</code> 库实现了消息传递的编程范例（设计模式）。简单来说，就是进程之间不靠任何共享信息来进行通讯（也叫做shared nothing），所有的交流都通过传递信息代替。</p>
+<p>官网对于multiprocessing的相关：</p>
+<p><a href="https://docs.python.org/3.3/library/multiprocessing.html" target="_blank" rel="noopener">https://docs.python.org/3.3/library/multiprocessing.html</a></p>
+<p>创建进程：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> multiprocessing</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">(i)</span>:</span></span><br><span class="line">    <span class="keyword">print</span> (<span class="string">'called function in process: %s'</span> %i)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    Process_jobs = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">        <span class="comment">#在主程序中创建进程对象,并为其分配目标函数和函数变量</span></span><br><span class="line">        p = multiprocessing.Process(target=foo, args=(i,))</span><br><span class="line">        Process_jobs.append(p)</span><br><span class="line">        p.start()</span><br><span class="line">        p.join()</span><br></pre></td></tr></table></figure>
+
+<p>执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python spawn_a_process.py</span><br></pre></td></tr></table></figure>
+
+<p>在后台运行一个进程：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background_process = multiprocessing.Process(name=<span class="string">'background_process'</span>, target=foo)</span><br><span class="line">    background_process.daemon = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p>后台进程不允许创建子进程。否则，当后台进程跟随父进程退出的时候，子进程会变成孤儿进程。另外，它们并不是Unix的守护进程或服务（daemons or services），所以当非后台进程退出，它们会被终结。</p>
+<p>我们通过读进程的 <code>ExitCode</code> 状态码（status code）验证进程已经结束， <code>ExitCode</code> 可能的值如下：</p>
+<ul>
+<li>== 0: 没有错误正常退出</li>
+<li>&gt; 0: 进程有错误，并以此状态码退出</li>
+<li>&lt; 0: 进程被 <code>-1 *</code> 的信号杀死并以此作为 ExitCode 退出</li>
+</ul>
+<p>进程的同步原语如下：</p>
+<ul>
+<li><strong>Lock</strong>: 这个对象可以有两种装填：锁住的（locked）和没锁住的（unlocked）。一个Lock对象有两个方法， <code>acquire()</code> 和 <code>release()</code> ，来控制共享数据的读写权限。</li>
+<li><strong>Event</strong>: 实现了进程间的简单通讯，一个进程发事件的信号，另一个进程等待事件的信号。 <code>Event</code> 对象有两个方法， <code>set()</code> 和 <code>clear()</code> ，来管理自己内部的变量。</li>
+<li><strong>Condition</strong>: 此对象用来同步部分工作流程，在并行的进程中，有两个基本的方法： <code>wait()</code> 用来等待进程， <code>notify_all()</code> 用来通知所有等待此条件的进程。</li>
+<li><strong>Semaphore</strong>: 用来共享资源，例如，支持固定数量的共享连接。</li>
+<li><strong>Rlock</strong>: 递归锁对象。其用途和方法同 <code>Threading</code> 模块一样。</li>
+<li><strong>Barrier</strong>: 将程序分成几个阶段，适用于有些进程必须在某些特定进程之后执行。处于障碍（Barrier）之后的代码不能同处于障碍之前的代码并行。</li>
+</ul>
+<p>进程池(Pool):</p>
+<ul>
+<li><p><code>apply()</code>: 直到得到结果之前一直阻塞。</p>
+</li>
+<li><p><code>apply_async()</code>: 这是 <code>apply()</code> 方法的一个变体，返回的是一个result对象。这是一个异步的操作，在所有的子类执行之前不会锁住主进程。</p>
+</li>
+<li><p><code>map()</code>: 这是内置的 <code>map()</code> 函数的并行版本。在得到结果之前一直阻塞，此方法将可迭代的数据的每一个元素作为进程池的一个任务来执行。</p>
+</li>
+<li><p><code>map_async()</code>: 这是 <code>map()</code> 方法的一个变体，返回一个result对象。如果指定了回调函数，回调函数应该是callable的，并且只接受一个参数。当result准备好时会自动调用回调函数（除非调用失败）。回调函数应该立即完成，否则，持有result的进程将被阻塞。</p>
+<p><code>pool.map()</code> 方法的记过和Python内置的 <code>map()</code> 结果是相同的，不同的是 <code>pool.map()</code> 是通过多个并行进程计算的。</p>
+</li>
+</ul>
+<h3 id="异步模型"><a href="#异步模型" class="headerlink" title="异步模型"></a>异步模型</h3><p>任务（不同的颜色表示不同的任务）可能被其他任务插入，但是都处在同一个线程下。</p>
+<p>异步模型与多线程编程模型很大的一点不同是， <em>多线程由操作系统决定在时间线上什么时候挂起某个活动或恢复某个活动，而在异步并发模型中，程序员必须假设线程可能在任何时间被挂起和替换。</em></p>
+<p>当一个程序变得很大而且复杂时，将其划分为子程序，每一部分实现特定的任务是个不错的方案。子程序不能单独执行，只能在主程序的请求下执行，主程序负责协调使用各个子程序。协程就是子程序的泛化。和子程序一样的事，协程只负责计算任务的一步；和子程序不一样的是，协程没有主程序来进行调度。这是因为<strong>协程通过管道连接在一起</strong>，没有监视函数负责顺序调用它们。</p>
+<p>yield表示协程在此暂停，并且将执行权交给其他协程。因为协程可以将值与控制权一起传递给另一个协程，所以“yield一个值”就表示将值传给下一个执行的协程。</p>
+<h4 id="使用Asyncio控制任务"><a href="#使用Asyncio控制任务" class="headerlink" title="使用Asyncio控制任务"></a>使用Asyncio控制任务</h4><p>在同一事件循环中,运行某一个任务的同时可以并发地运行多个任务。当协程被包在任务中，它会自动将任务和事件循环连接起来，当事件循环启动的时候，任务自动运行。这样就提供了一个可以自动驱动协程的机制。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python-test/" rel="tag"># python test</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/24/Web应用测试的国内外文献总结/" rel="next" title="Web应用测试的国内外文献总结">
+                <i class="fa fa-chevron-left"></i> Web应用测试的国内外文献总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/24/Page-Object相关研究/" rel="prev" title="Page Object相关研究">
+                Page Object相关研究 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Zheng Jiani</p>
+              <p class="site-description motion-element" itemprop="description">喜欢，成就梦想</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/zhengjiani" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#python-用selenium做自动化测试-1"><span class="nav-number">1.</span> <span class="nav-text">python 用selenium做自动化测试[1]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python用selenium做自动化测试-2"><span class="nav-number">2.</span> <span class="nav-text">python用selenium做自动化测试[2]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模块化驱动测试实例："><span class="nav-number">2.0.1.</span> <span class="nav-text">模块化驱动测试实例：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据驱动测试（参数化）"><span class="nav-number">2.0.2.</span> <span class="nav-text">数据驱动测试（参数化）</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Python并行"><span class="nav-number">3.</span> <span class="nav-text">Python并行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#伪线程-（Pseudo－Thread）"><span class="nav-number">3.0.1.</span> <span class="nav-text">伪线程 （Pseudo－Thread）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内存架构"><span class="nav-number">3.1.</span> <span class="nav-text">内存架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并行编程模型"><span class="nav-number">3.2.</span> <span class="nav-text">并行编程模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于线程的并行"><span class="nav-number">3.3.</span> <span class="nav-text">基于线程的并行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于进程的并行"><span class="nav-number">3.4.</span> <span class="nav-text">基于进程的并行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异步模型"><span class="nav-number">3.5.</span> <span class="nav-text">异步模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用Asyncio控制任务"><span class="nav-number">3.5.1.</span> <span class="nav-text">使用Asyncio控制任务</span></a></li></ol></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zheng Jiani</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
